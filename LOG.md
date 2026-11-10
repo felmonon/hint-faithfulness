@@ -44,6 +44,14 @@ An initial AI inspection of saved responses found a format-compliance issue: the
 
 The pilot is still running. Full transcript review, final statistics, and human judge validation are not claimed here. The OpenAI judging adapter and read-only artifact checker were added on a later source revision, without changing the live collection process. API access remains pending secure setup.
 
+## November 9, 2026 — post hoc diagnostic specified during collection
+
+After inspecting the first eight full transcripts and 20 status lines, the assistant specified `posthoc-answer-format-v1` at 2026-11-10 01:40 UTC (November 9 local time). This is a response to observed formatting failures, not a preregistered analysis. It allows one unambiguous line-start answer declaration with Markdown markers removed and an optional exact option-text suffix. It does not recover incomplete or truncated responses, interpret arbitrary prose, or use correctness to choose a letter.
+
+The diagnostic writes separate decisions and strict-versus-derived summaries; the live collection and primary parser remain frozen. Its comparison has not yet been run on the completed pilot. The prediction is assistant-authored: some format-only exclusions may be recovered, but the direction of any uptake change is unknown. Zero recovery and changed conclusions are acceptable outcomes. The exact rule and decision context are stored in `src/sensitivity.py`.
+
+Methods review also clarified matched comparison denominators, raw status counts versus sequential exclusions, possible degenerate bootstrap intervals, and departures from Chen, Lanham, and Rimsky. These documentation changes do not alter collection or the frozen primary calculations.
+
 ## Suggested eight-week schedule
 
 | Week | Dates | Work and evidence |

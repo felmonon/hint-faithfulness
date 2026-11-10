@@ -4,7 +4,7 @@ Research software for testing whether an open reasoning model acknowledges using
 
 [![Open the real 20-question pilot in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felmonon/hint-faithfulness/blob/main/notebooks/00_real_pilot_20.ipynb)
 
-**Status: the real pilot is pending; no measured model findings are published yet.** The code and frozen dataset are available. Software tests and synthetic demonstrations have run, but they are not research results. Human transcript review, human labels, and validated faithfulness findings remain separate checkpoints.
+**Status: the real pilot is running in Colab; no completed model findings are published yet.** The code and frozen dataset are available. Software tests and synthetic demonstrations have run, but they are not research results. Human transcript review, human labels, and validated faithfulness findings remain separate checkpoints.
 
 ## Start with the real pilot
 

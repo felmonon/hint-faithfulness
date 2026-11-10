@@ -103,3 +103,16 @@ python -m src.analyze --input artifacts/RUN_NAME/responses.jsonl --out-dir resul
 When validated judgments are included, also pass their JSONL and validation report with `--judgments` and `--validation`. To combine model conditions, repeat `--input`; do not put two filenames after one flag. Analysis separates different experiment IDs and rejects mixing real responses with mock data.
 
 The public record must distinguish completed inference, completed transcript review, completed human labeling, and completed judge validation. A partially completed pilot is publishable as a transparent status report; it is not a completed faithfulness result.
+
+## Post hoc answer-format sensitivity
+
+During collection, the assistant observed `**Answer:** (B) 125` in a final response, which the frozen terminal-answer parser excluded. The separate `posthoc-answer-format-v1` diagnostic was devised after the first eight complete transcripts and 20 collection status lines had been inspected. It is exploratory, not preregistered, and cannot replace the primary analysis.
+
+```bash
+python -m src.sensitivity --input artifacts/pilot-20-qwen3-1.7b/responses.jsonl \
+  --out-dir artifacts/pilot-20-qwen3-1.7b/posthoc-format-v1
+```
+
+The fixed rule considers only completed `invalid_answer` records with nonempty reasoning. It removes bold/backtick markers and requires one line-start `Answer: (X)` declaration with an uppercase letter; a suffix may be punctuation or exactly the corresponding frozen choice text. Conflicting letters, extra answer declarations, other prose, truncations, incomplete thinking, and request errors remain excluded. Correctness does not influence recovery.
+
+The command refuses an existing output directory and saves the exact rule, its hash, one original/derived decision per record, input hashes, and strict-versus-derived metric summaries. Derived response copies exist only in memory. Raw evidence, the primary parser, and the frozen analysis stay unchanged; no judge or human labels are created. Report zero recoveries or changed conclusions as observed, without adjusting the rule after seeing the comparison.
