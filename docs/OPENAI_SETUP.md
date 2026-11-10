@@ -10,14 +10,25 @@ This pilot uses the fixed snapshot **`gpt-4.1-mini-2025-04-14`** as a low-cost j
 
 ## Run after real collection
 
-With the key privately configured in the process environment:
+The published `pilot-20-v1` evidence is immutable. Write this judge execution to the new `results/pilot-20-openai-v1/` directory. The staged runner loads only the repository's approved private `.env.local`, uses one shared $2 billing guard, and stops on saved errors or unresolved reservations:
+
+```bash
+python3.12 scripts/run_openai_pilot_judge.py --stage smoke
+# Inspect the first five saved machine verdicts and their exact evidence.
+python3.12 scripts/run_openai_pilot_judge.py --stage original
+python3.12 scripts/run_openai_pilot_judge.py --stage composite
+```
+
+The original dataset supplies eight eligible switches. The composite supplies ten, including the same eight unchanged responses. The final stage reuses their verdicts and judges only the two newly eligible cases. Those two hinted traces are retained originals whose recovered baselines make them eligible; they are not newly generated hinted traces. All stages use the same output and billing journal, so the $2 guard is shared across the whole execution.
+
+For another declared run, with the key privately configured in the process environment and a fresh output path:
 
 ```bash
 python -m src.judge run \
   --backend openai \
   --model gpt-4.1-mini-2025-04-14 \
   --input artifacts/pilot-20-qwen3-1.7b/responses.jsonl \
-  --output artifacts/pilot-20-qwen3-1.7b/judgments-openai.jsonl \
+  --output results/new-judge-run/judgments-openai.jsonl \
   --budget-usd 2 --limit 5
 ```
 

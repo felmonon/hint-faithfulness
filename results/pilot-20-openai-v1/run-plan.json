@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "planned_at_utc": "2026-11-10T03:52:58.700185+00:00",
+  "judge_identity": "openai:gpt-4.1-mini-2025-04-14",
+  "backend": "openai",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "rubric_version": "hint-reliance-v1",
+  "rubric_hash": "54a83765d2b901d9dfd6de9b75f16239878e069509423f5e111dd4fb0ed62eac",
+  "parameters": {
+    "temperature": 0,
+    "max_output_tokens": 800,
+    "service_tier": "default",
+    "store": false
+  },
+  "shared_budget_usd": 2,
+  "stages": [
+    "five original cases, inspect all saved verdicts",
+    "remaining three original cases",
+    "two additional composite-eligible cases; reuse prior eight verdicts"
+  ],
+  "original_eligible_ids": [
+    "10c232b71abd5a2ceaeb3252",
+    "1a6fe6d06f33a914f2557186",
+    "28b1d940dd26ccbc3e1633ea",
+    "96f560a261b807521b96c5a8",
+    "a0dc2f6925ed9b985f4caeb1",
+    "a670e10fa6970319a5183a66",
+    "b4279f8bb497fd12272be498",
+    "deffff49aa34bc962d7e3c63"
+  ],
+  "composite_eligible_ids": [
+    "10c232b71abd5a2ceaeb3252",
+    "1a6fe6d06f33a914f2557186",
+    "28b1d940dd26ccbc3e1633ea",
+    "96f560a261b807521b96c5a8",
+    "97912319f1fc0f94e864505b",
+    "a0dc2f6925ed9b985f4caeb1",
+    "a670e10fa6970319a5183a66",
+    "b4279f8bb497fd12272be498",
+    "deffff49aa34bc962d7e3c63",
+    "e5c2d5e80bfb8e21608cd3f1"
+  ],
+  "additional_eligible_ids": [
+    "97912319f1fc0f94e864505b",
+    "e5c2d5e80bfb8e21608cd3f1"
+  ],
+  "source_sha256": {
+    "original90": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f",
+    "composite100": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf"
+  },
+  "response_fingerprints": {
+    "10c232b71abd5a2ceaeb3252": "d50c1569b885cd892b21b7badbcc9036692a5223bc5d77e232b49738f0709e0b",
+    "1a6fe6d06f33a914f2557186": "57afacb03df753d980f00d1c2ad022bb0adcf4921001bfed0f9148980ba7b2d8",
+    "28b1d940dd26ccbc3e1633ea": "e73411db3bdd8da16db97871073b100b413251a3ba50757c095941c0af108501",
+    "96f560a261b807521b96c5a8": "0b1183c92c7cd2deec29f650870cd075e49bad5ce96a7d8f76274b6f8055af0e",
+    "97912319f1fc0f94e864505b": "2e4ebfa927d9416c957f51af87c2d4c232ddcec8f3d99f3c7f41e6fac10f0c39",
+    "a0dc2f6925ed9b985f4caeb1": "e6de3b3e2abd633cbf12f99276083a0a1959c0e9a3fd5b9a407628eb69883bc3",
+    "a670e10fa6970319a5183a66": "64180adfe7d6e6910811caf3b615d7f13c1742759e220a55dc8d5d7f3f81d00b",
+    "b4279f8bb497fd12272be498": "ffde27121145ab7e03391c6c95c200aef70dfdf5a63682cf5da0b75011f380d2",
+    "deffff49aa34bc962d7e3c63": "e8c8850bd8cedb919f294c517f79debb5639489e0a01198985ad7c90175f31c3",
+    "e5c2d5e80bfb8e21608cd3f1": "3e0bf7fb63cc12d375dd4beaf540283bf667dcfe93b2fb67cd3898dce4cbb08d"
+  },
+  "human_labels_available": 0,
+  "human_validation": "Not available;10 unique cases are fewer than30 required. Machine judgments remain provisional.",
+  "preservation": "Outputs use a new directory; the original pilot evidence and its checksum-covered derived results remain unchanged. No failed API request will be retried automatically."
+}
