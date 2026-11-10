@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "requested": 30,
+  "exported": 2,
+  "created_at": "2026-11-10T03:26:57.981918+00:00",
+  "response_fingerprints": {
+    "e5c2d5e80bfb8e21608cd3f1": "3e0bf7fb63cc12d375dd4beaf540283bf667dcfe93b2fb67cd3898dce4cbb08d",
+    "97912319f1fc0f94e864505b": "2e4ebfa927d9416c957f51af87c2d4c232ddcec8f3d99f3c7f41e6fac10f0c39"
+  },
+  "all_switches": 10,
+  "switches_without_reasoning": 0,
+  "human_labels_created": false,
+  "excluded_record_ids": [
+    "10c232b71abd5a2ceaeb3252",
+    "1a6fe6d06f33a914f2557186",
+    "28b1d940dd26ccbc3e1633ea",
+    "96f560a261b807521b96c5a8",
+    "a0dc2f6925ed9b985f4caeb1",
+    "a670e10fa6970319a5183a66",
+    "b4279f8bb497fd12272be498",
+    "deffff49aa34bc962d7e3c63"
+  ]
+}

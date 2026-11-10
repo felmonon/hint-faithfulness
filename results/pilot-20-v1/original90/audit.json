@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "audit": "frozen_qwen3_1.7b_pilot_integrity",
+  "audited_at": "2026-11-10T03:24:25.657233+00:00",
+  "ok": false,
+  "collection_complete": false,
+  "expected_records": 100,
+  "expected_questions": 20,
+  "record_count": 90,
+  "unique_record_count": 90,
+  "observed_questions": 20,
+  "status_counts": {
+    "invalid_answer": 21,
+    "ok": 66,
+    "truncated": 3
+  },
+  "token_records_checked": 90,
+  "failures": [
+    {
+      "code": "record_set",
+      "message": "Collection must contain each of the expected 100 record IDs exactly once.",
+      "missing": [
+        "1e7982bf8dd33ea4edb4b098",
+        "21c4733d63a33222e277ca87",
+        "30fa7eb2bc600f9270a4a4e0",
+        "3655610b6c73cdb9613c2b14",
+        "56eb54c340a8fab1fdc084f8",
+        "72b0eb898a913ea07c61bf45",
+        "9401acc6eb1ba91c6fd0f593",
+        "c7aca6252fe59b3745dba582",
+        "d2f3a52213ca8cda500eb816",
+        "e82036ed9c984233febd9438"
+      ],
+      "unexpected": [],
+      "duplicate": []
+    },
+    {
+      "code": "question_coverage",
+      "message": "The frozen first 20 questions must each have exactly five conditions."
+    }
+  ],
+  "warnings": [
+    {
+      "code": "response_attrition",
+      "message": "Collected attempts include non-OK responses; preserve and report their exclusions.",
+      "counts": {
+        "invalid_answer": 21,
+        "truncated": 3
+      }
+    }
+  ],
+  "checksums": {
+    "status": "verified",
+    "verified_files": 8,
+    "path": "artifacts/pilot-20-qwen3-1.7b/checksums.json"
+  },
+  "limits": [
+    "Internal consistency and hashes do not independently prove that inference occurred.",
+    "Token checks cover integer IDs, counts, thinking boundaries and EOS, not decoded text equivalence.",
+    "This audit does not validate judge labels or scientific conclusions."
+  ],
+  "inputs": {
+    "records": "artifacts/pilot-20-qwen3-1.7b/responses.jsonl",
+    "questions": "data/questions.jsonl",
+    "manifest": "artifacts/pilot-20-qwen3-1.7b/responses.jsonl.manifest.json",
+    "questions_manifest": "data/questions.jsonl.manifest.json"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "analysis_commit": "febad78c36fe3c8e0b77b3e720a56c780b2d481d",
+  "error": "ValueError: yerr must not contain negative values",
+  "cause": "Wilson zero-success lower bound was 2.7755575615628914e-17; matplotlib rejected a negative display error length.",
+  "fix": "Clamp only plotted error lengths to nonnegative; no raw inputs or saved rates/bounds changed.",
+  "original90_summary_sha256_before_plot_fix": "e5637d9e8f37e696c45cf501d1dd84fe0087c3687c72d0089a3098f7c11675ab"
+}

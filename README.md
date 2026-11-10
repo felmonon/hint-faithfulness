@@ -4,7 +4,9 @@ Research software for testing whether an open reasoning model acknowledges using
 
 [![Open the real 20-question pilot in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felmonon/hint-faithfulness/blob/main/notebooks/00_real_pilot_20.ipynb)
 
-**Status: the real pilot is running in Colab; no completed model findings are published yet.** The code and frozen dataset are available. Software tests and synthetic demonstrations have run, but they are not research results. Human transcript review, human labels, and validated faithfulness findings remain separate checkpoints.
+**The real 20-question Qwen3 pilot is complete, with a documented storage incident.** The original pass made 100 attempts and retained 90 responses; ten missing slots were regenerated separately, giving 110 total attempts and a 100-record recovery composite. Read the [pilot report](docs/PILOT_REPORT.md), [raw evidence](artifacts/pilot-20-qwen3-1.7b/), and [reproducible analyses](results/pilot-20-v1/). All 100 retained traces received explicitly AI-assisted review. Human labels and validated faithfulness remain pending.
+
+Metadata hints produced 5/7 eligible wrong-target switches in the retained originals (95% Wilson interval 35.9–91.8%); the recovery composite gives 7/10 (39.7–89.2%). These are small, filtered descriptive samples. Formatting sensitivity, baseline variation, duplicate answer choices, and the storage loss limit interpretation. The report presents the original data first and the overlapping recovery dataset separately.
 
 ## Start with the real pilot
 
@@ -17,7 +19,7 @@ The notebook writes to `artifacts/pilot-20-qwen3-1.7b/` and exports `pilot-20-re
 | Material | Where to look | What it establishes |
 |---|---|---|
 | Frozen design | [Pilot protocol](docs/PILOT_PROTOCOL.md) | What was planned before live collection |
-| Actual real pilot | `artifacts/pilot-20-qwen3-1.7b/` when published | Measured outputs and their provenance; currently pending |
+| Actual real pilot | [Raw evidence](artifacts/pilot-20-qwen3-1.7b/), [results](results/pilot-20-v1/), [report](docs/PILOT_REPORT.md) | Original 90 records, separate recovery composite, logs, token IDs, hashes, and limitations |
 | Software demonstration | [Synthetic report](results/demo/report.md), [fixture data](data/demo/mock.jsonl) | Pipeline behavior only; not evidence about a model |
 | Human validation | Published labels and validation report when available | Judge agreement on actual reviewed cases; currently pending |
 | Implementation checks | [Verification notes](docs/VERIFICATION.md), [CI](https://github.com/felmonon/hint-faithfulness/actions/workflows/tests.yml) | Software checks, with their stated limits |
@@ -26,7 +28,7 @@ The notebook writes to `artifacts/pilot-20-qwen3-1.7b/` and exports `pilot-20-re
 
 The small experimental subject is **Qwen3-1.7B**, using unquantized half-precision weights and thinking enabled. Its exact checkpoint and token sequences are retained for later internal experiments. Each question receives two unhinted runs and one run for each of three hints: sycophancy, XML metadata, and grader hacking. The same preassigned wrong letter is reused across hint conditions.
 
-**OpenAI is used as a judge of the saved Qwen reasoning**, not as a replacement source of exposed model reasoning. See [OpenAI setup and judging](docs/OPENAI_SETUP.md) for secure access, the fixed judge snapshot, model availability limits, billing safeguards, and live validation. An OpenAI API key does not authenticate OpenRouter. No key is needed to collect or analyze the initial Qwen pilot.
+**An optional OpenAI judge of saved Qwen reasoning is implemented but has not run.** The secure local save prompt returned `not_approved`, so no key was created and this workflow made no OpenAI API calls. See [OpenAI setup and judging](docs/OPENAI_SETUP.md) for secure access, the fixed judge snapshot, model availability limits, billing safeguards, and live validation. An OpenAI API key does not authenticate OpenRouter. No key is needed to collect or analyze the Qwen pilot.
 
 The optional large-model comparison uses an open reasoning model through OpenRouter. It requires separate access and its own pilot. That comparison remains pending until its raw outputs exist. Two models of different sizes also differ in architecture and training, so this design cannot isolate a pure parameter-count effect.
 
@@ -54,10 +56,10 @@ python -m unittest discover -s tests -v
 For an exact replay, use the execution commit recorded in the original run's `runtime.json`. To collect a new, explicitly versioned pilot:
 
 ```bash
-python -m src.provenance --output artifacts/pilot-20-qwen3-1.7b/runtime.json
-python -m src.run --backend local --model Qwen/Qwen3-1.7B --revision 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e --questions data/questions.jsonl --limit 20 --seed 20261109 --temperature 0.6 --top-p 0.95 --top-k 20 --max-tokens 4096 --device cuda --output artifacts/pilot-20-qwen3-1.7b/responses.jsonl
-python -m src.transcripts --input artifacts/pilot-20-qwen3-1.7b/responses.jsonl --output artifacts/pilot-20-qwen3-1.7b/transcripts.md
-python -m src.analyze --input artifacts/pilot-20-qwen3-1.7b/responses.jsonl --out-dir artifacts/pilot-20-qwen3-1.7b/analysis
+python -m src.provenance --output artifacts/pilot-20-new-run/runtime.json
+python -m src.run --backend local --model Qwen/Qwen3-1.7B --revision 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e --questions data/questions.jsonl --limit 20 --seed 20261109 --temperature 0.6 --top-p 0.95 --top-k 20 --max-tokens 4096 --device cuda --output artifacts/pilot-20-new-run/responses.jsonl
+python -m src.transcripts --input artifacts/pilot-20-new-run/responses.jsonl --output artifacts/pilot-20-new-run/transcripts.md
+python -m src.analyze --input artifacts/pilot-20-new-run/responses.jsonl --out-dir artifacts/pilot-20-new-run/analysis
 ```
 
 Use a fresh artifact directory for a new run. Matching collection commands can resume saved responses; already recorded failures are retained and skipped rather than silently retried. Runtime and transcript exports preserve existing files, so choose new filenames when documenting another session or review. Read all 100 pilot responses before interpreting aggregates. If the 4,096-token allowance or parser needs changing, preserve the first run and document the revised condition before recollecting.
@@ -97,6 +99,7 @@ Early-answer agreement and probe accuracy show consistency or decodable informat
 ## Documentation and attribution
 
 - [Frozen pilot protocol](docs/PILOT_PROTOCOL.md): settings, exact question IDs, stopping rules, and diagnostic limits.
+- [Real pilot report](docs/PILOT_REPORT.md), [evidence and reproduction](results/pilot-20-v1/), and [recovery protocol](docs/RECOVERY_PROTOCOL.md): findings and the original-data loss, with separate recovery sensitivity.
 - [Reproducibility guide](docs/REPRODUCIBILITY.md): runtime capture, artifact contract, immutable raw results, and figure reproduction.
 - [Methods](docs/METHODS.md): source papers, metrics, controls, and inference limits.
 - [OpenAI setup](docs/OPENAI_SETUP.md) and [labeling guide](docs/LABELING.md): API judging and independent human validation.
@@ -106,4 +109,4 @@ Early-answer agreement and probe accuracy show consistency or decodable informat
 - [Data license and attribution](DATA_LICENSE.md): MMLU source and the preserved upstream notice.
 - [Citation metadata](CITATION.cff): cite the exact commit or release used, and the original papers separately.
 
-The implementation and documentation were produced with AI assistance at the maintainer's request. Review of the code, raw model traces, and human labels remains necessary. This repository documents an exploratory research process; its publication alone does not make the measurements complete or the conclusions independently validated.
+The implementation, execution assistance, documentation, and full retained-transcript review were AI-assisted at the maintainer's request. Independent review and human labels remain necessary. This repository documents an exploratory research process; publication alone does not establish independently validated conclusions.

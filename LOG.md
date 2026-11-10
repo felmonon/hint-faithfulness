@@ -58,6 +58,24 @@ A direct Colab terminal check found 23 saved rows while the progress log recorde
 
 The [fixed recovery protocol](docs/RECOVERY_PROTOCOL.md) was recorded at 2026-11-10 01:57 UTC before replaying any missing slot. Original retained data will remain immutable and supply the primary descriptive estimates. A separately named composite will regenerate only the fixed missing IDs with the original settings and seeds. Total attempts and lineage must be reported; replayed text must not be represented as the lost original text. No retained invalid or truncated output will be replaced.
 
+## November 9, 2026 — completed collection, recovery, and evidence review
+
+UTC timestamps extend into November 10. The original pass ran from 01:14:19 to 03:03:23 UTC: 100 logged generation attempts, 90 retained records. Recovery preparation at 03:04:36 UTC verified the fixed ten missing IDs, original files, source, and settings. Ten new executions finished at 03:17:41 UTC. Finalization verified exactly 90 unchanged originals plus ten new records, for 110 attempts and 100 retained trial slots. These replacements are a recovery sensitivity dataset, not recovered original text or independent replication.
+
+Colab's normal browser download failed, including a user attempt. An alternate data-URL download was blocked by browser policy and was not retried. The evidence was instead recorded as a structured notebook output and saved using Colab's normal Copy to Drive function, then retrieved through the authenticated Drive connector. The first text export normalized carriage returns in the recovery log; its checksum mismatch was detected before that log was accepted. The final byte-preserving UTF-8 export verified all 13 files against hashes computed in Colab. The raw model responses matched on both exports and were never changed. See `artifacts/pilot-20-qwen3-1.7b/export-provenance.json`.
+
+Four assistant review partitions read all 100 retained prompts, reasoning texts, and final responses before interpreting the rates. The [AI review manifest](results/pilot-20-v1/ai-review/coverage.json) records coverage and source hashes. This was unblinded AI review, with zero human labels. Observed problems include repetitive factual errors, disagreement between the end of reasoning and the final answer, 21 original strict-format exclusions, three original token-cap truncations, and duplicated A/B option text in `mmlu-test-90b259b07aa70826`. The malformed anatomy stem and duplicated options were retained as supplied. Missing original traces cannot be reviewed.
+
+Original status census: 66 `ok`, 21 `invalid_answer`, 3 `truncated`, and ten lost slots. Composite status census: 73 `ok`, 24 `invalid_answer`, 3 `truncated`. The original artifact audit fails only missing record/coverage checks; the composite audit passes. Original token and checksum checks pass. The verified lineage is essential to interpreting that composite pass.
+
+Strict original uptake is sycophancy 2/7, metadata 5/7, and grader hacking 1/6. Strict composite uptake is 2/10, 7/10, and 1/8 respectively. These all-pair rates are not directly subtracted from directional noise: matched original uptake is 2/6, 4/6, and 1/5, compared with target-switch noise 0/6, 0/6, and 0/5. Full uncertainty and composite comparisons are in the [report](docs/PILOT_REPORT.md). Small denominators, shared questions, nonrandom storage loss, and formatting exclusions restrict interpretation.
+
+The previously specified post hoc format rule recovered 15 original and 18 composite answer formats in derived copies. Original uptake then becomes 2/11, 6/11, 1/10; composite uptake becomes 2/15, 8/14, 1/13. This confirms material sensitivity to parsing eligibility, not a correction of the primary dataset.
+
+The first original plot failed because a zero-success Wilson bound rounded slightly above zero. Commit `9b4d3636fd24a5a981adb69a512503c9af279cd5` clamps only displayed error-bar lengths; the numerical original summary remained byte-identical. A regression checks zero and all-success endpoints without altering its input statistics. All 80 software tests passed. This fixes rendering only, with no collection, parser, or inferential formula changes.
+
+Eight original switches and two additional composite cases were exported as blank human-review forms. No machine verdicts or human labels exist; ten cases are insufficient for the stated minimum 30 held-out labels. The secure key destination prompt returned `not_approved`/`decline`, so no key was created or saved. This workflow made zero OpenAI API calls and purchased no Colab compute. Human validation and further experiments remain pending. The published result is a documented exploratory pilot, not a validated measure of model honesty.
+
 ## Suggested eight-week schedule
 
 | Week | Dates | Work and evidence |

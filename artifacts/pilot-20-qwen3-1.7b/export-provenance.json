@@ -1,0 +1,60 @@
+{
+  "schema": "hint-faithfulness-export-provenance-v1",
+  "notebook_sha256": "42238e93338d57471456611ae47a2d136e0f9427e7feab3f26334fa9ab7dea11",
+  "source_notebook": "https://colab.research.google.com/drive/1482xXNIZvikDu43A2Q6EUw0rREQruFNA",
+  "method": "Colab notebook application/json output, saved with Copy to Drive, retrieved through authenticated Drive connector; UTF-8 bytes hashed in Colab and reverified locally. Original response files unchanged.",
+  "files": [
+    {
+      "path": "collection.log",
+      "sha256": "81fa3ef726767467ef8c2c396a4b76f3996397a28c427d198cc70475cf44e9c2"
+    },
+    {
+      "path": "recovery/20261110T015337Z-audit.json",
+      "sha256": "a1e1df1b09d2e5abbebc2c2e2218c083b2734302af67b4f2f2ca599c9efe6428"
+    },
+    {
+      "path": "recovery/20261110T015337Z-partial-collection.log",
+      "sha256": "1e42b9232ba319afc7db14d8786d70e5a882f964551f01b930bda2361f09c96d"
+    },
+    {
+      "path": "recovery/20261110T015337Z-partial-responses.jsonl",
+      "sha256": "6d36361baae4c84a8d141bb3673f58208556bc91d34842ba668cee3662b0224f"
+    },
+    {
+      "path": "recovery-composite/collection-recovery.log",
+      "sha256": "5161f8fe8c392a08605d8ce3071678a374d1359fc6064acf8ed3e7384140fda2"
+    },
+    {
+      "path": "recovery-composite/lineage-preparation.json",
+      "sha256": "2677571e8bda3def2d6baf96ba4c8ecaae4bee5708508827691a592747abccc1"
+    },
+    {
+      "path": "recovery-composite/lineage.json",
+      "sha256": "3ad1ba0294269359af86232fe639cb05bc1f70169b7c50e65994b7fd8d24bb4b"
+    },
+    {
+      "path": "recovery-composite/responses.jsonl",
+      "sha256": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf"
+    },
+    {
+      "path": "recovery-composite/responses.jsonl.manifest.json",
+      "sha256": "58cbea8d228b73b01ff894db858f92dd3024c1377de50dd3b817752084aa7ac8"
+    },
+    {
+      "path": "recovery-composite/runtime.json",
+      "sha256": "fc2cbc691525df69329493098a7886a1a934db4a6f04c5191b942dc3577a610e"
+    },
+    {
+      "path": "responses.jsonl",
+      "sha256": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f"
+    },
+    {
+      "path": "responses.jsonl.manifest.json",
+      "sha256": "58cbea8d228b73b01ff894db858f92dd3024c1377de50dd3b817752084aa7ac8"
+    },
+    {
+      "path": "runtime.json",
+      "sha256": "fc04d539d4eb952686cb9e2e2e763e22eed046dddb5d4cc3e7c33114136bcc23"
+    }
+  ]
+}

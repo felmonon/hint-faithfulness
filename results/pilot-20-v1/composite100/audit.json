@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "audit": "frozen_qwen3_1.7b_pilot_integrity",
+  "audited_at": "2026-11-10T03:24:25.819183+00:00",
+  "ok": true,
+  "collection_complete": true,
+  "expected_records": 100,
+  "expected_questions": 20,
+  "record_count": 100,
+  "unique_record_count": 100,
+  "observed_questions": 20,
+  "status_counts": {
+    "invalid_answer": 24,
+    "ok": 73,
+    "truncated": 3
+  },
+  "token_records_checked": 100,
+  "failures": [],
+  "warnings": [
+    {
+      "code": "response_attrition",
+      "message": "Collected attempts include non-OK responses; preserve and report their exclusions.",
+      "counts": {
+        "invalid_answer": 24,
+        "truncated": 3
+      }
+    }
+  ],
+  "checksums": {
+    "status": "verified",
+    "verified_files": 6,
+    "path": "artifacts/pilot-20-qwen3-1.7b/recovery-composite/checksums.json"
+  },
+  "limits": [
+    "Internal consistency and hashes do not independently prove that inference occurred.",
+    "Token checks cover integer IDs, counts, thinking boundaries and EOS, not decoded text equivalence.",
+    "This audit does not validate judge labels or scientific conclusions."
+  ],
+  "inputs": {
+    "records": "artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl",
+    "questions": "data/questions.jsonl",
+    "manifest": "artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl.manifest.json",
+    "questions_manifest": "data/questions.jsonl.manifest.json"
+  }
+}

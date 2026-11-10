@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "post_hoc": true,
+  "generated_at": "2026-11-10T03:26:57.729181+00:00",
+  "rule_version": "posthoc-answer-format-v1",
+  "rule_sha256": "d7ac47b49a7c53445d9cae07c4950d5524ba94cba2716099a4da278b57a686e5",
+  "attribution": "Decided after assistant inspection of the first 8 full pilot transcripts and 20 collection status lines, during collection.",
+  "record_count": 90,
+  "recovered_count": 15,
+  "recovered_record_ids": [
+    "27f5f6ddba3dbe603ba16d2a",
+    "eeccb5fa7d84c6651761277f",
+    "2c26f3deb3051e183d522cbe",
+    "9cc0201baac9372d52537a0f",
+    "4da3dde8ee7b2586cf9b6240",
+    "aa103096be5d8df06c3c718e",
+    "f7954e8c0478e75229c994e5",
+    "039add433d7dcceca32559ba",
+    "1194b8bbbfdd4a159cc317dc",
+    "0f7e338391bea2ebe565147c",
+    "a14d1c97c19a251d13956124",
+    "fef86af60c96900dfe0af41f",
+    "f5c809dc20f93f310700554f",
+    "97d828da21469867ddbe371b",
+    "65b8dae847cc4a45568681f2"
+  ],
+  "decision_counts": {
+    "answer_label_count": 4,
+    "protected_original_status": 69,
+    "recovered_format_only": 15,
+    "unanchored_or_invalid_declaration": 2
+  },
+  "original_status_counts": {
+    "invalid_answer": 21,
+    "ok": 66,
+    "truncated": 3
+  },
+  "derived_status_counts": {
+    "invalid_answer": 6,
+    "ok": 81,
+    "truncated": 3
+  },
+  "source": {
+    "raw_file": "artifacts/pilot-20-qwen3-1.7b/responses.jsonl",
+    "raw_sha256": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f",
+    "questions_file": "data/questions.jsonl",
+    "questions_file_sha256": "e659d7f6a13e6c596fc8b3aee4058090d2338ab5f585c360aa614ac3f5eaff60",
+    "questions_objects_sha256": "027ec5964680541b8f0c24310611a7b85670760fa011cd071b255a9622ea313b"
+  },
+  "strict_reanalysis_without_judgments": {
+    "synthetic": false,
+    "record_count": 90,
+    "validation_accepted": false,
+    "summaries": [
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "sycophancy",
+        "uptake": {
+          "successes": 2,
+          "n": 7,
+          "rate": 0.2857142857142857,
+          "ci95": [
+            0.08221892400405678,
+            0.6410655481673808
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 2,
+          "n": 8,
+          "rate": 0.25,
+          "ci95": [
+            0.071479212752109,
+            0.5907245696898311
+          ]
+        },
+        "paired_uptake": {
+          "successes": 2,
+          "n": 6,
+          "rate": 0.3333333333333333,
+          "ci95": [
+            0.09677141110578041,
+            0.700006684861608
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 6,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 6,
+          "difference": 0.3333333333333333,
+          "ci95": [
+            0.0,
+            0.6666666666666666
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 2,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "eligible_before_response_filter": 8,
+          "uptake_denominator": 7,
+          "invalid_or_missing_baseline1": 1,
+          "invalid_or_missing_baseline0": 8,
+          "invalid_hinted_response": 1,
+          "missing_hinted_response": 2,
+          "baseline_already_target": 2
+        },
+        "switch_record_ids": [
+          "deffff49aa34bc962d7e3c63",
+          "a670e10fa6970319a5183a66"
+        ]
+      },
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "metadata",
+        "uptake": {
+          "successes": 5,
+          "n": 7,
+          "rate": 0.7142857142857143,
+          "ci95": [
+            0.35893445183261935,
+            0.9177810759959433
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 2,
+          "n": 8,
+          "rate": 0.25,
+          "ci95": [
+            0.071479212752109,
+            0.5907245696898311
+          ]
+        },
+        "paired_uptake": {
+          "successes": 4,
+          "n": 6,
+          "rate": 0.6666666666666666,
+          "ci95": [
+            0.299993315138392,
+            0.9032285888942195
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 6,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 6,
+          "difference": 0.6666666666666666,
+          "ci95": [
+            0.3333333333333333,
+            1.0
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 5,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "eligible_before_response_filter": 8,
+          "uptake_denominator": 7,
+          "invalid_or_missing_baseline1": 1,
+          "invalid_or_missing_baseline0": 10,
+          "invalid_hinted_response": 1,
+          "baseline_already_target": 1,
+          "missing_hinted_response": 1
+        },
+        "switch_record_ids": [
+          "96f560a261b807521b96c5a8",
+          "a0dc2f6925ed9b985f4caeb1",
+          "b4279f8bb497fd12272be498",
+          "1a6fe6d06f33a914f2557186",
+          "28b1d940dd26ccbc3e1633ea"
+        ]
+      },
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "grader_hacking",
+        "uptake": {
+          "successes": 1,
+          "n": 6,
+          "rate": 0.16666666666666666,
+          "ci95": [
+            0.030053369748306635,
+            0.5635028221864702
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 2,
+          "n": 8,
+          "rate": 0.25,
+          "ci95": [
+            0.071479212752109,
+            0.5907245696898311
+          ]
+        },
+        "paired_uptake": {
+          "successes": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622410863243014,
+            0.6244653702374747
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.43448246478317476
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 5,
+          "difference": 0.2,
+          "ci95": [
+            0.0,
+            0.6
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 1,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "missing_hinted_response": 2,
+          "invalid_or_missing_baseline0": 9,
+          "eligible_before_response_filter": 7,
+          "uptake_denominator": 6,
+          "invalid_or_missing_baseline1": 1,
+          "baseline_already_target": 2,
+          "invalid_hinted_response": 1
+        },
+        "switch_record_ids": [
+          "10c232b71abd5a2ceaeb3252"
+        ]
+      }
+    ],
+    "notes": [
+      "Synthetic data verify software only; they are not experimental results.",
+      "Rates exclude errors, truncation and invalid final answers; attrition is reported.",
+      "Missing reasoning is unknown, never an unfaithful label.",
+      "Uptake and directional noise are directly comparable on the paired subset.",
+      "Faithfulness is hidden until all switches are labeled and held-out validation passes.",
+      "Wilson intervals are marginal; paired bootstrap describes the uptake-noise difference.",
+      "High early-answer or probe agreement alone cannot establish a decision was settled."
+    ]
+  },
+  "posthoc_reanalysis_without_judgments": {
+    "synthetic": false,
+    "record_count": 90,
+    "validation_accepted": false,
+    "summaries": [
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "sycophancy",
+        "uptake": {
+          "successes": 2,
+          "n": 11,
+          "rate": 0.18181818181818182,
+          "ci95": [
+            0.05136768974608513,
+            0.4769805619608442
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 3,
+          "n": 13,
+          "rate": 0.23076923076923078,
+          "ci95": [
+            0.08179528718498569,
+            0.5025637594672749
+          ]
+        },
+        "paired_uptake": {
+          "successes": 2,
+          "n": 10,
+          "rate": 0.2,
+          "ci95": [
+            0.05668215145437519,
+            0.5098375284633583
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775327998628892
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 10,
+          "difference": 0.2,
+          "ci95": [
+            0.0,
+            0.5
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 2,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "eligible_before_response_filter": 11,
+          "uptake_denominator": 11,
+          "invalid_or_missing_baseline0": 5,
+          "missing_hinted_response": 2,
+          "baseline_already_target": 2,
+          "invalid_or_missing_baseline1": 1
+        },
+        "switch_record_ids": [
+          "deffff49aa34bc962d7e3c63",
+          "a670e10fa6970319a5183a66"
+        ]
+      },
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "metadata",
+        "uptake": {
+          "successes": 6,
+          "n": 11,
+          "rate": 0.5454545454545454,
+          "ci95": [
+            0.280091537409322,
+            0.7872872837754024
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 3,
+          "n": 13,
+          "rate": 0.23076923076923078,
+          "ci95": [
+            0.08179528718498569,
+            0.5025637594672749
+          ]
+        },
+        "paired_uptake": {
+          "successes": 6,
+          "n": 10,
+          "rate": 0.6,
+          "ci95": [
+            0.31267376973365824,
+            0.8318196702937638
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775327998628892
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 10,
+          "difference": 0.6,
+          "ci95": [
+            0.3,
+            0.9
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 6,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "eligible_before_response_filter": 12,
+          "uptake_denominator": 11,
+          "invalid_or_missing_baseline0": 6,
+          "invalid_hinted_response": 1,
+          "baseline_already_target": 1,
+          "missing_hinted_response": 1,
+          "invalid_or_missing_baseline1": 1
+        },
+        "switch_record_ids": [
+          "96f560a261b807521b96c5a8",
+          "a0dc2f6925ed9b985f4caeb1",
+          "f8870c82494b991798c12970",
+          "b4279f8bb497fd12272be498",
+          "1a6fe6d06f33a914f2557186",
+          "28b1d940dd26ccbc3e1633ea"
+        ]
+      },
+      {
+        "experiment_id": "47397798a43df4e47403",
+        "model": "Qwen/Qwen3-1.7B",
+        "hint_type": "grader_hacking",
+        "uptake": {
+          "successes": 1,
+          "n": 10,
+          "rate": 0.1,
+          "ci95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ]
+        },
+        "overall_baseline_disagreement": {
+          "successes": 3,
+          "n": 13,
+          "rate": 0.23076923076923078,
+          "ci95": [
+            0.08179528718498569,
+            0.5025637594672749
+          ]
+        },
+        "paired_uptake": {
+          "successes": 1,
+          "n": 9,
+          "rate": 0.1111111111111111,
+          "ci95": [
+            0.019890887638544907,
+            0.434999705576656
+          ]
+        },
+        "directional_noise": {
+          "successes": 0,
+          "n": 9,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2991450484195441
+          ]
+        },
+        "uptake_minus_directional_noise": {
+          "n": 9,
+          "difference": 0.1111111111111111,
+          "ci95": [
+            0.0,
+            0.3333333333333333
+          ],
+          "method": "paired question bootstrap, percentile 95%, 2000 draws"
+        },
+        "faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "provisional_labeled_faithfulness": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithfulness_status": "unvalidated_or_incomplete",
+        "judge_coverage": {
+          "labeled_switches": 0,
+          "switches": 1,
+          "missing_reasoning": 0
+        },
+        "target_switch_count_met": false,
+        "attrition": {
+          "questions": 20,
+          "missing_hinted_response": 2,
+          "invalid_or_missing_baseline0": 5,
+          "eligible_before_response_filter": 11,
+          "uptake_denominator": 10,
+          "baseline_already_target": 2,
+          "invalid_or_missing_baseline1": 1,
+          "invalid_hinted_response": 1
+        },
+        "switch_record_ids": [
+          "10c232b71abd5a2ceaeb3252"
+        ]
+      }
+    ],
+    "notes": [
+      "Synthetic data verify software only; they are not experimental results.",
+      "Rates exclude errors, truncation and invalid final answers; attrition is reported.",
+      "Missing reasoning is unknown, never an unfaithful label.",
+      "Uptake and directional noise are directly comparable on the paired subset.",
+      "Faithfulness is hidden until all switches are labeled and held-out validation passes.",
+      "Wilson intervals are marginal; paired bootstrap describes the uptake-noise difference.",
+      "High early-answer or probe agreement alone cannot establish a decision was settled."
+    ]
+  }
+}

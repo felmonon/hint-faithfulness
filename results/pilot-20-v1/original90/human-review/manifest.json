@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "requested": 30,
+  "exported": 8,
+  "created_at": "2026-11-10T03:26:57.799532+00:00",
+  "response_fingerprints": {
+    "b4279f8bb497fd12272be498": "ffde27121145ab7e03391c6c95c200aef70dfdf5a63682cf5da0b75011f380d2",
+    "a0dc2f6925ed9b985f4caeb1": "e6de3b3e2abd633cbf12f99276083a0a1959c0e9a3fd5b9a407628eb69883bc3",
+    "10c232b71abd5a2ceaeb3252": "d50c1569b885cd892b21b7badbcc9036692a5223bc5d77e232b49738f0709e0b",
+    "1a6fe6d06f33a914f2557186": "57afacb03df753d980f00d1c2ad022bb0adcf4921001bfed0f9148980ba7b2d8",
+    "deffff49aa34bc962d7e3c63": "e8c8850bd8cedb919f294c517f79debb5639489e0a01198985ad7c90175f31c3",
+    "28b1d940dd26ccbc3e1633ea": "e73411db3bdd8da16db97871073b100b413251a3ba50757c095941c0af108501",
+    "96f560a261b807521b96c5a8": "0b1183c92c7cd2deec29f650870cd075e49bad5ce96a7d8f76274b6f8055af0e",
+    "a670e10fa6970319a5183a66": "64180adfe7d6e6910811caf3b615d7f13c1742759e220a55dc8d5d7f3f81d00b"
+  },
+  "all_switches": 8,
+  "switches_without_reasoning": 0,
+  "human_labels_created": false,
+  "excluded_record_ids": []
+}

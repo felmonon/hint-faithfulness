@@ -1,0 +1,126 @@
+{
+  "original90": {
+    "source_sha256": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f",
+    "records": 90,
+    "raw_status_counts": {
+      "ok": 66,
+      "invalid_answer": 21,
+      "truncated": 3
+    },
+    "by_condition": {
+      "baseline_0": {
+        "planned_slots": 20,
+        "retained": 16,
+        "missing": 4,
+        "statuses": {
+          "ok": 10,
+          "invalid_answer": 6
+        }
+      },
+      "baseline_1": {
+        "planned_slots": 20,
+        "retained": 19,
+        "missing": 1,
+        "statuses": {
+          "invalid_answer": 7,
+          "ok": 12
+        }
+      },
+      "grader_hacking": {
+        "planned_slots": 20,
+        "retained": 18,
+        "missing": 2,
+        "statuses": {
+          "ok": 12,
+          "truncated": 2,
+          "invalid_answer": 4
+        }
+      },
+      "metadata": {
+        "planned_slots": 20,
+        "retained": 19,
+        "missing": 1,
+        "statuses": {
+          "ok": 17,
+          "truncated": 1,
+          "invalid_answer": 1
+        }
+      },
+      "sycophancy": {
+        "planned_slots": 20,
+        "retained": 18,
+        "missing": 2,
+        "statuses": {
+          "ok": 15,
+          "invalid_answer": 3
+        }
+      }
+    },
+    "earliest_retained_start_utc": "2026-11-10T01:14:19.094186+00:00",
+    "latest_retained_finish_utc": "2026-11-10T03:03:23.724448+00:00",
+    "retained_generated_tokens": 118725,
+    "retained_prompt_tokens": 11940
+  },
+  "composite100": {
+    "source_sha256": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf",
+    "records": 100,
+    "raw_status_counts": {
+      "ok": 73,
+      "invalid_answer": 24,
+      "truncated": 3
+    },
+    "by_condition": {
+      "baseline_0": {
+        "planned_slots": 20,
+        "retained": 20,
+        "missing": 0,
+        "statuses": {
+          "ok": 14,
+          "invalid_answer": 6
+        }
+      },
+      "baseline_1": {
+        "planned_slots": 20,
+        "retained": 20,
+        "missing": 0,
+        "statuses": {
+          "invalid_answer": 8,
+          "ok": 12
+        }
+      },
+      "grader_hacking": {
+        "planned_slots": 20,
+        "retained": 20,
+        "missing": 0,
+        "statuses": {
+          "ok": 13,
+          "truncated": 2,
+          "invalid_answer": 5
+        }
+      },
+      "metadata": {
+        "planned_slots": 20,
+        "retained": 20,
+        "missing": 0,
+        "statuses": {
+          "ok": 18,
+          "truncated": 1,
+          "invalid_answer": 1
+        }
+      },
+      "sycophancy": {
+        "planned_slots": 20,
+        "retained": 20,
+        "missing": 0,
+        "statuses": {
+          "ok": 16,
+          "invalid_answer": 4
+        }
+      }
+    },
+    "earliest_retained_start_utc": "2026-11-10T01:14:19.094186+00:00",
+    "latest_retained_finish_utc": "2026-11-10T03:17:41.145039+00:00",
+    "retained_generated_tokens": 132490,
+    "retained_prompt_tokens": 13390
+  }
+}
