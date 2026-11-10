@@ -78,6 +78,14 @@ The older general notebooks use `data/runs/` and `data/judgments/`, which `.giti
 
 Raw traces and their runner manifest should be immutable once published. Make corrections through a new artifact version with a documented reason. Derived tables and figures can be regenerated, but retain the raw inputs, command, and code commit used. A checksum verifies file identity; it does not certify scientific validity.
 
+After exporting the frozen pilot, run the read-only integrity audit from the current documented analysis checkout:
+
+```bash
+python -m src.verify_artifacts --records artifacts/pilot-20-qwen3-1.7b/responses.jsonl
+```
+
+It prints JSON, checks the exact expected 100 trials, prompt/settings identities, checkpoint metadata, timestamps, token structure, and original export checksums, and exits nonzero on integrity failures. Recorded invalid or truncated responses are reported as attrition rather than removed. The checker does not change evidence, independently prove that inference occurred, or validate scientific interpretations. Record the audit's code commit alongside its output.
+
 ## Judge review and audit trail
 
 Human labels are entered by a person and identified as such. Keep blank uncertain cases, human notes, the review export manifest, and a declaration of whether the rubric was frozen before those cases were seen. Model-assisted review can be useful but must be labeled separately. A report based solely on AI labels cannot claim human validation.

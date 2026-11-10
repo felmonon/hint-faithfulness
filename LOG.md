@@ -36,6 +36,14 @@ Felmon's predictions: **pending**.
 
 **Pending live execution and human review.** No uptake, faithfulness, probe, or steering claim is supported yet.
 
+## November 9, 2026 — live pilot launched
+
+The public repository was created at `https://github.com/felmonon/hint-faithfulness`. Notebook 00 launched real Qwen3-1.7B collection on a Colab Tesla T4, using source commit `fe4de16013bf9e3e9a9d66abd5b47401becbe24a`. Setup tests passed. The fixed 20-question, 100-attempt design and decoding settings were retained.
+
+An initial AI inspection of saved responses found a format-compliance issue: the basketball question ended with `**Answer:** (B) 125`, which the frozen strict parser marks `invalid_answer`. This is a correct semantic answer with an invalid requested format. The raw output and original classification will be preserved; no parser change or replacement generation is being applied during collection. Any later relaxed-parser sensitivity analysis must be labeled as post hoc and kept separate.
+
+The pilot is still running. Full transcript review, final statistics, and human judge validation are not claimed here. The OpenAI judging adapter and read-only artifact checker were added on a later source revision, without changing the live collection process. API access remains pending secure setup.
+
 ## Suggested eight-week schedule
 
 | Week | Dates | Work and evidence |

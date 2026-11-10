@@ -107,26 +107,40 @@ def judge_messages(row: dict) -> list[dict]:
 
 
 def run_judge(records: list[dict], output: Path, model: str, budget: float = 2.0,
-              max_tokens: int = 800, limit: int | None = None, retry_errors: bool = False) -> dict:
-    from .providers import BudgetExceededError, OpenRouterClient
+              max_tokens: int = 800, limit: int | None = None, retry_errors: bool = False,
+              backend: str = "openrouter") -> dict:
+    from .providers import BudgetExceededError, OpenRouterClient, validate_ledger_backend
     if limit is not None and limit <= 0:
         raise ValueError("Judge limit must be positive")
     if max_tokens <= 0:
         raise ValueError("Judge token limit must be positive")
+    if backend not in {"openrouter", "openai"}:
+        raise ValueError("Judge backend must be openrouter or openai")
+    judge_identity = f"{backend}:{model}"
     if any(row.get("synthetic") or row.get("backend") == "mock" for row in records):
         raise ValueError("Synthetic fixtures should not incur paid judge calls")
     output = Path(output)
+    ledger_path = output.with_suffix(output.suffix + ".billing.jsonl")
+    # The journal can already contain a paid response even if a crash prevented
+    # the first verdict file from being written. Never infer its backend from
+    # whichever client the user selected for this invocation.
+    if ledger_path.exists():
+        validate_ledger_backend(read_jsonl(ledger_path), backend)
     existing_rows = read_jsonl(output)
     existing = {}
     for row in existing_rows:
         if row["record_id"] in existing:
             raise ValueError("Judgment file contains duplicate record IDs")
-        if (row.get("judge_model") != model or row.get("rubric_version") != RUBRIC
+        if (row.get("judge_model") != judge_identity or row.get("rubric_version") != RUBRIC
                 or row.get("rubric_hash") != stable_hash(SYSTEM_PROMPT)):
             raise ValueError("Use a fresh output file when changing judge model or rubric")
         existing[row["record_id"]] = row
-    client = OpenRouterClient(budget_usd=budget, spent_usd=sum(r.get("cost_usd", 0) for r in existing_rows),
-                              ledger_path=output.with_suffix(output.suffix + ".billing.jsonl"))
+    client_type = OpenRouterClient
+    if backend == "openai":
+        from .openai_judge import OpenAIJudgeClient
+        client_type = OpenAIJudgeClient
+    client = client_type(budget_usd=budget, spent_usd=sum(r.get("cost_usd", 0) for r in existing_rows),
+                         ledger_path=ledger_path)
     calls = 0
     for row in eligible_switches(records):
         if not row.get("reasoning", "").strip():
@@ -145,7 +159,8 @@ def run_judge(records: list[dict], output: Path, model: str, budget: float = 2.0
         request_key = f"{row['record_id']}:attempt:{attempt}"
         calls += 1
         before = client.spent_usd
-        verdict = {"record_id": row["record_id"], "judge_model": model, "rubric_version": RUBRIC,
+        verdict = {"record_id": row["record_id"], "judge_model": judge_identity, "judge_backend": backend,
+                   "judge_model_id": model, "rubric_version": RUBRIC,
                    "response_hash": response_fingerprint(row), "created_at": utc_now(),
                    "rubric_hash": stable_hash(SYSTEM_PROMPT), "status": "error",
                    "attempt": attempt, "request_key": request_key}
@@ -258,10 +273,11 @@ def main() -> None:
     export.add_argument("--seed", type=int, default=42)
     export.add_argument("--exclude-manifest", action="append", type=Path, default=[],
                         help="Exclude records in a prior review manifest; repeat for multiple review sets")
-    run = commands.add_parser("run", help="Judge switched answers through OpenRouter")
+    run = commands.add_parser("run", help="Judge switched answers through OpenRouter or OpenAI")
     run.add_argument("--input", required=True, action="append", type=Path)
     run.add_argument("--output", required=True, type=Path)
     run.add_argument("--model", required=True)
+    run.add_argument("--backend", choices=["openrouter", "openai"], default="openrouter")
     run.add_argument("--budget-usd", type=float, default=2.0)
     run.add_argument("--max-tokens", type=int, default=800)
     run.add_argument("--limit", type=int)
@@ -280,7 +296,7 @@ def main() -> None:
                                args.count, args.seed, excluded)
     elif args.command == "run":
         result = run_judge([row for path in args.input for row in read_jsonl(path)], args.output, args.model, args.budget_usd,
-                           args.max_tokens, args.limit, args.retry_errors)
+                           args.max_tokens, args.limit, args.retry_errors, args.backend)
     else:
         manifest = json.loads(args.manifest.read_text()) if args.manifest else None
         result = validate_judge(read_jsonl(args.judgments), load_labels(args.labels), args.held_out, manifest)

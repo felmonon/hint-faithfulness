@@ -26,6 +26,47 @@ def ledger_state(path):
     return spent, pending
 
 
+def validate_ledger_backend(entries, backend):
+    """Check provenance before a client can reuse paid responses.
+
+    Historical OpenRouter journals omitted the backend marker. Accept those
+    only when their saved completions establish the OpenRouter request/response
+    format; an empty or pending-only unmarked journal is ambiguous. Preserve it
+    for charge reconciliation rather than guessing which account was billed.
+    """
+    if not entries or entries[0].get("event") != "opening_balance":
+        raise ValueError("Billing journal has no opening balance; preserve it and use a separate output file")
+    declared = entries[0].get("backend")
+    if declared is not None and declared != backend:
+        raise ValueError("Billing journal belongs to another backend; use a fresh output file")
+    if any(entry.get("backend") not in (None, backend) for entry in entries):
+        raise ValueError("Billing journal mixes backends; use a separate output file")
+    responses = [entry["response"] for entry in entries
+                 if entry.get("event") == "settle" and "response" in entry]
+    if declared is None and backend != "openrouter":
+        raise ValueError("Unmarked legacy billing journals are not OpenAI journals; use a separate output file")
+    if backend == "openrouter":
+        for response in responses:
+            parameters = response.get("request_parameters", {})
+            raw = response.get("raw_response", {})
+            if (not isinstance(parameters, dict) or not isinstance(parameters.get("messages"), list)
+                    or not isinstance(parameters.get("model"), str) or "input" in parameters
+                    or not isinstance(raw, dict) or not isinstance(raw.get("choices"), list)):
+                raise ValueError("Billing journal contains a response without OpenRouter provenance; use a separate output file")
+        if declared is None and not responses:
+            raise ValueError("Legacy billing journal has no verifiable OpenRouter response; preserve it, reconcile pending charges, and use a separate output file")
+
+
+def _comparable_request(payload):
+    """Compare model inputs/settings; price ceilings do not change past output."""
+    if not isinstance(payload, dict) or not isinstance(payload.get("provider"), dict):
+        raise ValueError("Saved request lacks verifiable parameters; use a separate output file")
+    comparable = dict(payload)
+    comparable["provider"] = dict(payload["provider"])
+    comparable["provider"].pop("max_price", None)
+    return comparable
+
+
 class OpenRouterClient:
     def __init__(self, budget_usd=10.0, spent_usd=0.0, timeout=180, ledger_path=None):
         self.key = os.environ.get("OPENROUTER_API_KEY")
@@ -39,11 +80,14 @@ class OpenRouterClient:
         self.completed = {}
         if self.ledger_path:
             if self.ledger_path.exists():
+                entries = read_jsonl(self.ledger_path)
+                validate_ledger_backend(entries, "openrouter")
                 self.spent_usd, self.pending = ledger_state(self.ledger_path)
-                self.completed = {entry["request_key"]: entry["response"] for entry in read_jsonl(self.ledger_path)
+                self.completed = {entry["request_key"]: entry["response"] for entry in entries
                                   if entry.get("event") == "settle" and "response" in entry}
             else:
-                append_jsonl(self.ledger_path, {"event": "opening_balance", "delta_usd": spent_usd, "at": utc_now()})
+                append_jsonl(self.ledger_path, {"event": "opening_balance", "backend": "openrouter",
+                                              "delta_usd": spent_usd, "at": utc_now()})
         self.catalog = {m["id"]: m for m in self.models()}
 
     @staticmethod
@@ -53,10 +97,6 @@ class OpenRouterClient:
 
     def complete(self, messages, model, max_tokens=2048, temperature=.6, top_p=.95,
                  top_k=20, seed=None, reasoning=True, provider=None, request_key=None):
-        # A crash after durable completion but before the caller saves its row
-        # reuses the already paid response rather than paying a second time.
-        if request_key and request_key in self.completed:
-            return self.completed[request_key]
         entry = self.catalog.get(model)
         if entry is None:
             raise ValueError(f"Model {model} is absent from the current OpenRouter catalog")
@@ -67,8 +107,6 @@ class OpenRouterClient:
         prompt_bound = sum(len(m["content"].encode()) + 64 for m in messages)
         prices = entry.get("pricing", {})
         upper_cost = prompt_bound * float(prices.get("prompt", 0)) + max_tokens * float(prices.get("completion", 0)) + float(prices.get("request", 0))
-        if self.spent_usd + upper_cost > self.budget_usd:
-            raise BudgetExceededError(f"Budget guard: next call could exceed ${self.budget_usd:.2f}. Recorded/reserved spend ${self.spent_usd:.4f}.")
         payload = {"model": model, "messages": messages, "max_tokens": max_tokens,
                    "temperature": temperature, "top_p": top_p,
                    "provider": {"require_parameters": True, "allow_fallbacks": False,
@@ -84,8 +122,17 @@ class OpenRouterClient:
         if reasoning:
             payload["reasoning"] = {"enabled": True, "exclude": False}
         request_key = request_key or stable_hash(payload)
+        # Recover a settled response only for the same model, input, sampling,
+        # and provider settings, including when no caller verdict was saved.
+        if request_key in self.completed:
+            saved = self.completed[request_key]
+            if _comparable_request(saved.get("request_parameters")) != _comparable_request(payload):
+                raise ValueError("Saved request key has different parameters; use a separate output file")
+            return saved
         if request_key in self.pending:
             raise RuntimeError("A prior request remains pending in the billing journal. Reconcile its charge before retrying (python -m src.billing --help).")
+        if self.spent_usd + upper_cost > self.budget_usd:
+            raise BudgetExceededError(f"Budget guard: next call could exceed ${self.budget_usd:.2f}. Recorded/reserved spend ${self.spent_usd:.4f}.")
         request = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions",
             data=json.dumps(payload).encode(), headers={"Authorization": "Bearer " + self.key,
                                                        "Content-Type": "application/json"})
