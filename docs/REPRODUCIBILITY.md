@@ -84,6 +84,8 @@ After exporting the frozen pilot, run the read-only integrity audit from the cur
 python -m src.verify_artifacts --records artifacts/pilot-20-qwen3-1.7b/responses.jsonl
 ```
 
+For the published original90 file, missing-record and coverage failures are **expected and documented**: ten original rows were lost. The saved original audit is in `results/pilot-20-v1/original90/audit.json`. Do not repair that primary file to make the checker pass. To verify the separately labeled 100-record recovery composite, pass `artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl` instead and retain its recovery lineage.
+
 It prints JSON, checks the exact expected 100 trials, prompt/settings identities, checkpoint metadata, timestamps, token structure, and original export checksums, and exits nonzero on integrity failures. Recorded invalid or truncated responses are reported as attrition rather than removed. The checker does not change evidence, independently prove that inference occurred, or validate scientific interpretations. Record the audit's code commit alongside its output.
 
 ## Judge review and audit trail

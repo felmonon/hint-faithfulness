@@ -15,8 +15,10 @@ Checked November 9, 2026 (America/Edmonton). These are **software checks with sy
 
 Both Phase 2 and Phase 3 CLI help commands pass. The Python cells in the four Colab notebooks compile after treating notebook shell commands as shell commands; the notebooks have not been executed in Colab.
 
-## Remaining validation
+## Current validation status
 
-Run the real small-model pilot, inspect raw traces, and then execute Phase 2 on those saved local token sequences. Confirm model revision, numerical precision, token boundaries, context limits, and GPU memory behavior on the actual runtime. The saved manifests record the relevant identities and precision. Phase 3 additionally needs all four target letters represented in its training split, successful held-out steering beyond random-direction controls, and actual human explanation labels.
+The real small-model pilot, full retained-trace AI review, and Phase 2 execution are now complete. The [Phase 2 report](PHASE2_PILOT_REPORT.md) and [numerical audit](../results/pilot-20-phase2-v1/audit.md) verify checkpoint identity, FP16 runtime, token boundaries, arrays, grouped splits, predictions, and statistics. They do not supply independent human labels or an independent GPU replication.
+
+Phase 3 is running with all four target letters represented in its training split, exact source prompt checks, separate held-out questions, and norm-matched random directions. Completion must preserve failed outputs and compare attrition/common-valid pairs before interpreting steering. AI explanation review may be reported separately; it cannot become human validation.
 
 The implementation intentionally reports answer agreement and linear decodability as proxies. Neither proves that an internal answer was already irrevocably settled; an unreported activation intervention does not establish deliberate concealment.
