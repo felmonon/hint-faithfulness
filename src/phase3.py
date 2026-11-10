@@ -15,7 +15,7 @@ import math
 import random
 from pathlib import Path
 
-from .common import LETTERS, append_jsonl, read_jsonl, stable_hash, write_jsonl
+from .common import HINTS, LETTERS, append_jsonl, read_jsonl, stable_hash, utc_now, write_jsonl
 
 
 def question_split(question_ids, seed=42, test_fraction=0.3):
@@ -26,6 +26,34 @@ def question_split(question_ids, seed=42, test_fraction=0.3):
     random.Random(seed).shuffle(ids)
     n_test = max(1, min(len(ids) - 1, math.ceil(len(ids) * test_fraction)))
     return sorted(ids[n_test:]), sorted(ids[:n_test])
+
+
+def target_stratified_split(question_ids, targets, seed=42, test_fraction=0.3):
+    """Allocate held-out questions by assigned target, never by observed answers.
+
+    Largest-remainder quotas reserve at least one training question per letter.
+    Ties follow A/B/C/D order; one RNG shuffles sorted groups in that order.
+    """
+    ids = sorted(set(question_ids))
+    groups = {letter: [qid for qid in ids if targets[qid] == letter] for letter in LETTERS}
+    if any(not group for group in groups.values()) or sum(map(len, groups.values())) != len(ids):
+        raise ValueError("Target-stratified splitting requires all four assigned target letters.")
+    n_test = max(1, min(len(ids) - 1, math.ceil(len(ids) * test_fraction)))
+    if n_test > len(ids) - len(LETTERS):
+        raise ValueError("Not enough questions to reserve training examples for all target letters.")
+    shares = {letter: len(group) * n_test / len(ids) for letter, group in groups.items()}
+    quotas = {letter: min(math.floor(shares[letter]), len(group) - 1)
+              for letter, group in groups.items()}
+    while sum(quotas.values()) < n_test:
+        available = [letter for letter in LETTERS if quotas[letter] < len(groups[letter]) - 1]
+        letter = max(available, key=lambda item: shares[item] - quotas[item])
+        quotas[letter] += 1
+    rng, train, test = random.Random(seed), [], []
+    for letter, group in groups.items():
+        rng.shuffle(group)
+        test.extend(group[:quotas[letter]])
+        train.extend(group[quotas[letter]:])
+    return sorted(train), sorted(test)
 
 
 def _hidden(output):
@@ -56,12 +84,12 @@ def steering_hook(vector, strength, prompt_length):
     return hook
 
 
-def load_records(path):
+def load_records(path, include_invalid_source_outcomes=False):
     rows = list(read_jsonl(path))
     if not rows:
         raise ValueError("No Phase 1 records found.")
-    if any(row.get("backend") != "local" for row in rows):
-        raise ValueError("Phase 3 requires a local-only Phase 1 file; reject API/mock rows.")
+    if any(row.get("backend") != "local" or row.get("synthetic") is not False for row in rows):
+        raise ValueError("Phase 3 requires explicitly nonsynthetic local Phase 1 records; reject API/mock rows.")
     identities = {(r.get("experiment_id"), r.get("model"), r.get("model_revision")) for r in rows}
     if len(identities) != 1:
         raise ValueError("Do not mix experiments, models, or model revisions.")
@@ -69,20 +97,41 @@ def load_records(path):
     if not all((experiment, model, revision)):
         raise ValueError("Records must identify the experiment, model, and resolved revision.")
     complete = [r for r in rows if _valid(r)]
-    if any(not r.get("messages") or not r.get("prompt_token_ids") for r in complete):
-        raise ValueError("Complete local records must preserve messages and prompt token IDs.")
-    ids = [r["record_id"] for r in complete]
+    selected = rows if include_invalid_source_outcomes else complete
+    for row in selected:
+        messages, tokens = row.get("messages"), row.get("prompt_token_ids")
+        if (not isinstance(messages, list) or not messages
+                or any(not isinstance(m, dict) or m.get("role") not in ("system", "user", "assistant")
+                       or not isinstance(m.get("content"), str) for m in messages)
+                or not isinstance(tokens, list) or not tokens
+                or any(type(token) is not int or token < 0 for token in tokens)):
+            raise ValueError("Selected local records must preserve messages and exact prompt token IDs.")
+    ids = [r["record_id"] for r in rows]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate source record IDs; deduplicate the source run first.")
-    return complete, {"experiment_id": experiment, "model": model, "model_revision": revision,
-                      "source_records": len(rows), "complete_source_records": len(complete)}
+    return selected, {"experiment_id": experiment, "model": model, "model_revision": revision,
+                      "source_records": len(rows), "complete_source_records": len(complete),
+                      "selected_source_records": len(selected),
+                      "source_cohort_rule": ("verified_local_prompts_regardless_of_source_outcome_v1"
+                                             if include_invalid_source_outcomes else
+                                             "parseable_nontruncated_source_outcomes_v1"),
+                      "source_file_sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest()}
 
 
-def paired_prompts(rows):
+def paired_prompts(rows, require_complete=False):
     baselines = {}
     hinted = {}
+    conditions = set()
     for row in rows:
         qid = row["question_id"]
+        condition = (qid, row["hint_type"], row.get("baseline_repeat"))
+        if condition in conditions:
+            raise ValueError("Duplicate source question/condition rows.")
+        conditions.add(condition)
+        if (row["hint_type"] not in ("none", *HINTS)
+                or (row["hint_type"] == "none" and row.get("baseline_repeat") not in (0, 1))
+                or (row["hint_type"] != "none" and row.get("baseline_repeat") is not None)):
+            raise ValueError("Unexpected source prompt condition.")
         if row["hint_type"] == "none" and row.get("baseline_repeat") == 0:
             if qid in baselines:
                 raise ValueError(f"Multiple first baselines for question {qid}.")
@@ -93,8 +142,11 @@ def paired_prompts(rows):
             hinted.setdefault(qid, []).append(row)
     common = sorted(set(baselines) & set(hinted))
     for qid in common:
-        if len({r["hint_letter"] for r in hinted[qid]}) != 1:
+        if len({r["hint_letter"] for r in [baselines[qid], *hinted[qid]]}) != 1:
             raise ValueError("Each question must use the same assigned letter across hints.")
+    if require_complete and (set(common) != {r["question_id"] for r in rows}
+                             or any({r["hint_type"] for r in hinted[q]} != set(HINTS) for q in common)):
+        raise ValueError("The prompt-only cohort requires baseline 0 and all three hints per question.")
     if not common:
         raise ValueError("No complete matched baseline/hinted prompt pairs found.")
     return baselines, hinted, common
@@ -244,8 +296,8 @@ def write_review_and_plot(out_dir, rows, summaries):
             if not items:
                 continue
             ax.errorbar([r["strength"] for r in items], [r["target_rate"] for r in items],
-                        yerr=[[r["target_rate"] - r["ci_low"] for r in items],
-                              [r["ci_high"] - r["target_rate"] for r in items]],
+                        yerr=[[max(0.0, r["target_rate"] - r["ci_low"]) for r in items],
+                              [max(0.0, r["ci_high"] - r["target_rate"]) for r in items]],
                         marker="o", capsize=3, label=direction)
         ax.set(title=f"Target {target}", xlabel="Steering strength", ylim=(-.03, 1.03))
         ax.set_ylabel("Fraction answering target")
@@ -326,6 +378,10 @@ def main():
     parser.add_argument("--device", default="auto")
     parser.add_argument("--limit", type=int, default=0, help="Limit held-out questions for a pilot; 0 means all")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--include-invalid-source-outcomes", action="store_true",
+                        help="Fit from verified saved prompts regardless of Phase 1 answer/status; does not change outcome scoring")
+    parser.add_argument("--stratify-targets", action="store_true",
+                        help="Split questions using assigned target letters and largest-remainder quotas")
     parser.add_argument("--summarize-only", action="store_true", help="Rebuild chart and summarize human labels without loading a model")
     args = parser.parse_args()
     if args.summarize_only:
@@ -344,9 +400,13 @@ def main():
         parser.error("Use at least one positive finite strength; zero control is always included.")
     if args.limit < 0 or args.max_new_tokens < 1:
         parser.error("Limit must be nonnegative and max-new-tokens positive.")
-    source, identity = load_records(args.records)
-    baselines, hinted, question_ids = paired_prompts(source)
-    training_ids, test_ids = question_split(question_ids, args.seed)
+    source, identity = load_records(args.records, args.include_invalid_source_outcomes)
+    baselines, hinted, question_ids = paired_prompts(source, require_complete=args.include_invalid_source_outcomes)
+    targets = {qid: hinted[qid][0]["hint_letter"] for qid in question_ids}
+    if args.stratify_targets:
+        training_ids, test_ids = target_stratified_split(question_ids, targets, args.seed)
+    else:
+        training_ids, test_ids = question_split(question_ids, args.seed)
     if args.limit:
         test_ids = test_ids[:args.limit]
     missing = set(LETTERS) - {hinted[q][0]["hint_letter"] for q in training_ids}
@@ -359,6 +419,9 @@ def main():
     local = LocalModel(model_id=identity["model"], revision=identity["model_revision"], device=args.device)
     if local.revision != identity["model_revision"]:
         raise ValueError("The loaded model revision differs from the source experiment.")
+    # Verify every selected saved prompt, including held-out hints and resumed fits.
+    for row in source:
+        prompt_ids(local, row)
     blocks = local.model.model.layers
     layer = args.layer if args.layer is not None else len(blocks) // 2
     if not 0 <= layer < len(blocks):
@@ -369,6 +432,10 @@ def main():
               "temperature": .6, "top_p": .95, "top_k": 20,
               "source_dtypes": sorted({r.get("dtype", "unknown") for r in source}),
               "intervention_dtype": str(local.model.dtype),
+              "source_prompt_tokens_verified": True,
+              "activation_token_position": "last_original_chat_prompt_token",
+              "split_rule": ("assigned_target_largest_remainder_v1" if args.stratify_targets else "shuffled_question_ids_v1"),
+              "assigned_targets": targets,
               "training_question_ids": training_ids, "test_question_ids": test_ids}
     out_dir = args.out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -413,10 +480,12 @@ def main():
             row = {"record_id": record_id, "source_record_id": source_row["record_id"],
                    "question_id": qid, "subject": source_row.get("subject"),
                    "correct_answer": source_row.get("correct_answer"), "backend": "local",
+                   "synthetic": False,
                    "experiment_id": identity["experiment_id"], "model": identity["model"],
                    "model_revision": identity["model_revision"], "phase": 3,
                    "direction": direction, "target_letter": target, "strength": strength,
-                   "layer": layer, "seed": seed, "messages": source_row["messages"]}
+                   "layer": layer, "seed": seed, "messages": source_row["messages"],
+                   "started_at": utc_now()}
             handle = None
             try:
                 if direction != "baseline":
@@ -427,6 +496,7 @@ def main():
                                            max_new_tokens=args.max_new_tokens,
                                            temperature=.6, top_p=.95, top_k=20)
                 row.update(generated)
+                row["finished_at"] = utc_now()
             finally:
                 if handle is not None:
                     handle.remove()
