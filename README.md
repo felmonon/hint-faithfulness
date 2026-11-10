@@ -8,7 +8,11 @@ Research software for testing whether an open reasoning model acknowledges using
 
 Metadata hints produced 5/7 eligible wrong-target switches in the retained originals (95% Wilson interval 35.9–91.8%); the recovery composite gives 7/10 (39.7–89.2%). These are small, filtered descriptive samples. Formatting sensitivity, baseline variation, duplicate answer choices, and the storage loss limit interpretation. The report presents the original data first and the overlapping recovery dataset separately.
 
-**Phase 2 has also completed on the real pinned Qwen weights.** Read the [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [raw activations and probabilities](artifacts/pilot-20-phase2-v1/), and [reproduction and audit](results/pilot-20-phase2-v1/). Forced zero-reasoning answers matched 5/10 original baselines and 8/8 selected hinted switches; linear probes stayed near chance with only six held-out questions. Phase 3 is running a frozen 198-response steering sweep with separate training/test questions and random-direction controls; no steering result is claimed yet. These are extensions of the 20-question pilot, not the full 150-question, two-model study.
+**Phase 2 has also completed on the real pinned Qwen weights.** Read the [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [raw activations and probabilities](artifacts/pilot-20-phase2-v1/), and [reproduction and audit](results/pilot-20-phase2-v1/). Forced zero-reasoning answers matched 5/10 original baselines and 8/8 selected hinted switches; linear probes stayed near chance with only six held-out questions. These are extensions of the 20-question pilot, not the full 150-question, two-model study.
+
+**Phase 3 is blocked by Colab GPU usage limits.** The earlier runtime is unavailable, and Colab currently reports that it cannot connect to a GPU because of usage limits. The [verified checkpoint](artifacts/pilot-20-phase3-checkpoint-0430/) preserves eight records from one question; 190 positions in the fixed 198-position sweep remain without archived outcomes. Attempts after the checkpoint are unknown, so eight preserved records does not mean only eight generations occurred. The [resume protocol](docs/PHASE3_RESUME_PROTOCOL.md) preserves the original rows, vectors, settings, and controls. No completed steering result or explanation conclusion is claimed.
+
+Local [software verification](docs/VERIFICATION.md) passes **97 tests**; these checks do not replace the unfinished GPU experiment.
 
 ## Start with the real pilot
 
@@ -106,6 +110,7 @@ Early-answer agreement and probe accuracy show consistency or decodable informat
 - [Reproducibility guide](docs/REPRODUCIBILITY.md): runtime capture, artifact contract, immutable raw results, and figure reproduction.
 - [Methods](docs/METHODS.md): source papers, metrics, controls, and inference limits.
 - [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [evidence/audit](results/pilot-20-phase2-v1/), and [Phase 3 frozen plan](docs/phase3-pilot-plan.json).
+- [Phase 3 checkpoint](artifacts/pilot-20-phase3-checkpoint-0430/) and [resume protocol](docs/PHASE3_RESUME_PROTOCOL.md): eight preserved records, unknown later attempts, and the fixed recovery procedure; continuation is blocked by Colab GPU quota.
 - [Live OpenAI judge report](docs/OPENAI_JUDGE_REPORT.md), [OpenAI setup](docs/OPENAI_SETUP.md), and [labeling guide](docs/LABELING.md): API judging and independent human validation.
 - [Research log](LOG.md): dated expectations and observations, with assistant-authored predictions identified.
 - [Verification](docs/VERIFICATION.md) and [Phase 2–3 checks](docs/PHASE2_3_VERIFICATION.md): what was tested and what remains unverified.
