@@ -52,6 +52,12 @@ The diagnostic writes separate decisions and strict-versus-derived summaries; th
 
 Methods review also clarified matched comparison denominators, raw status counts versus sequential exclusions, possible degenerate bootstrap intervals, and departures from Chen, Lanham, and Rimsky. These documentation changes do not alter collection or the frozen primary calculations.
 
+## November 9, 2026 — raw-record discrepancy during collection
+
+A direct Colab terminal check found 23 saved rows while the progress log recorded 33 completed attempts. Missing original ordinals are 9–16 and 25–26. This coincides with live raw-file editor access; the cause remains unproven, and no deliberate raw-data edits were made. The editor was closed, and timestamped copies of the partial raw data, log, and discrepancy audit were saved before recovery.
+
+The [fixed recovery protocol](docs/RECOVERY_PROTOCOL.md) was recorded at 2026-11-10 01:57 UTC before replaying any missing slot. Original retained data will remain immutable and supply the primary descriptive estimates. A separately named composite will regenerate only the fixed missing IDs with the original settings and seeds. Total attempts and lineage must be reported; replayed text must not be represented as the lost original text. No retained invalid or truncated output will be replaced.
+
 ## Suggested eight-week schedule
 
 | Week | Dates | Work and evidence |
