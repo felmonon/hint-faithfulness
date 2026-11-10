@@ -1,0 +1,8 @@
+# Runtime versions are recorded in docs/VERIFICATION.md after local verification.
+datasets>=4.5,<5
+huggingface-hub>=0.34,<2
+torch>=2.6,<3
+transformers>=4.51,<6
+numpy>=2,<3
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4

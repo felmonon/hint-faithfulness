@@ -1,0 +1,17 @@
+{
+  "experiment_id": "47397798a43df4e47403",
+  "model": "synthetic/pipeline-test",
+  "backend": "mock",
+  "revision": null,
+  "provider": null,
+  "parameters": {
+    "seed": 20261109,
+    "max_tokens": 4096,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "questions_sha256": "027ec5964680541b8f0c24310611a7b85670760fa011cd071b255a9622ea313b",
+  "device": "auto",
+  "prompts_sha256": "26692c078ebe9f56ecd67c32cad45fd773c6db94dca70dc1fcec0db1a9b269ce"
+}

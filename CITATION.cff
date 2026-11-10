@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: >-
+  Cite the exact commit or release used, and cite the original MMLU and
+  faithfulness papers separately. This repository contains a research
+  implementation and exploratory pilot; it is not a peer-reviewed paper.
+type: software
+title: "Hint Faithfulness: Does the Model Say What Changed Its Answer?"
+authors:
+  - given-names: Felmon
+    family-names: Fekadu
+repository-code: "https://github.com/felmonon/hint-faithfulness"
+abstract: >-
+  An AI-assisted implementation for measuring uptake of wrong-answer hints
+  and acknowledgment of their influence in open reasoning models, with
+  early-answering, linear-probe, and optional activation-steering experiments.
+  Synthetic software checks are distinguished from real model observations.
+keywords:
+  - chain-of-thought
+  - faithfulness
+  - interpretability
+  - language-model-evaluation
+  - reproducibility

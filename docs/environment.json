@@ -1,0 +1,100 @@
+{
+  "python": "3.12.6",
+  "platform": "macOS-27.3-arm64-arm-64bit",
+  "openrouter_key_configured": false,
+  "packages": {
+    "torch": "2.9.1",
+    "transformers": "5.0.0rc3",
+    "datasets": "4.5.0",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "huggingface-hub": "1.3.5"
+  },
+  "cuda_available": false,
+  "mps_available": true,
+  "model_catalog": [
+    {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000003",
+        "input_cache_read": "0.0000001"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "context_length": 262144
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "pricing": {
+        "prompt": "0.00000045",
+        "completion": "0.0000035"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "context_length": 128000
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "pricing": {
+        "prompt": "0.0000005",
+        "completion": "0.00000215",
+        "input_cache_read": "0.00000035"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "context_length": 163840
+    }
+  ],
+  "catalog_missing": [
+    "qwen/qwen3-1.7b",
+    "qwen/qwen3-4b"
+  ]
+}
