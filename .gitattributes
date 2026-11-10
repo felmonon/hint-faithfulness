@@ -2,3 +2,5 @@
 artifacts/pilot-20-qwen3-1.7b/** -text
 results/pilot-20-v1/** -text
 results/pilot-20-openai-v1/** -text
+artifacts/pilot-20-phase2-v1/** -text
+results/pilot-20-phase2-v1/** -text

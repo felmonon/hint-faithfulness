@@ -104,3 +104,13 @@ Observed result, numerator, denominator, uncertainty:
 Failures, exclusions, changed settings:
 
 Difference from prediction / next fixed experiment:
+
+## November 9 local / November 10 UTC — secure key and real OpenAI judge
+
+The native secure destination confirmation succeeded after the earlier confirmation-flow failures. One new key was created and saved only to the approved private, ignored `.env.local`; no value was printed or committed. Frozen judge plan and runner commit `03153e7` preceded requests. Five original cases were inspected, followed by the remaining three originals and two additional composite-eligible cases, reusing the shared eight verdicts. One exact-quotation failure was retried once with unchanged model, rubric, settings, output file, and budget after preserving the initial snapshot and recording the retry decision. It failed again and remains unscored. Eleven completed API requests returned 17,908 input and 1,006 output tokens; the conservative usage estimate is $0.0087728, not an invoice. Nine verdicts passed structural/evidence checks; unblinded AI audit found interpretive concerns, including a likely final-check error. No human labels or corrected favorable rate were manufactured. See [the judge report](docs/OPENAI_JUDGE_REPORT.md).
+
+## November 10 UTC — Phase 2 and Phase 3 pilot extensions
+
+The user authorized autonomous completion through Phase 3. Scope was stated as the same 20-question exploratory pilot; the full 150-question/two-model study remains separate. AI assistance is not human validation. The Phase 2 prediction and selection/split rules were frozen in commit `66788e3` before execution. Original strict cohort:54 records, 10 unhinted + 8 hinted-switch traces; composite strict cohort:61 records, 14 + 10 traces. Both probes hold out six questions. All four jobs completed on the real pinned Qwen weights by 04:08:34 UTC. Byte-preserving base64 notebook export saved 22 files; local hashes and20 in-run checksum entries verified. Raw probability/activation data and original parser exclusions are preserved.
+
+Phase 3 adaptations were specified before its measurements: all 20 verified prompt pairs regardless of Phase 1 completion format, a target-stratified 14/6 question split, 198 generations, strengths 0/1/2/4/8, middle block 14, and norm-matched random controls. This avoids filtering prompt vectors by whether a separate sampled completion followed the final-answer format. The split uses assigned target letters, not steering outcomes. Source commit `ef90362` contains the frozen plan and runner. It launched at 04:12 UTC on the same T4. Code/runtime provenance and exact prompt verification are retained; no success claim is made while it runs.

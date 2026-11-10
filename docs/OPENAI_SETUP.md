@@ -8,9 +8,11 @@ Create the project key through the secure OpenAI Platform setup flow, save it on
 
 This pilot uses the fixed snapshot **`gpt-4.1-mini-2025-04-14`** as a low-cost judge without a separate reasoning step. The documented standard price checked November 9, 2026 is **$0.40 per million input tokens and $1.60 per million output tokens**. The model is deprecated and scheduled to shut down **January 14, 2027**. It is still listed before that date, but actual access must be tested with the project key. The implementation refuses unpriced models and never silently replaces the judge. If migration becomes necessary, record a new judge identity, rerun calibration, and perform fresh held-out validation. [Model and pricing](https://developers.openai.com/api/docs/models/gpt-4.1-mini), [shutdown schedule](https://developers.openai.com/api/docs/deprecations)
 
-## Run after real collection
+## Recorded pilot execution
 
-The published `pilot-20-v1` evidence is immutable. Write this judge execution to the new `results/pilot-20-openai-v1/` directory. The staged runner loads only the repository's approved private `.env.local`, uses one shared $2 billing guard, and stops on saved errors or unresolved reservations:
+Secure key setup succeeded and the live follow-up is complete: eleven requests, nine accepted verdicts, and one case rejected on both attempts. See [the judge report](OPENAI_JUDGE_REPORT.md). The key stayed in the approved private, Git-ignored `.env.local`; it was never placed in Colab or the repository.
+
+The published `pilot-20-v1` evidence is immutable. The recorded judge execution used `results/pilot-20-openai-v1/`. That directory now contains immutable research evidence: do not rerun the staged commands against it. They document the original execution; a new experiment needs a fresh output directory and declared plan. The staged runner loads only the repository's approved private `.env.local`, uses one shared $2 billing guard, and stops on saved errors or unresolved reservations:
 
 ```bash
 python3.12 scripts/run_openai_pilot_judge.py --stage smoke

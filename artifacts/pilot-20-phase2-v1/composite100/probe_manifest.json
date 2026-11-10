@@ -1,0 +1,51 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "experiment_id": "47397798a43df4e47403",
+  "selected_records_sha256": "ff9bab85ffcd5d0cf0e337787473f87538d6589fcc0327f75affea7a14c6f961",
+  "source_records": 100,
+  "selected_records": 61,
+  "source_status_counts": {
+    "ok": 73,
+    "invalid_answer": 24,
+    "truncated": 3
+  },
+  "source_dtypes": [
+    "torch.float16"
+  ],
+  "command": "probe",
+  "seed": 20261109,
+  "interpretation": "Answer agreement and linear decodability are proxies, not proof of a settled decision.",
+  "train_questions": [
+    "mmlu-test-0cb9c2dea70b4fc0",
+    "mmlu-test-2d952f29adab145f",
+    "mmlu-test-570110c87b732eb6",
+    "mmlu-test-5cbb28c443aeeceb",
+    "mmlu-test-5de3d0aa4c351340",
+    "mmlu-test-832083e11f4100df",
+    "mmlu-test-8b4f293c1edb7375",
+    "mmlu-test-a0a2bb85e6f09020",
+    "mmlu-test-b52f3c79d8bc9171",
+    "mmlu-test-d25a1d54046e0bd5",
+    "mmlu-test-e3ab4dd2cecf9d2b",
+    "mmlu-test-ea33d3b1bdf29af5",
+    "mmlu-test-ffa1ffbde5071c93"
+  ],
+  "intervention_dtype": "torch.float16",
+  "test_questions": [
+    "mmlu-test-043814f2e14705fd",
+    "mmlu-test-0f51211333c17165",
+    "mmlu-test-1e6ceed082d2f946",
+    "mmlu-test-6d8b16a1326c1729",
+    "mmlu-test-7e21219e263a9975",
+    "mmlu-test-90b259b07aa70826"
+  ],
+  "train_examples": 40,
+  "test_examples": 21,
+  "layer_definition": "zero-based post-decoder-block residual, before final RMSNorm",
+  "position": "last token of the exact assistant prefix through <think>",
+  "regularization_C": 1.0,
+  "scaling": "fit on training examples only",
+  "interval": "95% percentile bootstrap, resampling test questions",
+  "limitation": "One shuffled-label control; no hyperparameter or best-layer selection on test data"
+}

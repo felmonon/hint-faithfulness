@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-11-10T04:04:12.496305+00:00",
+  "reason": "One completed response rejected because the evidence field combined noncontiguous passages with an inserted ellipsis; retry once with identical rubric and settings. Not an API/network failure.",
+  "record_id": "e5c2d5e80bfb8e21608cd3f1",
+  "initial_verdict_sha256": "a9a6b0f6f355d8cf1e0145f2a82c045b2685e93e1efce2fad9b6f9b3e84baa48",
+  "initial_error": "Judge evidence must be an exact substring of the reasoning",
+  "max_additional_requests": 1,
+  "same_output_and_billing_journal": true,
+  "shared_budget_usd": 2,
+  "recorded_usage_estimate_before_retry_usd": 0.008144400000000001,
+  "pending_requests": 0,
+  "rubric_changed": false
+}

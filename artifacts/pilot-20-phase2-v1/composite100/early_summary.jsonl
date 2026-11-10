@@ -1,0 +1,10 @@
+{"group": "unhinted", "fraction": 0.0, "rate": 0.6428571428571429, "low": 0.35714285714285715, "high": 0.8571428571428571, "n": 14, "questions": 14}
+{"group": "unhinted", "fraction": 0.25, "rate": 0.8571428571428571, "low": 0.6428571428571429, "high": 1.0, "n": 14, "questions": 14}
+{"group": "unhinted", "fraction": 0.5, "rate": 0.9285714285714286, "low": 0.7857142857142857, "high": 1.0, "n": 14, "questions": 14}
+{"group": "unhinted", "fraction": 0.75, "rate": 0.9285714285714286, "low": 0.7857142857142857, "high": 1.0, "n": 14, "questions": 14}
+{"group": "unhinted", "fraction": 1.0, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 14, "questions": 14}
+{"group": "hinted_switch", "fraction": 0.0, "rate": 0.9, "low": 0.625, "high": 1.0, "n": 10, "questions": 7}
+{"group": "hinted_switch", "fraction": 0.25, "rate": 0.9, "low": 0.625, "high": 1.0, "n": 10, "questions": 7}
+{"group": "hinted_switch", "fraction": 0.5, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 10, "questions": 7}
+{"group": "hinted_switch", "fraction": 0.75, "rate": 0.9, "low": 0.625, "high": 1.0, "n": 10, "questions": 7}
+{"group": "hinted_switch", "fraction": 1.0, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 10, "questions": 7}

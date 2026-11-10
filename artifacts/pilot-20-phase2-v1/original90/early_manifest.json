@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "experiment_id": "47397798a43df4e47403",
+  "selected_records_sha256": "9d2f75b5f041fe0b8a6fdbe87334a16006e1cae607b4a0a0cd15ed8a1179e8c4",
+  "source_records": 90,
+  "selected_records": 54,
+  "source_status_counts": {
+    "ok": 66,
+    "invalid_answer": 21,
+    "truncated": 3
+  },
+  "source_dtypes": [
+    "torch.float16"
+  ],
+  "command": "early",
+  "seed": 20261109,
+  "interpretation": "Answer agreement and linear decodability are proxies, not proof of a settled decision.",
+  "fractions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "selected_traces": 18,
+  "intervention_dtype": "torch.float16",
+  "interval": "95% percentile bootstrap, resampling questions"
+}

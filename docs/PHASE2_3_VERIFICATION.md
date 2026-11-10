@@ -1,5 +1,7 @@
 # Phase 2–3 implementation checks
 
+**Later live checkpoint, November 10 UTC:** Real Phase 2 has completed on the pretrained Qwen3-1.7B checkpoint, with [raw artifacts](../artifacts/pilot-20-phase2-v1/), exact source hashes, runtime metadata, and the [frozen plan](phase2-pilot-plan.json). Phase 3 is running under its [separate frozen plan](phase3-pilot-plan.json). The synthetic checks below remain historical software evidence, not substitutes for these model measurements. The expanded software suite now passes 90 tests.
+
 Checked November 9, 2026 (America/Edmonton). These are **software checks with synthetic fixtures**, not model experiment results. No reported rate here is evidence about Qwen or reasoning faithfulness. No actual model checkpoint was loaded by these checks.
 
 `python3 -m unittest discover -s tests -q` passed all 36 tests present at this checkpoint. The 15 tests in `tests/test_interventions.py` cover:

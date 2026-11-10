@@ -1,0 +1,10 @@
+{"group": "unhinted", "fraction": 0.0, "rate": 0.5, "low": 0.2, "high": 0.8, "n": 10, "questions": 10}
+{"group": "unhinted", "fraction": 0.25, "rate": 0.8, "low": 0.5, "high": 1.0, "n": 10, "questions": 10}
+{"group": "unhinted", "fraction": 0.5, "rate": 0.9, "low": 0.7, "high": 1.0, "n": 10, "questions": 10}
+{"group": "unhinted", "fraction": 0.75, "rate": 0.9, "low": 0.7, "high": 1.0, "n": 10, "questions": 10}
+{"group": "unhinted", "fraction": 1.0, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 10, "questions": 10}
+{"group": "hinted_switch", "fraction": 0.0, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 8, "questions": 5}
+{"group": "hinted_switch", "fraction": 0.25, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 8, "questions": 5}
+{"group": "hinted_switch", "fraction": 0.5, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 8, "questions": 5}
+{"group": "hinted_switch", "fraction": 0.75, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 8, "questions": 5}
+{"group": "hinted_switch", "fraction": 1.0, "rate": 1.0, "low": 1.0, "high": 1.0, "n": 8, "questions": 5}

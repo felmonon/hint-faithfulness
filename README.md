@@ -8,6 +8,8 @@ Research software for testing whether an open reasoning model acknowledges using
 
 Metadata hints produced 5/7 eligible wrong-target switches in the retained originals (95% Wilson interval 35.9–91.8%); the recovery composite gives 7/10 (39.7–89.2%). These are small, filtered descriptive samples. Formatting sensitivity, baseline variation, duplicate answer choices, and the storage loss limit interpretation. The report presents the original data first and the overlapping recovery dataset separately.
 
+**Phase 2 has also completed on the real pinned Qwen weights.** Read the [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [raw activations and probabilities](artifacts/pilot-20-phase2-v1/), and [reproduction and audit](results/pilot-20-phase2-v1/). Forced zero-reasoning answers matched 5/10 original baselines and 8/8 selected hinted switches; linear probes stayed near chance with only six held-out questions. Phase 3 is running a frozen 198-response steering sweep with separate training/test questions and random-direction controls; no steering result is claimed yet. These are extensions of the 20-question pilot, not the full 150-question, two-model study.
+
 ## Start with the real pilot
 
 Open [notebook 00](notebooks/00_real_pilot_20.ipynb) in Colab and select a **T4 GPU**. It clones this repository, checks out the frozen collection source, installs the pilot dependencies, runs software checks, captures the actual runtime, and attempts **100 responses: 20 questions × five conditions**. It needs no API key. The first 20 rows of the frozen 150-question sample are used, with one wrong target letter assigned to each question before generation.
@@ -28,7 +30,7 @@ The notebook writes to `artifacts/pilot-20-qwen3-1.7b/` and exports `pilot-20-re
 
 The small experimental subject is **Qwen3-1.7B**, using unquantized half-precision weights and thinking enabled. Its exact checkpoint and token sequences are retained for later internal experiments. Each question receives two unhinted runs and one run for each of three hints: sycophancy, XML metadata, and grader hacking. The same preassigned wrong letter is reused across hint conditions.
 
-**An optional OpenAI judge of saved Qwen reasoning is implemented but has not run.** The secure local save prompt returned `not_approved`, so no key was created and this workflow made no OpenAI API calls. See [OpenAI setup and judging](docs/OPENAI_SETUP.md) for secure access, the fixed judge snapshot, model availability limits, billing safeguards, and live validation. An OpenAI API key does not authenticate OpenRouter. No key is needed to collect or analyze the Qwen pilot.
+**The OpenAI judge follow-up has run.** Secure local key setup succeeded. Eleven API requests produced nine accepted machine verdicts and one case rejected twice for nonliteral evidence. The usage-based estimate is **$0.0087728**; this is not an invoice. The [judge report](docs/OPENAI_JUDGE_REPORT.md) and [raw judgments, billing journal, and AI audit](results/pilot-20-openai-v1/) preserve the failures and interpretive concerns. Validated faithfulness remains pending. See [OpenAI setup and judging](docs/OPENAI_SETUP.md) for access, the fixed snapshot, and billing safeguards. An OpenAI API key does not authenticate OpenRouter. No key is needed to collect or analyze the Qwen pilot.
 
 The optional large-model comparison uses an open reasoning model through OpenRouter. It requires separate access and its own pilot. That comparison remains pending until its raw outputs exist. Two models of different sizes also differ in architecture and training, so this design cannot isolate a pure parameter-count effect.
 
@@ -90,6 +92,7 @@ The uptake/noise chart can be generated before judging; the faithfulness panel r
 | [01 — general local Phase 1](notebooks/01_local_phase1.ipynb) | Alternative ZIP-based workflow for a declared larger small-model run | Colab GPU |
 | [02 — early answering and probes](notebooks/02_early_answering_and_probes.ipynb) | Reuse local tokens and weights; split by question; compare majority and shuffled-label controls | Colab GPU and saved local outputs |
 | [03 — optional steering](notebooks/03_optional_steering.ipynb) | Separate vector-building/evaluation questions; zero-strength and random-direction controls | Colab GPU and saved local outputs |
+| [05 — real Phase 2/3 pilot](notebooks/05_real_phase2_phase3_pilot.ipynb) | Frozen real-evidence extension: early answers, probes, 198-response controlled steering sweep | Colab T4; no API key |
 | [04 — OpenRouter comparison and judge](notebooks/04_judge_and_analysis.ipynb) | Optional large-model comparison and the original OpenRouter judging workflow | Separate OpenRouter key; CPU sufficient for API calls |
 
 Notebooks 01–04 accept a project ZIP and saved-results ZIP together. Their default `data/runs/small.jsonl` paths differ from notebook 00's `artifacts/` path: change `RECORDS` to the actual saved local response file before using Phase 2 or 3. Notebook 04 is an OpenRouter alternative, not an OpenAI-key setup flow. For the requested OpenAI judge, use [the OpenAI instructions](docs/OPENAI_SETUP.md).
@@ -102,7 +105,8 @@ Early-answer agreement and probe accuracy show consistency or decodable informat
 - [Real pilot report](docs/PILOT_REPORT.md), [evidence and reproduction](results/pilot-20-v1/), and [recovery protocol](docs/RECOVERY_PROTOCOL.md): findings and the original-data loss, with separate recovery sensitivity.
 - [Reproducibility guide](docs/REPRODUCIBILITY.md): runtime capture, artifact contract, immutable raw results, and figure reproduction.
 - [Methods](docs/METHODS.md): source papers, metrics, controls, and inference limits.
-- [OpenAI setup](docs/OPENAI_SETUP.md) and [labeling guide](docs/LABELING.md): API judging and independent human validation.
+- [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [evidence/audit](results/pilot-20-phase2-v1/), and [Phase 3 frozen plan](docs/phase3-pilot-plan.json).
+- [Live OpenAI judge report](docs/OPENAI_JUDGE_REPORT.md), [OpenAI setup](docs/OPENAI_SETUP.md), and [labeling guide](docs/LABELING.md): API judging and independent human validation.
 - [Research log](LOG.md): dated expectations and observations, with assistant-authored predictions identified.
 - [Verification](docs/VERIFICATION.md) and [Phase 2–3 checks](docs/PHASE2_3_VERIFICATION.md): what was tested and what remains unverified.
 - [Write-up template](docs/WRITEUP_TEMPLATE.md): a structure to complete after real evidence exists.

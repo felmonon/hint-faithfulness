@@ -1,0 +1,3126 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex AI assistant (/root/method_review)",
+  "review_type": "Independent saved-artifact numeric audit; no new model/API inference or human validation",
+  "audited_at_utc": "2026-11-10T04:17:26.239135+00:00",
+  "frozen_run_commit": "66788e3444a43f1cc87422313ad6b1f7b72a6114",
+  "frozen_phase2_code_sha256": "052393814bcf767c29f8f8891d1014e7b85dd57d2158179bf210e8f64c289e44",
+  "code_matches_current": true,
+  "plan_matches_saved_copy": true,
+  "run_checksum_files_verified": {
+    "composite100/early_answering.png": "7540ea6f4ee35c91df9c61254de59faae9370a5d279b92deace430c781045d33",
+    "composite100/early_manifest.json": "c4fcc8aee10c72e927f4f1288b7c55c4f6a4f5fec1659dd4eb9d7bbfeadcd650",
+    "composite100/early_results.jsonl": "6a84edad4cf4eb596cad93c3950d71073692d929b2928e6d924d7448deee15c4",
+    "composite100/early_summary.jsonl": "434342f0cd4da08439346299e593b6d00172c4645eeadbb552e6e5cde846fbfc",
+    "composite100/probe_accuracy.png": "2d6aa500ff3b507b5f55293dea70e7f0e774830ca7be50fa9c22f3a886959b3f",
+    "composite100/probe_activations.npz": "b1cdf4c877e1373f1a76532e1b9a7aa91e43efdae630bad95e0287c1d5a2195b",
+    "composite100/probe_manifest.json": "f0a7765f8e581dac8ecde91e619163fb6c8c4093253312c0995cb0099322ffcd",
+    "composite100/probe_predictions.jsonl": "531512d84691a0310fc7ab743ea9d0164083f0cfd2fffa3bded0d4372519c9aa",
+    "composite100/probe_summary.jsonl": "ccb5afda93d2ae8e6202c0d5e65a12e18a5db38a12234376fea3455205535fc7",
+    "original90/early_answering.png": "26eb2505a7ea9e9a18d89728c054afc45c200a3dafba5a5d051a405ef81e3df7",
+    "original90/early_manifest.json": "dcb0dadb4c273e5180ba7f0857262af3fa80f993debf52bd2238540515f90891",
+    "original90/early_results.jsonl": "4f9ea5358b91c1a45565cca07af01b46cdfe9b96ef2bbdb1422692549751f966",
+    "original90/early_summary.jsonl": "8f0e596f23f88f95d5223abf2613df97bc4b3261488ef1768399f9da62550745",
+    "original90/probe_accuracy.png": "e0963de23c73cfad1c07366d777a735c9975a6ce3597a95f9b91c2422d50406b",
+    "original90/probe_activations.npz": "a7bfd72f9ae0aedb64e041e1534e6224f51b8b60ae477f0aba244c993b14dd1b",
+    "original90/probe_manifest.json": "ef883f6daffec2eb4a4b90939acb3a2463f53a3cd406ab673aba35692cc45f05",
+    "original90/probe_predictions.jsonl": "dc2a5a6cafb54c6fca09a08f68162ae66a26960aa3a46daa857d75f9022249bb",
+    "original90/probe_summary.jsonl": "f697fdacfff07010fad4eef27d8d90ecab1da1b692fe5242eaac9d4bdd0e2eb1",
+    "plan.json": "7a94a66af2476e0b79e99b512baae1c6f0ed2d76fb43fc2d05637fd4acd3cc75",
+    "runtime.json": "fa2b0999c4034c9658926167557594f62de8c6a911764c1387cf4219cd2eef4f"
+  },
+  "local_reproduction_environment": {
+    "python": "3.12.6",
+    "platform": "macOS-27.3-arm64-arm-64bit",
+    "numpy": "2.2.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "torch": "2.9.1",
+    "transformers": "5.0.0rc3"
+  },
+  "recorded_run_environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "git_commit": "66788e3444a43f1cc87422313ad6b1f7b72a6114",
+    "git_tracked_changes": "",
+    "torch_version": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "gpu_name": "Tesla T4"
+  },
+  "recorded_relevant_distributions": [
+    "numpy==1.26.4",
+    "numpy==2.2.6",
+    "scikit-learn==1.8.0",
+    "scipy==1.16.3",
+    "transformers==5.0.0rc3"
+  ],
+  "bootstrap_recomputation": {
+    "draws": 1000,
+    "seed": 20261109,
+    "unit": "question clusters",
+    "aggregation": "example-weighted within sampled question clusters",
+    "tolerance": 1e-12
+  },
+  "tokenizer_local_cache_verification": {
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "downloaded": false,
+    "token_ids": {
+      "<think>": [
+        151667
+      ],
+      "</think>": [
+        151668
+      ],
+      "A": [
+        32
+      ],
+      "B": [
+        33
+      ],
+      "C": [
+        34
+      ],
+      "D": [
+        35
+      ],
+      "\n\nAnswer: (": [
+        271,
+        16141,
+        25,
+        320
+      ]
+    }
+  },
+  "cohorts": {
+    "original90": {
+      "source_path": "artifacts/pilot-20-qwen3-1.7b/responses.jsonl",
+      "source_sha256": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f",
+      "source_records": 90,
+      "source_status_counts": {
+        "ok": 66,
+        "invalid_answer": 21,
+        "truncated": 3
+      },
+      "eligible_records": 54,
+      "eligible_questions": 19,
+      "excluded_question_ids": [
+        "mmlu-test-734e02d9073e986d"
+      ],
+      "selection_and_manifest_hashes_match": true,
+      "all_saved_prompt_tokens_match_pinned_tokenizer": true,
+      "prefix_is_prompt_plus_opening_think_only": true,
+      "early": {
+        "rows": 90,
+        "traces": 18,
+        "groups": {
+          "unhinted": 10,
+          "hinted_switch": 8
+        },
+        "curves_recomputed": [
+          {
+            "group": "unhinted",
+            "fraction": 0,
+            "matches": 5,
+            "rate": 0.5,
+            "low": 0.2,
+            "high": 0.8,
+            "n": 10,
+            "questions": 10
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.25,
+            "matches": 8,
+            "rate": 0.8,
+            "low": 0.5,
+            "high": 1.0,
+            "n": 10,
+            "questions": 10
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.5,
+            "matches": 9,
+            "rate": 0.9,
+            "low": 0.7,
+            "high": 1.0,
+            "n": 10,
+            "questions": 10
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.75,
+            "matches": 9,
+            "rate": 0.9,
+            "low": 0.7,
+            "high": 1.0,
+            "n": 10,
+            "questions": 10
+          },
+          {
+            "group": "unhinted",
+            "fraction": 1.0,
+            "matches": 10,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 10,
+            "questions": 10
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0,
+            "matches": 8,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 8,
+            "questions": 5
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.25,
+            "matches": 8,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 8,
+            "questions": 5
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.5,
+            "matches": 8,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 8,
+            "questions": 5
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.75,
+            "matches": 8,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 8,
+            "questions": 5
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 1.0,
+            "matches": 8,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 8,
+            "questions": 5
+          }
+        ],
+        "all_five_fractions_per_trace": true,
+        "exact_token_cut_lengths_verified": true,
+        "all_probabilities_finite_and_bounded": true,
+        "letter_probability_mass": {
+          "min": 0.9999980342690833,
+          "median": 1.0000000002232121,
+          "max": 1.000000082578481,
+          "below_0_99": 0,
+          "above_one_within_float32_tolerance": 70,
+          "max_conditional_sum_error": 8.959057140600635e-08,
+          "max_raw_to_conditional_error": 8.959031061461786e-08
+        },
+        "summary_and_bootstrap_match": true
+      },
+      "probe": {
+        "npz_shape": [
+          54,
+          28,
+          2048
+        ],
+        "stored_dtype": "float32",
+        "all_finite": true,
+        "stored_values_exactly_representable_in_float16": true,
+        "activation_min": -356.0,
+        "activation_max": 834.0,
+        "all_indices_unique_in_range_complete": true,
+        "train_test_question_overlap": [],
+        "train_questions": [
+          "mmlu-test-0cb9c2dea70b4fc0",
+          "mmlu-test-2d952f29adab145f",
+          "mmlu-test-570110c87b732eb6",
+          "mmlu-test-5cbb28c443aeeceb",
+          "mmlu-test-5de3d0aa4c351340",
+          "mmlu-test-832083e11f4100df",
+          "mmlu-test-8b4f293c1edb7375",
+          "mmlu-test-a0a2bb85e6f09020",
+          "mmlu-test-b52f3c79d8bc9171",
+          "mmlu-test-d25a1d54046e0bd5",
+          "mmlu-test-e3ab4dd2cecf9d2b",
+          "mmlu-test-ea33d3b1bdf29af5",
+          "mmlu-test-ffa1ffbde5071c93"
+        ],
+        "test_questions": [
+          "mmlu-test-043814f2e14705fd",
+          "mmlu-test-0f51211333c17165",
+          "mmlu-test-1e6ceed082d2f946",
+          "mmlu-test-6d8b16a1326c1729",
+          "mmlu-test-7e21219e263a9975",
+          "mmlu-test-90b259b07aa70826"
+        ],
+        "train_examples": 34,
+        "test_examples": 20,
+        "train_classes": {
+          "D": 8,
+          "C": 8,
+          "B": 15,
+          "A": 3
+        },
+        "test_classes": {
+          "A": 7,
+          "B": 5,
+          "D": 5,
+          "C": 3
+        },
+        "majority_letter": "B",
+        "saved_prediction_rows": 560,
+        "probe_and_shuffled_label_predictions_compared": 1120,
+        "prediction_mismatches": [],
+        "fit_warnings": [],
+        "train_only_scaling_verified_in_code_and_refit": true,
+        "all_layer_and_subgroup_bootstrap_summaries_match": true,
+        "curves_recomputed": [
+          {
+            "layer": 0,
+            "test": {
+              "rate": 0.3,
+              "low": 0.047619047619047616,
+              "high": 0.5882352941176471,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.3,
+              "low": 0.05256578947368421,
+              "high": 0.5557291666666665,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.3333333333333333,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 1,
+            "test": {
+              "rate": 0.3,
+              "low": 0.047619047619047616,
+              "high": 0.5882352941176471,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.6,
+              "low": 0.2998529411764706,
+              "high": 0.8751838235294116,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.3333333333333333,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 2,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.16666666666666666,
+              "high": 0.8181818181818182,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 3,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.55,
+              "low": 0.2939075630252101,
+              "high": 0.7777777777777778,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 4,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.2222222222222222,
+              "high": 0.6818181818181818,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 5,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.55,
+              "low": 0.2939075630252101,
+              "high": 0.7777777777777778,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 6,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.10513157894736842,
+              "high": 0.8095238095238095,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 7,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.16666666666666666,
+              "high": 0.8181818181818182,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 8,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.6,
+              "low": 0.2998529411764706,
+              "high": 0.8751838235294116,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 9,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.21052631578947367,
+              "high": 0.7777777777777778,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 10,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.19047619047619047,
+              "high": 0.8235294117647058,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 11,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.6,
+              "low": 0.2998529411764706,
+              "high": 0.8751838235294116,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 12,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.2727272727272727,
+              "high": 0.7223484848484847,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 13,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.2727272727272727,
+              "high": 0.7223484848484847,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 14,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.55,
+              "low": 0.2939075630252101,
+              "high": 0.7777777777777778,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 15,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.2727272727272727,
+              "high": 0.7223484848484847,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 16,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.6,
+              "low": 0.2998529411764706,
+              "high": 0.8751838235294116,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 17,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.6,
+              "low": 0.2998529411764706,
+              "high": 0.8751838235294116,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 18,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.27248803827751195,
+              "high": 0.7222222222222222,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 19,
+            "test": {
+              "rate": 0.3,
+              "low": 0.047619047619047616,
+              "high": 0.5882352941176471,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.5,
+              "low": 0.21739130434782608,
+              "high": 0.8095982142857142,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 20,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.4,
+              "low": 0.2,
+              "high": 0.6190476190476191,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 21,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.21739130434782608,
+              "high": 0.7001470588235292,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 22,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.21739130434782608,
+              "high": 0.7001470588235292,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 23,
+            "test": {
+              "rate": 0.3,
+              "low": 0.047619047619047616,
+              "high": 0.5882352941176471,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.21739130434782608,
+              "high": 0.7001470588235292,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 24,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.4,
+              "low": 0.1426948051948052,
+              "high": 0.6875,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 25,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.35,
+              "low": 0.1,
+              "high": 0.6251644736842104,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 26,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.4,
+              "low": 0.18181818181818182,
+              "high": 0.6470588235294118,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 27,
+            "test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.45,
+              "low": 0.21739130434782608,
+              "high": 0.7001470588235292,
+              "n": 20,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.25,
+              "low": 0.0,
+              "high": 0.5555555555555556,
+              "n": 20,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          }
+        ],
+        "descriptive_layer_ranges": {
+          "test": {
+            "minimum": 0.25,
+            "maximum": 0.3,
+            "n": 20,
+            "questions": 6
+          },
+          "shuffled_training_labels": {
+            "minimum": 0.3,
+            "maximum": 0.6,
+            "n": 20,
+            "questions": 6
+          },
+          "train_majority_test": {
+            "minimum": 0.25,
+            "maximum": 0.25,
+            "n": 20,
+            "questions": 6
+          },
+          "wrong_model_answer": {
+            "minimum": 0.0,
+            "maximum": 0.1111111111111111,
+            "n": 9,
+            "questions": 4
+          },
+          "wrong_correct_answer": {
+            "minimum": 0.1111111111111111,
+            "maximum": 0.2222222222222222,
+            "n": 9,
+            "questions": 4
+          },
+          "resisted_hint_model_answer": {
+            "minimum": 0.375,
+            "maximum": 0.5,
+            "n": 8,
+            "questions": 4
+          }
+        }
+      }
+    },
+    "composite100": {
+      "source_path": "artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl",
+      "source_sha256": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf",
+      "source_records": 100,
+      "source_status_counts": {
+        "ok": 73,
+        "invalid_answer": 24,
+        "truncated": 3
+      },
+      "eligible_records": 61,
+      "eligible_questions": 19,
+      "excluded_question_ids": [
+        "mmlu-test-734e02d9073e986d"
+      ],
+      "selection_and_manifest_hashes_match": true,
+      "all_saved_prompt_tokens_match_pinned_tokenizer": true,
+      "prefix_is_prompt_plus_opening_think_only": true,
+      "early": {
+        "rows": 120,
+        "traces": 24,
+        "groups": {
+          "hinted_switch": 10,
+          "unhinted": 14
+        },
+        "curves_recomputed": [
+          {
+            "group": "unhinted",
+            "fraction": 0,
+            "matches": 9,
+            "rate": 0.6428571428571429,
+            "low": 0.35714285714285715,
+            "high": 0.8571428571428571,
+            "n": 14,
+            "questions": 14
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.25,
+            "matches": 12,
+            "rate": 0.8571428571428571,
+            "low": 0.6428571428571429,
+            "high": 1.0,
+            "n": 14,
+            "questions": 14
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.5,
+            "matches": 13,
+            "rate": 0.9285714285714286,
+            "low": 0.7857142857142857,
+            "high": 1.0,
+            "n": 14,
+            "questions": 14
+          },
+          {
+            "group": "unhinted",
+            "fraction": 0.75,
+            "matches": 13,
+            "rate": 0.9285714285714286,
+            "low": 0.7857142857142857,
+            "high": 1.0,
+            "n": 14,
+            "questions": 14
+          },
+          {
+            "group": "unhinted",
+            "fraction": 1.0,
+            "matches": 14,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 14,
+            "questions": 14
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0,
+            "matches": 9,
+            "rate": 0.9,
+            "low": 0.625,
+            "high": 1.0,
+            "n": 10,
+            "questions": 7
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.25,
+            "matches": 9,
+            "rate": 0.9,
+            "low": 0.625,
+            "high": 1.0,
+            "n": 10,
+            "questions": 7
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.5,
+            "matches": 10,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 10,
+            "questions": 7
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 0.75,
+            "matches": 9,
+            "rate": 0.9,
+            "low": 0.625,
+            "high": 1.0,
+            "n": 10,
+            "questions": 7
+          },
+          {
+            "group": "hinted_switch",
+            "fraction": 1.0,
+            "matches": 10,
+            "rate": 1.0,
+            "low": 1.0,
+            "high": 1.0,
+            "n": 10,
+            "questions": 7
+          }
+        ],
+        "all_five_fractions_per_trace": true,
+        "exact_token_cut_lengths_verified": true,
+        "all_probabilities_finite_and_bounded": true,
+        "letter_probability_mass": {
+          "min": 0.9999980342690833,
+          "median": 1.0000000002232121,
+          "max": 1.0000000896792054,
+          "below_0_99": 0,
+          "above_one_within_float32_tolerance": 90,
+          "max_conditional_sum_error": 8.967920539504348e-08,
+          "max_raw_to_conditional_error": 8.966047282399359e-08
+        },
+        "summary_and_bootstrap_match": true
+      },
+      "probe": {
+        "npz_shape": [
+          61,
+          28,
+          2048
+        ],
+        "stored_dtype": "float32",
+        "all_finite": true,
+        "stored_values_exactly_representable_in_float16": true,
+        "activation_min": -356.0,
+        "activation_max": 840.0,
+        "all_indices_unique_in_range_complete": true,
+        "train_test_question_overlap": [],
+        "train_questions": [
+          "mmlu-test-0cb9c2dea70b4fc0",
+          "mmlu-test-2d952f29adab145f",
+          "mmlu-test-570110c87b732eb6",
+          "mmlu-test-5cbb28c443aeeceb",
+          "mmlu-test-5de3d0aa4c351340",
+          "mmlu-test-832083e11f4100df",
+          "mmlu-test-8b4f293c1edb7375",
+          "mmlu-test-a0a2bb85e6f09020",
+          "mmlu-test-b52f3c79d8bc9171",
+          "mmlu-test-d25a1d54046e0bd5",
+          "mmlu-test-e3ab4dd2cecf9d2b",
+          "mmlu-test-ea33d3b1bdf29af5",
+          "mmlu-test-ffa1ffbde5071c93"
+        ],
+        "test_questions": [
+          "mmlu-test-043814f2e14705fd",
+          "mmlu-test-0f51211333c17165",
+          "mmlu-test-1e6ceed082d2f946",
+          "mmlu-test-6d8b16a1326c1729",
+          "mmlu-test-7e21219e263a9975",
+          "mmlu-test-90b259b07aa70826"
+        ],
+        "train_examples": 40,
+        "test_examples": 21,
+        "train_classes": {
+          "D": 8,
+          "C": 9,
+          "B": 18,
+          "A": 5
+        },
+        "test_classes": {
+          "A": 8,
+          "B": 5,
+          "D": 5,
+          "C": 3
+        },
+        "majority_letter": "B",
+        "saved_prediction_rows": 588,
+        "probe_and_shuffled_label_predictions_compared": 1176,
+        "prediction_mismatches": [],
+        "fit_warnings": [],
+        "train_only_scaling_verified_in_code_and_refit": true,
+        "all_layer_and_subgroup_bootstrap_summaries_match": true,
+        "curves_recomputed": [
+          {
+            "layer": 0,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.3333333333333333,
+              "low": 0.11096491228070175,
+              "high": 0.55,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.3333333333333333,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 1,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.3333333333333333,
+              "low": 0.19025974025974027,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.3333333333333333,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 2,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.42857142857142855,
+              "low": 0.21716485507246377,
+              "high": 0.6666666666666666,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 3,
+            "test": {
+              "rate": 0.19047619047619047,
+              "low": 0.0,
+              "high": 0.47058823529411764,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.3333333333333333,
+              "low": 0.17391304347826086,
+              "high": 0.47619047619047616,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 4,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.09523809523809523,
+              "high": 0.47619047619047616,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 5,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.0908102766798419,
+              "high": 0.38916666666666644,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 6,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.0908102766798419,
+              "high": 0.38916666666666644,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 7,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.10526315789473684,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 8,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.047619047619047616,
+              "high": 0.35,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 9,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.14285714285714285,
+              "low": 0.047619047619047616,
+              "high": 0.22727272727272727,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 10,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.10526315789473684,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 11,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.08695652173913043,
+              "high": 0.4090909090909091,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 12,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.10526315789473684,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 13,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.10526315789473684,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 14,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.6,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.3333333333333333,
+              "low": 0.19047619047619047,
+              "high": 0.45454545454545453,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.2727272727272727,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 15,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.043478260869565216,
+              "high": 0.3888888888888889,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.1111111111111111,
+              "low": 0.0,
+              "high": 0.5,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 16,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.043478260869565216,
+              "high": 0.3888888888888889,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 17,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.09523809523809523,
+              "low": 0.0,
+              "high": 0.19047619047619047,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 18,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.08695652173913043,
+              "high": 0.3,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 19,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.08695652173913043,
+              "high": 0.3,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 20,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.2857142857142857,
+              "low": 0.09090909090909091,
+              "high": 0.5238095238095238,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 21,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.09090909090909091,
+              "high": 0.4,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 22,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.09090909090909091,
+              "high": 0.4,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 23,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.09090909090909091,
+              "high": 0.4,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 24,
+            "test": {
+              "rate": 0.2857142857142857,
+              "low": 0.043478260869565216,
+              "high": 0.5791795665634673,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.23809523809523808,
+              "low": 0.09090909090909091,
+              "high": 0.4,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.5,
+              "low": 0.1,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 25,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.14285714285714285,
+              "low": 0.047619047619047616,
+              "high": 0.22727272727272727,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 26,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.08695652173913043,
+              "high": 0.3,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          },
+          {
+            "layer": 27,
+            "test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "shuffled_training_labels": {
+              "rate": 0.19047619047619047,
+              "low": 0.08695652173913043,
+              "high": 0.3,
+              "n": 21,
+              "questions": 6
+            },
+            "train_majority_test": {
+              "rate": 0.23809523809523808,
+              "low": 0.0,
+              "high": 0.5333333333333333,
+              "n": 21,
+              "questions": 6
+            },
+            "wrong_model_answer": {
+              "rate": 0.0,
+              "low": 0.0,
+              "high": 0.0,
+              "n": 9,
+              "questions": 4
+            },
+            "wrong_correct_answer": {
+              "rate": 0.2222222222222222,
+              "low": 0.0,
+              "high": 0.6666666666666666,
+              "n": 9,
+              "questions": 4
+            },
+            "resisted_hint_model_answer": {
+              "rate": 0.375,
+              "low": 0.0,
+              "high": 1.0,
+              "n": 8,
+              "questions": 4
+            }
+          }
+        ],
+        "descriptive_layer_ranges": {
+          "test": {
+            "minimum": 0.19047619047619047,
+            "maximum": 0.2857142857142857,
+            "n": 21,
+            "questions": 6
+          },
+          "shuffled_training_labels": {
+            "minimum": 0.09523809523809523,
+            "maximum": 0.42857142857142855,
+            "n": 21,
+            "questions": 6
+          },
+          "train_majority_test": {
+            "minimum": 0.23809523809523808,
+            "maximum": 0.23809523809523808,
+            "n": 21,
+            "questions": 6
+          },
+          "wrong_model_answer": {
+            "minimum": 0.0,
+            "maximum": 0.1111111111111111,
+            "n": 9,
+            "questions": 4
+          },
+          "wrong_correct_answer": {
+            "minimum": 0.1111111111111111,
+            "maximum": 0.2222222222222222,
+            "n": 9,
+            "questions": 4
+          },
+          "resisted_hint_model_answer": {
+            "minimum": 0.375,
+            "maximum": 0.5,
+            "n": 8,
+            "questions": 4
+          }
+        }
+      }
+    }
+  },
+  "overlap_check": {
+    "shared_probe_record_count": 54,
+    "max_absolute_shared_activation_difference": 0.0,
+    "all_shared_activations_exactly_equal": true,
+    "shared_early_rows": 90,
+    "shared_early_rows_exactly_equal": true,
+    "interpretation": "Recovery composite is overlapping sensitivity analysis, not independent replication."
+  },
+  "limitations": [
+    "Only strictly parseable completed source outputs are selected; failed/truncated/formatted alternatives are excluded, creating selection and survivorship limitations.",
+    "Hinted-switch curves condition on observed switching and unhinted curves use a different question mixture; their gap is not a randomized causal comparison.",
+    "The probe predicts sampled final answer letters from pre-reasoning prompts, which already contain hint/option information; decodability is not a settled decision or dishonesty.",
+    "All 28 layers are evaluated without best-layer selection. Six test questions and one shuffled-label control limit generalization; multiple layer/subgroup inspections are exploratory.",
+    "Bootstrap intervals resample questions but are conditional on the fixed training fit and selected cohort; they omit model-training and generation uncertainty. A 25% uniform baseline is not a complete task-specific chance model.",
+    "Float32 NPZ storage contains activations computed in float16; casting does not restore lost precision. No independent GPU forward-pass reproduction was performed.",
+    "Local scikit-learn 1.8.0 and SciPy 1.16.3 match recorded versions. Local Python/platform/Torch differ. Original runtime distribution listing includes both NumPy 1.26.4 and 2.2.6 without an imported NumPy version. Root reports a same-runtime post-execution import check at 04:18 UTC returned NumPy 2.2.6 and scikit-learn 1.8.0, with no intervening dependency installation; this corroborates but does not rewrite original provenance. Local refits use NumPy 2.2.6.",
+    "Artifacts do not contain fitted scaler/probe coefficients; this audit refits the frozen estimator recipe from saved activations and verifies predictions instead."
+  ],
+  "result": "passed_saved_artifact_recomputation_with_documented_limitations",
+  "raw_artifacts_unchanged": true,
+  "supplementary_runtime_check": {
+    "reported_by": "Root agent, direct Colab read-only import check",
+    "observed_at_utc": "2026-11-10T04:18:00+00:00",
+    "timestamp_precision": "minute",
+    "imported_versions": {
+      "numpy": "2.2.6",
+      "scikit-learn": "1.8.0"
+    },
+    "same_runtime_as_phase2": true,
+    "dependency_changes_between_execution_and_check_reported": false,
+    "qualification": "Supplementary post-execution provenance reported by root; original runtime.json distribution listing is preserved and lists two NumPy distributions. This audit did not itself observe the Colab import check."
+  }
+}

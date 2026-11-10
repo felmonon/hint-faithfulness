@@ -1,5 +1,7 @@
 # Wrong-answer hints and their acknowledgment: a 20-question Qwen3 pilot
 
+**Follow-up:** The [live OpenAI judge report](OPENAI_JUDGE_REPORT.md) adds nine accepted machine verdicts and one rejected case, with a documented retry, cost estimate, and unblinded AI audit. It does not change this original pilot dataset or establish human-validated faithfulness. The zero-API-cost statements below describe the collection publication checkpoint.
+
 **Completed exploratory pilot; faithfulness remains unvalidated.** Real Qwen generations were collected in Colab on 10 November 2026 UTC. Storage loss left 90 original records; ten replays produced a 100-record composite after **110 total generation attempts**. Strict formatting excluded many otherwise readable answers, materially changing eligible samples. The originals are primary; recovery and relaxed parsing are sensitivity analyses.
 
 ## Question and five-sentence method

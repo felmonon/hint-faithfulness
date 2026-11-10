@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "metadata_created_at_utc": "2026-11-10T04:09:07.116826+00:00",
+  "git_commit_at_metadata_creation": "66788e3444a43f1cc87422313ad6b1f7b72a6114",
+  "commands": [
+    "python3 -m src.analyze --input artifacts/pilot-20-qwen3-1.7b/responses.jsonl --judgments results/pilot-20-openai-v1/judgments.jsonl --out-dir results/pilot-20-openai-v1/original90",
+    "python3 -m src.analyze --input artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl --judgments results/pilot-20-openai-v1/judgments.jsonl --out-dir results/pilot-20-openai-v1/composite100"
+  ],
+  "human_validation_supplied": false,
+  "api_calls_by_analysis": 0,
+  "input_and_module_sha256": {
+    "artifacts/pilot-20-qwen3-1.7b/responses.jsonl": "61fdef1db01c557498d388c5aaf389ff2e61525749b9816db8432de8db996c0f",
+    "artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf",
+    "results/pilot-20-openai-v1/judgments.jsonl": "f6f4dd7ecce762b8392575cfbaf445b85d5a86d6eaf60dff4afcf4db18078d45",
+    "src/analyze.py": "d5f4fc75528246cd5215958c2d67008c9131e3e0d3e0c064599ff5cb90aa2613",
+    "src/common.py": "665d1d7866e87dac4afd0cff9e12c7be190a57e6daaa9cb692441e1475cc9d9d",
+    "src/judge.py": "908a1a4e0fb2674ee2a0910c666e043ccc4a4a773884a3e72be3cdf4ae03414f"
+  },
+  "outputs": {
+    "results/pilot-20-openai-v1/original90/summary.json": "cfff4b5a6903268988f4ad62008de817aa49c61957ce5e73924c242cd11f01e3",
+    "results/pilot-20-openai-v1/composite100/summary.json": "72171f0db536517a2dae91eeeb0471b5d61f94baf0c1af5f393251748a75284f"
+  },
+  "interpretation": "Provisional machine-label fractions only; validated faithfulness remains null. Original90 primary and overlapping composite100 sensitivity."
+}
