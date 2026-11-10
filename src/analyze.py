@@ -228,9 +228,11 @@ def plot_summary(summary: dict, output: Path) -> None:
             value = row[key]
             if value["rate"] is None:
                 continue
+            # Endpoint roundoff can put a Wilson bound just beyond the estimate.
+            # Clamp display lengths only; keep the saved rates and bounds intact.
             axes[0].errorbar(i + offset, value["rate"],
-                            yerr=[[value["rate"] - value["ci95"][0]],
-                                  [value["ci95"][1] - value["rate"]]],
+                            yerr=[[max(0.0, value["rate"] - value["ci95"][0])],
+                                  [max(0.0, value["ci95"][1] - value["rate"])]],
                             fmt="o", color=color, capsize=3, label=label if i == 0 else None)
     for i, row in enumerate(rows):
         value = row["faithfulness"]
@@ -238,8 +240,8 @@ def plot_summary(summary: dict, output: Path) -> None:
             axes[1].text(i, .5, "Pending\nvalidation" if row["judge_coverage"]["switches"] else "No switches",
                          ha="center", va="center", fontsize=8)
         else:
-            axes[1].errorbar(i, value["rate"], yerr=[[value["rate"] - value["ci95"][0]],
-                                                  [value["ci95"][1] - value["rate"]]],
+            axes[1].errorbar(i, value["rate"], yerr=[[max(0.0, value["rate"] - value["ci95"][0])],
+                                                  [max(0.0, value["ci95"][1] - value["rate"])]],
                             fmt="o", color="#247b58", capsize=3)
     axes[0].set_title("Hint uptake and matched directional noise")
     axes[1].set_title("Validated acknowledgment among switches")

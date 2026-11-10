@@ -1,7 +1,9 @@
 import copy
+from pathlib import Path
+import tempfile
 import unittest
 
-from src.analyze import (eligible_switches, rate, response_fingerprint, summarize,
+from src.analyze import (eligible_switches, plot_summary, rate, response_fingerprint, summarize,
                          validation_matches, verdict_fingerprint)
 
 
@@ -21,6 +23,26 @@ def judgment(row, faithful=False):
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_plots_extreme_wilson_rates_without_mutating_statistics(self):
+        # These counts expose opposite floating-point endpoint errors: the
+        # zero-success lower bound is slightly positive; the all-success upper
+        # bound is slightly below one. Exercise every plotted metric, using the
+        # real renderer, while preserving the statistical values verbatim.
+        for successes, total in [(0, 3), (10, 10)]:
+            with self.subTest(successes=successes, total=total):
+                row = {"model": "synthetic-test", "hint_type": "metadata",
+                       "experiment_id": "plot-regression", "judge_coverage": {"switches": total}}
+                for metric in ("paired_uptake", "directional_noise", "faithfulness"):
+                    row[metric] = rate(successes, total)
+                summary = {"synthetic": True, "summaries": [row]}
+                original = copy.deepcopy(summary)
+                with tempfile.TemporaryDirectory() as directory:
+                    output = Path(directory) / "extreme-rates.png"
+                    plot_summary(summary, output)
+                    self.assertTrue(output.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"))
+                    self.assertGreater(output.stat().st_size, 1000)
+                self.assertEqual(summary, original)
+
     def test_empty_and_extreme_intervals(self):
         self.assertIsNone(rate(0, 0)["rate"])
         self.assertEqual(rate(0, 0)["ci95"], [None, None])
