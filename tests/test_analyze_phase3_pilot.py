@@ -7,7 +7,8 @@ import tempfile
 import unittest
 
 from scripts.analyze_phase3_pilot import (estimate_tables, paired_effect, question_resamples,
-                                        validate_run, verify_inventory, write_plot, write_report)
+                                        validate_run, verify_inventory, write_plot, write_report,
+                                        select_hardware_sensitivity, HARDWARE_DECLARATION_SHA256, sha256)
 from src.common import HINTS, LETTERS, stable_hash
 from src.phase3 import _seed
 
@@ -80,6 +81,35 @@ def fixture():
 def find(rows, qid, direction, target=None, strength=0):
     return next(r for r in rows if (r["question_id"], r["direction"], r["target_letter"], r["strength"])
                 == (qid, direction, target, strength))
+
+
+def hardware_fixture():
+    """Synthetic outcomes under the real declared IDs; never observed research results."""
+    rows, manifest, plan, source = fixture()
+    path = Path(__file__).resolve().parents[1] / "docs/phase3-l4-resume-addendum.json"
+    declaration = json.loads(path.read_text())
+    mapping = dict(zip(plan["test_question_ids"], declaration["primary_test_question_ids"]))
+    # Correct-answer strata are derived from the frozen question file, never addendum prose.
+    questions = [json.loads(line) for line in (path.parents[1] / "data/questions.jsonl").read_text().splitlines()]
+    answers = {q["question_id"]: q["correct_answer"] for q in questions}
+    plan["test_question_ids"] = list(mapping.values())
+    plan["assigned_targets"] = {mapping.get(qid, qid): target for qid, target in plan["assigned_targets"].items()}
+    for row in source:
+        if row["question_id"] in mapping:
+            row["question_id"] = mapping[row["question_id"]]
+            row["correct_answer"] = answers[row["question_id"]]
+    manifest.update(test_question_ids=plan["test_question_ids"], assigned_targets=plan["assigned_targets"],
+                    source_digest=stable_hash(source))
+    digest = stable_hash(manifest)
+    for index, row in enumerate(rows):
+        row["question_id"] = mapping[row["question_id"]]
+        row["correct_answer"] = answers[row["question_id"]]
+        row["seed"] = _seed(plan["seed"], row["question_id"])
+        row["record_id"] = stable_hash([digest, row["question_id"], row["direction"], row["target_letter"], row["strength"]])
+        row["started_at"] = "2026-11-10T04:00:00+00:00" if index < 8 else "2026-11-10T12:00:00+00:00"
+        row["finished_at"] = "2026-11-10T04:01:00+00:00" if index < 8 else "2026-11-10T12:01:00+00:00"
+    runtime = {"cuda_available": True, "gpu_name": "NVIDIA L4", "captured_at": "2026-11-10T11:59:00+00:00"}
+    return rows, manifest, plan, source, declaration, deepcopy(rows[:8]), [runtime]
 
 
 class ValidationTests(unittest.TestCase):
@@ -189,6 +219,67 @@ class DenominatorTests(unittest.TestCase):
         reversed_rows = estimate_tables(list(reversed(rows)), list(reversed(plan["test_question_ids"])), plan["strengths"], bootstrap_repeats=20)
         self.assertEqual(original, reversed_rows)
         self.assertTrue(all(r["vector_minus_random"]["question_count"] == 6 for r in original[1] if r["stratum"] == "all"))
+
+
+class HardwareSensitivityTests(unittest.TestCase):
+    def test_declared_entire_question_exclusion_retains_failures_and_five_question_bootstrap(self):
+        rows, manifest, plan, source, declaration, checkpoint, runtimes = hardware_fixture()
+        set_response(rows[34], status="truncated")
+        set_response(rows[35], status="invalid_answer")
+        self.assertEqual(validate_run(rows, manifest, plan, source)["retained_grid_outcomes"], 198)
+        before = json.dumps(rows, sort_keys=True)
+        primary_before = estimate_tables(rows, plan["test_question_ids"], plan["strengths"], bootstrap_repeats=20)
+        selected, cohort = select_hardware_sensitivity(rows, plan, declaration, checkpoint, runtimes)
+        self.assertEqual(len(selected), 165)
+        self.assertEqual({r["question_id"] for r in selected}, set(declaration["secondary_test_question_ids"]))
+        self.assertTrue(all(sum(r["question_id"] == qid for r in selected) == 33 for qid in cohort["question_ids"]))
+        self.assertEqual(sum(r["direction"] == "baseline" for r in selected), 5)
+        self.assertEqual(sum(r["status"] == "truncated" for r in selected), 1)
+        self.assertEqual(sum(r["status"] == "invalid_answer" for r in selected), 1)
+        self.assertEqual(cohort["correct_answer_counts"], dict(A=0, B=4, C=1, D=0))
+        conditions, pairs, decisions = estimate_tables(selected, cohort["question_ids"], plan["strengths"], bootstrap_repeats=20)
+        self.assertTrue(all(r["attempts"] == 5 for r in conditions if r["stratum"] == "all"))
+        self.assertEqual(len(decisions), 80)
+        self.assertTrue(all(r["vector_minus_random"]["question_count"] <= 5 for r in pairs))
+        empty = [r for r in conditions if r["stratum"] == "correct_target" and r["target_letter"] in "AD"]
+        self.assertTrue(all(r["attempts"] == 0 and r["valid_target_rate"] is None for r in empty))
+        one = next(r for r in pairs if r["target_letter"] == "C" and r["stratum"] == "correct_target")
+        self.assertEqual(one["common_valid_n"], 1)
+        self.assertIn("One eligible question", one["vector_minus_random"]["precision_warning"])
+        self.assertEqual(json.dumps(rows, sort_keys=True), before)
+        self.assertEqual(primary_before, estimate_tables(rows, plan["test_question_ids"], plan["strengths"], bootstrap_repeats=20))
+        with tempfile.TemporaryDirectory() as directory:
+            write_report(Path(directory), conditions, pairs, cohort=cohort)
+            report = (Path(directory) / "REPORT.md").read_text()
+            self.assertIn("There are 5 held-out question clusters and 165 retained grid outcomes", report)
+            self.assertIn("5-question cluster resamples", report)
+            self.assertIn("six-question/198-outcome primary analysis remains unchanged", report)
+            self.assertIn("All steering vectors were fitted on T4", report)
+
+    def test_rejects_partial_grid_changed_membership_late_declaration_and_wrong_runtime(self):
+        rows, _, plan, _, declaration, checkpoint, runtimes = hardware_fixture()
+        cases = [
+            (rows[:-1], plan, declaration, checkpoint, runtimes),
+            (rows[33:], plan, declaration, checkpoint, runtimes),
+            (rows, plan, dict(declaration, secondary_exclude_question_ids=plan["test_question_ids"][:2]), checkpoint, runtimes),
+            (rows, plan, dict(declaration, secondary_test_question_ids=plan["test_question_ids"][:-1]), checkpoint, runtimes),
+            (rows, plan, dict(declaration, frozen_at_utc=rows[8]["started_at"]), checkpoint, runtimes),
+            (rows, plan, declaration, checkpoint, []),
+            (rows, plan, declaration, checkpoint, [dict(runtimes[0], gpu_name="Tesla T4")]),
+            (rows, plan, declaration, checkpoint, [dict(runtimes[0], captured_at="2026-11-10T12:00:01+00:00")]),
+        ]
+        for index, arguments in enumerate(cases):
+            with self.subTest(case=index):
+                with self.assertRaises(ValueError):
+                    select_hardware_sensitivity(*arguments)
+        altered = deepcopy(rows)
+        altered[0]["content"] = "Changed archived result"
+        with self.assertRaisesRegex(ValueError, "checkpoint outcomes changed"):
+            select_hardware_sensitivity(altered, plan, declaration, checkpoint, runtimes)
+
+    def test_published_declaration_bytes_match_fixed_hash(self):
+        path = Path(__file__).resolve().parents[1] / "docs/phase3-l4-resume-addendum.json"
+        self.assertEqual(sha256(path), HARDWARE_DECLARATION_SHA256)
 
 
 @unittest.skipUnless(importlib.util.find_spec("matplotlib"), "matplotlib is optional")

@@ -1,6 +1,6 @@
 # What was actually verified
 
-Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **blocked by Colab GPU usage limits**, with eight archived records and 190 missing grid positions. See the [pilot report](PILOT_REPORT.md), [evidence index](../results/pilot-20-v1/), and [Phase 3 resume protocol](PHASE3_RESUME_PROTOCOL.md).
+Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **L4 continuation running**, launched at 10:39 UTC after preflight; full-grid export and analysis remain pending. Eight original records are preserved. See the [pilot report](PILOT_REPORT.md), [evidence index](../results/pilot-20-v1/), and [Phase 3 resume protocol](PHASE3_RESUME_PROTOCOL.md).
 
 ## Completed
 
@@ -26,10 +26,18 @@ Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analy
 
 ## Still pending
 
-- **Phase 3 compute:** continuation is blocked by Colab's displayed GPU usage-limit message. The fixed grid has 198 positions, of which eight have archived records and 190 require a retained continuation outcome. Earlier attempts after the checkpoint are unknown, so a completed recovery must not claim exactly 198 historical attempts. The checkpoint covers only part of one question and supports no steering-efficacy conclusion.
+- **Phase 3 compute:** the paid L4 continuation is running after T4 allocation was unavailable. The fixed grid has 198 positions, of which eight have archived records and 190 require a retained continuation outcome. Earlier attempts after the checkpoint are unknown, so a completed recovery must not claim exactly 198 historical attempts. The checkpoint covers only part of one question and supports no steering-efficacy conclusion.
 - **Additional experiments:** DeepSeek inference and the full 150-question study have not been performed. Phase 2 measurements are complete. The setup Mac has 8 GB shared memory and no CUDA GPU; it is not the collection machine.
 - **API execution:** `OPENROUTER_API_KEY` is not configured here. OpenAI live judging is documented above; network-failure recovery and budget-exhaustion paths were exercised with simulated responses, not deliberate paid failures.
 - **Human validation:** no actual blind human labels or human judge validation have been supplied. The reporting rule requires at least 30 paired held-out labels and at least 90% agreement, with class balance inspected. Blank labels are intentional; a tuned judge needs a fresh, disjoint held-out check. Assistant-written predictions must not be attributed to the user as personal forecasts.
 - **Validated scientific conclusions:** faithfulness remains unvalidated; ten unique pilot switches are fewer than the required 30 held-out cases. The published descriptive uptake/noise report and supported examples do not establish population-wide honesty, intentional concealment, or causal necessity of reasoning.
 
 The public repository is [felmonon/hint-faithfulness](https://github.com/felmonon/hint-faithfulness). Descriptive pilot findings are published with their limitations; independent human validation remains pending. No social posting or calendar scheduling occurred.
+
+## L4 continuation verification, November 10 at 10:39 UTC
+
+- Published the hardware amendment before inference (`35fc053`), its guarded notebook (`47b9912`), and a factual descriptive-count erratum (`ce22848`). Question membership and all scientific settings were unchanged.
+- The first preflight stopped before restoration or inference because the live kernel retained stale package imports. A fresh subprocess confirmed the installed NumPy 2.2.6, Transformers 5.0.0rc3 and Torch 2.14.1+cu130; restarting the Python session resolved the mismatch. All guards then passed on NVIDIA L4.
+- The initial saved-Drive snapshot was independently downloaded and all 18 gzip/base64 payloads checked against raw/compressed sizes and hashes. It preserves eight original rows and runtime/setup lineage, captured at `2026-11-10T10:39:07.046576+00:00`. Downloaded notebook SHA-256: `117c963628e5c34875a03103248fca7a678d597cde360865c3353b6d533cb38b`. This proves the initial recovery snapshot is externally saved, not that later outcomes are complete.
+- An AI reviewer verified the actual setup metadata and cached tokenizer, with no inference or API calls. Original/resumed inference-package versions match; the GPU changes from Tesla T4 to NVIDIA L4. The execution checkout changes while the four scientific source files remain byte-identical to the original commit.
+- The expanded offline suite passed **112 tests**. It includes the full-grid artifact audit and secondary five-question hardware sensitivity. Both tools refuse an incomplete primary dataset. These software checks do not supply human validation or completed Phase 3 findings.

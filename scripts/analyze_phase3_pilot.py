@@ -25,6 +25,11 @@ from src.verify_artifacts import _tokens
 
 STRATA = ("all", "correct_target", "incorrect_target")
 ANALYSIS_VERSION = "phase3-paired-attrition-v1"
+HARDWARE_DECLARATION_COMMIT = "35fc053f65646030b780030fb592861113430ca6"
+HARDWARE_DECLARATION_SHA256 = "b9c9afeeddc099297bfd3eb1c9652590afea97ffcf4be03a4c2ad16ef9716607"
+HARDWARE_CHECKPOINT_SHA256 = "5bec0702c11667104b6a37a3f15487b19dceb7358f771748e467b346ae63044b"
+HARDWARE_VECTOR_SHA256 = "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57"
+MIXED_QUESTION_ID = "mmlu-test-570110c87b732eb6"
 
 
 def sha256(path):
@@ -130,6 +135,63 @@ def validate_run(rows, manifest, plan, source_rows):
             "historical_attempt_count_note": "Unknown after runtime loss; retained outcomes do not establish total generation attempts.",
             "status_counts": dict(sorted(Counter(row["status"] for row in rows).items())),
             "token_records_checked": token_audit["token_records_checked"], "grid_verified": True}
+
+
+def utc_timestamp(value):
+    timestamp = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    require(timestamp.utcoffset() == timedelta(0), "Hardware provenance timestamps must be UTC")
+    return timestamp
+
+
+def select_hardware_sensitivity(rows, plan, declaration, checkpoint_rows, resume_runtimes):
+    """Subset only after full-run validation; exclusion never depends on response outcomes."""
+    primary_ids = plan["test_question_ids"]
+    secondary_ids = [qid for qid in primary_ids if qid != MIXED_QUESTION_ID]
+    require(declaration.get("primary_test_question_ids") == primary_ids
+            and declaration.get("mixed_question_id") == MIXED_QUESTION_ID
+            and declaration.get("secondary_exclude_question_ids") == [MIXED_QUESTION_ID]
+            and declaration.get("secondary_test_question_ids") == secondary_ids
+            and len(primary_ids) == 6 and len(secondary_ids) == 5, "Hardware declaration question membership differs")
+    for field, value in {"primary_retained_grid_outcomes": 198, "secondary_retained_grid_outcomes": 165,
+                         "original_retained_records": 8, "planned_resumed_records": 190,
+                         "allowed_resume_gpu": "L4", "outcome_based_selection": False,
+                         "human_validation": False}.items():
+        require(declaration.get(field) == value, f"Hardware declaration differs: {field}")
+    require(len(rows) == 198 and Counter(row["question_id"] for row in rows) == dict.fromkeys(primary_ids, 33),
+            "Hardware sensitivity requires the entire completed 198-outcome grid before subsetting")
+    checkpoint_ids = {row["record_id"] for row in checkpoint_rows}
+    require(len(checkpoint_rows) == len(checkpoint_ids) == 8
+            and {row["question_id"] for row in checkpoint_rows} == {MIXED_QUESTION_ID}, "Checkpoint must contain the original eight mixed-question outcomes")
+    by_id = {row["record_id"]: row for row in rows}
+    require(len(by_id) == 198 and all(by_id.get(row["record_id"]) == row for row in checkpoint_rows),
+            "Retained checkpoint outcomes changed")
+    resumed = [row for row in rows if row["record_id"] not in checkpoint_ids]
+    require(len(resumed) == 190, "Expected exactly 190 retained resumed outcomes")
+    frozen = utc_timestamp(declaration["frozen_at_utc"])
+    first_resume = min(utc_timestamp(row["started_at"]) for row in resumed)
+    last_finish = max(utc_timestamp(row["finished_at"]) for row in resumed)
+    require(max(utc_timestamp(row["finished_at"]) for row in checkpoint_rows) < frozen < first_resume,
+            "Hardware declaration must precede the first resumed generation and follow the saved checkpoint")
+    require(resume_runtimes and all(runtime.get("cuda_available") is True
+            and "L4" in runtime.get("gpu_name", "").split() for runtime in resume_runtimes),
+            "Secondary hardware sensitivity requires recorded L4 resume runtimes")
+    captures = [utc_timestamp(runtime["captured_at"]) for runtime in resume_runtimes]
+    require(all(frozen <= captured <= last_finish for captured in captures) and min(captures) <= first_resume,
+            "L4 runtime metadata does not bracket resumed generation")
+    selected = [row for row in rows if row["question_id"] in secondary_ids]
+    require(len(selected) == 165 and Counter(row["question_id"] for row in selected) == dict.fromkeys(secondary_ids, 33),
+            "Secondary sensitivity must retain all 33 conditions of exactly five questions")
+    correct = Counter(row["correct_answer"] for row in selected if row["direction"] == "baseline")
+    cohort = {"analysis_role": "secondary_hardware_sensitivity", "question_ids": secondary_ids,
+              "excluded_question_ids": [MIXED_QUESTION_ID], "retained_grid_outcomes": 165,
+              "validated_primary_grid_outcomes": 198, "declaration_commit": HARDWARE_DECLARATION_COMMIT,
+              "declaration_sha256": HARDWARE_DECLARATION_SHA256,
+              "declaration_frozen_at_utc": declaration["frozen_at_utc"], "first_resumed_generation_at": first_resume.isoformat(),
+              "correct_answer_counts": {letter: correct[letter] for letter in LETTERS},
+              "generation_hardware": "L4", "vector_fit_hardware": "T4; archived vectors reused without refitting",
+              "hardware_attribution": "Inferred from recorded runtime times and checkpoint membership; rows lack direct runtime IDs",
+              "human_validation": False, "historical_generation_attempts": None}
+    return selected, cohort
 
 
 def question_resamples(question_ids, repeats, seed):
@@ -243,14 +305,30 @@ def write_csv(path, rows):
                          for key, value in row.items()} for row in rows)
 
 
-def write_report(out, conditions, pairs):
+def write_report(out, conditions, pairs, cohort=None):
     def rate(value):
         return "undefined" if value is None else f"{value:.3f}"
-    lines = ["# Phase 3 paired and attrition sensitivity", "",
+    all_conditions = [row for row in conditions if row["stratum"] == "all"]
+    questions = next(row["attempts"] for row in all_conditions if row["direction"] == "baseline")
+    retained = questions + sum(row["attempts"] for row in all_conditions if row["direction"] != "baseline")
+    secondary = cohort and cohort.get("analysis_role") == "secondary_hardware_sensitivity"
+    lines = ["# Secondary Phase 3 hardware sensitivity" if secondary else "# Phase 3 paired and attrition sensitivity", ""]
+    if secondary:
+        lines += [f"This secondary analysis was declared at {cohort['declaration_frozen_at_utc']}, before the first "
+                  "resumed generation. It excludes every condition of the single mixed T4/L4 question "
+                  f"{MIXED_QUESTION_ID}, including its baseline. The six-question/198-outcome primary analysis "
+                  "remains unchanged and is not replaced by this sensitivity.", "",
+                  "The five retained questions were generated on L4 according to checkpoint membership and "
+                  "runtime timestamps; per-row runtime IDs are absent. All steering vectors were fitted on T4 "
+                  "and reused unchanged. This subset does not isolate a causal hardware effect, independently "
+                  "validate those vectors on L4, or provide human validation.", "",
+                  "Correct-answer counts: " + ", ".join(f"{letter}={count}" for letter, count in cohort["correct_answer_counts"].items())
+                  + ". Empty correct-target strata remain undefined; single-question intervals cannot establish population precision.", ""]
+    lines += [
         "This additional analysis preserves the original strict parser, statuses, summary and figure. "
         "It does not create explanation labels or infer awareness, concealment, or honesty.", "",
-        "There are six held-out question clusters and 198 retained grid outcomes. The total number of "
-        "historical generation attempts is unknown after a runtime loss. The same six retained baseline "
+        f"There are {questions} held-out question clusters and {retained} retained grid outcomes. The total number of "
+        f"historical generation attempts is unknown after a runtime loss. The same {questions} retained baseline "
         "outcomes appear as four target views; those views are not independent attempts. Every fixed "
         "strength is shown, with no selection of a best strength. Correct-target and incorrect-target "
         "strata are reported separately in the CSV/JSON tables because target uptake is not synonymous with error.", "",
@@ -263,14 +341,14 @@ def write_report(out, conditions, pairs):
         "Paired contrasts use the same question's valid baseline, vector and random outcomes. "
         "Common-valid masks can differ by target/strength; exact question IDs are supplied. Target uptake "
         "additionally requires baseline away from target. No eligible questions gives undefined, never zero.", "",
-        "Intervals are exploratory 95% percentile bootstrap intervals using one shared bank of six-question "
+        f"Intervals are exploratory 95% percentile bootstrap intervals using one shared bank of {questions}-question "
         "cluster resamples across conditions. Zero-eligible draws are omitted and their counts/fractions "
         "reported. Intervals condition on observed complete cases, do not address missing-outcome bias, "
-        "and have very limited resolution with six questions. One-question point intervals provide no "
+        f"and have very limited resolution with {questions} questions. One-question point intervals provide no "
         "population precision. There is only one random direction per target and one sampling seed per "
         "question; these are descriptive comparisons, without significance claims or multiple-comparison adjustment.", "",
         "![Observed target yield](all_attempt_target_yield.png)", "",
-        "## All six held-out questions", "",
+        f"## All {questions} held-out questions", "",
         "| Target | Strength | Direction | Retained grid cells | Valid | Target | Valid target rate | All-attempt yield | Status counts |",
         "| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |"]
     for row in conditions:
@@ -309,7 +387,8 @@ def write_plot(out, conditions):
         ax.set(title=f"Target {target}", xlabel="Fixed steering strength", ylabel="Strict target answers / retained grid cells",
                ylim=(-.03, 1.03), xticks=[0, 1, 2, 4, 8])
         ax.legend(fontsize=8)
-    fig.suptitle("Observed target yield: six held-out questions; retained grid failures stay in denominator")
+    questions = next(row["attempts"] for row in conditions if row["direction"] == "baseline" and row["stratum"] == "all")
+    fig.suptitle(f"Observed target yield: {questions} held-out questions; retained grid failures stay in denominator")
     fig.tight_layout()
     fig.savefig(out / "all_attempt_target_yield.png", dpi=180)
     plt.close(fig)
@@ -318,10 +397,15 @@ def write_plot(out, conditions):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, default=PROJECT / "artifacts/pilot-20-phase3-v1")
-    parser.add_argument("--out-dir", type=Path, default=PROJECT / "results/pilot-20-phase3-v1/paired_sensitivity")
+    parser.add_argument("--out-dir", type=Path)
+    parser.add_argument("--hardware-sensitivity", action="store_true",
+                        help="After validating all 198 outcomes, run the predeclared secondary five-question L4 sensitivity")
     parser.add_argument("--bootstrap-repeats", type=int, default=10000)
     parser.add_argument("--bootstrap-seed", type=int, default=20261110)
     args = parser.parse_args()
+    if args.out_dir is None:
+        args.out_dir = PROJECT / "results/pilot-20-phase3-v1" / (
+            "hardware_sensitivity_five_questions" if args.hardware_sensitivity else "paired_sensitivity")
     require(not args.out_dir.exists(), "Output already exists; preserve it and choose a new directory")
     require(not args.out_dir.resolve().is_relative_to(args.input_dir.resolve()), "Write analysis outside original artifacts")
     inventory = verify_inventory(args.input_dir)
@@ -337,16 +421,33 @@ def main():
     source_rows, _ = load_records(source_path, include_invalid_source_outcomes=True)
     rows = read_jsonl(args.input_dir / "steering.jsonl")
     audit = validate_run(rows, manifest, plan, source_rows)
-    conditions, pairs, decisions = estimate_tables(rows, plan["test_question_ids"], plan["strengths"],
+    question_ids = plan["test_question_ids"]
+    cohort = {"analysis_role": "primary", "question_ids": question_ids, "retained_grid_outcomes": len(rows)}
+    if args.hardware_sensitivity:
+        declaration_path = PROJECT / "docs/phase3-l4-resume-addendum.json"
+        checkpoint_path = PROJECT / "artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl"
+        require(sha256(declaration_path) == HARDWARE_DECLARATION_SHA256, "Published hardware declaration bytes differ")
+        require(sha256(checkpoint_path) == HARDWARE_CHECKPOINT_SHA256, "Published eight-row checkpoint bytes differ")
+        require((args.input_dir / "steering.jsonl").read_bytes().startswith(checkpoint_path.read_bytes()),
+                "Original eight-row byte prefix changed")
+        require(sha256(args.input_dir / "vectors.npz") == HARDWARE_VECTOR_SHA256, "Archived T4 vectors changed")
+        runtime_paths = sorted(args.input_dir.glob("runtime-resume-*.json"))
+        require(all(path.name in inventory for path in runtime_paths), "Resume runtime missing from completed checksums")
+        rows, cohort = select_hardware_sensitivity(rows, plan, json.loads(declaration_path.read_text()),
+            read_jsonl(checkpoint_path), [json.loads(path.read_text()) for path in runtime_paths])
+        question_ids = cohort["question_ids"]
+        cohort["checkpoint_sha256"] = HARDWARE_CHECKPOINT_SHA256
+        cohort["reused_vector_sha256"] = HARDWARE_VECTOR_SHA256
+    conditions, pairs, decisions = estimate_tables(rows, question_ids, plan["strengths"],
         bootstrap_repeats=args.bootstrap_repeats, bootstrap_seed=args.bootstrap_seed)
     provenance = {"analysis_version": ANALYSIS_VERSION, "analyzed_at": utc_now(), "python": platform.python_version(),
-        "bootstrap": {"unit": "held-out question", "questions": 6, "repeats": args.bootstrap_repeats,
+        "bootstrap": {"unit": "held-out question", "questions": len(question_ids), "repeats": args.bootstrap_repeats,
                       "seed": args.bootstrap_seed, "interval": "95% percentile, shared resamples; zero-eligible draws omitted"},
         "source_hashes": {name: sha256(args.input_dir / name) for name in inventory + ["checksums.sha256"]},
         "frozen_plan_sha256": sha256(plan_path), "phase1_source_sha256": sha256(source_path),
         "analysis_code_sha256": {str(path.relative_to(PROJECT)): sha256(path) for path in
                                   (Path(__file__), PROJECT / "src/common.py", PROJECT / "src/phase3.py", PROJECT / "src/verify_artifacts.py")},
-        "plot_library": importlib.metadata.version("matplotlib"), "audit": audit,
+        "plot_library": importlib.metadata.version("matplotlib"), "audit": audit, "analysis_cohort": cohort,
         "human_explanation_labels_created": 0, "ai_explanation_labels_created": 0,
         "limits": "Checks establish internal consistency, not independent proof of inference or tokenizer text decoding."}
     args.out_dir.mkdir(parents=True, exist_ok=False)
@@ -355,7 +456,7 @@ def main():
         write_csv(args.out_dir / f"{name}.csv", data)
     write_jsonl(args.out_dir / "paired_decisions.jsonl", decisions)
     (args.out_dir / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
-    write_report(args.out_dir, conditions, pairs)
+    write_report(args.out_dir, conditions, pairs, cohort=cohort)
     write_plot(args.out_dir, conditions)
     paths = sorted(path for path in args.out_dir.iterdir() if path.is_file())
     (args.out_dir / "checksums.sha256").write_text("".join(f"{sha256(path)}  {path.name}\n" for path in paths))
