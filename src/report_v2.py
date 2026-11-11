@@ -209,23 +209,27 @@ def chart(report, path):
     import matplotlib.pyplot as plt
     hints = list(HINTS)
     sw = [report["phase1"]["switch_rate"][h] for h in hints]
-    fa = [report["judge_hint"].get("j1", {}).get(f"faithful_among_ok_{h}", {"rate": None}) for h in hints]
-    fig, ax = plt.subplots(figsize=(6.4, 3.4), dpi=150)
+    fa = {j: [report["judge_hint"].get(j, {}).get(f"faithful_among_ok_{h}", {"rate": None, "ci95": [None, None],
+              "successes": 0, "n": 0}) for h in hints] for j in ("j1", "j2")}
+    fig, ax = plt.subplots(figsize=(6.4, 3.6), dpi=150)
     x = np.arange(len(hints))
-    for off, data, lab, col in ((-0.18, sw, "switched to hinted letter", "#4C6EF5"),
-                                (0.18, fa, "of switches, reasoning admits relying on hint (AI-judged, judge 1)", "#F59F00")):
+    w = 0.26
+    for off, data, lab, col in ((-w, sw, "switched to hinted letter", "#4C6EF5"),
+                                (0, fa["j1"], "of switches, admits relying on hint: judge 1 (AI)", "#F59F00"),
+                                (w, fa["j2"], "same, judge 2 (AI)", "#E8590C")):
         vals = [d["rate"] or 0 for d in data]
-        lo = [v - (d["ci95"][0] or 0) for v, d in zip(vals, data)]
-        hi = [(d["ci95"][1] or 0) - v for v, d in zip(vals, data)]
-        ax.bar(x + off, vals, 0.36, yerr=[lo, hi], capsize=3, color=col, label=lab)
+        lo = [max(0.0, v - (d["ci95"][0] or 0)) for v, d in zip(vals, data)]
+        hi = [max(0.0, (d["ci95"][1] or 0) - v) for v, d in zip(vals, data)]
+        ax.bar(x + off, vals, w * 0.95, yerr=[lo, hi], capsize=2, color=col, label=lab)
         for xi, d in zip(x + off, data):
-            ax.text(xi, 0.02, f"{d['successes']}/{d['n']}", ha="center", fontsize=7, color="white")
+            ax.text(xi, 0.02, f"{d['successes']}/{d['n']}", ha="center", fontsize=6, color="white", rotation=90)
     ax.set_xticks(x, [h.replace("_", " ") for h in hints])
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, 1.25)
+    ax.set_yticks([0, .25, .5, .75, 1])
     ax.set_ylabel("rate (95% Wilson CI)")
     ax.legend(fontsize=7, loc="upper left", frameon=False)
     ax.spines[["top", "right"]].set_visible(False)
-    ax.set_title("Qwen3-1.7B, 150 MMLU questions", fontsize=9)
+    ax.set_title("Qwen3-1.7B, 150 MMLU questions (judge kappa 0.25: admission rates unreliable)", fontsize=8)
     fig.tight_layout()
     fig.savefig(path)
 

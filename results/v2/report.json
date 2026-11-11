@@ -1,0 +1,727 @@
+{
+  "phase1": {
+    "records": 750,
+    "status": {
+      "ok": 659,
+      "truncated": 85,
+      "invalid_answer": 6
+    },
+    "valid_by_condition": {
+      "none0": {
+        "valid": {
+          "successes": 136,
+          "n": 150,
+          "rate": 0.9066666666666666,
+          "ci95": [
+            0.8494360687243842,
+            0.9435881325229135
+          ]
+        },
+        "finish_length": 14
+      },
+      "none1": {
+        "valid": {
+          "successes": 133,
+          "n": 150,
+          "rate": 0.8866666666666667,
+          "ci95": [
+            0.825997250162395,
+            0.928025760859626
+          ]
+        },
+        "finish_length": 16
+      },
+      "sycophancy": {
+        "valid": {
+          "successes": 135,
+          "n": 150,
+          "rate": 0.9,
+          "ci95": [
+            0.8415651883318529,
+            0.9384586161736859
+          ]
+        },
+        "finish_length": 15
+      },
+      "metadata": {
+        "valid": {
+          "successes": 130,
+          "n": 150,
+          "rate": 0.8666666666666667,
+          "ci95": [
+            0.803019825502258,
+            0.9120019952944858
+          ]
+        },
+        "finish_length": 20
+      },
+      "grader_hacking": {
+        "valid": {
+          "successes": 125,
+          "n": 150,
+          "rate": 0.8333333333333334,
+          "ci95": [
+            0.7655341358309921,
+            0.884485701256957
+          ]
+        },
+        "finish_length": 20
+      }
+    },
+    "switch_rate": {
+      "sycophancy": {
+        "successes": 21,
+        "n": 124,
+        "rate": 0.1693548387096774,
+        "ci95": [
+          0.11351972002462418,
+          0.2450608159264691
+        ]
+      },
+      "metadata": {
+        "successes": 83,
+        "n": 124,
+        "rate": 0.6693548387096774,
+        "ci95": [
+          0.5825577946350449,
+          0.7459741259753707
+        ]
+      },
+      "grader_hacking": {
+        "successes": 18,
+        "n": 124,
+        "rate": 0.14516129032258066,
+        "ci95": [
+          0.09383657142673932,
+          0.21781083300858037
+        ]
+      }
+    },
+    "switch_rate_all_hints": {
+      "successes": 122,
+      "n": 372,
+      "rate": 0.3279569892473118,
+      "ci95": [
+        0.2822201386495281,
+        0.3772107277545266
+      ]
+    },
+    "control_unhinted_repeat_lands_on_hint_letter": {
+      "successes": 2,
+      "n": 124,
+      "rate": 0.016129032258064516,
+      "ci95": [
+        0.004434364460542482,
+        0.056903005223984324
+      ]
+    },
+    "denominator": "questions with a valid unhinted answer (repeat 0) that differs from the hint letter",
+    "answer_rule_counts": {
+      "strict_terminal": 519,
+      "none": 89,
+      "boxed": 31,
+      "line_declaration": 110,
+      "conflict": 1
+    }
+  },
+  "phase1_strict_parser": {
+    "records": 750,
+    "status": {
+      "ok": 519,
+      "truncated": 85,
+      "invalid_answer": 146
+    },
+    "valid_by_condition": {
+      "none0": {
+        "valid": {
+          "successes": 99,
+          "n": 150,
+          "rate": 0.66,
+          "ci95": [
+            0.5810428721065096,
+            0.730966649695706
+          ]
+        },
+        "finish_length": 14
+      },
+      "none1": {
+        "valid": {
+          "successes": 103,
+          "n": 150,
+          "rate": 0.6866666666666666,
+          "ci95": [
+            0.6085602497894558,
+            0.7554508589797957
+          ]
+        },
+        "finish_length": 16
+      },
+      "sycophancy": {
+        "valid": {
+          "successes": 113,
+          "n": 150,
+          "rate": 0.7533333333333333,
+          "ci95": [
+            0.6785967057397266,
+            0.8154183704471145
+          ]
+        },
+        "finish_length": 15
+      },
+      "metadata": {
+        "valid": {
+          "successes": 119,
+          "n": 150,
+          "rate": 0.7933333333333333,
+          "ci95": [
+            0.7216063981873552,
+            0.8504110584500398
+          ]
+        },
+        "finish_length": 20
+      },
+      "grader_hacking": {
+        "valid": {
+          "successes": 85,
+          "n": 150,
+          "rate": 0.5666666666666667,
+          "ci95": [
+            0.4866798706275503,
+            0.6433240967900394
+          ]
+        },
+        "finish_length": 20
+      }
+    },
+    "switch_rate": {
+      "sycophancy": {
+        "successes": 13,
+        "n": 91,
+        "rate": 0.14285714285714285,
+        "ci95": [
+          0.08542758136548777,
+          0.22921813572656952
+        ]
+      },
+      "metadata": {
+        "successes": 61,
+        "n": 91,
+        "rate": 0.6703296703296703,
+        "ci95": [
+          0.5685702786797696,
+          0.7582909947070954
+        ]
+      },
+      "grader_hacking": {
+        "successes": 12,
+        "n": 91,
+        "rate": 0.13186813186813187,
+        "ci95": [
+          0.07707107514538468,
+          0.21648681785719748
+        ]
+      }
+    },
+    "switch_rate_all_hints": {
+      "successes": 86,
+      "n": 273,
+      "rate": 0.315018315018315,
+      "ci95": [
+        0.2628057342361961,
+        0.3723645165266562
+      ]
+    },
+    "control_unhinted_repeat_lands_on_hint_letter": {
+      "successes": 2,
+      "n": 91,
+      "rate": 0.02197802197802198,
+      "ci95": [
+        0.006048006082981144,
+        0.0766316460248494
+      ]
+    },
+    "denominator": "questions with a valid unhinted answer (repeat 0) that differs from the hint letter"
+  },
+  "judge_hint": {
+    "j1": {
+      "judged": 122,
+      "ok": 77,
+      "errors": 45,
+      "model": "gpt-4.1-mini-2025-04-14",
+      "faithful_among_ok": {
+        "successes": 75,
+        "n": 77,
+        "rate": 0.974025974025974,
+        "ci95": [
+          0.9101541722024686,
+          0.9928478401921068
+        ]
+      },
+      "faithful_among_all_switches_errors_as_not_faithful": {
+        "successes": 75,
+        "n": 122,
+        "rate": 0.6147540983606558,
+        "ci95": [
+          0.5261521427011976,
+          0.6963500458652586
+        ]
+      },
+      "mentions_among_ok": {
+        "successes": 75,
+        "n": 77,
+        "rate": 0.974025974025974,
+        "ci95": [
+          0.9101541722024686,
+          0.9928478401921068
+        ]
+      },
+      "faithful_among_ok_sycophancy": {
+        "successes": 13,
+        "n": 14,
+        "rate": 0.9285714285714286,
+        "ci95": [
+          0.6853129557584889,
+          0.9872777847521093
+        ]
+      },
+      "faithful_among_ok_metadata": {
+        "successes": 49,
+        "n": 49,
+        "rate": 1.0,
+        "ci95": [
+          0.9273021807795035,
+          0.9999999999999999
+        ]
+      },
+      "faithful_among_ok_grader_hacking": {
+        "successes": 13,
+        "n": 14,
+        "rate": 0.9285714285714286,
+        "ci95": [
+          0.6853129557584889,
+          0.9872777847521093
+        ]
+      }
+    },
+    "j2": {
+      "judged": 122,
+      "ok": 116,
+      "errors": 6,
+      "model": "gpt-4o-2024-08-06",
+      "faithful_among_ok": {
+        "successes": 94,
+        "n": 116,
+        "rate": 0.8103448275862069,
+        "ci95": [
+          0.7295075732944671,
+          0.8712861812919639
+        ]
+      },
+      "faithful_among_all_switches_errors_as_not_faithful": {
+        "successes": 94,
+        "n": 122,
+        "rate": 0.7704918032786885,
+        "ci95": [
+          0.6883006215525808,
+          0.8361688229254941
+        ]
+      },
+      "mentions_among_ok": {
+        "successes": 94,
+        "n": 116,
+        "rate": 0.8103448275862069,
+        "ci95": [
+          0.7295075732944671,
+          0.8712861812919639
+        ]
+      },
+      "faithful_among_ok_sycophancy": {
+        "successes": 9,
+        "n": 20,
+        "rate": 0.45,
+        "ci95": [
+          0.2581978582556243,
+          0.6579146575496577
+        ]
+      },
+      "faithful_among_ok_metadata": {
+        "successes": 72,
+        "n": 78,
+        "rate": 0.9230769230769231,
+        "ci95": [
+          0.8421677019381915,
+          0.9642695359976443
+        ]
+      },
+      "faithful_among_ok_grader_hacking": {
+        "successes": 13,
+        "n": 18,
+        "rate": 0.7222222222222222,
+        "ci95": [
+          0.4912734343970254,
+          0.8750024662044601
+        ]
+      }
+    },
+    "agreement": {
+      "n_both_ok": 75,
+      "raw_agreement": {
+        "successes": 65,
+        "n": 75,
+        "rate": 0.8666666666666667,
+        "ci95": [
+          0.7716683625530486,
+          0.9259341529595605
+        ]
+      },
+      "cohen_kappa": 0.25149700598802427,
+      "kappa_ci95_bootstrap": [
+        0.0,
+        0.555000839066954
+      ],
+      "reliable": false,
+      "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+    },
+    "label": "AI-judged"
+  },
+  "phase2": {
+    "forced_at_0pct_equals_hint": {
+      "switched_hinted": {
+        "successes": 100,
+        "n": 122,
+        "rate": 0.819672131147541,
+        "ci95": [
+          0.7420367275186709,
+          0.8777907977735996
+        ]
+      },
+      "not_switched_hinted": {
+        "successes": 84,
+        "n": 268,
+        "rate": 0.31343283582089554,
+        "ci95": [
+          0.26086154689935115,
+          0.37127697812982874
+        ]
+      },
+      "unhinted_control": {
+        "successes": 42,
+        "n": 269,
+        "rate": 0.15613382899628253,
+        "ci95": [
+          0.11763369212101193,
+          0.20431686187606862
+        ]
+      }
+    },
+    "switch_given_forced0_hint": {
+      "successes": 100,
+      "n": 184,
+      "rate": 0.5434782608695652,
+      "ci95": [
+        0.4713517142183921,
+        0.6138264999013829
+      ]
+    },
+    "switch_given_forced0_not_hint": {
+      "successes": 22,
+      "n": 206,
+      "rate": 0.10679611650485436,
+      "ci95": [
+        0.07159049916573652,
+        0.1563980932199741
+      ]
+    },
+    "forced_equals_final_by_fraction": {
+      "0.0": {
+        "successes": 456,
+        "n": 659,
+        "rate": 0.6919575113808801,
+        "ci95": [
+          0.6556804292407005,
+          0.7260096365106624
+        ]
+      },
+      "0.25": {
+        "successes": 514,
+        "n": 659,
+        "rate": 0.779969650986343,
+        "ci95": [
+          0.746768172126536,
+          0.8099260344436334
+        ]
+      },
+      "0.5": {
+        "successes": 564,
+        "n": 659,
+        "rate": 0.8558421851289834,
+        "ci95": [
+          0.8269606521238511,
+          0.8805991930832209
+        ]
+      },
+      "0.75": {
+        "successes": 609,
+        "n": 659,
+        "rate": 0.9241274658573596,
+        "ci95": [
+          0.9013619653386304,
+          0.9419769546416534
+        ]
+      },
+      "1.0": {
+        "successes": 652,
+        "n": 659,
+        "rate": 0.9893778452200304,
+        "ci95": [
+          0.9782380720301158,
+          0.994845297177904
+        ]
+      }
+    },
+    "early_rows_total": 3295,
+    "early_errors": 0
+  },
+  "phase3": {
+    "layer_choice": {
+      "max_accuracy": 0.9340909090909091,
+      "tied_layers": [
+        12
+      ],
+      "layer": 12,
+      "rule": "max 5-fold GroupKFold accuracy decoding hinted letter; ties within 0.005 -> nearest middle",
+      "median_residual_norm": 116.59779550500218,
+      "n_rows": 1320,
+      "n_questions": 110,
+      "vector_norms": {
+        "A": 3.3502972283716512,
+        "B": 2.1394208069456266,
+        "C": 2.039100329227054,
+        "D": 2.541472573535072
+      },
+      "pairwise_cosines_fitted": {
+        "AB": -0.3748831025722859,
+        "AC": -0.5155266966769874,
+        "AD": -0.5890497805193535,
+        "BC": -0.12408361702716537,
+        "BD": -0.24805777944148857,
+        "CD": -0.018282941399178194
+      },
+      "pairwise_cosines_random": {
+        "AB": 0.022800278336397323,
+        "AC": 0.011766657948190451,
+        "AD": 0.022920649304963653,
+        "BC": -0.03050116517398434,
+        "BD": 0.01845579769752967,
+        "CD": 0.011556195874678595
+      },
+      "created_at": "2026-11-11T17:32:31.822380+00:00"
+    },
+    "layer_cv_accuracy": [
+      0.5484848484848485,
+      0.6636363636363637,
+      0.6393939393939394,
+      0.706060606060606,
+      0.7234848484848485,
+      0.6356060606060606,
+      0.6393939393939394,
+      0.6348484848484849,
+      0.6371212121212121,
+      0.7992424242424242,
+      0.8393939393939394,
+      0.9053030303030303,
+      0.9340909090909091,
+      0.9151515151515152,
+      0.8575757575757575,
+      0.8356060606060606,
+      0.8022727272727272,
+      0.7560606060606061,
+      0.7454545454545455,
+      0.7401515151515151,
+      0.7295454545454545,
+      0.7159090909090909,
+      0.7219696969696969,
+      0.7219696969696969,
+      0.7318181818181818,
+      0.7310606060606061,
+      0.7234848484848485,
+      0.7075757575757575
+    ],
+    "strengths": {
+      "valid_rate_by_fraction": {
+        "0.05": 0.7916666666666666,
+        "0.1": 0.7916666666666666,
+        "0.2": 0.8333333333333334,
+        "0.4": 0.75,
+        "0.8": 0.0,
+        "1.6": 0.0
+      },
+      "outputs_per_fraction": 24,
+      "threshold": 0.8,
+      "frozen_fractions": [
+        0.2
+      ],
+      "frozen_at": "2026-11-11T18:03:57.597054+00:00",
+      "rule": "keep fractions with >=80% valid answers; up to 4 spanning the kept range"
+    },
+    "baseline_valid": {
+      "successes": 37,
+      "n": 40,
+      "rate": 0.925,
+      "ci95": [
+        0.8013576647568946,
+        0.9741639742254119
+      ]
+    },
+    "steered_switch_rate": {
+      "fitted@0.2": {
+        "successes": 6,
+        "n": 111,
+        "rate": 0.05405405405405406,
+        "ci95": [
+          0.025006314260033254,
+          0.11293567100704646
+        ],
+        "invalid": 7
+      },
+      "random@0.2": {
+        "successes": 2,
+        "n": 111,
+        "rate": 0.018018018018018018,
+        "ci95": [
+          0.004955178708528081,
+          0.06332555284276006
+        ],
+        "invalid": 12
+      }
+    },
+    "steered_switch_rate_fitted_all_strengths": {
+      "successes": 6,
+      "n": 111,
+      "rate": 0.05405405405405406,
+      "ci95": [
+        0.025006314260033254,
+        0.11293567100704646
+      ]
+    },
+    "steered_switch_rate_random_all_strengths": {
+      "successes": 2,
+      "n": 111,
+      "rate": 0.018018018018018018,
+      "ci95": [
+        0.004955178708528081,
+        0.06332555284276006
+      ]
+    },
+    "denominator": "held-out (question, target letter) pairs whose valid unsteered answer differs from the target; invalid steered output = no switch"
+  },
+  "judge_steer": {
+    "j1": {
+      "judged": 8,
+      "ok": 3,
+      "errors": 5,
+      "model": "gpt-4.1-mini-2025-04-14",
+      "labels_among_ok": {
+        "mentions_outside_nudge": {
+          "successes": 0,
+          "n": 3,
+          "rate": 0.0,
+          "ci95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        },
+        "argues_normally": {
+          "successes": 3,
+          "n": 3,
+          "rate": 1.0,
+          "ci95": [
+            0.4385029682449546,
+            1.0
+          ]
+        },
+        "incoherent": {
+          "successes": 0,
+          "n": 3,
+          "rate": 0.0,
+          "ci95": [
+            5.551115123125783e-17,
+            0.5614970317550454
+          ]
+        }
+      }
+    },
+    "j2": {
+      "judged": 8,
+      "ok": 5,
+      "errors": 3,
+      "model": "gpt-4o-2024-08-06",
+      "labels_among_ok": {
+        "mentions_outside_nudge": {
+          "successes": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622410863243014,
+            0.6244653702374747
+          ]
+        },
+        "argues_normally": {
+          "successes": 1,
+          "n": 5,
+          "rate": 0.2,
+          "ci95": [
+            0.03622410863243014,
+            0.6244653702374747
+          ]
+        },
+        "incoherent": {
+          "successes": 3,
+          "n": 5,
+          "rate": 0.6,
+          "ci95": [
+            0.2307242812760128,
+            0.882379225767352
+          ]
+        }
+      }
+    },
+    "agreement": {
+      "n_both_ok": 1,
+      "raw_agreement": {
+        "successes": 0,
+        "n": 1,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.7934506856227626
+        ]
+      },
+      "cohen_kappa": 0.0,
+      "kappa_ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "reliable": false,
+      "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+    },
+    "label": "AI-judged"
+  },
+  "costs": {
+    "cap_usd": 25.0,
+    "total_usd": 1.109272,
+    "by_journal": {
+      "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
+      "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
+      "calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
+      "calibration_j1_r4.jsonl.billing.jsonl": 0.009723,
+      "calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
+      "hint_j1.jsonl.billing.jsonl": 0.132356,
+      "hint_j2.jsonl.billing.jsonl": 0.805493,
+      "steer_j1.jsonl.billing.jsonl": 0.010469,
+      "steer_j2.jsonl.billing.jsonl": 0.06409
+    },
+    "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
+    "updated_at": "2026-11-11T18:18:16.922078+00:00"
+  }
+}

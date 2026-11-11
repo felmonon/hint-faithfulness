@@ -1,6 +1,6 @@
 {
   "cap_usd": 25.0,
-  "total_usd": 1.034713,
+  "total_usd": 1.109272,
   "by_journal": {
     "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
     "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
@@ -8,8 +8,10 @@
     "calibration_j1_r4.jsonl.billing.jsonl": 0.009723,
     "calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
     "hint_j1.jsonl.billing.jsonl": 0.132356,
-    "hint_j2.jsonl.billing.jsonl": 0.805493
+    "hint_j2.jsonl.billing.jsonl": 0.805493,
+    "steer_j1.jsonl.billing.jsonl": 0.010469,
+    "steer_j2.jsonl.billing.jsonl": 0.06409
   },
   "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-  "updated_at": "2026-11-11T17:26:38.036527+00:00"
+  "updated_at": "2026-11-11T18:18:16.922078+00:00"
 }
