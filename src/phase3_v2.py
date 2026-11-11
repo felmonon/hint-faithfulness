@@ -212,15 +212,37 @@ class VLLMSteer:
             hidden = hidden + add
             return (hidden, *output[1:]) if isinstance(output, tuple) else hidden
         model.model.layers[layer].register_forward_hook(hook)
+        # vLLM's V2 GPU model runner: remember each new request's steer_idx and the
+        # InputBatch (req_ids order + query_start_loc) of the forward about to run.
+        self.steer_of, self.batch = {}, None
+        if not hasattr(self.runner, "input_batch"):
+            add, prep = self.runner.add_requests, self.runner.prepare_inputs
+
+            def add_requests(scheduler_output, *a, **k):
+                for new in scheduler_output.scheduled_new_reqs:
+                    extra = (new.sampling_params.extra_args or {}) if new.sampling_params else {}
+                    self.steer_of[new.req_id] = int(extra.get("steer_idx", 0))
+                return add(scheduler_output, *a, **k)
+
+            def prepare_inputs(*a, **k):
+                self.batch = prep(*a, **k)
+                return self.batch
+            self.runner.add_requests, self.runner.prepare_inputs = add_requests, prepare_inputs
         self.info = {"backend": "vllm", "vllm_version": vllm.__version__, "enforce_eager": True,
                      "steering": "per-request vector via forward hook (extra_args steer_idx)"}
 
     def token_index(self, n_tokens):
         r = self.runner
-        n = r.input_batch.num_reqs
-        ids = r.input_batch.req_ids[:n]
-        starts = r.query_start_loc.np[:n + 1]
-        idx = [((r.requests[i].sampling_params.extra_args or {}).get("steer_idx", 0)) for i in ids]
+        if hasattr(r, "input_batch"):  # V1 GPU model runner
+            n = r.input_batch.num_reqs
+            ids = r.input_batch.req_ids[:n]
+            starts = r.query_start_loc.np[:n + 1]
+            idx = [(r.requests[i].sampling_params.extra_args or {}).get("steer_idx", 0) for i in ids]
+        else:  # V2 GPU model runner
+            b = self.batch
+            ids = b.req_ids[:b.num_reqs]
+            starts = b.query_start_loc_np[:b.num_reqs + 1]
+            idx = [self.steer_of.get(i, 0) for i in ids]
         tok = np.repeat(np.asarray(idx, dtype=np.int64), np.diff(starts))
         if len(tok) < n_tokens:  # padding tokens get no steering
             tok = np.concatenate([tok, np.zeros(n_tokens - len(tok), dtype=np.int64)])
