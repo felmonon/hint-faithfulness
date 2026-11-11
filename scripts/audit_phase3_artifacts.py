@@ -7,6 +7,8 @@ and timestamp-based runtime lineage. Writes a separate AI audit, never raw artif
 from __future__ import annotations
 
 import argparse
+import base64
+import gzip
 from collections import Counter
 from datetime import datetime, timedelta
 import hashlib
@@ -38,6 +40,11 @@ CHECKPOINT_HASHES = {
     "execution.log": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9",
 }
 CHECKPOINT_PROVENANCE_SHA256 = "f012a8d91fc57206913e76a56416a3583a03f0053a691fcaed8e222095fd20a2"
+SECOND_CHECKPOINT_HASHES = {
+    "steering.jsonl": "54f5e311d8e6ceed08629f4bb39f4f0de3b5e7b6a337f74cef2e7812fed73507",
+    "snapshot.json": "92adcb34894143f73f63f74965862d1c895dd7041b2f81e568fbb86c1991b81a",
+    "acquisition-provenance.json": "f7aaab4e4a3290f511034a87f115dacf61135ed4058bf7d3812d55dea22ba57f",
+}
 CODE_HASHES = {
     "src/phase3.py": "57bb529ac9096f8892d3da6253d43b728d7fb562b1c1565a64c5b0691a28fcdc",
     "src/local_model.py": "b7a549ace225611660eb0c27ca03ba12cb1d4a180407b7138c1fd223fdb68766",
@@ -51,7 +58,7 @@ FINAL_REQUIRED = set(CHECKPOINT_HASHES) | {
 CHECKLIST = [
     "Verify completed inventory and seven archived checkpoint hashes.",
     "Bind source, manifest, plan, vectors and frozen scientific code to the checkpoint.",
-    "Require exact eight-row byte prefix and all 198 planned IDs in original order.",
+    "Require exact eight-row and 28-row checkpoint byte prefixes and all 198 planned IDs in original order.",
     "Validate every grid row, seed, source link, strict parser, token boundary and termination.",
     "Independently retokenize all source prompts and decode all generated traces using cached pinned files.",
     "Verify finite float32 vectors, training counts, norm-matched seeded random controls.",
@@ -124,6 +131,97 @@ def check_code(runtime_commit, project=PROJECT):
         require(hashlib.sha256(raw).hexdigest() == expected, f"Runtime commit changed scientific code: {name}")
         checked[name] = expected
     return checked
+
+
+def snapshot_payloads(snapshot, acquisition):
+    require(snapshot.get("schema") == "phase3-recovery-snapshot-v1"
+            and snapshot.get("retained_records") == 28 and snapshot.get("original_retained_records") == 8
+            and snapshot.get("complete_verified") is False, "Second snapshot metadata differs")
+    require(len(snapshot.get("files", {})) == 20, "Second snapshot must preserve all 20 payloads")
+    require(acquisition.get("files") == {name: item["sha256"] for name, item in snapshot["files"].items()},
+            "Second acquisition inventory differs from snapshot")
+    require(acquisition.get("retained_records") == 28 and acquisition.get("complete_verified") is False
+            and acquisition.get("snapshot_captured_at_utc") == snapshot["captured_at_utc"],
+            "Second acquisition timing/count differs")
+    require(utc(snapshot["captured_at_utc"]) <= utc(acquisition["acquired_at_utc"]), "Acquisition predates snapshot")
+    payloads = {}
+    for name, item in snapshot["files"].items():
+        relative = Path(name)
+        require(not relative.is_absolute() and ".." not in relative.parts, "Unsafe snapshot payload path")
+        require(item.get("encoding") == "gzip+base64", "Unknown snapshot payload encoding")
+        compressed = base64.b64decode(item["base64"], validate=True)
+        require(len(compressed) == item["compressed_bytes"]
+                and hashlib.sha256(compressed).hexdigest() == item["compressed_sha256"], "Compressed payload differs")
+        raw = gzip.decompress(compressed)
+        require(len(raw) == item["bytes"] and hashlib.sha256(raw).hexdigest() == item["sha256"], "Snapshot raw bytes differ")
+        payloads[name] = raw
+    return payloads
+
+
+def audit_second_checkpoint(root, checkpoint, second_checkpoint, rows, lineage, metadata_dirs, project=PROJECT):
+    observed = {}
+    for name, expected in SECOND_CHECKPOINT_HASHES.items():
+        path = second_checkpoint / name
+        require(path.is_file() and not path.is_symlink() and sha(path) == expected, f"Second archived checkpoint differs: {name}")
+        observed[path] = expected
+    snapshot = json.loads((second_checkpoint / "snapshot.json").read_text())
+    acquisition = json.loads((second_checkpoint / "acquisition-provenance.json").read_text())
+    payloads = snapshot_payloads(snapshot, acquisition)
+    prefix = (second_checkpoint / "steering.jsonl").read_bytes()
+    current_key = "artifacts/pilot-20-phase3-v1/steering.jsonl"
+    require(payloads.get(current_key) == prefix, "Second raw JSONL differs from its exact snapshot bytes")
+    original_prefix = (checkpoint / "steering.jsonl").read_bytes()
+    require(prefix.endswith(b"\n") and prefix.startswith(original_prefix), "Second checkpoint lost the original eight-row byte prefix")
+    retained = [json.loads(line) for line in prefix.splitlines()]
+    require(len(retained) == 28 and retained == rows[:28]
+            and (root / "steering.jsonl").read_bytes().startswith(prefix), "Final source changed the retained 28-row byte prefix")
+    require(utc(rows[27]["finished_at"]) <= utc(snapshot["captured_at_utc"])
+            and utc(rows[28]["started_at"]) >= utc(acquisition["acquired_at_utc"]),
+            "Retained rows do not respect the second acquisition boundary")
+    old_runtime_names, old_metadata = [], set()
+    preserved = []
+    for name, raw in payloads.items():
+        relative = Path(name);parts = relative.parts
+        if parts[:2] == ("artifacts", "pilot-20-phase3-v1"):
+            path = root.joinpath(*parts[2:])
+            if path.name.startswith("runtime-resume-"):
+                old_runtime_names.append(path.name)
+        elif parts[:2] == ("artifacts", "pilot-20-phase3-checkpoint-0430"):
+            path = checkpoint.joinpath(*parts[2:])
+        elif len(parts) == 3 and parts[0] == "artifacts" and parts[1].startswith("pilot-20-phase3-resume-notebook-"):
+            matches = [directory for directory in metadata_dirs if directory.name == parts[1]]
+            require(len(matches) == 1, "Preserved first-L4 notebook metadata directory is missing or ambiguous")
+            path = matches[0] / parts[2];old_metadata.add(parts[1])
+        elif parts[0] == "docs":
+            path = project / relative
+        else:
+            raise ValueError(f"Unexpected frozen snapshot path: {name}")
+        require(path.is_file() and not path.is_symlink(), f"Preserved snapshot payload missing: {name}")
+        if name == current_key:
+            require(path.read_bytes().startswith(raw), "Current source does not extend the exact 28-row snapshot")
+        else:
+            require(path.read_bytes() == raw, f"Preserved snapshot payload changed: {name}")
+        observed[path] = sha(path)
+        preserved.append({"snapshot_path": name, "final_path": artifact_label(path, project),
+                          "snapshot_sha256": hashlib.sha256(raw).hexdigest(),
+                          "preservation": "exact_byte_prefix" if name == current_key else "exact_bytes"})
+    require(len(old_runtime_names) == 1 and len(old_metadata) == 1, "Expected one first-L4 runtime/setup/log segment")
+    segments = {segment["runtime_file"]: segment for segment in lineage["segments"]}
+    first_name = old_runtime_names[0]
+    require(first_name in segments and segments[first_name]["record_ids"] == [row["record_id"] for row in rows[8:28]],
+            "First L4 runtime must retain exactly the preserved 20 records")
+    later = [segment for name, segment in segments.items() if name != first_name]
+    require(sum(segment["retained_records"] for segment in later) == 170,
+            "Expected 170 retained outcomes after the second interruption")
+    require(all(utc(segment["captured_at"]) >= utc(acquisition["acquired_at_utc"])
+                for segment in later if segment["retained_records"]), "A later retained runtime predates the second acquisition")
+    return {"archived_checkpoint": artifact_label(second_checkpoint, project),
+            "snapshot_captured_at_utc": snapshot["captured_at_utc"], "acquired_at_utc": acquisition["acquired_at_utc"],
+            "archive_sha256": SECOND_CHECKPOINT_HASHES, "all20_snapshot_payloads_verified": True,
+            "exact28_row_byte_prefix_unchanged": True, "first_l4_runtime_file": first_name,
+            "retained_segment_counts": {"original_t4": 8, "first_l4": 20, "later_l4": 170},
+            "preserved_payloads": preserved,
+            "historical_attempts": "Unknown after both interruptions; the retained 8 + 20 + 170 outcomes do not enumerate all calls."}, observed
 
 
 def audit_vectors(path, metadata, plan):
@@ -282,7 +380,7 @@ def audit_runtime_lineage(rows, original, resumed, checkpoint_at):
             "segments": [dict(segment, retained_records=len(segment["record_ids"])) for segment in segments.values()],
             "historical_total_attempts": None,
             "attribution": "Inferred from ordered timestamps and preserved metadata; rows do not directly attest runtime identity.",
-            "unknown_attempts": "Original unarchived/in-flight attempts may exist; retained counts do not bound total historical calls."}
+            "unknown_attempts": "Unarchived/in-flight attempts from both the interrupted original T4 run and first L4 continuation may exist; retained counts do not bound total historical calls."}
 
 
 def audit_hardware_addendum(addendum, rows, manifest, lineage):
@@ -312,7 +410,7 @@ def audit_hardware_addendum(addendum, rows, manifest, lineage):
             "note": "Subset membership only; primary outcomes retained and no new effect estimate computed."}
 
 
-def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_addendum=None):
+def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_addendum=None, second_checkpoint=None):
     inventory = verify_inventory(root)
     require(FINAL_REQUIRED <= set(inventory), "Completed inventory omits a required result or explanation-summary file")
     resumed_paths = sorted(root.glob("runtime-resume-*.json"))
@@ -355,6 +453,11 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
     tokenizer, tokenizer_provenance = load_cached_tokenizer(plan["model"], plan["model_revision"])
     token_text = audit_token_text(source, rows, tokenizer, tokenizer_provenance["model_vocab_size"])
     metadata_dirs = metadata_dirs if metadata_dirs is not None else sorted(root.parent.glob("pilot-20-phase3-resume-notebook-*"))
+    second_checkpoint = second_checkpoint or project / "artifacts/pilot-20-phase3-checkpoint-1110"
+    recovery, recovery_observed = audit_second_checkpoint(root, checkpoint, second_checkpoint, rows, lineage, metadata_dirs, project)
+    for path, expected in recovery_observed.items():
+        require(path not in observed or observed[path] == expected, "An input changed before second-checkpoint verification")
+        observed[path] = expected
     notebook_metadata = []
     for directory in metadata_dirs:
         require(directory.is_dir() and not directory.is_symlink(), "Notebook metadata path is not a regular directory")
@@ -370,6 +473,7 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
                     and setup_data.get("hardware_addendum") == hardware["declaration"],
                     "Notebook setup does not bind the frozen hardware addendum")
         for path in (setup, log):
+            require(path not in observed or observed[path] == sha(path), "Notebook evidence changed during auditing")
             observed[path] = sha(path)
         notebook_metadata.append({"directory": artifact_label(directory, project), "setup_sha256": sha(setup), "resume_log_sha256": sha(log),
                                   "notebook_checkout_commit": setup_data.get("checkpoint_commit"),
@@ -386,7 +490,7 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
     if token_text["substantive_preamble_discarded_by_frozen_adapter_ids"]:
         warnings.append("Some generated text precedes an opening thinking marker and is omitted by the frozen adapter; record IDs are listed.")
     if hardware is not None:
-        warnings.append("Eight preserved T4 outcomes and 190 resumed L4 outcomes form the primary dataset; only the first question spans both GPUs. The five-question sensitivity was declared before retained resumed generation.")
+        warnings.append("Eight preserved T4 outcomes, 20 first-L4 outcomes and 170 later-L4 outcomes form the primary dataset; only the first question spans both GPUs. The five-question sensitivity was declared before retained resumed generation.")
     warnings.extend(f"Runtime environment differs from original in {segment['runtime_file']}; see explicit hardware/software deltas."
                     for segment in lineage["segments"] if segment["changes_from_original"])
     warnings.extend(f"Runtime capture {segment['runtime_file']} has no retained rows; preserve as a zero-row setup event."
@@ -394,14 +498,15 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
     return {"status": "passed_with_documented_limits", "reviewer": "Codex AI artifact audit; not human validation",
             "audited_at_utc": utc_now(), "checklist": CHECKLIST, "inventory_files": len(inventory),
             "input_sha256": {artifact_label(path, project): value for path, value in observed.items()}, "grid": grid,
-            "original_eight_row_byte_prefix_unchanged": True, "scientific_code_sha256": CODE_HASHES,
+            "original_eight_row_byte_prefix_unchanged": True, "retained_twenty_eight_row_byte_prefix_unchanged": True,
+            "second_recovery_checkpoint": recovery, "scientific_code_sha256": CODE_HASHES,
             "vectors": vectors, "tokenizer_provenance": tokenizer_provenance, "token_text": token_text,
             "runtime_lineage": lineage, "hardware_addendum": hardware, "notebook_metadata": notebook_metadata, "warnings": warnings,
             "raw_artifacts_unchanged": True, "new_model_inference": False, "human_validation": False,
             "audit_environment": {"python": platform.python_version(), "platform": platform.platform(),
                 **{name: importlib.metadata.version(name) for name in ("numpy", "transformers", "tokenizers")}},
             "limits": ["Consistency and hashes do not independently prove that inference occurred.",
-                       "Unknown original unarchived attempts preclude an exact total historical attempt count.",
+                       "Unknown unarchived attempts after both interruptions preclude an exact total historical attempt count.",
                        "Runtime assignment is inferred from timestamps; package/driver differences are disclosed, not erased.",
                        "No new model forward pass, vector refit, explanation labeling, or statistical claim is performed.",
                        "Original distribution metadata lists two NumPy versions; it does not identify the imported version by itself."]}
@@ -415,7 +520,7 @@ def write_report(out, report):
     if "error" in report:
         lines += [f"Audit incomplete: {report['error']}", "", "No successful full-run audit is claimed."]
     else:
-        lines += ["All 198 retained grid outcomes, the exact original eight-row byte prefix, immutable checkpoint files, "
+        lines += ["All 198 retained grid outcomes, the exact eight-row and 28-row byte prefixes, immutable checkpoint files, "
                   "and frozen scientific source passed verification. Every saved response was independently decoded using "
                   "the cached pinned tokenizer. Historical total attempts remain unknown.", "",
                   f"Checked {report['token_text']['source_prompt_records']} source prompts and "
@@ -431,6 +536,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", type=Path, default=PROJECT / "artifacts/pilot-20-phase3-v1")
     parser.add_argument("--checkpoint-dir", type=Path, default=PROJECT / "artifacts/pilot-20-phase3-checkpoint-0430")
+    parser.add_argument("--second-checkpoint-dir", type=Path, default=PROJECT / "artifacts/pilot-20-phase3-checkpoint-1110")
     parser.add_argument("--metadata-dir", action="append", type=Path, help="Notebook metadata directory; otherwise auto-discover siblings")
     parser.add_argument("--out-dir", type=Path, default=PROJECT / "results/pilot-20-phase3-v1/artifact_audit")
     parser.add_argument("--hardware-addendum", type=Path, help="Frozen JSON declaration for an L4 continuation and mixed-question sensitivity")
@@ -442,9 +548,10 @@ def main():
     require(not args.out_dir.exists(), "Audit output already exists; preserve it and choose another directory")
     require(not args.out_dir.resolve().is_relative_to((PROJECT / "artifacts").resolve())
             and not args.out_dir.resolve().is_relative_to(args.input_dir.resolve())
-            and not args.out_dir.resolve().is_relative_to(args.checkpoint_dir.resolve()), "Write the audit outside raw artifacts")
+            and not args.out_dir.resolve().is_relative_to(args.checkpoint_dir.resolve())
+            and not args.out_dir.resolve().is_relative_to(args.second_checkpoint_dir.resolve()), "Write the audit outside raw artifacts")
     try:
-        report = run_audit(args.input_dir, args.checkpoint_dir, args.metadata_dir, hardware_addendum=args.hardware_addendum)
+        report = run_audit(args.input_dir, args.checkpoint_dir, args.metadata_dir, hardware_addendum=args.hardware_addendum, second_checkpoint=args.second_checkpoint_dir)
     except Exception as error:
         report = {"status": "incomplete_or_failed", "audited_at_utc": utc_now(), "error": f"{type(error).__name__}: {error}",
                   "new_model_inference": False, "human_validation": False, "checklist": CHECKLIST}

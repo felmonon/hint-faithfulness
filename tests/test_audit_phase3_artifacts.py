@@ -1,5 +1,7 @@
 """Synthetic failure tests for the offline audit; no model or network access."""
 from copy import deepcopy
+import base64
+import gzip
 from datetime import datetime, timedelta, timezone
 import hashlib
 import json
@@ -11,7 +13,7 @@ from unittest.mock import patch
 import numpy as np
 from scripts.audit_phase3_artifacts import (audit_prefix, audit_runtime_lineage, audit_token_text,
     audit_vectors, check_immutable, load_cached_tokenizer, ordered_ids, runtime_changes, audit_hardware_addendum,
-    ORIGINAL_COMMIT, CHECKPOINT_COMMIT)
+    ORIGINAL_COMMIT, CHECKPOINT_COMMIT, audit_second_checkpoint, snapshot_payloads)
 
 
 class FakeTokenizer:
@@ -208,6 +210,108 @@ class LineageTests(unittest.TestCase):
         for runtime, selected in cases:
             with self.subTest(runtime=runtime):
                 with self.assertRaises(ValueError):audit_runtime_lineage(selected, original, runtime, checkpoint)
+
+
+class SecondCheckpointTests(unittest.TestCase):
+    def fixture(self, directory):
+        project = Path(directory)
+        root = project/'artifacts/pilot-20-phase3-v1'
+        checkpoint = project/'artifacts/pilot-20-phase3-checkpoint-0430'
+        second = project/'artifacts/pilot-20-phase3-checkpoint-1110'
+        metadata = project/'artifacts/pilot-20-phase3-resume-notebook-SYNTHETIC'
+        for path in [root, checkpoint, second, metadata, project/'docs']:path.mkdir(parents=True)
+        rows = []
+        for i in range(198):
+            start = (datetime(2026,11,10,4,0,tzinfo=timezone.utc)+timedelta(minutes=i) if i<8 else
+                     datetime(2026,11,10,10,40,tzinfo=timezone.utc)+timedelta(minutes=i-8) if i<28 else
+                     datetime(2026,11,11,1,0,tzinfo=timezone.utc)+timedelta(minutes=i-28))
+            rows.append(dict(record_id=f'SYNTHETIC-ONLY-{i}',question_id=f'q{i//33}',started_at=start.isoformat(),
+                             finished_at=(start+timedelta(seconds=30)).isoformat()))
+        encode = lambda selected: ''.join(json.dumps(row)+'\n' for row in selected).encode()
+        raw8,raw28,raw198=encode(rows[:8]),encode(rows[:28]),encode(rows)
+        names=['manifest.json','plan.json','runtime.json','steering.jsonl','vector_metadata.json','vectors.npz','execution.log']
+        payloads={}
+        for folder in [checkpoint,root]:
+            for name in names:
+                raw=raw8 if name=='steering.jsonl' and folder==checkpoint else raw28 if name=='steering.jsonl' else ('SYNTHETIC '+name).encode()
+                payloads[str((folder/name).relative_to(project))]=raw
+        payloads[str((checkpoint/'checkpoint-provenance.json').relative_to(project))]=b'SYNTHETIC checkpoint provenance'
+        runtime_name='runtime-resume-SYNTHETIC-first.json'
+        payloads[str((root/runtime_name).relative_to(project))]=b'SYNTHETIC first L4 runtime'
+        for name in ['setup.json','resume-execution.log']:
+            payloads[str((metadata/name).relative_to(project))]=('SYNTHETIC old L4 '+name).encode()
+        for name in ['PHASE3_L4_RESUME_ADDENDUM.md','phase3-l4-resume-addendum.json']:
+            payloads['docs/'+name]=('SYNTHETIC '+name).encode()
+        self.assertEqual(len(payloads),20)
+        packed={}
+        for name,raw in payloads.items():
+            (project/name).write_bytes(raw)
+            compressed=gzip.compress(raw,mtime=0)
+            packed[name]=dict(encoding='gzip+base64',bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),
+                compressed_bytes=len(compressed),compressed_sha256=hashlib.sha256(compressed).hexdigest(),
+                base64=base64.b64encode(compressed).decode())
+        (root/'steering.jsonl').write_bytes(raw198)
+        snapshot=dict(schema='phase3-recovery-snapshot-v1',retained_records=28,original_retained_records=8,
+            complete_verified=False,captured_at_utc='2026-11-10T11:10:25+00:00',files=packed)
+        acquisition=dict(files={name:item['sha256'] for name,item in packed.items()},retained_records=28,
+            complete_verified=False,snapshot_captured_at_utc=snapshot['captured_at_utc'],
+            acquired_at_utc='2026-11-11T00:36:17+00:00')
+        (second/'steering.jsonl').write_bytes(raw28)
+        (second/'snapshot.json').write_text(json.dumps(snapshot))
+        (second/'acquisition-provenance.json').write_text(json.dumps(acquisition))
+        hashes={name:hashlib.sha256((second/name).read_bytes()).hexdigest()
+                for name in ['steering.jsonl','snapshot.json','acquisition-provenance.json']}
+        original=dict(captured_at='2026-11-10T03:50:00+00:00',gpu_name='Tesla T4')
+        resumed=[(runtime_name,dict(captured_at='2026-11-10T10:39:00+00:00',gpu_name='NVIDIA L4')),
+                 ('runtime-resume-SYNTHETIC-second.json',dict(captured_at='2026-11-11T00:59:00+00:00',gpu_name='NVIDIA L4'))]
+        lineage=audit_runtime_lineage(rows,original,resumed,'2026-11-10T04:28:00+00:00')
+        return project,root,checkpoint,second,metadata,rows,lineage,hashes,snapshot,acquisition
+
+    def test_both_prefixes_all20_payloads_and_8_20_170_lineage_are_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project,root,old,new,metadata,rows,lineage,hashes,snapshot,acquisition=self.fixture(directory)
+            self.assertEqual([segment['retained_records'] for segment in lineage['segments']],[20,170])
+            with patch('scripts.audit_phase3_artifacts.SECOND_CHECKPOINT_HASHES',hashes):
+                result,observed=audit_second_checkpoint(root,old,new,rows,lineage,[metadata],project)
+            self.assertTrue(result['all20_snapshot_payloads_verified'])
+            self.assertTrue(result['exact28_row_byte_prefix_unchanged'])
+            self.assertEqual(result['retained_segment_counts'],dict(original_t4=8,first_l4=20,later_l4=170))
+            self.assertEqual(len(result['preserved_payloads']),20)
+            self.assertIn(metadata/'resume-execution.log',observed)
+            self.assertIn('both interruptions',result['historical_attempts'])
+
+    def test_changed28_prefix_old_setup_log_runtime_or_snapshot_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project,root,old,new,metadata,rows,lineage,hashes,snapshot,acquisition=self.fixture(directory)
+            with patch('scripts.audit_phase3_artifacts.SECOND_CHECKPOINT_HASHES',hashes):
+                for path in [root/'steering.jsonl',metadata/'setup.json',metadata/'resume-execution.log',
+                             root/'runtime-resume-SYNTHETIC-first.json',new/'snapshot.json']:
+                    saved=path.read_bytes();path.write_bytes(b'CHANGED '+saved)
+                    with self.subTest(path=path.name):
+                        with self.assertRaises(ValueError):audit_second_checkpoint(root,old,new,rows,lineage,[metadata],project)
+                    path.write_bytes(saved)
+                old_log=metadata/'resume-execution.log';saved=old_log.read_bytes()
+                old_log.write_bytes(saved+b'\nSYNTHETIC appended new-session output')
+                with self.assertRaisesRegex(ValueError,'Preserved snapshot payload changed'):
+                    audit_second_checkpoint(root,old,new,rows,lineage,[metadata],project)
+                old_log.write_bytes(saved)
+                with self.assertRaisesRegex(ValueError,'metadata directory'):
+                    audit_second_checkpoint(root,old,new,rows,lineage,[],project)
+                bad=deepcopy(lineage);bad['segments'][0]['record_ids'].append(rows[28]['record_id'])
+                with self.assertRaisesRegex(ValueError,'exactly the preserved 20'):
+                    audit_second_checkpoint(root,old,new,rows,bad,[metadata],project)
+
+    def test_payload_encoding_hash_and_acquisition_inventory_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            *_,snapshot,acquisition=self.fixture(directory)
+            first=next(iter(snapshot['files']))
+            for field,value in [('compressed_sha256','0'*64),('sha256','0'*64),('encoding','unknown')]:
+                bad=deepcopy(snapshot);bad['files'][first][field]=value
+                with self.subTest(field=field):
+                    with self.assertRaises(ValueError):snapshot_payloads(bad,acquisition)
+            bad_acquisition=deepcopy(acquisition);bad_acquisition['files'].pop(first)
+            with self.assertRaisesRegex(ValueError,'inventory differs'):snapshot_payloads(snapshot,bad_acquisition)
+
 
 
 if __name__ == '__main__':

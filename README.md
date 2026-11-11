@@ -12,7 +12,7 @@ Metadata hints produced 5/7 eligible wrong-target switches in the retained origi
 
 **Phase 3 recovery is being prepared from 28 verified conditions.** The original T4 and first L4 sessions are no longer available. The [latest verified checkpoint](artifacts/pilot-20-phase3-checkpoint-1110/) preserves eight original T4 rows and 20 first-continuation L4 rows, all from one question. The fixed sweep still has 198 positions, leaving 170 to collect. Any unarchived attempts after either interruption are unknown. The [second recovery protocol](docs/PHASE3_SECOND_RESUME_PROTOCOL.md) freezes restoration of the full 28-row prefix with identical vectors, settings, controls, and analysis rules. No completed steering result or explanation conclusion is claimed. Earlier [recovery](docs/PHASE3_RESUME_PROTOCOL.md), [hardware amendment](docs/PHASE3_L4_RESUME_ADDENDUM.md), and [factual erratum](docs/PHASE3_L4_ADDENDUM_ERRATUM.md) remain part of the provenance.
 
-Local [software verification](docs/VERIFICATION.md) passes **112 tests**; these checks do not replace the unfinished GPU experiment.
+Local [software verification](docs/VERIFICATION.md) passes **127 tests**; these checks do not replace the unfinished GPU experiment.
 
 ## Start with the real pilot
 
