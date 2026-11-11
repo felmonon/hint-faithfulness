@@ -1,0 +1,10 @@
+# Large v2 arrays kept out of git (each ~14 MB or larger). SHA-256 as produced on Colab (L4, vLLM 0.33.0, torch 2.14.0+cu130).
+# Regenerate (GPU): phase2 shards: python -m src.phase2_v2 acts ; phase3 arrays: python -m src.phase3_v2 acts && python -m src.phase3_v2 vectors
+61c13c10363eab42fcc24dfaa93cc3fcc572f7c224dc3627ddb58cf7162b943b  phase2/probe_acts_layers_00-06.npz
+e05bd241587522df9c9bcb1c4076e123f1a5f64057e9f1389efd51af797765f6  phase2/probe_acts_layers_07-13.npz
+80d477855b54579da32df6b1d8d6bd0704c0d55c7471df2f8e7127c4321d6a02  phase2/probe_acts_layers_14-20.npz
+56b62e02ba2e0665f41dd2ae6ba270fe63994f5f1c19cb287f5905c3789bf984  phase2/probe_acts_layers_21-27.npz
+505c6bc0383a6cf0d725a3cd0b93962bd4e0612cfe5a3795621a5f17c878bb12  phase3/train_acts_all_layers.npy
+7dcf86e73130901cbd335854ace29c8b1c20fb3ad94b4b57e9c4c720e3539a51  phase3/train_acts_chosen_layer.npy
+1f6acd25bd1076ffcd0c4e76a589b0fc43036be8ee67b0a2465d31435ca17f69  phase3/train_act_norms.npz
+eaef1c5237f9bbdca21231e3d132143ee58c02d8c3b93afa335ec0336f9454d8  phase3/vectors.npz  (committed)
