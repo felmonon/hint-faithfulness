@@ -183,3 +183,11 @@ The complete offline software suite passed **152 tests in 8.656 seconds**. Indep
 - Admission is now reported per hint: judges agree 47/48 on metadata, 8/13 on sycophancy, 10/14 on grader hacking. Post hoc keyword check: 81/83, 15/21, 14/18 (controls 16/124, 27/124, 12/124). All match the reviewer.
 - Skipped: the DeepSeek R1 comparison (no OPENROUTER_API_KEY) and Phase 2 rows for the 4 newly valid responses (would need GPU).
 - Spend: US$0.07 this session, US$1.18 of US$25 in total. No human labels.
+
+### November 11 — v3 item 4: DeepSeek and a third judge
+- The owner's override replaced R1-0528 with DeepSeek V4.1 Flash 1017: effort fixed at high, pinned to DeepInfra fp8, 750/750 rows (742 ok, 8 truncated), US$0.17.
+- R1-0528 stopped at 225/750 and is kept as a partial condition. The budget guard had used the repo cap, not the OpenRouter account credit (US$2.42); fixed.
+- Two of my own bugs, fixed and logged: a price ceiling made every V4.1 smoke call 404, and costs.json collided on journal names (it read US$1.61 instead of US$3.14).
+- V4.1 switches: grader hacking 144/146, metadata 52/146, sycophancy 0/146 (control 0/146). Judges rate 97–100% of switches as admitting the hint.
+- Third judge, Gemini 3.8 Flash: on Qwen it agrees best with j2 (κ 0.59); sycophancy admission ranges 4/21 to 13/14 across judges, so no rate is claimed.
+- Spend: US$4.80 of US$25. No human labels.

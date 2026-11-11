@@ -364,28 +364,47 @@ def chart(report, path):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     hints = list(HINTS)
-    sw = [report["phase1"]["switch_rate"][h] for h in hints]
-    fa = {j: [report["judge_hint"].get(j, {}).get(f"faithful_among_ok_{h}", {"rate": None, "ci95": [None, None],
-              "successes": 0, "n": 0}) for h in hints] for j in ("j1", "j2")}
-    fig, ax = plt.subplots(figsize=(6.4, 3.6), dpi=150)
+    models = [("Qwen3-1.7B", report["phase1"], report["judge_hint"], "#4C6EF5")]
+    if "deepseek" in report:
+        models.append(("DeepSeek V4.1 Flash", report["deepseek"]["phase1"], report["deepseek"]["judge_hint"], "#E8590C"))
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.6, 3.8), dpi=150)
     x = np.arange(len(hints))
-    w = 0.26
-    for off, data, lab, col in ((-w, sw, "switched to hinted letter", "#4C6EF5"),
-                                (0, fa["j1"], "of switches, admits relying on hint: judge 1 (AI)", "#F59F00"),
-                                (w, fa["j2"], "same, judge 2 (AI)", "#E8590C")):
+    w = 0.38
+
+    def bars(ax, xs, data, col, lab):
         vals = [d["rate"] or 0 for d in data]
         lo = [max(0.0, v - (d["ci95"][0] or 0)) for v, d in zip(vals, data)]
         hi = [max(0.0, (d["ci95"][1] or 0) - v) for v, d in zip(vals, data)]
-        ax.bar(x + off, vals, w * 0.95, yerr=[lo, hi], capsize=2, color=col, label=lab)
-        for xi, d in zip(x + off, data):
-            ax.text(xi, 0.02, f"{d['successes']}/{d['n']}", ha="center", fontsize=6, color="white", rotation=90)
-    ax.set_xticks(x, [h.replace("_", " ") for h in hints])
-    ax.set_ylim(0, 1.25)
-    ax.set_yticks([0, .25, .5, .75, 1])
-    ax.set_ylabel("rate (95% Wilson CI)")
-    ax.legend(fontsize=7, loc="upper left", frameon=False)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.set_title("Qwen3-1.7B, 150 MMLU questions. AI judges agree 47/48 on metadata;\nsycophancy (8/13) and grader-hacking (10/14) admission rates are unreliable", fontsize=7.5)
+        ax.bar(xs, vals, w * 0.95, yerr=[lo, hi], capsize=2, color=col, label=lab)
+        for xi, v, d in zip(xs, vals, data):
+            ax.text(xi, v + 0.04 if v < 0.8 else 0.03, f"{d['successes']}/{d['n']}", ha="center", fontsize=6,
+                    color="black" if v < 0.8 else "white")
+    for k, (name, p1, _, col) in enumerate(models):
+        bars(a1, x + (k - (len(models) - 1) / 2) * w, [p1["switch_rate"][h] for h in hints], col, name)
+    a1.set_title("Switched to the hinted letter\n(of questions whose unhinted answer differs)", fontsize=8)
+    marks = {"j1": "o", "j2": "s", "j3": "^"}
+    for k, (name, _, jh, col) in enumerate(models):
+        for m, (jid, mk) in enumerate(marks.items()):
+            for hi_, h in enumerate(hints):
+                d = jh.get(jid, {}).get(f"faithful_among_ok_{h}")
+                if not d or not d["n"]:
+                    continue
+                xp = hi_ + (k - (len(models) - 1) / 2) * w + (m - 1) * 0.1
+                a2.errorbar(xp, d["rate"], yerr=[[max(0.0, d["rate"] - d["ci95"][0])], [max(0.0, d["ci95"][1] - d["rate"])]],
+                            fmt=mk, color=col, ms=4, capsize=1.5, lw=0.8, label=f"{name}, {jid}")
+    seen = {}
+    for hdl, lab in zip(*a2.get_legend_handles_labels()):
+        seen.setdefault(lab, hdl)  # one legend entry per model x judge
+    a2.legend(seen.values(), seen.keys(), fontsize=6, loc="lower right", frameon=False, ncol=1)
+    a2.set_title("Of those switches, reasoning admits relying on the hint\n(three AI judges; no human labels)", fontsize=8)
+    for ax in (a1, a2):
+        ax.set_xticks(x, [h.replace("_", " ") for h in hints])
+        ax.set_ylim(0, 1.15)
+        ax.set_yticks([0, .25, .5, .75, 1])
+        ax.spines[["top", "right"]].set_visible(False)
+    a1.set_ylabel("rate (95% Wilson CI)")
+    a1.legend(fontsize=7, loc="upper left", frameon=False)
+    fig.suptitle("150 MMLU questions per model. Two models are a comparison, not a size trend.", fontsize=8)
     fig.tight_layout()
     fig.savefig(path)
 

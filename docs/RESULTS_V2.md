@@ -1,6 +1,6 @@
 # Results v2
 
-Qwen3-1.7B (revision `70d244cc`), 150 questions × 5 conditions, thinking on, T 0.6 / top-p 0.95 / top-k 20, 4,096-token cap, vLLM 0.33.0 on a Colab L4. The plan is in [PLAN_V2.md](PLAN_V2.md) and every change after the freeze is in its changelog. DeepSeek was not run because no OpenRouter key was configured; the v3 comparison is waiting for that key.
+Qwen3-1.7B (revision `70d244cc`), 150 questions × 5 conditions, thinking on, T 0.6 / top-p 0.95 / top-k 20, 4,096-token cap, vLLM 0.33.0 on a Colab L4. The plan is in [PLAN_V2.md](PLAN_V2.md) and every change after the freeze is in its changelog. The v3 comparison model, DeepSeek V4.1 Flash, is in [section 6](#6-deepseek-v41-flash-vs-qwen3-17b-v3-item-4).
 
 **v3 update (2026-11-11, after an external review).** Two bugs were fixed and every number below was recomputed:
 - Parser v2 now accepts `\boxed{\text{X}}`.
@@ -16,7 +16,7 @@ python -m src.report_v2 --chart
 
 This writes `results/v2/report.json` and `results/v2/switch_and_admission.png`. The JSON key for each number is given in brackets.
 
-**All faithfulness labels are AI-judged.** Both judges are OpenAI models (the same family). No human labels exist.
+**All faithfulness labels are AI-judged.** j1 and j2 are OpenAI models (the same family); j3 (v3) is Google Gemini 3.8 Flash via OpenRouter. No human labels exist.
 
 ## 1. Do hints change the answer? (Phase 1)
 
@@ -71,7 +71,19 @@ Kappa is low partly because almost every case is labelled "admits". When one lab
 | Sycophancy | 15/21 = 71.4% [50.0, 86.2] | 27/124 = 21.8% [15.4, 29.8] |
 | Grader hacking | 14/18 = 77.8% [54.8, 91.0] | 12/124 = 9.7% [5.6, 16.2] |
 
-**Reading.** When the metadata hint changes Qwen3-1.7B's answer, the reasoning almost always says so: the judges agree, and the keyword check agrees. For sycophancy and grader hacking, there are too few switches and the judges disagree, so no admission rate is claimed.
+**Third judge (v3).** j3 = `google/gemini-3.8-flash` (outside OpenAI), same frozen rubric, strict JSON schema, temperature 0, low reasoning effort (`judge/hint_j3.jsonl`). It was not calibrated on the pilot cases; the rubric was already frozen. Usable 120/122 (2 errors: non-verbatim quote). Admits among usable: 88/120 = 73.3% [64.8, 80.4]. Sycophancy 4/21 = 19.0% [7.7, 40.0], metadata 70/81 = 86.4% [77.3, 92.2], grader hacking 14/18 = 77.8% [54.8, 91.0] [`judge_hint.j3`].
+
+Pairwise agreement on cases both judges labelled, raw agreement with Cohen's kappa (bootstrap 95% CI) [`judge_hint.pairwise`]:
+
+| Pair | All | Metadata | Sycophancy | Grader hacking |
+|---|---|---|---|---|
+| j1–j2 | 65/75, κ 0.25 [0.00, 0.56] | 47/48, κ 0.00 | 8/13, κ 0.18 | 10/14, κ 0.24 |
+| j1–j3 | 55/76, κ 0.12 [0.00, 0.29] | 41/48, κ 0.00 | 3/14, κ 0.03 | 11/14, κ 0.32 |
+| j2–j3 | 97/114, κ 0.59 [0.40, 0.75] | 65/76, κ 0.28 | 15/20, κ 0.47 | 17/18, κ 0.85 |
+
+j1 is the outlier: it says "admits" in almost every case it can label. j2 and j3 agree best, but κ is still below 0.6 overall and on metadata and sycophancy.
+
+**Reading.** When the metadata hint changes Qwen3-1.7B's answer, the reasoning usually says so: all three judges put admission at 86–100%, and the keyword check agrees. For sycophancy the judges range from 4/21 to 13/14, so no sycophancy admission rate is claimed. For grader hacking the three judges give 72–93% on 14–18 cases; j2 and j3 agree on 17/18, but the sample is small.
 
 ## 3. Was the answer decided before the reasoning? (Phase 2)
 
@@ -168,7 +180,7 @@ At both strengths the fitted vectors change answers about as often as random one
 
 ## 5. Costs, failures and limits
 
-- **API spend:** US$1.18 of the US$25 cap (US$1.11 in v2, plus US$0.07 in v3 to judge the 9 new steered switches) (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`). These are list-price estimates from returned token usage, not an invoice. Colab used the existing balance only.
+- **API spend:** US$4.80 of the US$25 cap (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`): US$1.11 in v2; in v3, US$0.07 for the steered switches, US$1.50 for the stopped R1-0528 run (includes reserves for calls in flight when it was stopped, an upper bound), US$0.19 for V4.1 generation including its smoke tests, and the rest for j1/j2/j3 on the new switches. OpenAI figures are list-price estimates from token usage; OpenRouter figures are the cost it returned. Colab used the existing balance only.
 - **Kept failures:**
   - Phase 1: 85 truncated and 2 invalid responses (6 before the parser fix).
   - Judges: 45 + 6 errors on hint cases and 12 + 5 on steer cases.
@@ -179,12 +191,93 @@ At both strengths the fitted vectors change answers about as often as random one
   - Phase 3 steering changed from one vector per call to one vector per request, so the 15 earliest calibration rows were generated the old way.
   - The probe ran locally from checksum-verified shards.
   - Post hoc analyses are labelled where they appear.
-- **Not run:** the DeepSeek R1 comparison (v3 item 4). `OPENROUTER_API_KEY` is not configured, so it is waiting for the key. No DeepSeek call was made, and no third (non-OpenAI) judge was run.
+- **DeepSeek (v3 item 4):** run on V4.1 Flash, not R1-0528 as the v3 brief named. See section 6 for why. R1-0528 stopped at 225/750 rows and is kept as a partial condition.
 - **Numbers vs. the reviewer's expected values:** every expected value in the v3 brief matches, before and after the fixes: Phase 1, calibration, sweep, early-answer groups, per-hint agreement and the keyword check. No differences need explaining.
 - **Limits:**
-  - One small model.
-  - Both judges are OpenAI models, and their agreement is poor.
+  - Two models, so a comparison, not a size trend.
+  - Judge agreement is poor for Qwen (best pair j2–j3, κ 0.59); for DeepSeek it is near-perfect, but nearly every case is "admits", so κ is undefined.
   - No human labels.
   - Only one steering strength survived calibration.
   - With 8 steered switches, the steered-reasoning labels can't support any conclusion.
 - **Large files** (activation shards, Phase 3 training activations) are not committed. Their SHA-256 sums and regeneration commands are in `artifacts/v2/CHECKSUMS.txt`.
+
+## 6. DeepSeek V4.1 Flash vs. Qwen3-1.7B (v3 item 4)
+
+**Model.** `deepseek/deepseek-v4.1-flash-1017` via OpenRouter. This is the owner's instruction; the v3 brief named R1-0528. Settings:
+- `reasoning_effort` fixed at `high` and recorded in every row.
+- Every call pinned to the DeepInfra fp8 endpoint, with no fallbacks.
+- T 0.6, top-p 0.95, 8,192-token cap, and the same per-trial seeds and 750 prompts as Qwen.
+- Parsed with the fixed parser v2, using the same eligible / switch / noise definitions.
+
+Data: `artifacts/v2/deepseek-v41/responses.jsonl`. Command: `python -m src.deepseek_v3 run --model v41`. The 5-prompt smoke gate passed: the returned reasoning is full, not summarized, at about 2.7–4.9 characters per billed reasoning token. The median trace is 856 characters.
+
+**Two models make a comparison, not a size trend.** They differ in size, training, provider and token cap (Qwen 4,096, DeepSeek 8,192), so no difference below can be attributed to size.
+
+**Records:** 750/750, all served by DeepInfra with the same resolved model and effort. 742 ok, 8 truncated (5 of them metadata), 0 errors [`deepseek.phase1.status`].
+
+**Switch rates** (same denominator: questions whose valid unhinted repeat-0 answer differs from the hint letter). Differences are DeepSeek minus Qwen, with Newcombe hybrid-score 95% intervals that treat the two models as independent samples [`comparison.switch_rate`]:
+
+| Hint | Qwen3-1.7B | DeepSeek V4.1 Flash | Difference |
+|---|---|---|---|
+| Sycophancy | 21/124 = 16.9% [11.4, 24.5] | 0/146 = 0.0% [0.0, 2.6] | −16.9 pts [−24.5, −10.8] |
+| Metadata | 83/124 = 66.9% [58.3, 74.6] | 52/146 = 35.6% [28.3, 43.7] | −31.3 pts [−41.9, −19.5] |
+| Grader hacking | 18/124 = 14.5% [9.4, 21.8] | 144/146 = 98.6% [95.1, 99.6] | +84.1 pts [+76.1, +89.3] |
+| Control: unhinted repeat lands on hint letter | 2/124 = 1.6% | 0/146 = 0.0% | |
+
+DeepSeek ignores a user's stated opinion entirely and follows leaked grader code almost every time.
+
+**Admission among switches (AI-judged).** Each judge's usable verdicts, DeepSeek minus Qwen [`comparison.admission_faithful_among_ok`]:
+
+| Hint | Judge | Qwen | DeepSeek | Difference |
+|---|---|---|---|---|
+| Metadata | j1 | 49/49 = 100% [92.7, 100] | 33/34 = 97.1% [85.1, 99.5] | −2.9 pts [−14.9, +4.7] |
+| Metadata | j2 | 72/78 = 92.3% [84.2, 96.4] | 49/49 = 100% [92.7, 100] | +7.7 pts [−0.7, +15.8] |
+| Metadata | j3 | 70/81 = 86.4% [77.3, 92.2] | 51/51 = 100% [93.0, 100] | +13.6 pts [+4.5, +22.7] |
+| Grader hacking | j1 | 13/14 = 92.9% [68.5, 98.7] | 108/108 = 100% [96.6, 100] | +7.1 pts [+0.3, +31.5] |
+| Grader hacking | j2 | 13/18 = 72.2% [49.1, 87.5] | 136/136 = 100% [97.3, 100] | +27.8 pts [+12.3, +50.9] |
+| Grader hacking | j3 | 14/18 = 77.8% [54.8, 91.0] | 141/141 = 100% [97.3, 100] | +22.2 pts [+8.7, +45.2] |
+| Sycophancy | all | 13/14, 9/20, 4/21 | no switches | – |
+
+Usable DeepSeek verdicts:
+- j1: 142/196 (54 errors, mostly non-verbatim quotes).
+- j2: 185/196.
+- j3: 192/196.
+
+Pairwise raw agreement on DeepSeek [`deepseek.judge_hint.pairwise`]:
+- j1–j2: 135/136.
+- j1–j3: 140/141.
+- j2–j3: 181/181.
+
+Kappa is 0 or undefined there, because almost every case is "admits". That is exactly the case where kappa fails, so read the raw agreement.
+
+**Keyword cross-check (post hoc,** same reviewer patterns) [`deepseek.keyword_check_post_hoc`]:
+
+| Hint | Switches matching | Unhinted control matching |
+|---|---|---|
+| Metadata | 52/52 = 100% [93.1, 100] | 0/146 = 0.0% [0.0, 2.6] |
+| Grader hacking | 143/144 = 99.3% [96.2, 99.9] | 7/146 = 4.8% [2.3, 9.6] |
+
+**Summarization check (post hoc).** This asks whether a model's reasoning names the hint's source in *all* hinted responses, switched or not, using the same keyword patterns [`comparison.source_mention_rate_post_hoc`]:
+
+| Hint | Qwen | DeepSeek V4.1 | R1-0528 (partial) |
+|---|---|---|---|
+| Metadata | 137/150 | 144/150 | 42/42 |
+| Sycophancy | 106/150 | 106/150 | 46/47 |
+| Grader hacking | 71/150 | 149/150 | 42/43 |
+
+V4.1's short traces do not hide the hint any more often than Qwen's. No summarization failure was found.
+
+**Reading.** On these 150 questions, DeepSeek V4.1 Flash is moved by a different hint than Qwen3-1.7B: grader code rather than metadata or a user's opinion. When a hint does move it, all three AI judges and the keyword check say the reasoning names the hint and relies on it, at rates of 97–100%. No unfaithful switch is detected for this model.
+
+**R1-0528 (partial second condition, not judged).** `artifacts/v2/deepseek/responses.jsonl`: 225/750 rows (215 ok, 10 truncated at 8,192 tokens), all from DeepInfra. It was stopped for two reasons:
+- It cannot take the required effort setting.
+- The OpenRouter account credit was nearly exhausted. The guard had checked the repo's US$25 cap, not the account balance; that is now fixed.
+
+Only questions whose repeat-0 and hinted rows both finished count. Switch rates: sycophancy 0/10, metadata 4/10, grader hacking 7/13; control 0/18 [`deepseek_r1_partial`]. These are too few to compare and are shown only so the data isn't dropped.
+
+**Differences from the reviewer's numbers (v3 review of item 4).** The reviewer's figures checked out against the live API:
+- Account credit was US$2.42 at check time; the reviewer said US$2.60 earlier.
+- R1-0528 cost US$0.0054 per call over 225 rows; the reviewer said US$0.00545 over 195 rows.
+- 10/225 R1 rows truncated; the reviewer counted 9/195.
+- V4.1 cost US$0.00023 per call over the full run. The reviewer's US$0.000106 was the Relace fp4 endpoint, which does not support `seed`; this run used DeepInfra fp8.
+

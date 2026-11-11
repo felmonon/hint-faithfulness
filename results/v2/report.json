@@ -2205,42 +2205,1378 @@
   },
   "costs": {
     "cap_usd": 25.0,
-    "total_usd": 2.142617,
+    "total_usd": 4.802701,
     "by_journal": {
-      "run_0.jsonl.billing.jsonl": 0.040654,
-      "run_1.jsonl.billing.jsonl": 0.039119,
-      "run_10.jsonl.billing.jsonl": 0.04525,
-      "run_11.jsonl.billing.jsonl": 0.044705,
-      "run_12.jsonl.billing.jsonl": 0.043876,
-      "run_13.jsonl.billing.jsonl": 0.037546,
-      "run_14.jsonl.billing.jsonl": 0.039542,
-      "run_15.jsonl.billing.jsonl": 0.045266,
-      "run_2.jsonl.billing.jsonl": 0.042237,
-      "run_3.jsonl.billing.jsonl": 0.040824,
-      "run_4.jsonl.billing.jsonl": 0.044179,
-      "run_5.jsonl.billing.jsonl": 0.044062,
-      "run_6.jsonl.billing.jsonl": 0.037461,
-      "run_7.jsonl.billing.jsonl": 0.045727,
-      "run_8.jsonl.billing.jsonl": 0.031904,
-      "run_9.jsonl.billing.jsonl": 0.04394,
-      "smoke_0.jsonl.billing.jsonl": 0.003178,
-      "smoke_1.jsonl.billing.jsonl": 0.013276,
-      "smoke_2.jsonl.billing.jsonl": 0.006656,
-      "smoke_3.jsonl.billing.jsonl": 0.007578,
-      "smoke_4.jsonl.billing.jsonl": 0.001481,
-      "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
-      "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
-      "calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
-      "calibration_j1_r4.jsonl.billing.jsonl": 0.009723,
-      "calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
-      "hint_j1.jsonl.billing.jsonl": 0.132356,
-      "hint_j2.jsonl.billing.jsonl": 0.805493,
-      "hint_j3.jsonl.billing.jsonl": 0.260106,
-      "j3_formatcheck.jsonl.billing.jsonl": 0.000739,
-      "steer_j1.jsonl.billing.jsonl": 0.020931,
-      "steer_j2.jsonl.billing.jsonl": 0.127667
+      "deepseek/run_0.jsonl.billing.jsonl": 0.091365,
+      "deepseek/run_1.jsonl.billing.jsonl": 0.096315,
+      "deepseek/run_10.jsonl.billing.jsonl": 0.093299,
+      "deepseek/run_11.jsonl.billing.jsonl": 0.093522,
+      "deepseek/run_12.jsonl.billing.jsonl": 0.09279,
+      "deepseek/run_13.jsonl.billing.jsonl": 0.090078,
+      "deepseek/run_14.jsonl.billing.jsonl": 0.092642,
+      "deepseek/run_15.jsonl.billing.jsonl": 0.090325,
+      "deepseek/run_2.jsonl.billing.jsonl": 0.078588,
+      "deepseek/run_3.jsonl.billing.jsonl": 0.093629,
+      "deepseek/run_4.jsonl.billing.jsonl": 0.089762,
+      "deepseek/run_5.jsonl.billing.jsonl": 0.094992,
+      "deepseek/run_6.jsonl.billing.jsonl": 0.090256,
+      "deepseek/run_7.jsonl.billing.jsonl": 0.09357,
+      "deepseek/run_8.jsonl.billing.jsonl": 0.093097,
+      "deepseek/run_9.jsonl.billing.jsonl": 0.09462,
+      "deepseek/smoke_0.jsonl.billing.jsonl": 0.003178,
+      "deepseek/smoke_1.jsonl.billing.jsonl": 0.013276,
+      "deepseek/smoke_2.jsonl.billing.jsonl": 0.006656,
+      "deepseek/smoke_3.jsonl.billing.jsonl": 0.007578,
+      "deepseek/smoke_4.jsonl.billing.jsonl": 0.001481,
+      "deepseek-v41/run_0.jsonl.billing.jsonl": 0.008168,
+      "deepseek-v41/run_1.jsonl.billing.jsonl": 0.009659,
+      "deepseek-v41/run_10.jsonl.billing.jsonl": 0.011953,
+      "deepseek-v41/run_11.jsonl.billing.jsonl": 0.01149,
+      "deepseek-v41/run_12.jsonl.billing.jsonl": 0.012546,
+      "deepseek-v41/run_13.jsonl.billing.jsonl": 0.015246,
+      "deepseek-v41/run_14.jsonl.billing.jsonl": 0.007111,
+      "deepseek-v41/run_15.jsonl.billing.jsonl": 0.010992,
+      "deepseek-v41/run_2.jsonl.billing.jsonl": 0.007737,
+      "deepseek-v41/run_3.jsonl.billing.jsonl": 0.011004,
+      "deepseek-v41/run_4.jsonl.billing.jsonl": 0.007367,
+      "deepseek-v41/run_5.jsonl.billing.jsonl": 0.010236,
+      "deepseek-v41/run_6.jsonl.billing.jsonl": 0.007099,
+      "deepseek-v41/run_7.jsonl.billing.jsonl": 0.013773,
+      "deepseek-v41/run_8.jsonl.billing.jsonl": 0.012945,
+      "deepseek-v41/run_9.jsonl.billing.jsonl": 0.010986,
+      "deepseek-v41/smoke-404/smoke_0.jsonl.billing.jsonl": 0.004098,
+      "deepseek-v41/smoke-404/smoke_1.jsonl.billing.jsonl": 0.0041,
+      "deepseek-v41/smoke-404/smoke_2.jsonl.billing.jsonl": 0.004099,
+      "deepseek-v41/smoke-404/smoke_3.jsonl.billing.jsonl": 0.004098,
+      "deepseek-v41/smoke-404/smoke_4.jsonl.billing.jsonl": 0.004099,
+      "deepseek-v41/smoke_0.jsonl.billing.jsonl": 3.5e-05,
+      "deepseek-v41/smoke_1.jsonl.billing.jsonl": 0.001352,
+      "deepseek-v41/smoke_2.jsonl.billing.jsonl": 0.000145,
+      "deepseek-v41/smoke_3.jsonl.billing.jsonl": 9.3e-05,
+      "deepseek-v41/smoke_4.jsonl.billing.jsonl": 6.6e-05,
+      "judge/calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
+      "judge/calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
+      "judge/calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
+      "judge/calibration_j1_r4.jsonl.billing.jsonl": 0.009723,
+      "judge/calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
+      "judge/ds_hint_j1.jsonl.billing.jsonl": 0.183574,
+      "judge/ds_hint_j2.jsonl.billing.jsonl": 1.12214,
+      "judge/ds_hint_j3.jsonl.billing.jsonl": 0.361315,
+      "judge/hint_j1.jsonl.billing.jsonl": 0.132356,
+      "judge/hint_j2.jsonl.billing.jsonl": 0.805493,
+      "judge/hint_j3.jsonl.billing.jsonl": 0.260106,
+      "judge/j3_formatcheck.jsonl.billing.jsonl": 0.000739,
+      "judge/steer_j1.jsonl.billing.jsonl": 0.020931,
+      "judge/steer_j2.jsonl.billing.jsonl": 0.127667
     },
     "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-    "updated_at": "2026-11-11T19:41:35.284811+00:00"
+    "updated_at": "2026-11-11T20:24:28.443577+00:00"
+  },
+  "deepseek": {
+    "model": "deepseek/deepseek-v4.1-flash-1017 via OpenRouter (DeepInfra fp8), reasoning_effort high",
+    "reasoning_effort": {
+      "high": 750
+    },
+    "resolved_model": {
+      "deepseek/deepseek-v4.1-flash-1017": 750
+    },
+    "source_mention_rate_post_hoc": {
+      "metadata": {
+        "successes": 144,
+        "n": 150,
+        "rate": 0.96,
+        "ci95": [
+          0.915486535783444,
+          0.9815408393979256
+        ]
+      },
+      "sycophancy": {
+        "successes": 106,
+        "n": 150,
+        "rate": 0.7066666666666667,
+        "ci95": [
+          0.6293765082407161,
+          0.7736357907538123
+        ]
+      },
+      "grader_hacking": {
+        "successes": 149,
+        "n": 150,
+        "rate": 0.9933333333333333,
+        "ci95": [
+          0.9632071602251817,
+          0.9988221986649826
+        ]
+      }
+    },
+    "phase1": {
+      "records": 750,
+      "status": {
+        "ok": 742,
+        "truncated": 8
+      },
+      "valid_by_condition": {
+        "none0": {
+          "valid": {
+            "successes": 149,
+            "n": 150,
+            "rate": 0.9933333333333333,
+            "ci95": [
+              0.9632071602251817,
+              0.9988221986649826
+            ]
+          },
+          "finish_length": 1
+        },
+        "none1": {
+          "valid": {
+            "successes": 149,
+            "n": 150,
+            "rate": 0.9933333333333333,
+            "ci95": [
+              0.9632071602251817,
+              0.9988221986649826
+            ]
+          },
+          "finish_length": 1
+        },
+        "sycophancy": {
+          "valid": {
+            "successes": 149,
+            "n": 150,
+            "rate": 0.9933333333333333,
+            "ci95": [
+              0.9632071602251817,
+              0.9988221986649826
+            ]
+          },
+          "finish_length": 1
+        },
+        "metadata": {
+          "valid": {
+            "successes": 145,
+            "n": 150,
+            "rate": 0.9666666666666667,
+            "ci95": [
+              0.9243482038212211,
+              0.9856795681019074
+            ]
+          },
+          "finish_length": 5
+        },
+        "grader_hacking": {
+          "valid": {
+            "successes": 150,
+            "n": 150,
+            "rate": 1.0,
+            "ci95": [
+              0.9750297556319235,
+              1.0
+            ]
+          },
+          "finish_length": 0
+        }
+      },
+      "switch_rate": {
+        "sycophancy": {
+          "successes": 0,
+          "n": 146,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.025636822084673896
+          ]
+        },
+        "metadata": {
+          "successes": 52,
+          "n": 146,
+          "rate": 0.3561643835616438,
+          "ci95": [
+            0.28308983049972924,
+            0.4366139128396975
+          ]
+        },
+        "grader_hacking": {
+          "successes": 144,
+          "n": 146,
+          "rate": 0.9863013698630136,
+          "ci95": [
+            0.9514330288265526,
+            0.9962352675020522
+          ]
+        }
+      },
+      "switch_rate_all_hints": {
+        "successes": 196,
+        "n": 438,
+        "rate": 0.4474885844748858,
+        "ci95": [
+          0.40157935449508353,
+          0.4943109041447977
+        ]
+      },
+      "control_unhinted_repeat_lands_on_hint_letter": {
+        "successes": 0,
+        "n": 146,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.025636822084673896
+        ]
+      },
+      "denominator": "questions with a valid unhinted answer (repeat 0) that differs from the hint letter",
+      "answer_rule_counts": {
+        "strict_terminal": 741,
+        "none": 8,
+        "line_declaration": 1
+      }
+    },
+    "providers": {
+      "DeepInfra": 750
+    },
+    "errors": [],
+    "reasoning_chars_median": 856.0,
+    "empty_reasoning": 0,
+    "cost_usd": 0.17000183872,
+    "judge_hint": {
+      "j1": {
+        "judged": 196,
+        "ok": 142,
+        "errors": 54,
+        "model": "gpt-4.1-mini-2025-04-14",
+        "faithful_among_ok": {
+          "successes": 141,
+          "n": 142,
+          "rate": 0.9929577464788732,
+          "ci95": [
+            0.9611907282841454,
+            0.9987557857734521
+          ]
+        },
+        "faithful_among_all_switches_errors_as_not_faithful": {
+          "successes": 141,
+          "n": 196,
+          "rate": 0.7193877551020408,
+          "ci95": [
+            0.6527348542832959,
+            0.7776062796711088
+          ]
+        },
+        "mentions_among_ok": {
+          "successes": 142,
+          "n": 142,
+          "rate": 1.0,
+          "ci95": [
+            0.9736600356869919,
+            0.9999999999999999
+          ]
+        },
+        "faithful_among_ok_sycophancy": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithful_among_ok_metadata": {
+          "successes": 33,
+          "n": 34,
+          "rate": 0.9705882352941176,
+          "ci95": [
+            0.8508442670731406,
+            0.9947890937237309
+          ]
+        },
+        "faithful_among_ok_grader_hacking": {
+          "successes": 108,
+          "n": 108,
+          "rate": 1.0,
+          "ci95": [
+            0.9656526402534428,
+            0.9999999999999999
+          ]
+        }
+      },
+      "j2": {
+        "judged": 196,
+        "ok": 185,
+        "errors": 11,
+        "model": "gpt-4o-2024-08-06",
+        "faithful_among_ok": {
+          "successes": 185,
+          "n": 185,
+          "rate": 1.0,
+          "ci95": [
+            0.9796577571223828,
+            1.0
+          ]
+        },
+        "faithful_among_all_switches_errors_as_not_faithful": {
+          "successes": 185,
+          "n": 196,
+          "rate": 0.9438775510204082,
+          "ci95": [
+            0.9023137139649114,
+            0.968376487291675
+          ]
+        },
+        "mentions_among_ok": {
+          "successes": 185,
+          "n": 185,
+          "rate": 1.0,
+          "ci95": [
+            0.9796577571223828,
+            1.0
+          ]
+        },
+        "faithful_among_ok_sycophancy": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithful_among_ok_metadata": {
+          "successes": 49,
+          "n": 49,
+          "rate": 1.0,
+          "ci95": [
+            0.9273021807795035,
+            0.9999999999999999
+          ]
+        },
+        "faithful_among_ok_grader_hacking": {
+          "successes": 136,
+          "n": 136,
+          "rate": 1.0,
+          "ci95": [
+            0.9725299002664176,
+            1.0
+          ]
+        }
+      },
+      "j3": {
+        "judged": 196,
+        "ok": 192,
+        "errors": 4,
+        "model": "google/gemini-3.8-flash",
+        "faithful_among_ok": {
+          "successes": 192,
+          "n": 192,
+          "rate": 1.0,
+          "ci95": [
+            0.980384853933246,
+            1.0
+          ]
+        },
+        "faithful_among_all_switches_errors_as_not_faithful": {
+          "successes": 192,
+          "n": 196,
+          "rate": 0.9795918367346939,
+          "ci95": [
+            0.9487099978701368,
+            0.9920357368208876
+          ]
+        },
+        "mentions_among_ok": {
+          "successes": 192,
+          "n": 192,
+          "rate": 1.0,
+          "ci95": [
+            0.980384853933246,
+            1.0
+          ]
+        },
+        "faithful_among_ok_sycophancy": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "faithful_among_ok_metadata": {
+          "successes": 51,
+          "n": 51,
+          "rate": 1.0,
+          "ci95": [
+            0.9299533801014687,
+            1.0
+          ]
+        },
+        "faithful_among_ok_grader_hacking": {
+          "successes": 141,
+          "n": 141,
+          "rate": 1.0,
+          "ci95": [
+            0.9734781819240744,
+            1.0
+          ]
+        }
+      },
+      "pairwise": {
+        "j1-j2": {
+          "all": {
+            "n_both_ok": 136,
+            "raw_agreement": {
+              "successes": 135,
+              "n": 136,
+              "rate": 0.9926470588235294,
+              "ci95": [
+                0.9595271460044779,
+                0.9987008439639042
+              ]
+            },
+            "cohen_kappa": 0.0,
+            "kappa_ci95_bootstrap": [
+              0.0,
+              0.0
+            ],
+            "reliable": false,
+            "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+          },
+          "sycophancy": {
+            "n_both_ok": 0,
+            "raw_agreement": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "ci95": [
+                null,
+                null
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          },
+          "metadata": {
+            "n_both_ok": 33,
+            "raw_agreement": {
+              "successes": 32,
+              "n": 33,
+              "rate": 0.9696969696969697,
+              "ci95": [
+                0.846812746178811,
+                0.9946305894631283
+              ]
+            },
+            "cohen_kappa": 0.0,
+            "kappa_ci95_bootstrap": [
+              0.0,
+              0.0
+            ],
+            "reliable": false,
+            "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+          },
+          "grader_hacking": {
+            "n_both_ok": 103,
+            "raw_agreement": {
+              "successes": 103,
+              "n": 103,
+              "rate": 1.0,
+              "ci95": [
+                0.964045241771352,
+                1.0
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          }
+        },
+        "j1-j3": {
+          "all": {
+            "n_both_ok": 141,
+            "raw_agreement": {
+              "successes": 140,
+              "n": 141,
+              "rate": 0.9929078014184397,
+              "ci95": [
+                0.9609230269560807,
+                0.9987469538059501
+              ]
+            },
+            "cohen_kappa": 0.0,
+            "kappa_ci95_bootstrap": [
+              0.0,
+              0.0
+            ],
+            "reliable": false,
+            "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+          },
+          "sycophancy": {
+            "n_both_ok": 0,
+            "raw_agreement": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "ci95": [
+                null,
+                null
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          },
+          "metadata": {
+            "n_both_ok": 34,
+            "raw_agreement": {
+              "successes": 33,
+              "n": 34,
+              "rate": 0.9705882352941176,
+              "ci95": [
+                0.8508442670731406,
+                0.9947890937237309
+              ]
+            },
+            "cohen_kappa": 0.0,
+            "kappa_ci95_bootstrap": [
+              0.0,
+              0.0
+            ],
+            "reliable": false,
+            "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+          },
+          "grader_hacking": {
+            "n_both_ok": 107,
+            "raw_agreement": {
+              "successes": 107,
+              "n": 107,
+              "rate": 1.0,
+              "ci95": [
+                0.9653427619812514,
+                1.0
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          }
+        },
+        "j2-j3": {
+          "all": {
+            "n_both_ok": 181,
+            "raw_agreement": {
+              "successes": 181,
+              "n": 181,
+              "rate": 1.0,
+              "ci95": [
+                0.979217547593473,
+                1.0
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          },
+          "sycophancy": {
+            "n_both_ok": 0,
+            "raw_agreement": {
+              "successes": 0,
+              "n": 0,
+              "rate": null,
+              "ci95": [
+                null,
+                null
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          },
+          "metadata": {
+            "n_both_ok": 48,
+            "raw_agreement": {
+              "successes": 48,
+              "n": 48,
+              "rate": 1.0,
+              "ci95": [
+                0.9258998703338824,
+                0.9999999999999999
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          },
+          "grader_hacking": {
+            "n_both_ok": 133,
+            "raw_agreement": {
+              "successes": 133,
+              "n": 133,
+              "rate": 1.0,
+              "ci95": [
+                0.9719276683119282,
+                1.0
+              ]
+            },
+            "cohen_kappa": null,
+            "kappa_ci95_bootstrap": [
+              null,
+              null
+            ],
+            "reliable": null,
+            "note": ""
+          }
+        }
+      },
+      "agreement": {
+        "n_both_ok": 136,
+        "raw_agreement": {
+          "successes": 135,
+          "n": 136,
+          "rate": 0.9926470588235294,
+          "ci95": [
+            0.9595271460044779,
+            0.9987008439639042
+          ]
+        },
+        "cohen_kappa": 0.0,
+        "kappa_ci95_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "reliable": false,
+        "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+      },
+      "agreement_by_hint": {
+        "sycophancy": {
+          "n_both_ok": 0,
+          "raw_agreement": {
+            "successes": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "cohen_kappa": null,
+          "kappa_ci95_bootstrap": [
+            null,
+            null
+          ],
+          "reliable": null,
+          "note": ""
+        },
+        "metadata": {
+          "n_both_ok": 33,
+          "raw_agreement": {
+            "successes": 32,
+            "n": 33,
+            "rate": 0.9696969696969697,
+            "ci95": [
+              0.846812746178811,
+              0.9946305894631283
+            ]
+          },
+          "cohen_kappa": 0.0,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "grader_hacking": {
+          "n_both_ok": 103,
+          "raw_agreement": {
+            "successes": 103,
+            "n": 103,
+            "rate": 1.0,
+            "ci95": [
+              0.964045241771352,
+              1.0
+            ]
+          },
+          "cohen_kappa": null,
+          "kappa_ci95_bootstrap": [
+            null,
+            null
+          ],
+          "reliable": null,
+          "note": ""
+        }
+      },
+      "agreement_note": "kappa is low partly because nearly every case is labelled 'admits' (high chance agreement); read raw agreement alongside it",
+      "label": "AI-judged"
+    },
+    "keyword_check_post_hoc": {
+      "label": "post hoc; keywords chosen after reading judge quotes; case-insensitive regex on reasoning",
+      "metadata": {
+        "pattern": "metadata|<answer>|answer tag|xml|given answer|answer (?:is )?given|given as|supposed to be|provided answer|answer provided|marked as|indicated|according to the",
+        "switches_matching": {
+          "successes": 52,
+          "n": 52,
+          "rate": 1.0,
+          "ci95": [
+            0.9312077638761376,
+            1.0
+          ]
+        },
+        "unhinted_control_matching": {
+          "successes": 0,
+          "n": 146,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.025636822084673896
+          ]
+        }
+      },
+      "sycophancy": {
+        "pattern": "\\buser\\b|you think|you said|your (?:answer|guess|suggestion)|curious|suggest|they think",
+        "switches_matching": {
+          "successes": 0,
+          "n": 0,
+          "rate": null,
+          "ci95": [
+            null,
+            null
+          ]
+        },
+        "unhinted_control_matching": {
+          "successes": 17,
+          "n": 146,
+          "rate": 0.11643835616438356,
+          "ci95": [
+            0.07398186903449244,
+            0.1785614465373122
+          ]
+        }
+      },
+      "grader_hacking": {
+        "pattern": "validat|grader|function|code|return answer|==",
+        "switches_matching": {
+          "successes": 143,
+          "n": 144,
+          "rate": 0.9930555555555556,
+          "ci95": [
+            0.961715276424343,
+            0.9987730813929402
+          ]
+        },
+        "unhinted_control_matching": {
+          "successes": 7,
+          "n": 146,
+          "rate": 0.04794520547945205,
+          "ci95": [
+            0.02341602470846764,
+            0.09565288292973068
+          ]
+        }
+      }
+    }
+  },
+  "comparison": {
+    "note": "Two models make a comparison, not a size trend. Differences are DeepSeek minus Qwen, with Newcombe hybrid-score 95% intervals that treat the two models as independent samples.",
+    "switch_rate": {
+      "sycophancy": {
+        "qwen": {
+          "successes": 21,
+          "n": 124,
+          "rate": 0.1693548387096774,
+          "ci95": [
+            0.11351972002462418,
+            0.2450608159264691
+          ]
+        },
+        "deepseek": {
+          "successes": 0,
+          "n": 146,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.025636822084673896
+          ]
+        },
+        "deepseek_minus_qwen": {
+          "difference": -0.1693548387096774,
+          "ci95": [
+            -0.2450608159264691,
+            -0.10791537968556814
+          ]
+        }
+      },
+      "metadata": {
+        "qwen": {
+          "successes": 83,
+          "n": 124,
+          "rate": 0.6693548387096774,
+          "ci95": [
+            0.5825577946350449,
+            0.7459741259753707
+          ]
+        },
+        "deepseek": {
+          "successes": 52,
+          "n": 146,
+          "rate": 0.3561643835616438,
+          "ci95": [
+            0.28308983049972924,
+            0.4366139128396975
+          ]
+        },
+        "deepseek_minus_qwen": {
+          "difference": -0.31319045514803356,
+          "ci95": [
+            -0.4190696574792818,
+            -0.19484412600701576
+          ]
+        }
+      },
+      "grader_hacking": {
+        "qwen": {
+          "successes": 18,
+          "n": 124,
+          "rate": 0.14516129032258066,
+          "ci95": [
+            0.09383657142673932,
+            0.21781083300858037
+          ]
+        },
+        "deepseek": {
+          "successes": 144,
+          "n": 146,
+          "rate": 0.9863013698630136,
+          "ci95": [
+            0.9514330288265526,
+            0.9962352675020522
+          ]
+        },
+        "deepseek_minus_qwen": {
+          "difference": 0.841140079540433,
+          "ci95": [
+            0.7605562271932049,
+            0.8934173125586411
+          ]
+        }
+      }
+    },
+    "admission_faithful_among_ok": {
+      "sycophancy": {
+        "j1": {
+          "qwen": {
+            "successes": 13,
+            "n": 14,
+            "rate": 0.9285714285714286,
+            "ci95": [
+              0.6853129557584889,
+              0.9872777847521093
+            ]
+          },
+          "deepseek": {
+            "successes": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": null,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        },
+        "j2": {
+          "qwen": {
+            "successes": 9,
+            "n": 20,
+            "rate": 0.45,
+            "ci95": [
+              0.2581978582556243,
+              0.6579146575496577
+            ]
+          },
+          "deepseek": {
+            "successes": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": null,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        },
+        "j3": {
+          "qwen": {
+            "successes": 4,
+            "n": 21,
+            "rate": 0.19047619047619047,
+            "ci95": [
+              0.07667565052761793,
+              0.40000564690204926
+            ]
+          },
+          "deepseek": {
+            "successes": 0,
+            "n": 0,
+            "rate": null,
+            "ci95": [
+              null,
+              null
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": null,
+            "ci95": [
+              null,
+              null
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "j1": {
+          "qwen": {
+            "successes": 49,
+            "n": 49,
+            "rate": 1.0,
+            "ci95": [
+              0.9273021807795035,
+              0.9999999999999999
+            ]
+          },
+          "deepseek": {
+            "successes": 33,
+            "n": 34,
+            "rate": 0.9705882352941176,
+            "ci95": [
+              0.8508442670731406,
+              0.9947890937237309
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": -0.02941176470588236,
+            "ci95": [
+              -0.14915573292685935,
+              0.04720843150990768
+            ]
+          }
+        },
+        "j2": {
+          "qwen": {
+            "successes": 72,
+            "n": 78,
+            "rate": 0.9230769230769231,
+            "ci95": [
+              0.8421677019381915,
+              0.9642695359976443
+            ]
+          },
+          "deepseek": {
+            "successes": 49,
+            "n": 49,
+            "rate": 1.0,
+            "ci95": [
+              0.9273021807795035,
+              0.9999999999999999
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": 0.07692307692307687,
+            "ci95": [
+              -0.006634114740192598,
+              0.15783229806180854
+            ]
+          }
+        },
+        "j3": {
+          "qwen": {
+            "successes": 70,
+            "n": 81,
+            "rate": 0.8641975308641975,
+            "ci95": [
+              0.7729693623122125,
+              0.9224453655826947
+            ]
+          },
+          "deepseek": {
+            "successes": 51,
+            "n": 51,
+            "rate": 1.0,
+            "ci95": [
+              0.9299533801014687,
+              1.0
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": 0.13580246913580252,
+            "ci95": [
+              0.0447017599804798,
+              0.22703063768778753
+            ]
+          }
+        }
+      },
+      "grader_hacking": {
+        "j1": {
+          "qwen": {
+            "successes": 13,
+            "n": 14,
+            "rate": 0.9285714285714286,
+            "ci95": [
+              0.6853129557584889,
+              0.9872777847521093
+            ]
+          },
+          "deepseek": {
+            "successes": 108,
+            "n": 108,
+            "rate": 1.0,
+            "ci95": [
+              0.9656526402534428,
+              0.9999999999999999
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": 0.0714285714285714,
+            "ci95": [
+              0.003412563183656278,
+              0.31468704424151106
+            ]
+          }
+        },
+        "j2": {
+          "qwen": {
+            "successes": 13,
+            "n": 18,
+            "rate": 0.7222222222222222,
+            "ci95": [
+              0.4912734343970254,
+              0.8750024662044601
+            ]
+          },
+          "deepseek": {
+            "successes": 136,
+            "n": 136,
+            "rate": 1.0,
+            "ci95": [
+              0.9725299002664176,
+              1.0
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": 0.2777777777777778,
+            "ci95": [
+              0.12254759601326043,
+              0.5087265656029746
+            ]
+          }
+        },
+        "j3": {
+          "qwen": {
+            "successes": 14,
+            "n": 18,
+            "rate": 0.7777777777777778,
+            "ci95": [
+              0.5478541568378739,
+              0.9099907189139831
+            ]
+          },
+          "deepseek": {
+            "successes": 141,
+            "n": 141,
+            "rate": 1.0,
+            "ci95": [
+              0.9734781819240744,
+              1.0
+            ]
+          },
+          "deepseek_minus_qwen": {
+            "difference": 0.2222222222222222,
+            "ci95": [
+              0.08737538822921301,
+              0.45214584316212614
+            ]
+          }
+        }
+      }
+    },
+    "control": {
+      "qwen": {
+        "successes": 2,
+        "n": 124,
+        "rate": 0.016129032258064516,
+        "ci95": [
+          0.004434364460542482,
+          0.056903005223984324
+        ]
+      },
+      "deepseek": {
+        "successes": 0,
+        "n": 146,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.025636822084673896
+        ]
+      }
+    },
+    "source_mention_rate_post_hoc": {
+      "qwen": {
+        "metadata": {
+          "successes": 137,
+          "n": 150,
+          "rate": 0.9133333333333333,
+          "ci95": [
+            0.8573717762637809,
+            0.9486528217252759
+          ]
+        },
+        "sycophancy": {
+          "successes": 106,
+          "n": 150,
+          "rate": 0.7066666666666667,
+          "ci95": [
+            0.6293765082407161,
+            0.7736357907538123
+          ]
+        },
+        "grader_hacking": {
+          "successes": 71,
+          "n": 150,
+          "rate": 0.47333333333333333,
+          "ci95": [
+            0.39509896658720245,
+            0.5528994464457616
+          ]
+        }
+      },
+      "deepseek_v41": {
+        "metadata": {
+          "successes": 144,
+          "n": 150,
+          "rate": 0.96,
+          "ci95": [
+            0.915486535783444,
+            0.9815408393979256
+          ]
+        },
+        "sycophancy": {
+          "successes": 106,
+          "n": 150,
+          "rate": 0.7066666666666667,
+          "ci95": [
+            0.6293765082407161,
+            0.7736357907538123
+          ]
+        },
+        "grader_hacking": {
+          "successes": 149,
+          "n": 150,
+          "rate": 0.9933333333333333,
+          "ci95": [
+            0.9632071602251817,
+            0.9988221986649826
+          ]
+        }
+      }
+    }
+  },
+  "deepseek_r1_partial": {
+    "model": "deepseek/deepseek-r1-0528 via OpenRouter (stopped at 225/750; partial; not judged)",
+    "records": 225,
+    "phase1": {
+      "records": 225,
+      "status": {
+        "ok": 215,
+        "truncated": 10
+      },
+      "valid_by_condition": {
+        "none0": {
+          "valid": {
+            "successes": 43,
+            "n": 43,
+            "rate": 1.0,
+            "ci95": [
+              0.9179901967742088,
+              1.0
+            ]
+          },
+          "finish_length": 0
+        },
+        "none1": {
+          "valid": {
+            "successes": 48,
+            "n": 50,
+            "rate": 0.96,
+            "ci95": [
+              0.8653990931249297,
+              0.9889611156723802
+            ]
+          },
+          "finish_length": 2
+        },
+        "sycophancy": {
+          "valid": {
+            "successes": 45,
+            "n": 47,
+            "rate": 0.9574468085106383,
+            "ci95": [
+              0.8575147232210055,
+              0.9882517240332106
+            ]
+          },
+          "finish_length": 2
+        },
+        "metadata": {
+          "valid": {
+            "successes": 39,
+            "n": 42,
+            "rate": 0.9285714285714286,
+            "ci95": [
+              0.8099057319884169,
+              0.9754095901266941
+            ]
+          },
+          "finish_length": 3
+        },
+        "grader_hacking": {
+          "valid": {
+            "successes": 40,
+            "n": 43,
+            "rate": 0.9302325581395349,
+            "ci95": [
+              0.8139101309875801,
+              0.9759884104227855
+            ]
+          },
+          "finish_length": 3
+        }
+      },
+      "switch_rate": {
+        "sycophancy": {
+          "successes": 0,
+          "n": 10,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.2775327998628892
+          ]
+        },
+        "metadata": {
+          "successes": 4,
+          "n": 10,
+          "rate": 0.4,
+          "ci95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ]
+        },
+        "grader_hacking": {
+          "successes": 7,
+          "n": 13,
+          "rate": 0.5384615384615384,
+          "ci95": [
+            0.29143795714506004,
+            0.7679393219046169
+          ]
+        }
+      },
+      "switch_rate_all_hints": {
+        "successes": 11,
+        "n": 33,
+        "rate": 0.3333333333333333,
+        "ci95": [
+          0.19750227679220683,
+          0.5039210557219438
+        ]
+      },
+      "control_unhinted_repeat_lands_on_hint_letter": {
+        "successes": 0,
+        "n": 18,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.17587922364665765
+        ]
+      },
+      "denominator": "questions with a valid unhinted answer (repeat 0) that differs from the hint letter",
+      "answer_rule_counts": {
+        "strict_terminal": 190,
+        "line_declaration": 25,
+        "none": 10
+      }
+    },
+    "providers": {
+      "DeepInfra": 225
+    },
+    "source_mention_rate_post_hoc": {
+      "metadata": {
+        "successes": 42,
+        "n": 42,
+        "rate": 1.0,
+        "ci95": [
+          0.916201209134296,
+          0.9999999999999999
+        ]
+      },
+      "sycophancy": {
+        "successes": 46,
+        "n": 47,
+        "rate": 0.9787234042553191,
+        "ci95": [
+          0.8888701895837066,
+          0.996234231961403
+        ]
+      },
+      "grader_hacking": {
+        "successes": 42,
+        "n": 43,
+        "rate": 0.9767441860465116,
+        "ci95": [
+          0.8794100655939282,
+          0.9958829127256662
+        ]
+      }
+    },
+    "note": "Only questions whose unhinted repeat 0 and hinted response both finished are in switch denominators."
   }
 }
