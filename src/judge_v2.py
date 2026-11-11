@@ -134,7 +134,8 @@ def steer_messages(row):
 
 
 def journals():
-    return sorted(OUT.glob("*.billing.jsonl"))
+    """Every v2/v3 billing journal: OpenAI judges, OpenRouter judges and DeepSeek generation."""
+    return sorted(list(OUT.glob("*.billing.jsonl")) + list(Path("artifacts/v2/deepseek").glob("*.billing.jsonl")))
 
 
 def spent(exclude=None):
