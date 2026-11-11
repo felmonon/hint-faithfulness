@@ -185,10 +185,10 @@ At both strengths the fitted vectors change answers about as often as random one
 
 ## 5. Costs, failures and limits
 
-- **API spend:** US$4.80 of the US$25 cap (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`): US$1.11 in v2; in v3, US$0.07 for the steered switches, US$1.50 for the stopped R1-0528 run (includes reserves for calls in flight when it was stopped, an upper bound), US$0.19 for V4.1 generation including its smoke tests, and the rest for j1/j2/j3 on the new switches. OpenAI figures are list-price estimates from token usage; OpenRouter figures are the cost it returned. Colab used the existing balance only.
+- **API spend:** US$5.67 of the US$25 cap (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`): US$1.11 in v2; in v3, US$0.07 for the steered switches, US$1.50 for the stopped R1-0528 run (includes reserves for calls in flight when it was stopped, an upper bound), US$0.19 for V4.1 generation including its smoke tests, and the rest for j1/j2/j3 on the new switches, of which US$0.87 is the post hoc knowing-switch labeling (all three judges on 144 rows, plus a 3-row smoke). OpenAI figures are list-price estimates from token usage; OpenRouter figures are the cost it returned. Colab used the existing balance only.
 - **Kept failures:**
   - Phase 1: 85 truncated and 2 invalid responses (6 before the parser fix).
-  - Judges: 122 error rows across both models (45 + 6 + 2 on Qwen switches; 54 + 11 + 4 on DeepSeek switches) and 12 + 5 on steer cases. All but one carry a complete, parseable verdict, and all but one say "admits" (section 6).
+  - Judges: 138 error rows across every run (45 + 6 + 2 on Qwen switches; 54 + 11 + 4 on DeepSeek switches; 15 + 0 + 1 on the knowing-switch question; 12 + 5 on steer cases). All but one carry a complete, parseable verdict, and all but one say "admits" or "says_not_correct" (section 6).
   - Phase 3: calibration and sweep outputs that truncated or gave no answer.
   - All of these stay in the raw files and in the denominators stated above.
 - **Changes after the plan was frozen** (dated in [PLAN_V2.md](PLAN_V2.md)):
@@ -202,7 +202,8 @@ At both strengths the fitted vectors change answers about as often as random one
   - Two models, so a comparison, not a size trend.
   - Judge agreement is poor for Qwen (best pair j2–j3, κ 0.59); for DeepSeek it is near-perfect, but nearly every case is "admits", so κ is undefined.
   - No human labels.
-  - Only one steering strength survived calibration.
+  - Two steering strengths survived calibration (0.1 and 0.2), still fewer than the 3–4 hoped for.
+  - The knowing-switch question (section 6) is post hoc: the question was chosen after the switches were known, and it is judged by the same three AI judges. It is reported separately from the frozen numbers for that reason.
   - With 8 steered switches, the steered-reasoning labels can't support any conclusion.
 - **Large files** (activation shards, Phase 3 training activations) are not committed. Their SHA-256 sums and regeneration commands are in `artifacts/v2/CHECKSUMS.txt`.
 
