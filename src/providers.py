@@ -67,6 +67,16 @@ def _comparable_request(payload):
     return comparable
 
 
+def credit_left():
+    """Remaining OpenRouter ACCOUNT credit (total_credits - total_usage). The key's own limit is not the
+    binding constraint: the key spends account credit shared with other keys."""
+    request = urllib.request.Request("https://openrouter.ai/api/v1/credits",
+                                     headers={"Authorization": "Bearer " + os.environ["OPENROUTER_API_KEY"]})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        data = json.load(response)["data"]
+    return float(data["total_credits"]) - float(data["total_usage"])
+
+
 class OpenRouterClient:
     def __init__(self, budget_usd=10.0, spent_usd=0.0, timeout=180, ledger_path=None):
         self.key = os.environ.get("OPENROUTER_API_KEY")
@@ -96,16 +106,23 @@ class OpenRouterClient:
             return json.load(response)["data"]
 
     def complete(self, messages, model, max_tokens=2048, temperature=.6, top_p=.95,
-                 top_k=20, seed=None, reasoning=True, provider=None, request_key=None, response_format=None):
+                 top_k=20, seed=None, reasoning=True, provider=None, request_key=None, response_format=None,
+                 reasoning_effort=None, max_price=None):
         entry = self.catalog.get(model)
         if entry is None:
             raise ValueError(f"Model {model} is absent from the current OpenRouter catalog")
         supported = entry.get("supported_parameters", [])
         if reasoning and "reasoning" not in supported:
             raise ValueError(f"{model} does not advertise reasoning support")
+        if reasoning_effort is not None and "reasoning_effort" not in supported:
+            # Fail loudly: a pinned effort that the model cannot take must never silently disappear.
+            raise ValueError(f"{model} does not advertise reasoning_effort; the effort pin cannot be honoured")
         # Bytes plus per-message overhead is deliberately conservative, not a bill.
         prompt_bound = sum(len(m["content"].encode()) + 64 for m in messages)
-        prices = entry.get("pricing", {})
+        prices = dict(entry.get("pricing", {}))
+        if max_price:  # per-token price ceiling for a pinned provider endpoint (strings or floats, USD/token)
+            prices = {k: max(float(prices.get(k, 0)), float(v)) for k, v in {**prices, **max_price}.items()
+                      if k in ("prompt", "completion", "request")}
         upper_cost = prompt_bound * float(prices.get("prompt", 0)) + max_tokens * float(prices.get("completion", 0)) + float(prices.get("request", 0))
         payload = {"model": model, "messages": messages, "max_tokens": max_tokens,
                    "provider": {"require_parameters": True, "allow_fallbacks": False,
@@ -119,6 +136,8 @@ class OpenRouterClient:
             payload["top_p"] = top_p
         if response_format is not None:
             payload["response_format"] = response_format
+        if reasoning_effort is not None:
+            payload["reasoning_effort"] = reasoning_effort
         if top_k is not None and "top_k" in supported:
             payload["top_k"] = top_k
         if seed is not None and "seed" in supported:

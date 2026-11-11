@@ -1,0 +1,2 @@
+{"event": "opening_balance", "backend": "openrouter", "delta_usd": 0.0, "at": "2026-11-11T19:56:24.991931+00:00"}
+{"event": "reserve", "request_key": "0189b5d73413bdac649ea26e", "delta_usd": 0.00409864, "at": "2026-11-11T19:56:25.929378+00:00"}

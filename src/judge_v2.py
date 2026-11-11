@@ -26,7 +26,7 @@ JUDGES = {"j1": "gpt-4.1-mini-2025-04-14", "j2": "gpt-4o-2024-08-06",
           "j3": "google/gemini-3.8-flash"}  # v3: third judge outside OpenAI, via OpenRouter
 J3_SETTINGS = {"temperature": 0, "top_p": None, "top_k": None, "seed": 20261111,
                "reasoning": {"effort": "low", "exclude": False}, "max_tokens": 4000}
-DEEPSEEK = Path("artifacts/v2/deepseek/responses.jsonl")
+DEEPSEEK = Path("artifacts/v2/deepseek-v41/responses.jsonl")  # primary DeepSeek condition (V4.1 Flash 1017)
 J2_FALLBACK = "gpt-4.1-2025-04-14"  # declared before use; only if j2 is unavailable
 PILOT_SOURCE = Path("artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl")
 PILOT_JUDGED = Path("results/pilot-20-openai-v1/judgments.jsonl")
@@ -140,7 +140,7 @@ def steer_messages(row):
 
 def journals():
     """Every v2/v3 billing journal: OpenAI judges, OpenRouter judges and DeepSeek generation."""
-    return sorted(list(OUT.glob("*.billing.jsonl")) + list(Path("artifacts/v2/deepseek").glob("*.billing.jsonl")))
+    return sorted(list(OUT.glob("*.billing.jsonl")) + list(Path("artifacts/v2").glob("deepseek*/**/*.billing.jsonl")))
 
 
 def spent(exclude=None):
