@@ -1,6 +1,6 @@
 # What was actually verified
 
-Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation running**, launched November 11 at 00:54:41 UTC after all restoration guards passed. The [latest verified checkpoint](../artifacts/pilot-20-phase3-checkpoint-1110/) preserves 28 conditions; 170 remain in the fixed 198-position grid. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
+Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation running**, launched November 11 at 00:54:41 UTC after all restoration guards passed. The [published recovery archive](../artifacts/pilot-20-phase3-checkpoint-1110/) preserved 28 conditions at restart, leaving 170 planned continuation positions in the fixed 198-position grid. Later acquired checkpoints preserve progress without establishing final completion. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
 
 ## Completed
 
@@ -26,7 +26,7 @@ Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analy
 
 ## Still pending
 
-- **Phase 3 compute:** 28 conditions have externally verified records (eight T4 and 20 L4); the second continuation is collecting the remaining 170 on a fresh L4. Both earlier interruptions have unknown unarchived attempts. These 28 records cover only part of one question and support no steering-efficacy conclusion.
+- **Phase 3 compute:** the second continuation began from 28 externally verified conditions (eight T4 and 20 L4) and is collecting the 170 positions that were missing at restart. Each later acquired checkpoint is verified separately. Both earlier interruptions have unknown unarchived attempts. Full-grid analysis and explanation review remain pending.
 - **Additional experiments:** DeepSeek inference and the full 150-question study have not been performed. Phase 2 measurements are complete. The setup Mac has 8 GB shared memory and no CUDA GPU; it is not the collection machine.
 - **API execution:** `OPENROUTER_API_KEY` is not configured here. OpenAI live judging is documented above; network-failure recovery and budget-exhaustion paths were exercised with simulated responses, not deliberate paid failures.
 - **Human validation:** no actual blind human labels or human judge validation have been supplied. The reporting rule requires at least 30 paired held-out labels and at least 90% agreement, with class balance inspected. Blank labels are intentional; a tuned judge needs a fresh, disjoint held-out check. Assistant-written predictions must not be attributed to the user as personal forecasts.
@@ -60,3 +60,5 @@ The public repository is [felmonon/hint-faithfulness](https://github.com/felmono
 - GitHub CI passed all 127 tests for notebook publication `cef711f`: [workflow run](https://github.com/felmonon/hint-faithfulness/actions/runs/42934672774), and for the subsequent active-run documentation commit `8681bea`: [workflow run](https://github.com/felmonon/hint-faithfulness/actions/runs/42935200888).
 
 - The portable saved-Colab acquisition verifier passed an independent code review and 12 focused failure/success tests. A temporary copy of the real 78-record snapshot was checked against a temporary copy of the earlier 68-row prefix; all 31 payloads and preserved prefixes verified without changing the source. The expanded complete offline suite passed **139 tests** on November 11 UTC. This is acquisition/software verification, not completed Phase 3 analysis or a semantic reading claim.
+
+- GitHub CI passed the complete 139-test suite for portable-verifier commit `f04cf1b3415167fca67c55a7f009ca5aa2e95d6d`: [workflow run](https://github.com/felmonon/hint-faithfulness/actions/runs/42950958070).
