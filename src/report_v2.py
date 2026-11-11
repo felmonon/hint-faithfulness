@@ -20,7 +20,8 @@ from .common import HINTS, LETTERS, read_jsonl
 
 V2 = Path("artifacts/v2")
 P1 = V2 / "phase1/responses.jsonl"
-DS = V2 / "deepseek/responses.jsonl"
+DS = V2 / "deepseek-v41/responses.jsonl"        # primary: deepseek/deepseek-v4.1-flash-1017, effort high
+DS_R1 = V2 / "deepseek/responses.jsonl"         # partial second condition: deepseek/deepseek-r1-0528, 225/750
 JUDGE_IDS = ("j1", "j2", "j3")
 PAIRS = (("j1", "j2"), ("j1", "j3"), ("j2", "j3"))
 P2 = V2 / "phase2"
@@ -202,11 +203,35 @@ def comparison(report):
     return out
 
 
+def source_mention_rate(rows):
+    """Post hoc summarization check: share of ALL valid hinted responses whose reasoning matches that hint's
+    keyword pattern (names the hint's source), regardless of switching."""
+    import re
+    out = {}
+    for h, pattern in KEYWORDS.items():
+        rx = re.compile(pattern, re.IGNORECASE)
+        sub = [r for r in rows if r["hint_type"] == h and r.get("status") not in ("error",) and r.get("reasoning")]
+        out[h] = rate(sum(bool(rx.search(r["reasoning"])) for r in sub), len(sub))
+    return out
+
+
+def r1_partial_block():
+    rows = read_jsonl(DS_R1)
+    return {"model": "deepseek/deepseek-r1-0528 via OpenRouter (stopped at 225/750; partial; not judged)",
+            "records": len(rows), "phase1": phase1(path=DS_R1),
+            "providers": dict(Counter(r.get("provider") for r in rows)),
+            "source_mention_rate_post_hoc": source_mention_rate(rows),
+            "note": "Only questions whose unhinted repeat 0 and hinted response both finished are in switch denominators."}
+
+
 def deepseek_block():
     rows = read_jsonl(DS)
     HINT_TYPE.update({r["record_id"]: r["hint_type"] for r in rows})
     ok = [r for r in rows if r["status"] != "error"]
-    return {"model": "deepseek/deepseek-r1-0528 via OpenRouter", "phase1": phase1(path=DS),
+    return {"model": "deepseek/deepseek-v4.1-flash-1017 via OpenRouter (DeepInfra fp8), reasoning_effort high",
+            "reasoning_effort": dict(Counter(r.get("reasoning_effort") for r in rows)),
+            "resolved_model": dict(Counter(r.get("resolved_model") for r in rows)),
+            "source_mention_rate_post_hoc": source_mention_rate(rows), "phase1": phase1(path=DS),
             "providers": dict(Counter(r.get("provider") for r in rows)),
             "errors": [{"record_id": r["record_id"], "error": r["error"]} for r in rows if r["status"] == "error"],
             "reasoning_chars_median": float(np.median([r["reasoning_chars"] for r in ok])) if ok else None,
@@ -377,6 +402,10 @@ def main():
     if DS.exists():
         report["deepseek"] = deepseek_block()
         report["comparison"] = comparison(report)
+        report["comparison"]["source_mention_rate_post_hoc"] = {
+            "qwen": source_mention_rate(read_jsonl(P1)), "deepseek_v41": report["deepseek"]["source_mention_rate_post_hoc"]}
+    if DS_R1.exists():
+        report["deepseek_r1_partial"] = r1_partial_block()
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "report.json").write_text(json.dumps(report, indent=2) + "\n")
     if args.chart:

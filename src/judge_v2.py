@@ -150,7 +150,7 @@ def spent(exclude=None):
 
 def write_costs():
     from .providers import ledger_state
-    rows = {p.name: round(ledger_state(p)[0], 6) for p in journals()}
+    rows = {str(p.relative_to("artifacts/v2")): round(ledger_state(p)[0], 6) for p in journals()}  # full path: names repeat across dirs
     COSTS.parent.mkdir(parents=True, exist_ok=True)
     COSTS.write_text(json.dumps({"cap_usd": CAP_USD, "total_usd": round(sum(rows.values()), 6), "by_journal": rows,
         "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
