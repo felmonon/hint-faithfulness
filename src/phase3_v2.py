@@ -168,10 +168,13 @@ def conditions(strengths):
 
 
 class VLLMSteer:
-    """vLLM (V1, in-process, eager) generation with one steering vector per call.
+    """vLLM (V1, in-process, eager) generation with a steering vector per request.
 
-    The hook adds the vector to the hidden-state output of decoder block `layer`.
-    Qwen blocks in vLLM return (hidden, residual) with the residual stream = hidden + residual,
+    A forward hook on decoder block `layer` adds, to every token of request r, the
+    vector table[steer_idx(r)], where steer_idx travels in SamplingParams.extra_args
+    (0 = no steering). Token->request mapping comes from the model runner's
+    input_batch.req_ids order and query_start_loc offsets for the current forward.
+    Qwen blocks in vLLM return (hidden, residual) with residual stream = hidden + residual,
     so adding to hidden adds to the residual stream. Per-request seeds: qseed(question_id).
     """
 
@@ -181,55 +184,69 @@ class VLLMSteer:
         import torch
         import vllm
         from .gen_v2 import load_vllm
-        self.torch, self.vector = torch, None
+        self.torch, self.table = torch, None
         self.llm = load_vllm(max_num_seqs=128, enforce_eager=True)
         self.tok = self.llm.get_tokenizer()
-        model = None
-        for path in ("llm_engine.engine_core.engine_core.model_executor.driver_worker.worker.model_runner.model",
-                     "llm_engine.model_executor.driver_worker.worker.model_runner.model",
-                     "llm_engine.model_executor.driver_worker.model_runner.model"):
+        self.runner = None
+        for path in ("llm_engine.engine_core.engine_core.model_executor.driver_worker.worker.model_runner",
+                     "llm_engine.model_executor.driver_worker.worker.model_runner"):
             obj = self.llm
             try:
                 for part in path.split("."):
                     obj = getattr(obj, part)
-                model = obj
+                self.runner = obj
                 break
             except AttributeError:
                 continue
-        if model is None:
-            found = []
-            self.llm.apply_model(lambda m: found.append(m))  # in-process engine: runs here
-            model = found[0] if found else None
-        if model is None:
-            raise RuntimeError("cannot reach the in-process vLLM model to hook")
+        if self.runner is None:
+            raise RuntimeError("cannot reach the in-process vLLM model runner to hook")
+        model = self.runner.model
         param = next(model.parameters())
         self.dtype, self.device = param.dtype, param.device
 
         def hook(_module, _inputs, output):
-            if self.vector is None:
+            if self.table is None:
                 return output
-            if isinstance(output, tuple):
-                return (output[0] + self.vector, *output[1:])
-            return output + self.vector
+            hidden = output[0] if isinstance(output, tuple) else output
+            add = self.table[self.token_index(hidden.shape[0])]
+            hidden = hidden + add
+            return (hidden, *output[1:]) if isinstance(output, tuple) else hidden
         model.model.layers[layer].register_forward_hook(hook)
-        self.info = {"backend": "vllm", "vllm_version": vllm.__version__, "enforce_eager": True}
+        self.info = {"backend": "vllm", "vllm_version": vllm.__version__, "enforce_eager": True,
+                     "steering": "per-request vector via forward hook (extra_args steer_idx)"}
+
+    def token_index(self, n_tokens):
+        r = self.runner
+        n = r.input_batch.num_reqs
+        ids = r.input_batch.req_ids[:n]
+        starts = r.query_start_loc.np[:n + 1]
+        idx = [((r.requests[i].sampling_params.extra_args or {}).get("steer_idx", 0)) for i in ids]
+        tok = np.repeat(np.asarray(idx, dtype=np.int64), np.diff(starts))
+        if len(tok) < n_tokens:  # padding tokens get no steering
+            tok = np.concatenate([tok, np.zeros(n_tokens - len(tok), dtype=np.int64)])
+        return self.torch.as_tensor(tok[:n_tokens], device=self.device)
 
     def run(self, items, path):
-        """items: (meta, messages, vector) sharing one vector."""
+        """items: (meta, messages, vector or None); vectors may differ per item."""
         from vllm import SamplingParams
         from vllm.inputs import TokensPrompt
         from .gen_v2 import PARAMS, split_generation
-        vector = items[0][2]
-        self.vector = None if vector is None else self.torch.tensor(vector, dtype=self.dtype, device=self.device)
+        width = self.runner.model.config.hidden_size
+        table = np.zeros((len(items) + 1, width), dtype=np.float32)
+        for i, (_, _, v) in enumerate(items, 1):
+            if v is not None:
+                table[i] = v
+        self.table = self.torch.tensor(table, dtype=self.dtype, device=self.device)
         prompts = [self.tok.apply_chat_template(m, tokenize=True, add_generation_prompt=True, enable_thinking=True,
                                                 return_dict=False) for _, m, _ in items]
         params = [SamplingParams(seed=qseed(meta["question_id"]), temperature=PARAMS["temperature"], top_p=PARAMS["top_p"],
-                                 top_k=PARAMS["top_k"], max_tokens=PARAMS["max_tokens"], skip_special_tokens=False)
-                  for meta, _, _ in items]
+                                 top_k=PARAMS["top_k"], max_tokens=PARAMS["max_tokens"], skip_special_tokens=False,
+                                 extra_args={"steer_idx": i})
+                  for i, (meta, _, _) in enumerate(items, 1)]
         try:
-            results = self.llm.generate([TokensPrompt(prompt_token_ids=p) for p in prompts], params, use_tqdm=False)
+            results = self.llm.generate([TokensPrompt(prompt_token_ids=p) for p in prompts], params, use_tqdm=True)
         finally:
-            self.vector = None
+            self.table = None
         for (meta, _, _), ids, result in zip(items, prompts, results):
             out = result.outputs[0]
             finish = "length" if out.finish_reason == "length" else "stop" if out.finish_reason == "stop" else str(out.finish_reason)
@@ -238,14 +255,11 @@ class VLLMSteer:
                                 "prompt_token_ids": ids, **self.info, "finished_at": utc_now()})
 
 
-def generate_vllm(steer, items, path):
-    groups = {}
-    for item in items:
-        m = item[0]
-        groups.setdefault((m["direction"], m["target_letter"], m["fraction"]), []).append(item)
-    for k, group in groups.items():
-        steer.run(group, path)
-        print(f"{path.name}: {k} {len(group)}", flush=True)
+def generate_vllm(steer, items, path, chunk=400):
+    """All conditions mixed in one vLLM call per chunk (rows appended after each chunk)."""
+    for start in range(0, len(items), chunk):
+        steer.run(items[start:start + chunk], path)
+        print(f"{path.name}: {start + len(items[start:start + chunk])}/{len(items)}", flush=True)
 
 
 def run_steps(questions, split, choice, backend="vllm"):
@@ -322,10 +336,11 @@ def main():
         vec = np.load(OUT / "vectors.npz")
         steer = VLLMSteer(int(vec["layer"]))
         by_id = {q["question_id"]: q for q in questions}
-        path = OUT / "hook_check.jsonl"
-        for name, v in (("zero", None), ("fitted_A_x1.6", scaled(vec["fitted_A"], 1.6, float(vec["median_norm"])))):
-            steer.run([({"phase": "hook_check", "question_id": q, "direction": name, "target_letter": "A", "fraction": 0},
-                        build_messages(by_id[q], "none"), v) for q in split["train"][:2]], path)
+        path = OUT / "hook_check_mixed.jsonl"
+        big = scaled(vec["fitted_A"], 1.6, float(vec["median_norm"]))
+        steer.run([({"phase": "hook_check_mixed", "question_id": q, "direction": name, "target_letter": "A", "fraction": 0},
+                    build_messages(by_id[q], "none"), v)
+                   for q in split["train"][:2] for name, v in (("zero", None), ("fitted_A_x1.6", big))], path)
         print([(r["direction"], r["answer"], r["content"][-40:]) for r in read_jsonl(path)], flush=True)
     if args.step in ("all", "steer"):
         run_steps(questions, split, choice, args.backend)
