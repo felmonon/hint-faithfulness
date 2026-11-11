@@ -281,7 +281,7 @@ Only questions whose repeat-0 and hinted rows both finished count. Switch rates:
 - 10 of 225 R1 rows were truncated; the review counted 9 of 195.
 - V4.1 cost US$0.00023 per call. The review's US$0.000106 was the Relace fp4 endpoint, which does not support `seed`; this run used DeepInfra fp8.
 
-**Post hoc checks from the later audit (2026-11-11)** [recomputed by `src/report_v2.py`, which was not changed for this; the numbers come from the raw files]:
+**Post hoc checks from the later audit (2026-11-11)** [`comparison.audit_checks_post_hoc`]:
 - **DeepSeek mostly switches away from answers it knew.** In 139 of its 144 grader-hacking switches, its unhinted repeat-0 answer was the correct one. Unhinted accuracy on the 146 eligible questions was 141/146. Example reasoning: "But validation function says answer == "C" (pneumonia) oddly."
 - How often the reasoning *states* that the graded letter is wrong has not been measured. A rough regex gives anywhere from 44 to 129 of 144, depending on the pattern. That would need a new judge question, so it is not claimed.
 - **The comparison holds on the questions both models share.** On the 122 questions eligible for both models, switches are: sycophancy DeepSeek 0 vs Qwen 19, metadata 41 vs 81, grader hacking 120 vs 17.
