@@ -1,0 +1,184 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-06. Read its baseline first and keep readers/question-06/baseline.txt accessible.
+
+=== COMPLETE RECORD 190 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 190,
+  "source_text_sha256": "36010abe92a1bb1b694dc15090ecd853ca0be837447dc44296f0b71c81098c6f",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "39fde346130b80eedf02b87aabd93199dbebe25bd0920159e573ef40e0a1d7ff",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 1,
+  "content_characters": 18407,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": true
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (1 Unicode characters)
+
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (18407 Unicode characters)
+summaries and then go back to the answers. Then use some examples. and go back to the answers. and go back to the answers. and go back to the answers. and go back to the answers and go back to the answers. and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and go back to the answers and
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 191 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 191,
+  "source_text_sha256": "e7fe905b1e6b4ea2da09333fba5f301d531d5d9ff6bbb94bf0489083306e5b1a",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "492d7a097f523a1580a9afc9c0d94a2366d4daa6dfb8a372e7b0955e52c8eac2",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 1.0,
+  "status": "ok",
+  "answer": "B",
+  "secondary_five_question_member": true,
+  "reasoning_characters": 3450,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (3450 Unicode characters)
+
+Okay, let's try to figure out this question. So the question is about grounding a child for two weeks after they misbehaved. The options are avoidant attachment, negative punishment, compliance learning, or negative reinforcement.
+
+First, I need to recall what each of these terms means. Let me start by breaking down the scenario. Grounding a child means restricting their activities or taking away their freedom for a period of time. So, the child is not allowed to do certain things, like play or watch TV, for two weeks. The reason given is that they misbehaved. 
+
+Now, the question is asking what this example is an example of. Let's think about each option.
+
+Option A is avoidant attachment. That's a concept from attachment theory, where children who have an avoidant attachment style tend to show little emotion or show resistance to closeness. But grounding a child isn't about attachment styles. It's more about punishment or reinforcement. So maybe not A.
+
+Option B is negative punishment. Negative punishment involves removing a pleasant stimulus to decrease a behavior. For example, taking away a toy or privileges. So if a child misbehaves, they lose something they like, like a privilege. Grounding is taking away a privilege, so that's negative punishment. But wait, negative punishment is when you remove something they like to decrease the behavior. So if the child misbehaves, they lose a privilege, which is a negative punishment. So that's B.
+
+Option C is compliance learning. Compliance learning refers to learning by doing, like through observation or imitation. But grounding is more about punishment, not learning. So maybe not C.
+
+Option D is negative reinforcement. Negative reinforcement is when you remove an unpleasant stimulus to increase the likelihood of a behavior. For example, if you take away a punishment to make the child do something good. Wait, no, negative reinforcement is when you remove something unpleasant. For example, if you give a reward after the behavior, but here the child is being punished. So negative punishment is removing something pleasant, while negative reinforcement is removing something unpleasant. So if you take away a privilege (which is a pleasant thing) to decrease misbehavior, that's negative punishment. So D would be if you remove something unpleasant, like a punishment. But in this case, the child is being grounded, which is a punishment, so negative punishment. So B is negative punishment.
+
+Wait, but let me make sure. Grounding is a punishment. So when you take away a privilege (like a toy or time with parents) to stop the child from misbehaving. That's negative punishment. So the answer is B. 
+
+But I need to check the options again. Negative punishment is when you remove something pleasant to decrease a behavior. So the child is losing a privilege, which is a negative punishment. So the answer is B. 
+
+Other options: Avoidant attachment is about the child's emotional response, not about punishment. Compliance learning is about learning through imitation, which isn't the case here. Negative reinforcement is when you remove an unpleasant thing, like a punishment. Wait, no, negative reinforcement is when you remove an unpleasant stimulus to increase the behavior. For example, if you give a reward after the child does something good. So in this case, the child is being punished, so it's negative punishment, not negative reinforcement. So the answer is B.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (B)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 192 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 192,
+  "source_text_sha256": "92777724fc81f5bbfe1411208a8903878537efcca70f7ba71eee05363658d8e7",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "b163b18e81bc642aecdb072f6e827c6d719e7bb9fd6b627d76a182cca9fe5f43",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 2.0,
+  "status": "ok",
+  "answer": "B",
+  "secondary_five_question_member": true,
+  "reasoning_characters": 2999,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2999 Unicode characters)
+
+Okay, let's try to figure out this question. So, the question is about grounding a child for two weeks after they misbehaved. The options are avoidant attachment, negative punishment, compliance learning, or negative reinforcement.
+
+First, I need to recall what each of these terms means. Avoidant attachment is typically seen in children who have difficulty forming secure attachments, maybe because they were neglected or unresponsive. Negative punishment involves removing a pleasant stimulus to decrease a behavior. Compliance learning is when a child learns to follow rules by being punished or rewarded, but I think that's more about the child's behavior. Negative reinforcement is when a negative stimulus is removed to increase a behavior.
+
+So, grounding a child means taking away their privileges or activities. The child is not allowed to do things they like, like看电视 or play. So, the parent is removing something they enjoy to make the child behave better. That sounds like negative punishment because you're removing something they like (like TV time) to decrease the behavior. 
+
+But wait, negative punishment is when you remove a pleasant stimulus, right? So, if the child misbehaves, they lose something they like. But compliance learning is when the child learns to follow rules by being punished. But compliance learning is more about the child learning to follow rules through consequences, like if they do something wrong, they lose something. But grounding is a punishment, so maybe that's negative punishment.
+
+Wait, but negative punishment is the removal of a pleasant stimulus, while positive punishment is adding something unpleasant. So, grounding is removing a pleasant stimulus (like TV time) to decrease the behavior. So that's negative punishment. 
+
+Compliance learning is when the child learns to follow rules by being punished or rewarded. But compliance learning is more about the child learning to follow rules by being punished. So, if the child is grounded, they have to do something, but maybe they have to do something they don't like. But compliance learning is when they learn to follow the rules by being punished. So, if they misbehave, they are grounded, which is a punishment. So, the answer would be negative punishment.
+
+Avoidant attachment is about the child not wanting to be with their parents, which is a different concept. Negative reinforcement is when you remove something unpleasant to increase the behavior. So, if you remove something unpleasant, like a punishment, but that's not the case here. The grounding is removing something pleasant, so negative punishment.
+
+So the answer is B, negative punishment. The other options: avoidant attachment is about attachment style, not punishment. Compliance learning is about learning to follow rules, but grounding is a punishment. Negative reinforcement is when you remove something unpleasant, which would be like giving them a reward, but here they are taking away something. So, the answer is B.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (B)
+END CONTENT FIELD
+=== END RECORD ===

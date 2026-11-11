@@ -1,6 +1,6 @@
 # What was actually verified
 
-Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation running**, launched November 11 at 00:54:41 UTC after all restoration guards passed. The [published recovery archive](../artifacts/pilot-20-phase3-checkpoint-1110/) preserved 28 conditions at restart, leaving 170 planned continuation positions in the fixed 198-position grid. Later acquired checkpoints preserve progress without establishing final completion. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
+Prepared November 9, 2026, America/Edmonton; updated after final Phase 3 audit on November 11 UTC. **Phase 3 completed all 198 retained outcomes and passed its full saved-artifact audit.** Both frozen prefixes, vectors, source files, token/text records and 8 T4 + 20 first-L4 + 170 later-L4 lineage verified. The six-question primary and declared five-question numerical analyses are published in [the results directory](../results/pilot-20-phase3-v1/). Unknown unarchived attempts after both earlier interruptions remain unknown. The historical entries below describe what was known at their dates; they are not current run-status claims.
 
 ## Completed
 
@@ -26,7 +26,6 @@ Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analy
 
 ## Still pending
 
-- **Phase 3 compute:** the second continuation began from 28 externally verified conditions (eight T4 and 20 L4) and is collecting the 170 positions that were missing at restart. Each later acquired checkpoint is verified separately. Both earlier interruptions have unknown unarchived attempts. Full-grid analysis and explanation review remain pending.
 - **Additional experiments:** DeepSeek inference and the full 150-question study have not been performed. Phase 2 measurements are complete. The setup Mac has 8 GB shared memory and no CUDA GPU; it is not the collection machine.
 - **API execution:** `OPENROUTER_API_KEY` is not configured here. OpenAI live judging is documented above; network-failure recovery and budget-exhaustion paths were exercised with simulated responses, not deliberate paid failures.
 - **Human validation:** no actual blind human labels or human judge validation have been supplied. The reporting rule requires at least 30 paired held-out labels and at least 90% agreement, with class balance inspected. Blank labels are intentional; a tuned judge needs a fresh, disjoint held-out check. Assistant-written predictions must not be attributed to the user as personal forecasts.
@@ -62,3 +61,12 @@ The public repository is [felmonon/hint-faithfulness](https://github.com/felmono
 - The portable saved-Colab acquisition verifier passed an independent code review and 12 focused failure/success tests. A temporary copy of the real 78-record snapshot was checked against a temporary copy of the earlier 68-row prefix; all 31 payloads and preserved prefixes verified without changing the source. The expanded complete offline suite passed **139 tests** on November 11 UTC. This is acquisition/software verification, not completed Phase 3 analysis or a semantic reading claim.
 
 - GitHub CI passed the complete 139-test suite for portable-verifier commit `f04cf1b3415167fca67c55a7f009ca5aa2e95d6d`: [workflow run](https://github.com/felmonon/hint-faithfulness/actions/runs/42950958070).
+
+
+## Final Phase 3 audit and publication checks, November 11 UTC
+
+- All 198 retained outcomes passed the complete saved-artifact audit: 100 source prompts retokenized, 198 generated traces decoded, both exact checkpoint prefixes, all earlier payloads, fitted vectors and scientific source checked. The runtime lineage is eight T4 +20 first-L4 +170 later-L4 records. No model weights were loaded and no new inference or judge request was made.
+- The two final notebook snapshots independently passed acquisition checks with identical 38-file payload dictionaries. The original notebook, extraction chain, all 13 intermediate checkpoint acquisition records and exact source hashes are published separately from the raw scientific dataset.
+- The unchanged numerical analyzer completed both six-question primary and declared five-question sensitivity analyses. Every condition count and paired point contrast was independently recomputed from raw metadata; figure values and all output checksums were checked. This does not remove small-sample, attrition or hardware limitations.
+- The descriptive-review counting utility adds no semantic labels or full-read claims. Four synthetic checks verify invalid/baseline denominator exclusion, disjoint switch/change groups, correct/incorrect strata and source identities, and separate content-only/ambiguous claims. The complete offline suite passed **152 tests in 8.656 seconds**. The additional nine context-check tests cover source/assignment bindings, complete coverage, distinct reader identity, full-read fields, timestamps, agreement consistency and preserved disagreements. Test judge messages use simulated fixtures, not new paid calls.
+- All 198 actual full-text AI annotations and all 99 selected second-reader context checks are bound to the final source in the review directory. The separate completion verifier passed with zero recorded disagreements; all 90 mandatory records and the prescribed spots are covered. Structural checks attest coverage and exact quotations; they cannot independently establish comprehension or human validation. Human-label fields remain blank.

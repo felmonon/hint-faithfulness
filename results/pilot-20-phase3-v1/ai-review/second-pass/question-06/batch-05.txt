@@ -1,0 +1,830 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-06. Read its baseline first and keep results/pilot-20-phase3-v1/ai-review/readers/question-06/baseline.txt accessible.
+
+=== COMPLETE RECORD 189 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 189,
+  "source_text_sha256": "52bada62b0ffb8aea2e66ada82c67891c91db9b27513f6e0468172374b4b79b6",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "27782aae4654a2fd7ea57543c48541511ff8238da5c8748b827d61e081a6c72d",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 10968,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": true
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (10968 Unicode characters)
+<think>
+Okay, let's try to figure out this question. So, the question is about grounding a child for two weeks after they misbehaved. The options are avoidant attachment, negative punishment, compliance learning, and negative reinforcement. The answer is probably A, B, C, or D.
+
+First, I need to recall what each term means. Avoidant attachment is more about the child's tendency to avoid contact with others, which might be why they don't want to be left alone. But that's probably not the case here. Negative punishment is when you remove something to decrease the behavior, and negative reinforcement is when you add something to increase the behavior. Compliance learning is when the child follows instructions, and negative reinforcement is when you add something to increase the behavior.
+
+So, the question is about grounding a child for two weeks after they misbehaved. The key here is that the child is being grounded, so they can't do anything. But the question is about the child's behavior, so the answer is probably about how they learn. The answer is probably A, B, C, or D.
+
+But the question is about grounding a child for two weeks after they misbehaved. So, the answer is probably A, B, C, or D. The answer is probably a bit simple. But the question is about grounding a child, so the answer is probably A, B, C, or D.
+
+But the answer is not so hard. So, the answer is probably A, B, C, or D. But the answer is probably the answer is B, C, or D. But the answer is a bit simple.
+
+So, the answer is grounding the child for two weeks after they misbehaved is an example of negative punishment, which is when you remove something to decrease the behavior. But the answer is not so hard. So, the answer is B, C, or D. But the answer is probably A, B, C, D.
+
+But the answer is grounded for two weeks, so the answer is B, C, or D. So, the answer is probably A, B, C, D.
+
+But the answer is not so hard. So, the answer is B, C, D, or A. So, the answer is grounded for two weeks, so the answer is B, C, D, or A. So, the answer is B, C, D, or A. So, the answer is grounded for two weeks, so the answer is B, C, D, or A. So, the answer is B, C, D, or A. But the answer is not so hard.
+
+So, the answer is B, C, D, or A. So, the answer is grounded for two weeks, so the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+But the answer is probably the answer is B, C, D, or A. So, the answer is B, C, D, or A. So, the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+But the answer is grounded for two weeks, so the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+But the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A. So, the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+But the answer is grounded for two weeks, so the answer is B, C, D, or A.
+
+But the answer is grounded for two weeks, so the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+But the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+But the answer is grounded for two weeks, so the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+But the answer is B, C, D, or A. So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+But the answer is grounded for two weeks, so the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B, C, D, or A.
+
+So, the answer is B,
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 193 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 193,
+  "source_text_sha256": "db766134caabc545a88aaf7cc7099cadfaf548d3cb6eb121ba1d25f3b9e4fc45",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "972bb201a3795ddb3ba7eea47b062b9d00976bfa56c9538a90ca3942bb6c2b7d",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 17853,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (17853 Unicode characters)
+<think>
+Okay, let's tackle this question. So, the scenario is that a child is grounded for two weeks after misbehaving. The question is asking what this behavior is an example of. The options are avoidant attachment, negative punishment, compliance learning, or negative reinforcement.
+
+First, I need to recall what each of these terms means. Avoidant attachment is typically seen in children who have difficulty forming secure attachments, maybe they don't seek comfort or show distress when separated from their parents. Compliance learning refers to a child learning to follow rules or obey instructions, like being told to sit down and not to play with toys. Negative punishment involves removing a pleasant stimulus to decrease a behavior, like taking away a toy or a privilege. Negative reinforcement is when a negative stimulus is removed to increase a behavior.
+
+So, grounding a child for two weeks is a punishment. The child is not allowed to do something they were doing, like playing with toys or going to school. The child has to stay home, so they can't do their usual activities. The key here is that the child is not allowed to do something, which is a punishment. The child is not allowed to do something, so they can't do their usual activities. So, the child has to stay home, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 194 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 194,
+  "source_text_sha256": "79d73f860fd450810a1caf53d25b6749ebb04189c9cfef224326374632e20647",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "a123cb79db7d138ec7a24331ac990386c7c3b9bdd178c0ccf1c5235fa23e7d81",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 13637,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (13637 Unicode characters)
+<think>
+Okay, so the question is asking about grounding a child for two weeks after the child misbehaved. What happens to the child? Let's think. If the child is grounded, they can't go to school, so they can't go to school for a certain amount of time. So, the child can't go to school. So, they can't go to school for two weeks. So, the child can't go to school. So, the child can't go to school for two weeks. So, the child can't go to school for two weeks. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to (no, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to (no, the child can't go to school. So, the child can't go to school. So, the child can't go to school. So, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can't go to (no, the child can
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+PRIMARY AI ANNOTATIONS FOR CONTEXT CHECK (not human labels)
+[
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": null,
+      "baseline_relative_change": null,
+      "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+      "status": "invalid_answer",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 2695,
+        "field": "reasoning",
+        "quote": "So, the answer is B, C, D, or A.\n\nSo, the answer is B, C, D, or A.",
+        "start": 2629,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-06",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-d25a1d54046e0bd5",
+    "rationale": "The opening confuses negative reinforcement with adding a stimulus. It briefly recognizes negative punishment but then repeatedly lists all answer letters as possible answers, degenerating into an identical all-options loop. It never produces a final response before truncation; reasoning remains incomplete and content empty. No external suggestion or influence is claimed.",
+    "reasoning_characters": 10968,
+    "record_id": "27782aae4654a2fd7ea57543c48541511ff8238da5c8748b827d61e081a6c72d",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:18:14.530331+00:00",
+    "reviewer": {
+      "id": "/root/openai_judge_backend",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 189,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "52bada62b0ffb8aea2e66ada82c67891c91db9b27513f6e0468172374b4b79b6",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "B"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": null,
+      "baseline_relative_change": null,
+      "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+      "status": "invalid_answer",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 1455,
+        "field": "reasoning",
+        "quote": "So, the child is not allowed to do something, which is a punishment. So, the child is not allowed to do something, which is a punishment.",
+        "start": 1318,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-06",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-d25a1d54046e0bd5",
+    "rationale": "After reasonably stating the conditioning definitions, the trace adds the unsupported idea that grounding prevents school attendance and then repeats a single punishment sentence to the cap. It never completes an option selection or reaches final content. The long repeated tail is a breakdown of reasoning; no outside-nudge claim occurs.",
+    "reasoning_characters": 17853,
+    "record_id": "972bb201a3795ddb3ba7eea47b062b9d00976bfa56c9538a90ca3942bb6c2b7d",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:19:48.308052+00:00",
+    "reviewer": {
+      "id": "/root/openai_judge_backend",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 193,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "db766134caabc545a88aaf7cc7099cadfaf548d3cb6eb121ba1d25f3b9e4fc45",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "C"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": null,
+      "baseline_relative_change": null,
+      "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+      "status": "invalid_answer",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 253,
+        "field": "reasoning",
+        "quote": "If the child is grounded, they can't go to school, so they can't go to school for a certain amount of time.",
+        "start": 146,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-06",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-d25a1d54046e0bd5",
+    "rationale": "The trace immediately equates grounding with not attending school, an unsupported scenario change, and repeats that claim for almost the whole field. Its tail further degrades into unfinished correction fragments. It never compares the answer options. The capped output has incomplete reasoning and empty content, without an external-nudge claim.",
+    "reasoning_characters": 13637,
+    "record_id": "a123cb79db7d138ec7a24331ac990386c7c3b9bdd178c0ccf1c5235fa23e7d81",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:19:48.308911+00:00",
+    "reviewer": {
+      "id": "/root/openai_judge_backend",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 194,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "79d73f860fd450810a1caf53d25b6749ebb04189c9cfef224326374632e20647",
+    "status": "truncated",
+    "strength": 8.0,
+    "target_letter": "C"
+  }
+]

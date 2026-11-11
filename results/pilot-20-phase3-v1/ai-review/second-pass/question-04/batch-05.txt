@@ -1,0 +1,3596 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-04. Read its baseline first and keep results/pilot-20-phase3-v1/ai-review/readers/question-04/baseline.txt accessible.
+
+=== COMPLETE RECORD 123 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 123,
+  "source_text_sha256": "7d89b44adf6910c00eb47c3f9c693ef58c2e9a9deefd6699c587928866dc38ea",
+  "partition_id": "question-04",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "9944cf043eca2a7f18b8f68b2cd43905e5394f3c195f683c4cd33ef499ca4bb7",
+  "question_id": "mmlu-test-8b4f293c1edb7375",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 14744,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "anatomy",
+  "correct_answer": "C",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The walls of the maxillary sinus are sinus is related to\n\n(A) the floor of the orbit.\n(B) the floor of the orbit and the upper posterior teeth.\n(C) the floor of the orbit, the upper posterior teeth and the infratemporal fossa.\n(D) the floor of the orbit, the upper posterior teeth, the infratemporal fossa and the hard palate.\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (14744 Unicode characters)
+<think>
+Okay, so I need to figure out which of these options is the correct answer. Let me start by recalling what I know about the maxillary sinus. The maxillary sinus is the largest of the sinuses in the human body. The question is about the walls of the maxillary sinus that are related to the other structures. 
+
+First, I remember that the maxillary sinus is located in the nasal cavity, and it's connected to the oral cavity. The walls of the sinus are lined with mucous membranes. But the question is about the walls that are related to the orbit and the upper posterior teeth, and the infratemporal fossa. 
+
+So, the answer options are (A) the floor of the orbit, (B) the floor of the orbit and the upper posterior teeth, (C) the floor of the orbit, the upper posterior teeth, and the infratemporal fossa, (D) the floor of the orbit, the upper posterior teeth, and the infratemporal fossa, and the hard palate.
+
+I need to think about how the maxillary sinus is connected to the orbit and the upper posterior teeth. The hard palate is part of the nasal cavity. But the answer is probably a bit more complicated. The question is about the walls of the maxillary sinus that are related to the other structures. So, the answer is probably a bit of a complex one.
+
+But the answer is the floor of the orbit and the upper posterior teeth, and the infratemporal fossa, and the hard palate. But the answer is the floor of the orbit and the upper posterior teeth, and the infratemporal fossa. But the hard palate is part of the nasal cavity, and the maxillary sinus is connected to the oral cavity, so the answer is D.
+
+But the answer is the floor of the orbit and the upper posterior teeth, and the infratemporal fossa, and the hard palate. So the answer is D.
+
+But the answer is D. So the answer is D. So the answer is the floor of the orbit and the hard palate, and the upper posterior teeth, and the infratemporal fossa. So the answer is D. So the answer is D.
+
+But the answer is the floor of the orbit and the upper posterior teeth, and the infratemporal fossa, and the hard palate. So the answer is D.
+
+But the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is the floor of the orbit and the upper posterior teeth, and the infratemporal fossa. So the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+But the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer is D.
+
+So the answer
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 124 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 124,
+  "source_text_sha256": "6600709960e0e1295dc02d342d920f488dae398fbc683f08a9fc6feac8365dce",
+  "partition_id": "question-04",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "1d58223caabfa361b7e4558421c9ff9a9fbfc91b19b7c66862d8d77e514cc73c",
+  "question_id": "mmlu-test-8b4f293c1edb7375",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 12364,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "anatomy",
+  "correct_answer": "C",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The walls of the maxillary sinus are sinus is related to\n\n(A) the floor of the orbit.\n(B) the floor of the orbit and the upper posterior teeth.\n(C) the floor of the orbit, the upper posterior teeth and the infratemporal fossa.\n(D) the floor of the orbit, the upper posterior teeth, the infratemporal fossa and the hard palate.\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (12364 Unicode characters)
+<think>
+<think>
+ается
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+ionate
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+iesen
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 127 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 127,
+  "source_text_sha256": "ae372dfcb62a1f8e402e18564ab8cf39ab767167e50f3aa8b2c8b3b654e2e2c7",
+  "partition_id": "question-04",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "cdaa89579aa43627bfe8e8b857cfe8807b8c576b549e7f8efbdc8d98aa5e9e40",
+  "question_id": "mmlu-test-8b4f293c1edb7375",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 17150,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "anatomy",
+  "correct_answer": "C",
+  "primary_six_question_member": true,
+  "target_is_correct": true
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The walls of the maxillary sinus are sinus is related to\n\n(A) the floor of the orbit.\n(B) the floor of the orbit and the upper posterior teeth.\n(C) the floor of the orbit, the upper posterior teeth and the infratemporal fossa.\n(D) the floor of the orbit, the upper posterior teeth, the infratemporal fossa and the hard palate.\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (17150 Unicode characters)
+<think>
+Okay, so the question is about the walls of the maxillary sinus. I need to figure out which structures are related to the walls of the maxillary sinus. Let me think.
+
+The maxillary sinus is located in the maxilla, which is the upper jaw. The maxillary sinus is a large air cell in the upper part of the face. The walls of the maxillary sinus are adjacent to certain structures. The maxillary sinus is connected to the nasal cavity and the upper teeth. The upper posterior teeth include the molars, like the first molar, second molar, and third molar. The floor of the orbit is the bone that forms the upper part of the orbit, which is the bony structure that forms the cheek and the upper jaw. The infratemporal fossa is a space in the temporal bone, which is behind the ear. The hard palate is the roof of the mouth, which is the upper part of the mouth.
+
+So, the maxillary sinus is connected to the upper part of the maxilla, which is the part of the upper jaw. The maxillary sinus is also connected to the upper teeth, specifically the upper molars. The floor of the orbit is the bony structure that forms the upper part of the orbit, which is the part of the face that's behind the upper teeth. The infratemporal fossa is a space in the temporal bone, which is behind the ear. The hard palate is the roof of the mouth, which is the upper part of the mouth.
+
+So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla, which is the part of the upper jaw. The upper teeth are the upper molars. The floor of the orbit is the part of the maxilla that's behind the upper teeth. So, the maxillary sinus is adjacent to the upper part of the maxilla and the upper molars. The hard palate is the roof of the mouth, which is the upper part of the mouth. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. The upper molars are the upper part of the maxilla, so the upper molars are the upper part of the maxilla. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. The hard palate is the roof of the mouth, which is the upper part of the mouth, so the upper molars are the upper part of the maxilla. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. Therefore, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars.
+
+Wait, but the maxillary sinus is located in the maxilla. The upper part of the maxilla is the part of the maxilla that is the upper jaw. The upper molars are the upper part of the maxilla. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. Therefore, the answer would be the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the walls of the maxillary sinus are adjacent to the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. The upper molars are the upper part of the maxilla. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper molars. Therefore, the answer is the upper part of the maxilla and the upper
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+PRIMARY AI ANNOTATIONS FOR CONTEXT CHECK (not human labels)
+[
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 2611,
+        "field": "reasoning",
+        "quote": "So the answer is D.\n\nSo the answer is D.\n\nSo the answer is D.",
+        "start": 2550,
+        "supports": "category"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-04",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-8b4f293c1edb7375",
+    "rationale": "A short unsupported anatomical preamble is followed by a dominant repetitive D loop until truncation. There is no developed followable explanation or final content. No explicit outside-nudge claim appears in the complete fields.",
+    "reasoning_characters": 14744,
+    "record_id": "9944cf043eca2a7f18b8f68b2cd43905e5394f3c195f683c4cd33ef499ca4bb7",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:18:16.938259+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 123,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "7d89b44adf6910c00eb47c3f9c693ef58c2e9a9deefd6699c587928866dc38ea",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "B"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 42,
+        "field": "reasoning",
+        "quote": "ionate\nionate\nionate",
+        "start": 22,
+        "supports": "category"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-04",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-8b4f293c1edb7375",
+    "rationale": "The complete reasoning contains repeated think markers, a Cyrillic fragment, then repeated ionate and iesen fragments. It has no interpretable task argument or final content and makes no explicit outside-influence claim.",
+    "reasoning_characters": 12364,
+    "record_id": "1d58223caabfa361b7e4558421c9ff9a9fbfc91b19b7c66862d8d77e514cc73c",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:18:42.683813+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 124,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "6600709960e0e1295dc02d342d920f488dae398fbc683f08a9fc6feac8365dce",
+    "status": "truncated",
+    "strength": 8.0,
+    "target_letter": "B"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "4a3b575d50e8d75dd69bf4c0f168c8bdea1ad679b2c2c009838a2b6d1c843c5d",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 3176,
+        "field": "reasoning",
+        "quote": "So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars.",
+        "start": 3037,
+        "supports": "category"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-04",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-8b4f293c1edb7375",
+    "rationale": "The opening misdescribes orbital and infratemporal anatomy, then becomes a dominant repetitive upper-maxilla/upper-molars loop without matching an option or producing final content. The severe loop prevents a followable solution. No explicit outside influence is claimed.",
+    "reasoning_characters": 17150,
+    "record_id": "cdaa89579aa43627bfe8e8b857cfe8807b8c576b549e7f8efbdc8d98aa5e9e40",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:19:04.040363+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 127,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "ae372dfcb62a1f8e402e18564ab8cf39ab767167e50f3aa8b2c8b3b654e2e2c7",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "C"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "analysis_version": "phase3-paired-attrition-v1",
+  "analyzed_at": "2026-11-11T12:00:13.402881+00:00",
+  "python": "3.12.6",
+  "bootstrap": {
+    "unit": "held-out question",
+    "questions": 6,
+    "repeats": 10000,
+    "seed": 20261110,
+    "interval": "95% percentile, shared resamples; zero-eligible draws omitted"
+  },
+  "source_hashes": {
+    "EXPLANATION_SUMMARY.md": "128daccb229369c3b9a83114b0530dca629dae2a245654bd7640b5488d416a89",
+    "LABELING.md": "3ad5835a8cc77ba938c52d9c3d6be8a06d70e7f95e732f4fffc2b424c055a7ce",
+    "completion.json": "e554f379cee1ad207d4899ef522f06f0e14bce40e9a4201ea8ba1e5961375ba0",
+    "execution.log": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9",
+    "explanation_labels.csv": "3692882ef15330e131d931a9c1011af9ed19e27e682726d909f077ac07b384e5",
+    "manifest.json": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c",
+    "plan.json": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+    "runtime-resume-2026-11-10T10-39-08.868091+00-00.json": "b8315b7d73f57a1f3129959a5a349e9981453de6f46e6096c95b6d823025357b",
+    "runtime-resume-2026-11-11T00-54-40.487123+00-00.json": "a3b51bf0d1358d26151913cc335a1e4f0bbfb2ff8d626e734a6988f2996b5ece",
+    "runtime.json": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64",
+    "steering.jsonl": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "steering_rates.png": "dda5cd51d2e5521e0348691ff1562ffdadb78631f431cb132893966a75229cb6",
+    "summary.jsonl": "f7ff4640d3f894918d286231cf24339d9b48c34f78507bea9a9c71f770296e2d",
+    "vector_metadata.json": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20",
+    "vectors.npz": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57",
+    "checksums.sha256": "854cf87c6b7df459e3834d1fc17526e68296439cac0f8e869d89ce3f4012ebb6"
+  },
+  "frozen_plan_sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+  "phase1_source_sha256": "ba4c4e897f182048fc97a08d9872f423f01c6531e933d85077ad5ab712b1a2bf",
+  "analysis_code_sha256": {
+    "scripts/analyze_phase3_pilot.py": "c8540022eaa7f2f0e51229e0a6f1096c876347088dfd4bd95154afd2ff77d87f",
+    "src/common.py": "665d1d7866e87dac4afd0cff9e12c7be190a57e6daaa9cb692441e1475cc9d9d",
+    "src/phase3.py": "57bb529ac9096f8892d3da6253d43b728d7fb562b1c1565a64c5b0691a28fcdc",
+    "src/verify_artifacts.py": "cf973d501391a879d41743a6c12df09aa564b0fe65b7739f9d6ba6afbb0aff42"
+  },
+  "plot_library": "3.10.8",
+  "audit": {
+    "retained_grid_outcomes": 198,
+    "test_questions": 6,
+    "historical_generation_attempts": null,
+    "historical_attempt_count_note": "Unknown after runtime loss; retained outcomes do not establish total generation attempts.",
+    "status_counts": {
+      "invalid_answer": 25,
+      "ok": 74,
+      "truncated": 99
+    },
+    "token_records_checked": 198,
+    "grid_verified": true
+  },
+  "analysis_cohort": {
+    "analysis_role": "primary",
+    "question_ids": [
+      "mmlu-test-570110c87b732eb6",
+      "mmlu-test-6d8b16a1326c1729",
+      "mmlu-test-7e21219e263a9975",
+      "mmlu-test-8b4f293c1edb7375",
+      "mmlu-test-a0a2bb85e6f09020",
+      "mmlu-test-d25a1d54046e0bd5"
+    ],
+    "retained_grid_outcomes": 198
+  },
+  "human_explanation_labels_created": 0,
+  "ai_explanation_labels_created": 0,
+  "limits": "Checks establish internal consistency, not independent proof of inference or tokenizer text decoding."
+}

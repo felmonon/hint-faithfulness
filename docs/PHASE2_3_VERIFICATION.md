@@ -1,8 +1,10 @@
 # Phase 2–3 implementation checks
 
-**Current checkpoint, November 10 UTC:** Real Phase 2 has completed on the pinned Qwen3-1.7B checkpoint, with [raw artifacts](../artifacts/pilot-20-phase2-v1/), exact source hashes, runtime metadata, and the [frozen plan](phase2-pilot-plan.json). Phase 3 is **blocked by Colab GPU usage limits** after loss of the earlier runtime. Its [archived checkpoint](../artifacts/pilot-20-phase3-checkpoint-0430/) preserves eight records; 190 grid positions lack archived outcomes, and later original attempts are unknown. The [resume protocol](PHASE3_RESUME_PROTOCOL.md) preserves the [separate frozen plan](phase3-pilot-plan.json), vectors, and retained rows. The synthetic checks below remain historical software evidence, not substitutes for model measurements.
+**Final update, November 11 UTC:** Both real pilot extensions completed. Phase 3 now has 198 audited retained outputs, with unchanged eight/28-row prefixes and both primary/secondary numerical analyses. See the [Phase 3 report](PHASE3_PILOT_REPORT.md) and [final audit](../results/pilot-20-phase3-v1/artifact_audit/audit.md). The latest software suite passed 152 tests. The entries below are preserved historical software/execution checkpoints, not current GPU blockers. Human validation and the larger two-model study remain absent.
 
-The current local suite passed **97 tests** with `python3.12 -m unittest discover -s tests -q` on November 10 UTC, including seven offline Phase 3 analyzer tests. The earlier 36-test checkpoint below is retained as history. Passing the expanded suite does not imply that the 198-position model sweep completed.
+**Historical checkpoint, November 10 UTC:** Real Phase 2 has completed on the pinned Qwen3-1.7B checkpoint, with [raw artifacts](../artifacts/pilot-20-phase2-v1/), exact source hashes, runtime metadata, and the [frozen plan](phase2-pilot-plan.json). Phase 3 is **blocked by Colab GPU usage limits** after loss of the earlier runtime. Its [archived checkpoint](../artifacts/pilot-20-phase3-checkpoint-0430/) preserves eight records; 190 grid positions lack archived outcomes, and later original attempts are unknown. The [resume protocol](PHASE3_RESUME_PROTOCOL.md) preserves the [separate frozen plan](phase3-pilot-plan.json), vectors, and retained rows. The synthetic checks below remain historical software evidence, not substitutes for model measurements.
+
+The local suite at that checkpoint passed **97 tests** with `python3.12 -m unittest discover -s tests -q` on November 10 UTC, including seven offline Phase 3 analyzer tests. The earlier 36-test checkpoint below is retained as history. Passing the expanded suite does not imply that the 198-position model sweep completed.
 
 Checked November 9, 2026 (America/Edmonton). These are **software checks with synthetic fixtures**, not model experiment results. No reported rate here is evidence about Qwen or reasoning faithfulness. No actual model checkpoint was loaded by these checks.
 
@@ -17,7 +19,7 @@ Checked November 9, 2026 (America/Edmonton). These are **software checks with sy
 
 Both Phase 2 and Phase 3 CLI help commands pass. The Python cells in the four Colab notebooks compile after treating notebook shell commands as shell commands; the notebooks have not been executed in Colab.
 
-## Current validation status
+## Historical validation status at the checkpoint
 
 The real small-model pilot, full retained-trace AI review, and Phase 2 execution are now complete. The [Phase 2 report](PHASE2_PILOT_REPORT.md) and [numerical audit](../results/pilot-20-phase2-v1/audit.md) verify checkpoint identity, FP16 runtime, token boundaries, arrays, grouped splits, predictions, and statistics. They do not supply independent human labels or an independent GPU replication.
 

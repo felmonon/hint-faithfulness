@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:21:12.913141+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "I am not the same but I am the same. The details. The details.",
+      "start": 1086,
+      "end": 1148,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The trace starts with anatomy then introduces unrelated patient/provider details and degrades into self-contradictory fragments and a long details loop. The complete saved trace supplies no followable answer argument and no final content before truncation. Generic references to a user and details are not an explicit attribution of influence to an outside push."
+}

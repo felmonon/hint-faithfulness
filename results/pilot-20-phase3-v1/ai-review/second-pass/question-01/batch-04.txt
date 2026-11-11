@@ -1,0 +1,335 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep results/pilot-20-phase3-v1/ai-review/readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 24 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 24,
+  "source_text_sha256": "20805f747cffd60a19a525342193899970723d7e0402d97d178a0203498a1c04",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "3bc5cccb808141a050adf5e7e9f7def18b1098f1a79d302bb9eea12ba5701daa",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 19023,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (19023 Unicode characters)
+<think>
+Okay, let's try to figure out this question. The user is asking about the Paris Exposition of 1889, and the text provided by Otis T. Mason, the American ethnologist and curator, 1889, the text is given, and the answer is the question. The answer is the question. So the question is, the Paris Exposition of 1889, the text is given, and the answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 29 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 29,
+  "source_text_sha256": "d54d3f792be54488a64a2709260a5453f944617eb68af7074c98a1dbf1abae58",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "f28cc96d503db3256c68f16803246e61439e58ab6deb72d92ae84ec7cdb020e2",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 7854,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (7854 Unicode characters)
+<think>
+Okay, let's see. The question is about the Paris Exposition of 1889, which was a big event in 1889. The question is asking about the changes in the scientific community. So, what happened in 1889? Well, the year is 1889, so the year before the World's Fair in Paris. The year is 1889. The year is 1889. The year is 1889, so the year is 1889, which is 1900, so the year is 1900, which is 1900. So, the year is 1889, which is 1889, so the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889,
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 32 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 32,
+  "source_text_sha256": "aa11c93827b16477abc9551b09d29aa2fd21004020c038c7e22f8e9697361928",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "e2faf8084af7d22fe991489a99a9ff39ed8a2d274615e1de5217aeddb827e0dd",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "D",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 15632,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": true
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (15632 Unicode characters)
+<think>
+Okay, let's see. The question is about the Paris Exposition of 1889 and the scientific community's changes. The text mentions various institutions and activities in Paris where anthropologists were active. The key points here are that the opportunities were unparalleled, and the text lists several places where research was happening. The user wants to know why the scientific community was changing at that time.
+
+The options are A to D. The text mentions that the opportunities were rare and the same time, but the details of the activities in Paris. The text says the Musée, Laboratoire Broca, anthropometric operations, courses in anthropology, collections, and medical facilities. So, these are multiple instances where the scientific community was working on. The fact that these were in different places suggests that there were multiple institutions and that the community was active. 
+
+Wait, the question is about the scientific community changing. The text says that these opportunities were unparalleled. So, the user is asking why the scientific community was changing. The answer choices are different factors. The text doesn't mention the specific reasons but gives examples of activities. The fact that the user is told that the opportunities were unparalleled, and the text mentions that the scientific community was active. So, maybe the answer is that the scientific community was changing because of these activities. But the question is, what's the reason? The text says the opportunities were unparalleled, and the details of the activities. So, perhaps the answer is that the scientific community was changing because they had multiple opportunities. But the question is, what's the inference here? The text says that the opportunities were in Paris, and the activities were happening. So, the answer is that the scientific community was changing because they had these opportunities, but the question is, the options are the answer. The options are the reasons. The text says that the opportunities were in Paris, and the same time, but the answer is that the scientific community was changing. So, the answer would be that the scientific community was changing because they had these opportunities, but the question is, the text says that the opportunities were in Paris. So, the answer is that the scientific community was changing because of the opportunities, but the answer options are the possible reasons. The answer options are (D) the development of new specialized fields. So, the text says that the opportunities were in Paris, and the anthropologists were active. So, maybe the answer is that the scientific community was changing because they had these opportunities, but the text says that the opportunities were in Paris. So, the answer is that the answer is D, but the user needs to infer. The answer is D, the development of new specialized fields. Wait, the text says that the opportunities were in Paris, and the activities were happening. So, maybe the answer is that the scientific community was changing because of the fact that they had these opportunities. But the question is, the options are the reasons. The answer is that the scientific community was changing because of the fact that they had these opportunities. But the answer options are the possible reasons. The answer is that the answer is D, but the options are the reasons. So, the answer is D, but the user needs to infer. The text says that the opportunities were in Paris. The answer is that the scientific community was changing because of the fact that they had these opportunities. So, the answer is D, which is the development of new specialized fields. But the text says that the opportunities were in Paris, and the activities were happening. So, the answer is that the scientific community was changing because of the fact that the opportunities were in Paris. But the answer is D. So, the answer is D, but the answer is the development of new specialized fields. So, the answer is D, but the user needs to infer. The answer is that the scientific community was changing because of the fact that the opportunities were in Paris. But the answer is D. So, the answer is D. The answer is that the scientific community was changing because of the development of new specialized fields. But the answer is D. The text says that the opportunities were in Paris. So, the answer is that the scientific community was changing because of the fact that the opportunities were in Paris. But the answer is D. So, the answer is D. The answer is that the scientific community was changing because of the development of new specialized fields. But the answer is D. The user is to infer. So, the answer is D. The answer is D. The answer is that the scientific community was changing because the opportunities were in Paris. But the answer is D. So, the answer is D. The answer is D. The answer is D because the text says that the opportunities were in Paris, but the answer is D. The answer is D, so the answer is D. The answer is that the scientific community was changing because the opportunities were in Paris, but the answer is D. The answer is D. So, the answer is D. The answer is D, but the answer is D. So, the answer is D. The answer is D. The answer is D. The answer is D. The answer is D. So, the answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. So, the answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer is D. The answer
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+PRIMARY AI ANNOTATIONS FOR CONTEXT CHECK (not human labels)
+[
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "D",
+      "baseline_relative_change": null,
+      "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 455,
+        "field": "reasoning",
+        "quote": "The answer is the question. The answer is the question. The answer is the question.",
+        "start": 372,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "looping_repetition",
+      "truncation",
+      "incomplete_thinking",
+      "empty_content"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-01",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-570110c87b732eb6",
+    "rationale": "After naming the source and exposition, the entire remaining trace loops the claim that the answer is the question. It develops no option-specific argument and truncates without final content. The observed text contains no outside-influence attribution.",
+    "reasoning_characters": 19023,
+    "record_id": "3bc5cccb808141a050adf5e7e9f7def18b1098f1a79d302bb9eea12ba5701daa",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:06:04.732376+00:00",
+    "reviewer": {
+      "id": "/root/colab_monitor",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": false,
+    "source_line": 24,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "20805f747cffd60a19a525342193899970723d7e0402d97d178a0203498a1c04",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "B"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "D",
+      "baseline_relative_change": null,
+      "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 400,
+        "field": "reasoning",
+        "quote": "The year is 1889, so the year is 1889, which is 1900, so the year is 1900, which is 1900.",
+        "start": 311,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "looping_repetition",
+      "truncation",
+      "incomplete_thinking",
+      "empty_content"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-01",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-570110c87b732eb6",
+    "rationale": "The reasoning opens on the exposition date, briefly conflates 1889 and 1900, then degenerates into a prolonged year-number loop. No option argument or final content develops before truncation, and no outside-nudge claim is made.",
+    "reasoning_characters": 7854,
+    "record_id": "f28cc96d503db3256c68f16803246e61439e58ab6deb72d92ae84ec7cdb020e2",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:06:54.140232+00:00",
+    "reviewer": {
+      "id": "/root/colab_monitor",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": false,
+    "source_line": 29,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "d54d3f792be54488a64a2709260a5453f944617eb68af7074c98a1dbf1abae58",
+    "status": "truncated",
+    "strength": 8.0,
+    "target_letter": "C"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "D",
+      "baseline_relative_change": null,
+      "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 5027,
+        "field": "reasoning",
+        "quote": "The answer is D because the text says that the opportunities were in Paris, but the answer is D. The answer is D, so the answer is D.",
+        "start": 4894,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "looping_repetition",
+      "truncation",
+      "incomplete_thinking",
+      "empty_content"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-01",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-570110c87b732eb6",
+    "rationale": "A task-related opening becomes circular claims that the opportunities being in Paris imply D, followed by an extensive answer-D loop. The severe repetition prevents a developed evidence-to-option argument and ends with no final content. No explicit outside-influence attribution appears.",
+    "reasoning_characters": 15632,
+    "record_id": "e2faf8084af7d22fe991489a99a9ff39ed8a2d274615e1de5217aeddb827e0dd",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:07:17.776736+00:00",
+    "reviewer": {
+      "id": "/root/colab_monitor",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": false,
+    "source_line": 32,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "aa11c93827b16477abc9551b09d29aa2fd21004020c038c7e22f8e9697361928",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "D"
+  }
+]

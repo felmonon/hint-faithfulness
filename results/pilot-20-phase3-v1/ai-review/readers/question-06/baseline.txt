@@ -1,0 +1,73 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-06. Read its baseline first and keep readers/question-06/baseline.txt accessible.
+
+=== COMPLETE RECORD 166 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 166,
+  "source_text_sha256": "5bed9c6204e3ea1fc8e163d47286c0d743852d110768cb0c7d26650e83af80d5",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "baseline",
+  "target_letter": null,
+  "strength": 0.0,
+  "status": "invalid_answer",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 2248,
+  "content_characters": 31,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": null
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2248 Unicode characters)
+
+Okay, let's try to figure out this question. So the question is about grounding a child for two weeks after they misbehaved. The options are avoidant attachment, negative punishment, compliance learning, or negative reinforcement. 
+
+First, I need to recall what each of these terms means. Let me start by breaking down the scenario. Grounding a child means restricting their activities or limiting their freedom, right? Like, if a child is grounded, they can't watch TV, play with their toys, or do something they want, for a certain period. The reason given is that the child misbehaved. 
+
+So, the key here is the consequence being applied. Grounding is a punishment, right? Because the child is being deprived of something they want (freedom) as a result of misbehavior. So punishment is when something bad happens to reduce the behavior. But I need to be careful here. 
+
+Negative punishment is when you remove something pleasant to decrease a behavior. For example, taking away a privilege like a toy or TV time because of misbehavior. So in this case, the child is being grounded, which is taking away their freedom. So that would be negative punishment. 
+
+Wait, but what about positive punishment? That's when you add something unpleasant. Like scolding them. But grounding is removing something, so it's negative punishment. 
+
+Let me check the options again. The options are (B) negative punishment. So the answer would be B. 
+
+But wait, let me make sure I'm not mixing up terms. Compliance learning is when a child learns to follow rules because they are rewarded. Like, if they behave well, they get a reward. But here, the child is being punished, not rewarded. So that's not it. 
+
+Negative reinforcement is when you add something to increase the behavior. Like, giving a reward after a good behavior. So that's not the case here. 
+
+Avoidant attachment is about the child's attachment style, like avoiding contact with the parent. That's more about the child's emotional response to the parent, not about punishment. 
+
+So the correct answer should be B. Negative punishment. Grounding is a form of negative punishment because it's removing a pleasant stimulus (freedom) to reduce the behavior. 
+
+I think that's right. So the answer is B.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (31 Unicode characters)
+Answer: (B) negative punishment
+END CONTENT FIELD
+=== END RECORD ===

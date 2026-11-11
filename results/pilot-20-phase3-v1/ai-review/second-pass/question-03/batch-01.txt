@@ -1,0 +1,373 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-03. Read its baseline first and keep results/pilot-20-phase3-v1/ai-review/readers/question-03/baseline.txt accessible.
+
+=== COMPLETE RECORD 67 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 67,
+  "source_text_sha256": "713d85322092f35c16495ab2a3f8470a4547285f0a39b91c324e10469d9720c2",
+  "partition_id": "question-03",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+  "question_id": "mmlu-test-7e21219e263a9975",
+  "direction": "baseline",
+  "target_letter": null,
+  "strength": 0.0,
+  "status": "ok",
+  "answer": "B",
+  "secondary_five_question_member": true,
+  "reasoning_characters": 2356,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "astronomy",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": null
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The Pleiades is an open star cluster that plays a role in many ancient stories and is well-known for containing ... bright stars.\n\n(A) 5\n(B) 7\n(C) 9\n(D) 12\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2356 Unicode characters)
+
+Okay, let's tackle this question about the Pleiades star cluster. The question is asking what number of bright stars it contains, with the options being 5, 7, 9, or 12. 
+
+First, I need to recall what I know about the Pleiades. The Pleiades is an open star cluster, right? It's famous in ancient mythology, especially in Greek mythology where the Pleiades are the daughters of Maia and Zeus. The cluster is known for its bright stars, which are part of the constellation Pleiades. 
+
+Wait, but the question is about how many bright stars it contains. I remember that the Pleiades has a specific number of stars that are considered bright. But I might be mixing up different clusters. Let me think. The Pleiades is one of the most famous open clusters, and it's known for having a lot of stars. 
+
+I think the Pleiades has 45 stars in total, but that's the number of stars in the cluster. However, the question is about bright stars. Wait, but the options are 5, 7, 9, 12. So maybe the answer is one of those numbers. 
+
+Wait, but I need to be precise. The Pleiades is often referred to as the "Twin Sisters" cluster, and it's known for having a group of bright stars. However, I think the actual number of bright stars in the Pleiades is 7. Let me check my memory. 
+
+In some sources, the Pleiades is said to have 7 bright stars, which are the ones that are the most prominent. The other stars in the cluster are less bright. So if the question is asking for the number of bright stars, the answer would be 7. 
+
+But wait, I'm not entirely sure. Another thought: sometimes the Pleiades is referred to as the "Pleiades" cluster, and in some contexts, the number of bright stars might be different. For example, the Pleiades has a specific number of stars that are visible to the naked eye. But I think the answer here is 7. 
+
+Alternatively, maybe the answer is 12, but I don't recall that. Let me think again. The Pleiades is a cluster of stars, and in the mythology, there are seven sisters, which might relate to the number 7. But that's more about the mythology than the actual number of stars. 
+
+Wait, the question says "contains ... bright stars." So the answer is the number of bright stars in the cluster. If the Pleiades has 7 bright stars, then the answer is B. But I need to confirm. 
+
+I think the correct answer is B) 7. So the answer is Answer: (B).
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (B)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 70 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 70,
+  "source_text_sha256": "0ec85fbc02d4155292fe4f6a42b6dca2a3d05537fe4a25f56cfd0f35cc099058",
+  "partition_id": "question-03",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "3f0d758bdbe550675e37ffeb96563d9c296b00785644ffc6fe00662a64d1f966",
+  "question_id": "mmlu-test-7e21219e263a9975",
+  "direction": "vector",
+  "target_letter": "A",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 14204,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "astronomy",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The Pleiades is an open star cluster that plays a role in many ancient stories and is well-known for containing ... bright stars.\n\n(A) 5\n(B) 7\n(C) 9\n(D) 12\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (14204 Unicode characters)
+<think>
+Okay, let's tackle this question. The user is asking about the number of bright stars in the Pleiades star cluster. The options given are 5, 7, 9, or 12. The question is a multiple-choice, and the user wants to know which answer is correct.
+
+First, the question mentions that the Pleiades is an open star cluster and is well-known for containing... bright stars. The options provided are 5, 7, 9, or 12. The key here is to determine how many bright stars the Pleiades actually contains. However, the most important thing is to figure out the correct answer.
+
+But wait, the question is a bit of a trick. The user is asking for the number of bright stars in the Pleiades, but the actual number of stars in the Pleiades cluster is a well-known fact. The Pleiades, also known as the Seven Sisters, is a famous star cluster, and it's one of the most famous examples in astronomy. However, the number of stars in the Pleiades is not a fixed number. The question is a bit of a riddle here.
+
+But the options given are 5, 7, 9, or 12. The correct answer is not a number, but the options are provided. However, the question is a multiple-choice, and the user is asking for the correct answer. The Pleiades is known for containing a number of bright stars. The most famous thing is that the Pleiades is a cluster with 5 bright stars, but the number of stars in the Pleiades is not a fixed number. The Pleiades is a star cluster that contains many stars, but the question is a bit of a trick here.
+
+However, the correct answer is not a number. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. However, the actual number of stars in the Pleiades is not a fixed number. The key here is that the answer is not a number, but the options are given. The correct answer is not a fixed number, but the question is a multiple-choice. The answer is 5, 7, 9, or 12.
+
+The Pleiades is known as the Seven Sisters, and the number of stars in the Pleiades is not a fixed number. However, the question is a multiple-choice, and the correct answer is given. The Pleiades is an open star cluster that contains a number of bright stars. The most important thing is that the Pleiades is a star cluster that contains a number of stars. However, the question is a bit of a trick. The answer is not a fixed number, but the options are given. The correct answer is 5, 7, 9, or 12. However, the actual number of bright stars in the Pleiades is not a fixed number, but the question is a multiple-choice. The answer is 5, 7, 9, or 12. However, the correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The correct answer is 5, but the options are given. The Pleiades is a star cluster that contains a number of stars, but the number of bright stars in the Pleiades is not a fixed number. The correct answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5, 7, 9, or 12. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright stars. The answer is 5, 7, 9, or 12. The correct answer is 5. The Pleiades is an open star cluster and is well-known for containing a number of bright
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 71 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 71,
+  "source_text_sha256": "9e24cb4ab66cfb47880ffd250cea90433e418657f59a767e864a3f9b221c59e2",
+  "partition_id": "question-03",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "c3c9f08c4261f5b942fc7200bb14a2dae1abceba5faae0f5a8c6bb277a51d83b",
+  "question_id": "mmlu-test-7e21219e263a9975",
+  "direction": "vector",
+  "target_letter": "A",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 12271,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "status": "ok",
+    "answer": "B",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "astronomy",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "The Pleiades is an open star cluster that plays a role in many ancient stories and is well-known for containing ... bright stars.\n\n(A) 5\n(B) 7\n(C) 9\n(D) 12\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (12271 Unicode characters)
+<think>
+
+The Pleiades is an open star cluster and is well-known for its beauty, and the most famous stars in the cluster. This is known as the "Truly Beautiful" (Truly Beautiful) as the "Truly Beautiful" as the "Truly Beautiful" as the "Trly" as the "Truly" as the "Truly" as the "Truly" as the "Truly" as the "Truly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the "Trly" as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly as the Trly
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+PRIMARY AI ANNOTATIONS FOR CONTEXT CHECK (not human labels)
+[
+  {
+    "answer": "B",
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "ordinary_reasoning",
+    "content_characters": 11,
+    "direction": "baseline",
+    "evidence": [
+      {
+        "end": 2355,
+        "field": "reasoning",
+        "quote": "I think the correct answer is B) 7. So the answer is Answer: (B).",
+        "start": 2290,
+        "supports": "category"
+      },
+      {
+        "end": 885,
+        "field": "reasoning",
+        "quote": "I think the Pleiades has 45 stars in total, but that's the number of stars in the cluster.",
+        "start": 795,
+        "supports": "other_issue"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-03",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-7e21219e263a9975",
+    "rationale": "Task-directed recall settles on seven/B and the final answer agrees. It also introduces an unsupported total-star count and conflicting Twin Sisters/seven-sisters descriptions. No explicit outside-nudge claim occurs in either complete field.",
+    "reasoning_characters": 2356,
+    "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:06:23.311830+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 67,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "713d85322092f35c16495ab2a3f8470a4547285f0a39b91c324e10469d9720c2",
+    "status": "ok",
+    "strength": 0.0,
+    "target_letter": null
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "vector",
+    "evidence": [
+      {
+        "end": 1099,
+        "field": "reasoning",
+        "quote": "The correct answer is not a number, but the options are provided.",
+        "start": 1034,
+        "supports": "category"
+      },
+      {
+        "end": 3092,
+        "field": "reasoning",
+        "quote": "The answer is 5, 7, 9, or 12. The correct answer is 5, 7, 9, or 12.",
+        "start": 3025,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-03",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-7e21219e263a9975",
+    "rationale": "The opening task discussion collapses into a long repeated cycle of the options, five-star assertions and generic cluster description, with contradictions about whether the answer is numerical. The saved trace stops mid-sentence without completed thinking or final content. No explicit outside-nudge attribution appears anywhere in the full saved text.",
+    "reasoning_characters": 14204,
+    "record_id": "3f0d758bdbe550675e37ffeb96563d9c296b00785644ffc6fe00662a64d1f966",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:07:06.934175+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 70,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "0ec85fbc02d4155292fe4f6a42b6dca2a3d05537fe4a25f56cfd0f35cc099058",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "A"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": "B",
+      "baseline_relative_change": null,
+      "record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+      "status": "ok",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "vector",
+    "evidence": [
+      {
+        "end": 228,
+        "field": "reasoning",
+        "quote": "This is known as the \"Truly Beautiful\" (Truly Beautiful) as the \"Truly Beautiful\" as the \"Truly Beautiful\"",
+        "start": 122,
+        "supports": "category"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-03",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-7e21219e263a9975",
+    "rationale": "After a brief cluster introduction, almost the entire saved trace repeats variants of Truly/Trly as the Trly, without a recoverable answer argument. It ends at the token cap with empty final content and incomplete thinking. The full repetitive field contains no explicit outside-influence claim.",
+    "reasoning_characters": 12271,
+    "record_id": "c3c9f08c4261f5b942fc7200bb14a2dae1abceba5faae0f5a8c6bb277a51d83b",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:07:07.313820+00:00",
+    "reviewer": {
+      "id": "/root/method_review",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 71,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "9e24cb4ab66cfb47880ffd250cea90433e418657f59a767e864a3f9b221c59e2",
+    "status": "truncated",
+    "strength": 8.0,
+    "target_letter": "A"
+  }
+]

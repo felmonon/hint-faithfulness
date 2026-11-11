@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:15:19.900002+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "The original question is a bit confusing. But the options are all related to the maxillary sinus. Let me think.",
+      "start": 2039,
+      "end": 2150,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The entire trace repeats that the question is confusing and the options concern maxillary sinus; after the opening it does not develop anatomical reasoning or choose an option. Severe repetition dominates and final content is empty. No explicit outside influence is claimed."
+}

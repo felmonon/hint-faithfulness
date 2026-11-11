@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:18:42.683813+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "ionate\nionate\nionate",
+      "start": 22,
+      "end": 42,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The complete reasoning contains repeated think markers, a Cyrillic fragment, then repeated ionate and iesen fragments. It has no interpretable task argument or final content and makes no explicit outside-influence claim."
+}

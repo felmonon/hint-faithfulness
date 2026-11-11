@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:17:11.082909+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "<think>",
+      "start": 0,
+      "end": 7,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The complete reasoning field contains only the literal opening think marker followed by spaces/newlines. Under the whitespace-only empty rule the marker makes this nonempty, but it contains no task-directed argument; final content is empty. It never claims an outside push."
+}

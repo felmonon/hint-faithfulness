@@ -1,0 +1,29 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:14:53.793166+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition",
+    "unsupported_reasoning"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "However, the maxillary sinus is in the maxilla and the walls of the sinus are related to the floor of the orbit and the upper posterior teeth.",
+      "start": 4403,
+      "end": 4545,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The trace begins an option comparison but contradicts itself about teeth, hard palate and infratemporal fossa, then becomes an extensive verbatim adjacency loop without resolution. Severe looping and contradictions prevent a followable solution; final content is empty. Neither field claims external influence."
+}

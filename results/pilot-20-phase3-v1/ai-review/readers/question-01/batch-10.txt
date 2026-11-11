@@ -1,0 +1,194 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 28 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 28,
+  "source_text_sha256": "66243d04f840c1b659625b964f690bd91ba87cfec0a41c50a2565284545ef1d4",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "36397bff6283a931cb98351a787f3ff04cacd1b9dfb3d85d46003e7fcbb55b2c",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 4.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 2951,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2951 Unicode characters)
+
+Okay, let's try to figure out this question. The text talks about the Paris Exposition of 1889 and mentions various institutions and people involved in studying human natural history. The key points here are the presence of different institutions like the Musée and Laboratoire Broca, the Palais de Justice, and the École d'Anthropologie. Also, there's mention of medical schools and hospitals. 
+
+So, the question is asking what the scientific community was changing due to the Paris Exposition. The options are about women, funding, public education, or new specialized fields. 
+
+First, I need to think about what happened in the late 19th century. The Paris Exposition was a big event, and during that time, there were many developments in anthropology and related fields. The text mentions that there were various institutions and courses in anthropology, medical schools, and hospitals. 
+
+Anthropology in the late 19th century was a field that was developing. The Paris Exposition might have been a place where people could study human anatomy, which is important for anthropology. The text also mentions that there were courses in anthropology, and maybe other related fields like medicine. 
+
+So, the question is about what the scientific community was changing. If you think about the time, the 19th century saw the rise of anthropology as a field. The development of specialized fields like anthropology, medicine, and other related areas. 
+
+The options are: A) inclusion of women, B) increase in funding, C) development of public education, D) development of new specialized fields. 
+
+If the question is about the scientific community, then the answer would be about the development of new specialized fields. Because during the late 19th century, anthropology was developing, and there were more specialized fields like medical schools, and maybe other fields. 
+
+But wait, the text mentions that there were institutions like the Musée and Laboratoire Broca, which are related to human anatomy and anthropology. The École d'Anthropologie, which is a school for anthropology. So, maybe the scientific community was changing in terms of the specialization of fields. 
+
+Another point is that in the 19th century, the field of anthropology was becoming more specialized. So, the answer could be D. 
+
+But the options are about the scientific community. If the answer is D, then the scientific community was changing because they were developing new specialized fields. 
+
+Other options: A) inclusion of women. Maybe, but in the late 19th century, women were not necessarily included in the scientific community as much as they are now. 
+
+C) development of public education. Maybe, but public education in the 19th century was more about the general education, but not necessarily the scientific community. 
+
+So, the answer would be D. 
+
+Therefore, the correct answer is D, which is the development of new specialized fields. 
+
+So, the answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 29 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 29,
+  "source_text_sha256": "d54d3f792be54488a64a2709260a5453f944617eb68af7074c98a1dbf1abae58",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "f28cc96d503db3256c68f16803246e61439e58ab6deb72d92ae84ec7cdb020e2",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "C",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 7854,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (7854 Unicode characters)
+<think>
+Okay, let's see. The question is about the Paris Exposition of 1889, which was a big event in 1889. The question is asking about the changes in the scientific community. So, what happened in 1889? Well, the year is 1889, so the year before the World's Fair in Paris. The year is 1889. The year is 1889. The year is 1889, so the year is 1889, which is 1900, so the year is 1900, which is 1900. So, the year is 1889, which is 1889, so the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889. So, the year is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889, which is 1889,
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 30 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 30,
+  "source_text_sha256": "7ba290164470023aa33d6c6e377c303e0a104eb4ff31d89dfad7002b3a455297",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "501af5d70029618955c85ba7e34961259ab9ec87c805e817d421380e341d0322",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "D",
+  "strength": 1.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 2987,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": true
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2987 Unicode characters)
+
+Okay, let's try to figure out this question. The text is about the Paris Exposition of 1889 and the opportunities for studying human anthropology there. The question is asking what the scientific community was changing due to, based on the information given.
+
+First, I need to look at the passage again. It mentions various institutions and facilities in Paris during the Exposition, like the Musée and Laboratoire Broca, anthropometric operations by Bertillon in the Palais de Justice, courses in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in medical schools and hospitals. The key point here is that there were many opportunities for anthropologists and biologists to work, which suggests that the scientific community was active and had various resources.
+
+The question is about what the scientific community was changing due to. The options are A to D. Let's break them down.
+
+Option A: Inclusion of women. The passage doesn't mention anything about women being included or excluded. It talks about opportunities for anthropologists, but not specifically about women. So maybe not A.
+
+Option B: Increase in funding from officials. The text mentions that the French capital had these facilities, but does it say that funding was increased? The passage says "the opportunities to study... were unparalleled," but it doesn't explicitly mention funding. However, maybe the presence of these institutions implies that there was support, but the text doesn't directly state funding. So B might be a possible answer, but I need to check others.
+
+Option C: Development of universal public education. The text mentions courses in the École d'Anthropologie, which is a specialized school. If public education was developing, that might mean more people could access these courses. But the passage doesn't explicitly mention education being universal. It's possible, but not directly stated. The text is about the availability of resources, not the education system's development.
+
+Option D: Development of new, specialized fields. The passage talks about various institutions and methods being available, which suggests that anthropology and related fields were becoming more specialized. The fact that there were multiple institutions and methods (like anthropometry, medical facilities, etc.) indicates that the field was expanding and becoming more specialized. So D might be the answer.
+
+So, the passage mentions that there were numerous opportunities for study, which could be due to the development of new fields. The fact that they had different institutions and methods suggests that the scientific community was moving into more specialized areas. The other options are not directly mentioned. The inclusion of women isn't discussed, funding isn't explicitly stated, and while education might be part of it, the text focuses on the availability of resources and methods rather than the education system's development. Therefore, the answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===

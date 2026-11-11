@@ -1,0 +1,71 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 1 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 1,
+  "source_text_sha256": "e474c7fe97a56ac57e16fbd97deb40fff5fb638598b1c1efa788888347f6ba44",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "baseline",
+  "target_letter": null,
+  "strength": 0.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 2959,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": null
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2959 Unicode characters)
+
+Okay, let's try to figure out this question. The text is about the Paris Exposition of 1889 and the opportunities available for studying human anthropology during that time. The question is asking what the scientific community was changing due to, based on the information given.
+
+First, I need to look at the passage again. It mentions various institutions and activities: the Musée and Laboratoire Broca, anthropometric operations by Bertillon in the Palais de Justice, courses in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in medical schools and hospitals. These are all different areas where anthropologists and biologists could work. The key here is that the text talks about the availability of resources and opportunities in Paris during the Exposition, which was a major event.
+
+The question is about what the scientific community was changing due to. The options are A to D. Let's break down each option.
+
+Option A: Inclusion of women. The passage doesn't mention anything about women being included or excluded. It's about the availability of resources, so maybe not A.
+
+Option B: Increase in funding from officials in the French capital. The text mentions that the French capital offers rare advantages, but it doesn't explicitly mention funding. However, if the Exposition was a major event, maybe there was more funding, but the passage doesn't directly state that. It's possible, but not sure yet.
+
+Option C: Development of universal public education in many European countries. The passage mentions courses in the École d'Anthropologie, which is a specific educational institution. But does this relate to universal public education? The text doesn't mention education systems in general, just specific institutions. So maybe C is not the right answer.
+
+Option D: Development of new, specialized fields. The text talks about various fields like anthropology, comparative anatomy, biology, and medical facilities. These are different specialized areas. The fact that there are more opportunities in Paris suggests that the scientific community was expanding into new areas, which would be a development in specialized fields. So D could be a candidate.
+
+Wait, the passage says that during the Exposition, there were opportunities to study human natural history, and various institutions and methods were available. The fact that there are multiple specialized areas (anthropology, biology, medicine) suggests that the scientific community was moving into more specialized fields. So the development of new specialized fields would be the answer. 
+
+Alternatively, maybe the answer is D. The other options don't directly relate. The passage doesn't mention funding (B), but if the Exposition was a major event, maybe funding was increased. But the text doesn't say that. The key is the availability of different institutions and the expansion of fields. So D makes sense. 
+
+Therefore, the answer should be D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===

@@ -1,0 +1,182 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 22 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 22,
+  "source_text_sha256": "2935f20769bec0a11140463ccfaa90542f2af4beda90659e9b27787c9a7999cc",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "65274619fe70de8713ab676bd661a53f1ee27a429ef7d527878fd6ba44280732",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 1.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 3473,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (3473 Unicode characters)
+
+Okay, let's try to figure out this question. The user provided a text about the Paris Exposition of 1889 and some options regarding what the scientific community was changing due to. The question is asking which of the options (A to D) can be inferred from the text.
+
+First, I need to understand the text. The passage mentions that during the Paris Exposition, there were many opportunities for studying human natural history. It talks about various institutions like the Musée and Laboratoire Broca, Bertillon's anthropometric operations in the Palais de Justice, courses in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in medical schools and hospitals. These are all things that contribute to the study of anthropology and biology.
+
+The question is about what the scientific community was changing due to. The options are about women's inclusion, funding from officials, public education, or new specialized fields.
+
+Looking at the text, it emphasizes the availability of resources and institutions. The mention of the Musée, Laboratoire Broca, the Palais de Justice, École d'Anthropologie, Jardin de Plantes, and medical facilities suggests that there were advancements in these areas. The fact that they mention these specific institutions and the opportunities available during the Exposition indicates that the scientific community was taking advantage of these resources.
+
+Now, the options: 
+
+A) Inclusion of women. The text doesn't mention anything about women. It's possible that women were involved, but the text doesn't state that. So maybe not A.
+
+B) Increase in funding from officials. The text doesn't talk about funding. It mentions the availability of facilities, but not funding. So maybe not B.
+
+C) Development of universal public education. The text mentions courses in the École d'Anthropologie, which might be part of public education. However, the text doesn't explicitly say that public education was developing. It's possible, but not directly stated.
+
+D) Development of new, specialized fields. The text talks about various fields like anthropology, biology, and anatomy. The fact that there are multiple institutions and operations suggests that these fields were being developed and studied more. The Exposition was a time when these fields were being explored, so maybe the development of new specialized areas is the answer.
+
+But the question is about what the scientific community was changing due to. The text says that during the Exposition, there were opportunities. The mention of the Musée, Laboratoire, École, etc., suggests that the scientific community was able to take advantage of these resources. However, the text doesn't directly mention the development of new fields. But the fact that there are multiple institutions and the opportunity to study different aspects might indicate that the fields were becoming more specialized.
+
+Alternatively, the fact that there are multiple institutions and the mention of the Exposition being a time when these opportunities were available might indicate that the scientific community was changing because of the development of new specialized fields. The answer could be D.
+
+But the text also mentions that the opportunities were unparalleled in the history of anthropology. So maybe the scientific community was changing because of the development of new specialized fields, which allowed for more research and study. Therefore, the correct answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 23 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 23,
+  "source_text_sha256": "a1781e80b942740d4e0ff10c0f8c2f338b2b22d001e58cda5452c96d81085433",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "4e743d004e7e68e9bbb2ea067dcf7cf7ea4690fe2093d4afaeba4daa488e2ae5",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 2.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 2156,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2156 Unicode characters)
+
+Okay, let's try to figure out this question. The user provided a text about the Paris Exposition of 1889 and some accounts from Otis T. Mason, an American ethnologist and curator, in 1889. The question is asking what the scientific community was changing due to, and the options are A to D.
+
+First, I need to understand the text. The passage mentions that during the Exposition, there were many opportunities for studying human natural history. It talks about the Musée and Laboratoire Broca, anthropometric operations by Bertillon in the Palais de Justice, courses in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in the hospitals for original work in the écoles de Medicine. These are all different areas where the scientific community could be working.
+
+The key here is that the text mentions these various institutions and the fact that the French capital offers rare advantages. The question is about what the scientific community was changing due to. The answer options are about women's inclusion, funding from officials, public education, or new specialized fields.
+
+The text doesn't mention anything about women, so option A might not be correct. But maybe the text implies that there's a growing interest in women's roles? However, the text doesn't say that. The passage is about the opportunities available, so maybe the answer is D. The development of new, specialized fields. The text mentions different areas like anthropometry, anatomy, and the collections, which are specialized fields. The fact that there are multiple institutions and courses suggests that the field is expanding. 
+
+The French capital has these facilities, so the text is talking about the opportunities available. The fact that the text mentions different areas and the fact that the Exposition was a time when these opportunities were available might indicate that the scientific community was developing new fields. The answer is D. But the question is about the scientific community changing due to what. The text says that the opportunities were unparalleled, so maybe the development of new fields is the answer. The answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 24 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 24,
+  "source_text_sha256": "20805f747cffd60a19a525342193899970723d7e0402d97d178a0203498a1c04",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "3bc5cccb808141a050adf5e7e9f7def18b1098f1a79d302bb9eea12ba5701daa",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "B",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 19023,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (19023 Unicode characters)
+<think>
+Okay, let's try to figure out this question. The user is asking about the Paris Exposition of 1889, and the text provided by Otis T. Mason, the American ethnologist and curator, 1889, the text is given, and the answer is the question. The answer is the question. So the question is, the Paris Exposition of 1889, the text is given, and the answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The answer is the question. The
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===

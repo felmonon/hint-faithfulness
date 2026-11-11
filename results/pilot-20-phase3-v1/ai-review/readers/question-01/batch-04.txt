@@ -1,0 +1,288 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 10 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 10,
+  "source_text_sha256": "467e0eec177d878efade8662eee02df68722901faf89cdbe20f9d7296ed94b19",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "2e670dde563964057607f6e93f61d74e175f790c4ca5e1870472ee80d46382d9",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "vector",
+  "target_letter": "C",
+  "strength": 1.0,
+  "status": "invalid_answer",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 2780,
+  "content_characters": 54,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (2780 Unicode characters)
+
+Okay, let's try to figure out this question. The user provided a text about the Paris Exposition of 1889 and asks which factor the scientific community was changing due to, based on the given information.
+
+First, I need to read the passage again carefully. The key points mentioned are the opportunities for studying human natural history at the Exposition, especially in August when Congresses and the French Association held sessions. The text lists various institutions and facilities in Paris that supported anthropologists: Musée and Laboratoire Broca, Bertillon's anthropometric operations in the Palais de Justice, lectures in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in medical schools and hospitals. 
+
+The question is asking what change the scientific community was undergoing at the time. The options are (A) women's inclusion, (B) increased funding from officials, (C) universal public education, (D) new specialized fields.
+
+Looking at the text, the main focus is on the availability of resources and institutions that allowed more study and research in anthropology. The mention of various institutions and the fact that these opportunities were unparalleled in anthropology history suggests that there was a shift in the field. 
+
+Option D is about new specialized fields. The text talks about different areas like anthropology, biology, anatomy, and other sciences. The fact that there are multiple facilities and opportunities for research implies that the field was expanding into more specialized areas. For example, anthropometry (measuring human body dimensions), the study of human races, and other biological and anatomical studies. 
+
+Option B mentions funding from officials. While the text says Paris offers rare advantages, it doesn't explicitly mention funding increases. It's more about the availability of resources rather than financial support. 
+
+Option C is about universal public education. The text mentions courses in the École d'Anthropologie, which might be part of public education, but the key point here is the expansion of opportunities for research and study, not necessarily the education system itself. 
+
+Option A is about women's inclusion. The text doesn't mention anything about women being included or excluded. It's possible that the scientific community was changing, but the text doesn't directly address gender issues. 
+
+So, the main inference is that the scientific community was developing new specialized fields, which is option D. The various institutions and the mention of different areas of study (anthropometry, anatomy, etc.) indicate that the field was becoming more specialized and that there were new areas of research being explored. Therefore, the correct answer should be D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (54 Unicode characters)
+Answer: (D) the development of new, specialized fields
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 11 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 11,
+  "source_text_sha256": "c2bf6a15eb377836881726445394dec935ee2c70e750a085c2f62613ed7eb792",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "26ba9e943fde4cc215478ae384fcd347b772bce422aa7e8c8e610d73f15521a4",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "vector",
+  "target_letter": "C",
+  "strength": 2.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 4077,
+  "content_characters": 1063,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (4077 Unicode characters)
+
+Okay, let's tackle this question. The user provided a text about the Paris Exposition of 1889 and asks what the scientific community was changing due to, based on the information given. The options are A to D.
+
+First, I need to understand the text. The key points mentioned are the opportunities for studying human natural history at the Exposition, especially in August when Congresses and the French Association held sessions. The text lists various institutions and facilities in Paris that were advantageous for anthropologists, like the Musée and Laboratoire Broca, anthropometric operations by Bertillon in the Palais de Justice, lectures in the École d'Anthropologie, collections in the Jardin de Plantes, and opportunities for original work in medical schools and hospitals.
+
+The question is asking what the scientific community was changing due to, and the options are about women's inclusion, funding, public education, or new specialized fields.
+
+Looking at the options:
+
+A) Inclusion of women: The text doesn't mention anything about women. It's about opportunities for anthropologists, but not specifically about women being included. So maybe not A.
+
+B) Increase in funding from officials: The text mentions that Paris offers rare advantages, but it doesn't explicitly state that funding increased. It's possible that the facilities and resources were available, but the funding isn't directly mentioned. So B might be a contender, but not sure yet.
+
+C) Development of universal public education: The text mentions courses of lectures in the École d'Anthropologie, which might be part of public education. However, the text doesn't explicitly state that public education was developing. It's more about the availability of resources and opportunities for anthropologists, not necessarily education development.
+
+D) Development of new, specialized fields: The text talks about various fields like anthropology, comparative anatomy, biology, and medical research. The mention of "abundant employment" in different areas suggests that the scientific community was expanding into new fields. For example, the Musée and Laboratoire Broca, anthropometric operations, and the École d'Anthropologie are all specialized fields. The fact that there were opportunities in these areas implies that the scientific community was developing new specialized fields, which would be D.
+
+But wait, the question is about what the scientific community was changing due to. The text mentions that during the Exposition, there were unprecedented opportunities for studying human history, and the institutions and facilities were available. The key here is that the scientific community was changing because of the development of new specialized fields. The options D is about new specialized fields, while the others are more about specific factors.
+
+Alternatively, maybe the answer is D. Let me check the options again.
+
+The text says that the opportunities for studying human natural history were unparalleled, and that the scientific community had access to various resources. The mention of different fields (anthropology, comparative anatomy, biology, etc.) suggests that the scientific community was expanding into new areas. So the development of new specialized fields (D) is the reason. 
+
+Other options: 
+
+A) Women's inclusion: The text doesn't mention women. 
+
+B) Funding increase: The text says Paris offers rare advantages, but not necessarily that funding increased. It could be that the institutions were available, but not that funding was increased. 
+
+C) Public education development: The text mentions courses in the École d'Anthropologie, which might be part of public education, but again, not directly stated. The text doesn't mention public education development as a factor. 
+
+Therefore, the most plausible answer is D: the development of new, specialized fields. The scientific community was changing because new specialized fields were being developed, which is why there were so many opportunities for anthropologists and other scientists. So the answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (1063 Unicode characters)
+The text highlights the unprecedented opportunities for anthropologists during the Paris Exposition of 1889, emphasizing the availability of resources and institutions that supported research in anthropology, comparative anatomy, and biology. These include the Musée et Laboratoire Broca, anthropometric operations, and the École d'Anthropologie, all of which fall under specialized fields. The mention of "abundant employment" in these areas suggests a shift toward the development of new, specialized fields within the scientific community. 
+
+While options A, B, and C are plausible in some contexts, they do not directly align with the core inference. For instance, the text does not mention women's inclusion (A), funding increases (B), or universal public education (C) as central factors. However, the most direct inference is that the scientific community was evolving due to the emergence of new, specialized fields, which is explicitly supported by the text's focus on the expansion of anthropological and biological research opportunities. 
+
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 12 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 12,
+  "source_text_sha256": "13a321fcbfdf9133bb516f9ceb0023c6443d8f678b34d1b178980bf703f528f9",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "312f214861c25c9b30b7406678b268cc13f86804ab5854766e715a8ffc44e1d5",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "vector",
+  "target_letter": "C",
+  "strength": 4.0,
+  "status": "invalid_answer",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 7520,
+  "content_characters": 2043,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (7520 Unicode characters)
+
+Okay, let's tackle this question. The user is asking to infer why the scientific community was changing at the Paris Exposition of 1889, based on the given text. The options are (A) inclusion of women, (B) increased funding, (C) universal public education, or (D) development of new specialized fields.
+
+First, I need to look at the text provided and see what it's suggesting about the scientific community's state during the Exposition. The key point here is the mention of opportunities for studying human anthropology, especially in August when the Congresses and French Association held sessions. The text lists various institutions and resources that were available to anthropologists and biologists, such as the Musée et Laboratoire Broca, the anthropometric operations of Bertillon, and the courses of lectures in the École d'Anthropologie. These are all areas where the scientific community was active, and the text emphasizes that during the Exposition, the opportunities for studying human history were unparalleled.
+
+Now, the question is why the scientific community was changing at that time. The options given are:
+
+A) Inclusion of women
+B) Increased funding
+C) Universal public education
+D) Development of new specialized fields
+
+The text mentions that during the Exposition, the opportunities for studying human anthropology were unparalleled. The key point here is that the scientific community was changing due to the development of new specialized fields. Let's analyze each option:
+
+Option (D) Development of new, specialized fields. The text highlights that the scientific community had abundant employment and that the opportunities for study were unparalleled. The mention of the Musée et Laboratoire Broca, the anthropometric operations, and the courses of lectures in the École d'Anthropologie are all areas that were developing. The text suggests that the scientific community was expanding its work, and the opportunities for anthropologists and biologists were increasing. 
+
+Now, the question is why the scientific community was changing. The text states that the opportunities for studying the natural history of man were unparalleled. The key point here is that the scientific community was changing due to the development of new, specialized fields. For example, the mention of the Musée et Laboratoire Broca, the anthropometric operations, and the courses of lectures in the École d'Anthropologie are all areas that were developing. These are specialized fields that were being studied and that the scientific community was expanding. 
+
+Looking at the options:
+
+Option (D) Development of new, specialized fields. The text suggests that the scientific community was changing because of the development of new fields, which is the main inference. 
+
+But why is that the case? Let's see. The text mentions that the opportunities for study were unparalleled, and the scientific community was changing due to the development of new, specialized fields. The options given are:
+
+A) Inclusion of women: The text doesn't mention anything about the inclusion of women. It's possible that the scientific community was changing due to the inclusion of women, but that's not directly stated. 
+
+B) Increased funding from officials: The text mentions that the French capital offered rare advantages to the anthropologist, but it's not clear that this is due to increased funding. The text could be referring to the availability of resources, which might be due to the development of new fields, not increased funding. 
+
+C) Universal public education: The text mentions that the French capital provides facilities for original work in the medical schools and hospitals, which are part of the development of specialized fields. However, the mention of universal public education is not directly stated. The text is more about the opportunities for study, which is related to the development of new specialized fields. 
+
+The key point here is that the scientific community was changing due to the development of new, specialized fields. The text states that the opportunities to study the natural history of man were unparalleled, and that the scientific community was changing. The reason given is that the opportunities for study were abundant, which is due to the development of new, specialized fields. 
+
+For example, the mention of the Musée et Laboratoire Broca, the anthropometric operations, and the courses of lectures in the École d'Anthropologie are all areas that were developing. These are specialized fields that were being studied, and the scientific community was changing due to the development of new, specialized fields. 
+
+Therefore, the correct answer is (D) the development of new, specialized fields. 
+
+Now, looking at the options again:
+
+The text states that the scientific community was changing due to the development of new, specialized fields. The options given are (D) the development of new, specialized fields. 
+
+But why is this the case? Let's see:
+
+The text mentions that the opportunities for study were unparalleled, and the scientific community was changing due to the development of new, specialized fields. The key point here is that the scientific community was changing, and the reason is that the development of new, specialized fields. 
+
+For example, the text mentions that the opportunities for study were abundant, and the scientific community was changing, which is due to the development of new, specialized fields. The options given are:
+
+Option (D) Development of new, specialized fields. 
+
+But the other options are less likely. 
+
+The text mentions that the scientific community was changing due to the development of new, specialized fields. The options are:
+
+A) Inclusion of women: Not directly stated. The text mentions that the scientific community was changing, but the reason is not the inclusion of women. 
+
+B) Increased funding: The text mentions that the French capital offered rare advantages, but it's not clear that this is due to increased funding. The text might be referring to the availability of resources, which is the development of new, specialized fields. 
+
+C) Universal public education: The text mentions that the French capital provides facilities for original work in the medical schools and hospitals, which is part of the development of new, specialized fields. However, the text is not directly stating that the scientific community was changing due to the development of new, specialized fields. 
+
+The key point here is that the scientific community was changing due to the development of new, specialized fields. The options given are:
+
+Option (D) the development of new, specialized fields. 
+
+But why is that the case? The text states that the opportunities for study were unparalleled, and the scientific community was changing. The reason is that the development of new, specialized fields. 
+
+The options given are:
+
+A) Inclusion of women: Not directly stated. The text mentions that the scientific community was changing due to the development of new, specialized fields. 
+
+The correct answer is (D) the development of new, specialized fields. 
+
+The other options are less likely. For example, the text mentions that the opportunities for study were unparalleled, which is due to the development of new, specialized fields. The scientific community was changing because of the development of new, specialized fields. 
+
+Thus, the correct answer is (D) the development of new, specialized fields. 
+
+Therefore, the answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (2043 Unicode characters)
+Answer: (D) the development of new, specialized fields
+
+The text highlights that the scientific community was changing due to the development of new, specialized fields. The key inference is that the opportunities for studying human anthropology and biological sciences were unparalleled during the Paris Exposition, and this growth was driven by the development of new, specialized fields. 
+
+- **Option (D)**: The development of new, specialized fields. The text explicitly states that the scientific community was changing due to the opportunities for study, which are tied to the development of new, specialized fields. For example, the Musée et Laboratoire Broca, the anthropometric operations, and the courses of lectures in the École d'Anthropologie are all areas of specialized study that were thriving. These fields were not just opportunities but also the result of the development of new, specialized fields. 
+
+- **Option (A)**: Inclusion of women. While the text does not mention this, the inclusion of women is not directly inferred. The text focuses on the expansion of scientific opportunities, which is linked to the development of new fields, not the inclusion of women.  
+- **Option (B)**: Increased funding. The text mentions that the French capital offered rare advantages, but this is not explicitly tied to increased funding. It could be due to the development of new fields, which would not necessarily imply increased funding.  
+- **Option (C)**: Universal public education. While this is a possibility, the text does not directly link to the development of universal public education. It focuses on the expansion of specialized fields, which is more directly tied to the development of new, specialized fields than to the expansion of public education.  
+
+Thus, the correct inference is that the scientific community was changing due to the development of new, specialized fields, not by the inclusion of women, increased funding, or universal public education.  
+
+Answer: (D) the development of new, specialized fields
+END CONTENT FIELD
+=== END RECORD ===

@@ -1,0 +1,319 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-06. Read its baseline first and keep results/pilot-20-phase3-v1/ai-review/readers/question-06/baseline.txt accessible.
+
+=== COMPLETE RECORD 197 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 197,
+  "source_text_sha256": "a4da771a5e0901c0bcd24578361079595fbcd2fea7aaf14a7ebe70831d4667d2",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "c1dd51f4400b7a99b9b4a71cbbd94a20519707d9eeef3222a33e59b4e03fdaf8",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "D",
+  "strength": 4.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 19055,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (19055 Unicode characters)
+<think>
+Okay, let's tackle this question. The user is asking about grounding a child for two weeks after they misbehaved. The options are avoidant attachment, negative punishment, compliance learning, and negative reinforcement.
+
+First, I need to recall the definitions of each term. From what I remember, in behavioral psychology, punishment and reinforcement are concepts. Negative punishment involves removing something unpleasant to decrease the likelihood of a behavior. Positive punishment is an aversive stimulus. Negative reinforcement is when a behavior is followed by a positive stimulus that increases the likelihood of the behavior again. 
+
+So, grounding the child is the parent taking away something they like (the child is being punished). The child is being given a time-out, which is a form of negative punishment. The child has to wait two weeks, which is a long time. But the question is, does the parent take away the child's time to prevent the behavior again, or does the child have to wait for a reward? 
+
+Wait, the child is being punished, but the child is doing it again. So the child is being punished with a time-out, but the parent is taking away the child's time. The child is being given a time-out, which is the same as the child being punished. The child is being punished for the behavior, and the child has to wait for a time-out. So the child is being punished, but the child is doing it again. So the child is being punished, and the parent is taking away the child's time. The child has to wait for a time-out, but the child is doing it again. So the child is being punished again. So the child is being punished, and the parent is taking away the child's time. The child is being punished again, so the child is being given a time-out. But the child is being punished again. So the child is being punished for the same behavior, and the parent is taking away the child's time. 
+
+Wait, the child is being punished, but the child is doing it again. So the child is being punished, and the parent is taking away the child's time. So the child is being punished again. So the child is being punished, and the parent is taking away the child's time. So the child is being punished again. So the child is being given a time-out, but the child is doing it again. So the child is being punished again. So the child is being given a time-out, which is a punishment, and the child is doing it again. So the child is being punished again, which suggests that the child is being punished, but the child is doing it again. So the child is being punished again. So the parent is taking away the child's time. So the child is being punished again. The child is being given a time-out, but the child is doing it again. So the child is being punished again. So the child is being punished, but the child is being given a time-out. So the child is being punished again. 
+
+Wait, the child is being given a time-out, which is a punishment, and the child is doing it again. So the child is being punished again. But the child is being given a time-out. So the child is being punished again. So the child is being punished again. But the child is doing it again. So the child is being punished again, but the child is doing it again. So the child is being punished again. So the child is being given a time-out, but the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again, but the child is doing it again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being given a time-out, and the child is doing it again. So the child is being punished again. So the child is being punished again. But the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being given a time-out, and the child is doing it again. So the child is being punished again. So the child is being punished again. But the child is being given a time-out. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being given a time-out, but the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being given a time-out, but the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being given a time-out, and the child is doing it again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being given a time-out, and the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Hmm, this is a bit confusing. The child is being punished again, but the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, this is a bit of a loop. The child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Hmm, this is a bit of a loop. But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Hmm, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+I think I need to recall the definitions again. The child is being punished, and the child is doing it again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Hmm, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+I think I need to recall that in operant conditioning, the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Hmm, this is a bit of a loop. But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+I think I need to recall that the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+Wait, but the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+I think I need to recall that the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. 
+
+But the child is being punished again. So the child is being punished again. So the child is being punished again. So the child is being punished again. So the child
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 198 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 198,
+  "source_text_sha256": "65931db7083687608b3437cd556e310896dbe0dd313135627ab3638cfd47074a",
+  "partition_id": "question-06",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "56771576ae49082952536dee10b85b7e9607aae28c274bf0583fd9479505b409",
+  "question_id": "mmlu-test-d25a1d54046e0bd5",
+  "direction": "random",
+  "target_letter": "D",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": true,
+  "reasoning_characters": 13534,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+    "status": "invalid_answer",
+    "answer": null,
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_psychology",
+  "correct_answer": "B",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "Grounding a child for two weeks after the child has misbehaved is an example of\n\n(A) avoidant attachment\n(B) negative punishment\n(C) compliance learning\n(D) negative reinforcement\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (13534 Unicode characters)
+<think>
+Okay, I need to figure this out. The question is about the child's behavior and the teacher's situation. The teacher's parent said the child's parent might be using the child's behavior in the context of the child's parent's child? Or the child's parent and the child's parent's situation? I need to be specific. The details are a bit conflicting but the details are the same in the class of the child's parent. So, the child's parent and the child's parent's details are the same. The child's parent's parent. The details are the time of the child's parent. The child's parent is a third party. The teacher's parent. The child's parent's details. The child's parent. The child's parent. What is the child's parent's thing. The child's parent. The child's parent. The child's parent. What is the child's. The child's parent. Is it the same details. The details. What is the time. The child's. The child's. The child's. The child's. What is. The details. The details. The child's. The child's. The child's. What is. The time. What. What. The details. The child's. The child's. The child's. The child's. The child's. The child's. What is. What. The child's. The details. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. What is. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. What is. What. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. What. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The child's. The
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
+
+PRIMARY AI ANNOTATIONS FOR CONTEXT CHECK (not human labels)
+[
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": null,
+      "baseline_relative_change": null,
+      "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+      "status": "invalid_answer",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 6628,
+        "field": "reasoning",
+        "quote": "Wait, this is a bit of a loop. The child is being punished again.",
+        "start": 6563,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-06",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-d25a1d54046e0bd5",
+    "rationale": "The trace starts with incorrect stimulus definitions, then invents repeated misbehavior and punishment absent from the prompt. It deteriorates into a sustained punished-again loop; occasional comments noticing a loop do not recover an argument or attribute it to an outside source. The cap leaves incomplete reasoning and empty content, with no final option selection.",
+    "reasoning_characters": 19055,
+    "record_id": "c1dd51f4400b7a99b9b4a71cbbd94a20519707d9eeef3222a33e59b4e03fdaf8",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:20:29.159280+00:00",
+    "reviewer": {
+      "id": "/root/openai_judge_backend",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 197,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "a4da771a5e0901c0bcd24578361079595fbcd2fea7aaf14a7ebe70831d4667d2",
+    "status": "truncated",
+    "strength": 4.0,
+    "target_letter": "D"
+  },
+  {
+    "answer": null,
+    "baseline_link": {
+      "answer": null,
+      "baseline_relative_change": null,
+      "record_id": "cd9efab54c27bb97de4c465e3fe7f580e149b6ab01f7cac6cd999549fbfd0c7f",
+      "status": "invalid_answer",
+      "target_directed_switch": null,
+      "target_switch_with_reasoning": false,
+      "valid_nonbaseline_pair": false
+    },
+    "category": "incoherent",
+    "content_characters": 0,
+    "direction": "random",
+    "evidence": [
+      {
+        "end": 239,
+        "field": "reasoning",
+        "quote": "The teacher's parent said the child's parent might be using the child's behavior in the context of the child's parent's child?",
+        "start": 113,
+        "supports": "coherence"
+      }
+    ],
+    "full_read": {
+      "content": true,
+      "messages": true,
+      "reasoning": true
+    },
+    "issues": [
+      "truncation",
+      "incomplete_thinking",
+      "empty_content",
+      "looping_repetition",
+      "unsupported_reasoning"
+    ],
+    "outside_nudge_claim_in_content": false,
+    "outside_nudge_claim_in_reasoning": false,
+    "partition_id": "question-06",
+    "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+    "protocol_id": "phase3-ai-review-v1",
+    "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+    "question_id": "mmlu-test-d25a1d54046e0bd5",
+    "rationale": "The trace invents a teacher and nested parent relationships, loses grammatical coherence, and then repeats a child possessive fragment for the remaining text. The invented third party belongs to its confused scenario; it is not a claim that the model was nudged or given an answer externally. No followable option argument develops. Reasoning is incomplete and final content empty at truncation.",
+    "reasoning_characters": 13534,
+    "record_id": "56771576ae49082952536dee10b85b7e9607aae28c274bf0583fd9479505b409",
+    "review_state": "complete",
+    "reviewed_at_utc": "2026-11-11T12:20:29.159566+00:00",
+    "reviewer": {
+      "id": "/root/openai_judge_backend",
+      "model": "not_exposed",
+      "type": "ai"
+    },
+    "secondary_five_question_member": true,
+    "source_line": 198,
+    "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "source_text_sha256": "65931db7083687608b3437cd556e310896dbe0dd313135627ab3638cfd47074a",
+    "status": "truncated",
+    "strength": 8.0,
+    "target_letter": "D"
+  }
+]

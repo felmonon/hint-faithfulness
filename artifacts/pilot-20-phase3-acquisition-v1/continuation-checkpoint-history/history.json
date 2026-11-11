@@ -1,0 +1,162 @@
+{
+  "description": "Historical second-continuation acquisition records. Full intermediate notebooks remain in the local evidence backup; exact prefix bytes can be reconstructed from the final JSONL and checked against these hashes. Final notebook is published separately.",
+  "final_steering_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "acquisitions": [
+    {
+      "acquired_at_utc": "2026-11-11T00:55:28.142255+00:00",
+      "drive_modified_at": "2026-11-11T00:55:02.288Z",
+      "notebook_bytes": 820237,
+      "notebook_sha256": "9da21bda35dd9174d1a73cf245be7dacb32e7d63196a6a9da82025050de6486f",
+      "snapshot_captured_at_utc": "2026-11-11T00:54:38.685331+00:00",
+      "retained_records": 28,
+      "provenance_file": "028-acquisition-provenance.json",
+      "provenance_sha256": "56c4176469c8afbaf73fd95da89eb8d7b817ed235f465e73cc8a79f68ad6e2a8",
+      "raw_prefix_sha256": "54f5e311d8e6ceed08629f4bb39f4f0de3b5e7b6a337f74cef2e7812fed73507",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T01:17:26.491980+00:00",
+      "drive_modified_at": "2026-11-11T01:17:15.494Z",
+      "notebook_bytes": 862765,
+      "notebook_sha256": "3ba2b5546d5278c5aaa160ca026439950936a4d71ff182589662821838949568",
+      "snapshot_captured_at_utc": "2026-11-11T01:15:46.612876+00:00",
+      "retained_records": 38,
+      "provenance_file": "038-acquisition-provenance.json",
+      "provenance_sha256": "49bc21a6de07aeb676320dd79c492e80b797c8acc42e6d53c0614072221f9f8b",
+      "raw_prefix_sha256": "51fa0935ce809ec3f55a9af9b79d5dc7efb1618271ed318712ed26602eab5561",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T01:39:37.835421+00:00",
+      "drive_modified_at": "2026-11-11T01:38:37.860Z",
+      "notebook_bytes": 898501,
+      "notebook_sha256": "2a03bd7929c061393aa70c71ab38cff73237d0f2e825bf36e05b7dc2f330376f",
+      "snapshot_captured_at_utc": "2026-11-11T01:38:09.402667+00:00",
+      "retained_records": 48,
+      "provenance_file": "048-acquisition-provenance.json",
+      "provenance_sha256": "a96932dc75a498a6f2504e5763ed80915f025ce202a919a32aa53efb44f18835",
+      "raw_prefix_sha256": "bece0015969235aed5a3dbfef1fe9761f8fb9bdf185aec414f43e191a2b6def7",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T02:02:31.264569+00:00",
+      "drive_modified_at": "2026-11-11T02:01:58.677Z",
+      "notebook_bytes": 927915,
+      "notebook_sha256": "36861259133be16d5460cfed5d3f55634500c9a03a062a621ff822cb7cb946a6",
+      "snapshot_captured_at_utc": "2026-11-11T02:01:51.020187+00:00",
+      "retained_records": 58,
+      "provenance_file": "058-acquisition-provenance.json",
+      "provenance_sha256": "45be623fba72250902ebfa25f0fd62ad4ed807f6a3ca50a57f044d5bc67c7df0",
+      "raw_prefix_sha256": "5d27b128b7c78fa9783d941f222cffe95fcc981cfede67a4da5cd09989b21c1e",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T02:21:47.013418+00:00",
+      "drive_modified_at": "2026-11-11T02:21:29.248Z",
+      "notebook_bytes": 959441,
+      "notebook_sha256": "9411c879af9b2bf49dc646520ba7c4c85b535b330b599b75be65e6f64b112c83",
+      "snapshot_captured_at_utc": "2026-11-11T02:21:08.119476+00:00",
+      "retained_records": 68,
+      "provenance_file": "068-acquisition-provenance.json",
+      "provenance_sha256": "ad53866546c2a3c2eb18e48f583f37462d76a1257402990f4b85334e0997bb64",
+      "raw_prefix_sha256": "c7e102112d65037757f5306c39c53fb5defbdf36e512d0236116cd0b88212159",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T02:43:47.222279+00:00",
+      "drive_modified_at": "2026-11-11T02:43:20.450Z",
+      "notebook_bytes": 979003,
+      "notebook_sha256": "b92cd84192be8a91132ccf99b931b2d38e5b89c7d56a33722d63e680ebc2db00",
+      "snapshot_captured_at_utc": "2026-11-11T02:42:22.676755+00:00",
+      "retained_records": 78,
+      "provenance_file": "078-acquisition-provenance.json",
+      "provenance_sha256": "ff964baa15cbdcb95263ca95b9314640cdf3badadc5aa13cc38f9a9e4bf57275",
+      "raw_prefix_sha256": "a47d7a32ae8a290146cd341968c76042cfff0ae1a986844c649ea1689a747944",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T03:02:14.696031+00:00",
+      "drive_modified_at": "2026-11-11T03:01:17.496Z",
+      "notebook_bytes": 999844,
+      "notebook_sha256": "5d68fd3ddea7341ee6e4384480db074daf319cbb34fdb43670d186f1c49f060f",
+      "snapshot_captured_at_utc": "2026-11-11T03:00:39.662670+00:00",
+      "retained_records": 88,
+      "provenance_file": "088-acquisition-provenance.json",
+      "provenance_sha256": "5f0d6fe35d01404d5eb53620c9ff0498766c4939d7bc4c66f863b697bf16d334",
+      "raw_prefix_sha256": "8733b56c55484cc45bc9105606b18297d0d30e77037b1ad5d7d45fbc0a179bf4",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T03:20:02.167419+00:00",
+      "drive_modified_at": "2026-11-11T03:19:34.735Z",
+      "notebook_bytes": 1019771,
+      "notebook_sha256": "547e07e40357385a6c39621193e545d10a39a4ea9051a182d3f02c0c5aec4cb8",
+      "snapshot_captured_at_utc": "2026-11-11T03:19:27.893277+00:00",
+      "retained_records": 98,
+      "provenance_file": "098-acquisition-provenance.json",
+      "provenance_sha256": "ad2134a8f7ecbfda5179c5bbbcb7c53d4eeb2ff5db1f57a77310329645e66fb7",
+      "raw_prefix_sha256": "23a61cf7e902ca92c34f076cdff2e42961c1163d03f0b410d1c0633d6c74958a",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T03:45:01.742549+00:00",
+      "drive_modified_at": "2026-11-11T03:43:58.978Z",
+      "notebook_bytes": 1050392,
+      "notebook_sha256": "081705d89ffd7ac5216f1d01b107e09d520aa3b1884757bf1f0b2db9777546cc",
+      "snapshot_captured_at_utc": "2026-11-11T03:43:32.711674+00:00",
+      "retained_records": 108,
+      "provenance_file": "108-acquisition-provenance.json",
+      "provenance_sha256": "77e5c63caaac157187f54744d17436fee22ea10fc9be4e7509a4b6b1826cf463",
+      "raw_prefix_sha256": "858277c968d83832561a3cc047b2aceb61409ddbf590e54bb071e58ec1c62e3f",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T04:09:55.480669+00:00",
+      "drive_modified_at": "2026-11-11T04:09:15.129Z",
+      "notebook_bytes": 1092669,
+      "notebook_sha256": "a6e073970ce4a17a0a20c59c4424dc000c30bd24a393f2ed141f132821b1edb2",
+      "snapshot_captured_at_utc": "2026-11-11T04:08:27.074176+00:00",
+      "retained_records": 118,
+      "provenance_file": "118-acquisition-provenance.json",
+      "provenance_sha256": "54de5c726d2796c774b5f384e2492b8eb6dfb0d891232f0ccf418bfab69e60ab",
+      "raw_prefix_sha256": "cca1775186e66f288372cff4584dd1e28eedc6f275f7a756c4c3f3abb273b1bf",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T04:36:41.724950+00:00",
+      "drive_modified_at": "2026-11-11T04:35:50.920Z",
+      "notebook_bytes": 1124058,
+      "notebook_sha256": "7d5baaba4336f3910d22152d31f130313571334ec531fdbfbbcf22e2e0d3dd26",
+      "snapshot_captured_at_utc": "2026-11-11T04:35:01.452844+00:00",
+      "retained_records": 128,
+      "provenance_file": "128-acquisition-provenance.json",
+      "provenance_sha256": "77d98d41bfbe32f1b19720b2e808354b1d85ad4350f77feeb7175ac706351a72",
+      "raw_prefix_sha256": "ac9eb636ae120584d43302e615adce38747c8801312547381e2ac8ccff92e58f",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T04:58:41.246191+00:00",
+      "drive_modified_at": "2026-11-11T04:57:52.116Z",
+      "notebook_bytes": 1167359,
+      "notebook_sha256": "7334ad3b27ca4a9c106f7cda5cc88f6ac288c0b186e1deb5345a455a656a9545",
+      "snapshot_captured_at_utc": "2026-11-11T04:57:15.259951+00:00",
+      "retained_records": 138,
+      "provenance_file": "138-acquisition-provenance.json",
+      "provenance_sha256": "13676e9fb2fd2fd04e523c6f9269f400b6534c1f29f375c23f824166a15ddb20",
+      "raw_prefix_sha256": "b4b403e03df7f1223e08cda8d6d2c2260c837a1a4f15057cd4a6e0be31fd88b1",
+      "unchanged_final_prefix": true
+    },
+    {
+      "acquired_at_utc": "2026-11-11T05:27:09.953652+00:00",
+      "drive_modified_at": "2026-11-11T05:26:53.816Z",
+      "notebook_bytes": 1217824,
+      "notebook_sha256": "22acdbc2a0b9098181b1981d369045b2f0c697c61c6b725b7df4ac3589aff5cf",
+      "snapshot_captured_at_utc": "2026-11-11T05:26:12.124755+00:00",
+      "retained_records": 148,
+      "provenance_file": "148-acquisition-provenance.json",
+      "provenance_sha256": "3214319edb844c42c919c416ff70945acb4f5995e66fa600faad2cf7904aba60",
+      "raw_prefix_sha256": "0bd944ee06d448bc3a985c6c87e6b3651addf4b359a00cb737071b1d1c922953",
+      "unchanged_final_prefix": true
+    }
+  ]
+}

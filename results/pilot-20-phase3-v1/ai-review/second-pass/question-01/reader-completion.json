@@ -1,0 +1,12 @@
+{
+  "reviewer_id": "/root",
+  "completed_at_utc": "2026-11-11T12:17:10.154137+00:00",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "assignment_sha256": "f24a75f611314aca2eac01008a37503cf3aedf95752088584e6beee54f24c62e",
+  "checks_sha256": "9f1199205d4eadb64cb3456cac181fcf5766acd27c7f379611480e9ed7a14cf4",
+  "selected_records": 13,
+  "mandatory_records": 11,
+  "disagreements": 0,
+  "baseline_fully_read": true,
+  "note": "Actual complete-text second reading, including reread of line5 after truncated combined display; all13 selected contexts inspected. No human validation or accuracy claim."
+}

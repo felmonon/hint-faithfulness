@@ -1,0 +1,2518 @@
+{
+  "schema": "research-publication-inventory-v1",
+  "created_at_utc": "2026-11-11T12:36:40.931823+00:00",
+  "repository": "https://github.com/felmonon/hint-faithfulness",
+  "base_git_commit": "147a115455ffb2d6590d802afc2a9399993b339b",
+  "scope": "Every file added or updated in this publication, plus all source/scripts/tests, requirements, CI, frozen Phase 3 protocols, checkpoint artifacts and execution notebooks 05-08. Excludes this manifest itself; Git records its bytes. Unrelated prior demo outputs are not included.",
+  "file_count": 495,
+  "total_bytes": 37006917,
+  "phase3": {
+    "retained_outcomes": 198,
+    "primary_question_identities": 6,
+    "secondary_question_identities": 5,
+    "status_counts": {
+      "ok": 74,
+      "invalid_answer": 25,
+      "truncated": 99
+    },
+    "steering_jsonl_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+    "artifact_audit": "results/pilot-20-phase3-v1/artifact_audit/audit.json",
+    "ai_primary_reviews": 198,
+    "ai_second_context_checks": 99,
+    "unresolved_disagreements": 0,
+    "context_completion_sha256": "6f556dc8cd059353a81814d67c9e8c306299a38fc990f78e151363e0f4eec5e8",
+    "human_labels": 0,
+    "new_inference_or_judge_calls_for_final_audit_analysis_review": 0,
+    "interpretation": "No fitted-vector condition has higher target yield per retained grid cell than its random control in either cohort. Steering interpretation gate unmet/inconclusive."
+  },
+  "software_validation": {
+    "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python3.12 -m unittest discover -s tests -q",
+    "tests_passed": 152,
+    "observed_runtime_seconds": 8.656,
+    "evidence": "docs/VERIFICATION.md",
+    "scope": "Local software checks; not human validation or independent model replication."
+  },
+  "publication_checks": {
+    "staged_file_bytes_equal_worktree": true,
+    "credential_pattern_findings": 0,
+    "private_env_key_files_excluded": true,
+    "credential_scan_limit": "Pattern scan, not proof of absence of every possible secret; private key files were not opened."
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 534,
+      "sha256": "92c5113f3958d659fc896a5cd7e9911545f962b8305058be6d202624aa916bbc"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "bytes": 803,
+      "sha256": "511712ebfcb6bce202569401e98aab02bcf7b5ee6ac0ccade0b3299cf1168442"
+    },
+    {
+      "path": "LOG.md",
+      "bytes": 24602,
+      "sha256": "466ea120acb82813428d4d7270d2c5a6b2130c3fac7a09c908ba259f14df3111"
+    },
+    {
+      "path": "README.md",
+      "bytes": 16900,
+      "sha256": "9151b6a7aa70cf21dc275b7fcbf1e4a7c95b2de86017c0a10fb971ec39144c18"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/README.md",
+      "bytes": 3170,
+      "sha256": "ec1914f3a5089dfbe43983d24ee540c61922777c5a5c3083e6a86a897560df8f"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/checksums.sha256",
+      "bytes": 6401,
+      "sha256": "bd283859fa2bffe1e8b1654193cc4ab1b66a3ede0405c4bdb44d9ec60221a78e"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/028-acquisition-provenance.json",
+      "bytes": 4497,
+      "sha256": "56c4176469c8afbaf73fd95da89eb8d7b817ed235f465e73cc8a79f68ad6e2a8"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/038-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "49bc21a6de07aeb676320dd79c492e80b797c8acc42e6d53c0614072221f9f8b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/048-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "a96932dc75a498a6f2504e5763ed80915f025ce202a919a32aa53efb44f18835"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/058-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "45be623fba72250902ebfa25f0fd62ad4ed807f6a3ca50a57f044d5bc67c7df0"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/068-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "ad53866546c2a3c2eb18e48f583f37462d76a1257402990f4b85334e0997bb64"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/078-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "ff964baa15cbdcb95263ca95b9314640cdf3badadc5aa13cc38f9a9e4bf57275"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/088-acquisition-provenance.json",
+      "bytes": 4654,
+      "sha256": "5f0d6fe35d01404d5eb53620c9ff0498766c4939d7bc4c66f863b697bf16d334"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/098-acquisition-provenance.json",
+      "bytes": 4655,
+      "sha256": "ad2134a8f7ecbfda5179c5bbbcb7c53d4eeb2ff5db1f57a77310329645e66fb7"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/108-acquisition-provenance.json",
+      "bytes": 4656,
+      "sha256": "77e5c63caaac157187f54744d17436fee22ea10fc9be4e7509a4b6b1826cf463"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/118-acquisition-provenance.json",
+      "bytes": 4656,
+      "sha256": "54de5c726d2796c774b5f384e2492b8eb6dfb0d891232f0ccf418bfab69e60ab"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/128-acquisition-provenance.json",
+      "bytes": 4656,
+      "sha256": "77d98d41bfbe32f1b19720b2e808354b1d85ad4350f77feeb7175ac706351a72"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/138-acquisition-provenance.json",
+      "bytes": 4656,
+      "sha256": "13676e9fb2fd2fd04e523c6f9269f400b6534c1f29f375c23f824166a15ddb20"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/148-acquisition-provenance.json",
+      "bytes": 4656,
+      "sha256": "3214319edb844c42c919c416ff70945acb4f5995e66fa600faad2cf7904aba60"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/checksums.sha256",
+      "bytes": 1353,
+      "sha256": "25e2cb9b8b5aa8dc6dc5d84a5881fcac4df126a976bf056969c1e80602db92ae"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/continuation-checkpoint-history/history.json",
+      "bytes": 8738,
+      "sha256": "00b8e5ee9a8df3c3491d5b675997580a7d561216223fcb78f5ec5a4c886791bc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/foreground-snapshot.json",
+      "bytes": 1521498,
+      "sha256": "be6dd11ae347ad340ea27f1f1a45e4f1f8f6d8e80babbc4ab9ea566ce975b1dc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/foreground-verification-provenance.json",
+      "bytes": 9057,
+      "sha256": "7db60d2bb1b9c7e15b197ee738b784cb746ac524b01ba0aa449b1f5a7c41bf89"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/notebook-acquisition.json",
+      "bytes": 1757,
+      "sha256": "7e6eabfb54dc707d23910f5c72e4ecefd678e944963aa624871a2b179581bea1"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/source-notebook.ipynb",
+      "bytes": 3090573,
+      "sha256": "b9104b848a244de389f24627167eb2a8f51193167f70779d084da950f8b7a5f0"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/acquisition-provenance.json",
+      "bytes": 9057,
+      "sha256": "9faeb16f48fac63b703ad3c2c99357d59de7c02043fc8b10cbe3ffcc9968e92b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/checksums.sha256",
+      "bytes": 5160,
+      "sha256": "b5b2a9b14d17ae1c829d716941af5e408081f502fb980ef175262a7420ea823f"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/checkpoint-provenance.json",
+      "bytes": 940,
+      "sha256": "f012a8d91fc57206913e76a56416a3583a03f0053a691fcaed8e222095fd20a2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/execution.log",
+      "bytes": 90146,
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/manifest.json",
+      "bytes": 2531,
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/plan.json",
+      "bytes": 5109,
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/runtime.json",
+      "bytes": 19801,
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl",
+      "bytes": 259338,
+      "sha256": "5bec0702c11667104b6a37a3f15487b19dceb7358f771748e467b346ae63044b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/vector_metadata.json",
+      "bytes": 325,
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/vectors.npz",
+      "bytes": 59220,
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/README.md",
+      "bytes": 1571,
+      "sha256": "a5f96ed58eeb79b5c27c490ed796eb44eb9785012b0fe3a792c5b49ac24e12bd"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/acquisition-provenance.json",
+      "bytes": 3141,
+      "sha256": "f7aaab4e4a3290f511034a87f115dacf61135ed4058bf7d3812d55dea22ba57f"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/checksums.sha256",
+      "bytes": 331,
+      "sha256": "3bdc3d73beca7d00d99886018e4da6a85578bbaccb70cde0ce19cc0ece349005"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/snapshot.json",
+      "bytes": 336729,
+      "sha256": "92adcb34894143f73f63f74965862d1c895dd7041b2f81e568fbb86c1991b81a"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/steering.jsonl",
+      "bytes": 885213,
+      "sha256": "54f5e311d8e6ceed08629f4bb39f4f0de3b5e7b6a337f74cef2e7812fed73507"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/resume-execution.log",
+      "bytes": 88361,
+      "sha256": "64a72187a9469b5c3d524f27c73b721f73b72c244eda3e81e4031be88db799cc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/setup.json",
+      "bytes": 23173,
+      "sha256": "64f16e6faa983ba54cca6e09ece9b4fe644f7f8e896f6b0f362fa69ebc0f7f35"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/resume-execution.log",
+      "bytes": 93287,
+      "sha256": "1107e81c26d9b3e6164ee8182e91c48db09145107988ba24a13fdfbabe39a588"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/setup.json",
+      "bytes": 26777,
+      "sha256": "9c7e71b7719d3c2ed13646161534ee51e629f1ed4b5a3e7e19cdf487a6e97a5e"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/EXPLANATION_SUMMARY.md",
+      "bytes": 252,
+      "sha256": "128daccb229369c3b9a83114b0530dca629dae2a245654bd7640b5488d416a89"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/LABELING.md",
+      "bytes": 1229,
+      "sha256": "3ad5835a8cc77ba938c52d9c3d6be8a06d70e7f95e732f4fffc2b424c055a7ce"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/checksums.sha256",
+      "bytes": 1302,
+      "sha256": "854cf87c6b7df459e3834d1fc17526e68296439cac0f8e869d89ce3f4012ebb6"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/completion.json",
+      "bytes": 131,
+      "sha256": "e554f379cee1ad207d4899ef522f06f0e14bce40e9a4201ea8ba1e5961375ba0"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/execution.log",
+      "bytes": 90146,
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/explanation_labels.csv",
+      "bytes": 90465,
+      "sha256": "3692882ef15330e131d931a9c1011af9ed19e27e682726d909f077ac07b384e5"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/manifest.json",
+      "bytes": 2531,
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/plan.json",
+      "bytes": 5109,
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-10T10-39-08.868091+00-00.json",
+      "bytes": 19802,
+      "sha256": "b8315b7d73f57a1f3129959a5a349e9981453de6f46e6096c95b6d823025357b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-11T00-54-40.487123+00-00.json",
+      "bytes": 19802,
+      "sha256": "a3b51bf0d1358d26151913cc335a1e4f0bbfb2ff8d626e734a6988f2996b5ece"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime.json",
+      "bytes": 19801,
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/steering.jsonl",
+      "bytes": 7777476,
+      "sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/steering_rates.png",
+      "bytes": 126458,
+      "sha256": "dda5cd51d2e5521e0348691ff1562ffdadb78631f431cb132893966a75229cb6"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/summary.jsonl",
+      "bytes": 13024,
+      "sha256": "f7ff4640d3f894918d286231cf24339d9b48c34f78507bea9a9c71f770296e2d"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "bytes": 325,
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/vectors.npz",
+      "bytes": 59220,
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_L4_ADDENDUM_ERRATUM.md",
+      "bytes": 3060,
+      "sha256": "67a7b033795d9a97603143d5a6585f1a6c863cedbd0ef2c7d9d3302fa86a1f88"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_L4_RESUME_ADDENDUM.md",
+      "bytes": 3448,
+      "sha256": "88d762777c692619758bba590220d7da8c8bbd15804ded14581c3e68955299fb"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_RESUME_PROTOCOL.md",
+      "bytes": 9500,
+      "sha256": "16985dd9ed3ebb1a584169b40d88c40b2a1e12c2df4e66a7823bc65d207b4309"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_SECOND_RESUME_PROTOCOL.md",
+      "bytes": 5865,
+      "sha256": "c90533a6be1e8fd563075f9b1d982d03111ff8f380f4ce3b69898965b5e2147d"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/phase3-l4-resume-addendum.json",
+      "bytes": 1126,
+      "sha256": "b9c9afeeddc099297bfd3eb1c9652590afea97ffcf4be03a4c2ad16ef9716607"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/snapshot.json",
+      "bytes": 1519718,
+      "sha256": "204befb2edae088bc7435bde87cce5711a422cb003a492611bc431648e4bd7b9"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/source-export.json",
+      "bytes": 1521498,
+      "sha256": "988c551ac3fbb5e68935aedd03a79ff01bd36f06d2f1f6ecced7d379fd4eb61a"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/verification-complete.json",
+      "bytes": 202,
+      "sha256": "e4a44acf8db9e42ceeb374c0e3350cf5d727d2b97439edd856057146ea578012"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/README.md",
+      "bytes": 1240,
+      "sha256": "c0e6597c0da6d1d7fcda9ed0d8a7fdc1a502fcb85af61058b57092deebfec40c"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/checkpoint-provenance.json",
+      "bytes": 940,
+      "sha256": "f012a8d91fc57206913e76a56416a3583a03f0053a691fcaed8e222095fd20a2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/execution.log",
+      "bytes": 90146,
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/manifest.json",
+      "bytes": 2531,
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/plan.json",
+      "bytes": 5109,
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/runtime.json",
+      "bytes": 19801,
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl",
+      "bytes": 259338,
+      "sha256": "5bec0702c11667104b6a37a3f15487b19dceb7358f771748e467b346ae63044b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/vector_metadata.json",
+      "bytes": 325,
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-0430/vectors.npz",
+      "bytes": 59220,
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-1110/README.md",
+      "bytes": 1571,
+      "sha256": "a5f96ed58eeb79b5c27c490ed796eb44eb9785012b0fe3a792c5b49ac24e12bd"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-1110/acquisition-provenance.json",
+      "bytes": 3141,
+      "sha256": "f7aaab4e4a3290f511034a87f115dacf61135ed4058bf7d3812d55dea22ba57f"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-1110/checksums.sha256",
+      "bytes": 331,
+      "sha256": "3bdc3d73beca7d00d99886018e4da6a85578bbaccb70cde0ce19cc0ece349005"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-1110/snapshot.json",
+      "bytes": 336729,
+      "sha256": "92adcb34894143f73f63f74965862d1c895dd7041b2f81e568fbb86c1991b81a"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-checkpoint-1110/steering.jsonl",
+      "bytes": 885213,
+      "sha256": "54f5e311d8e6ceed08629f4bb39f4f0de3b5e7b6a337f74cef2e7812fed73507"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/resume-execution.log",
+      "bytes": 88361,
+      "sha256": "64a72187a9469b5c3d524f27c73b721f73b72c244eda3e81e4031be88db799cc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/setup.json",
+      "bytes": 23173,
+      "sha256": "64f16e6faa983ba54cca6e09ece9b4fe644f7f8e896f6b0f362fa69ebc0f7f35"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/resume-execution.log",
+      "bytes": 93287,
+      "sha256": "1107e81c26d9b3e6164ee8182e91c48db09145107988ba24a13fdfbabe39a588"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/setup.json",
+      "bytes": 26777,
+      "sha256": "9c7e71b7719d3c2ed13646161534ee51e629f1ed4b5a3e7e19cdf487a6e97a5e"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/EXPLANATION_SUMMARY.md",
+      "bytes": 252,
+      "sha256": "128daccb229369c3b9a83114b0530dca629dae2a245654bd7640b5488d416a89"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/LABELING.md",
+      "bytes": 1229,
+      "sha256": "3ad5835a8cc77ba938c52d9c3d6be8a06d70e7f95e732f4fffc2b424c055a7ce"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/checksums.sha256",
+      "bytes": 1302,
+      "sha256": "854cf87c6b7df459e3834d1fc17526e68296439cac0f8e869d89ce3f4012ebb6"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/completion.json",
+      "bytes": 131,
+      "sha256": "e554f379cee1ad207d4899ef522f06f0e14bce40e9a4201ea8ba1e5961375ba0"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/execution.log",
+      "bytes": 90146,
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/explanation_labels.csv",
+      "bytes": 90465,
+      "sha256": "3692882ef15330e131d931a9c1011af9ed19e27e682726d909f077ac07b384e5"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/manifest.json",
+      "bytes": 2531,
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/plan.json",
+      "bytes": 5109,
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-10T10-39-08.868091+00-00.json",
+      "bytes": 19802,
+      "sha256": "b8315b7d73f57a1f3129959a5a349e9981453de6f46e6096c95b6d823025357b"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-11T00-54-40.487123+00-00.json",
+      "bytes": 19802,
+      "sha256": "a3b51bf0d1358d26151913cc335a1e4f0bbfb2ff8d626e734a6988f2996b5ece"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/runtime.json",
+      "bytes": 19801,
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/steering.jsonl",
+      "bytes": 7777476,
+      "sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/steering_rates.png",
+      "bytes": 126458,
+      "sha256": "dda5cd51d2e5521e0348691ff1562ffdadb78631f431cb132893966a75229cb6"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/summary.jsonl",
+      "bytes": 13024,
+      "sha256": "f7ff4640d3f894918d286231cf24339d9b48c34f78507bea9a9c71f770296e2d"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "bytes": 325,
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20"
+    },
+    {
+      "path": "artifacts/pilot-20-phase3-v1/vectors.npz",
+      "bytes": 59220,
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57"
+    },
+    {
+      "path": "docs/METHODS.md",
+      "bytes": 12723,
+      "sha256": "50acc03c538d850dd218e4003f9545b20c6780f5d1225ebdfc195c9d6bd76561"
+    },
+    {
+      "path": "docs/PHASE2_3_VERIFICATION.md",
+      "bytes": 4563,
+      "sha256": "5c5bfc6066b890a937e2d634b9431a55146d2cd2301c7a4f2c966ef2da79858d"
+    },
+    {
+      "path": "docs/PHASE3_AI_REVIEW_PROTOCOL.md",
+      "bytes": 22174,
+      "sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625"
+    },
+    {
+      "path": "docs/PHASE3_EXPORT_VERIFICATION.md",
+      "bytes": 6755,
+      "sha256": "e1495cc75e6cdb38ac59b2bec448c7db115552a82a7515e51d452d179d1babb8"
+    },
+    {
+      "path": "docs/PHASE3_L4_ADDENDUM_ERRATUM.md",
+      "bytes": 3060,
+      "sha256": "67a7b033795d9a97603143d5a6585f1a6c863cedbd0ef2c7d9d3302fa86a1f88"
+    },
+    {
+      "path": "docs/PHASE3_L4_RESUME_ADDENDUM.md",
+      "bytes": 3448,
+      "sha256": "88d762777c692619758bba590220d7da8c8bbd15804ded14581c3e68955299fb"
+    },
+    {
+      "path": "docs/PHASE3_PILOT_REPORT.md",
+      "bytes": 25071,
+      "sha256": "e6c5ea473fd20b38cdd6ffbbca2bd43192ffa850451b4d5ade60ab654e8aa213"
+    },
+    {
+      "path": "docs/PHASE3_RESUME_PROTOCOL.md",
+      "bytes": 9500,
+      "sha256": "16985dd9ed3ebb1a584169b40d88c40b2a1e12c2df4e66a7823bc65d207b4309"
+    },
+    {
+      "path": "docs/PHASE3_SECOND_RESUME_PROTOCOL.md",
+      "bytes": 5865,
+      "sha256": "c90533a6be1e8fd563075f9b1d982d03111ff8f380f4ce3b69898965b5e2147d"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "bytes": 33843,
+      "sha256": "f4306b0a6875e064990fbfce646cd683bea7cac92982784d0addcc832213d08e"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 15921,
+      "sha256": "b690498534f87c2849c5f2eef5493ce888dc278f7da9c4d9158473ace0c42d30"
+    },
+    {
+      "path": "docs/phase3-l4-resume-addendum.json",
+      "bytes": 1126,
+      "sha256": "b9c9afeeddc099297bfd3eb1c9652590afea97ffcf4be03a4c2ad16ef9716607"
+    },
+    {
+      "path": "docs/phase3-pilot-plan.json",
+      "bytes": 5109,
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2"
+    },
+    {
+      "path": "notebooks/05_real_phase2_phase3_pilot.ipynb",
+      "bytes": 15115,
+      "sha256": "b9e8a1a51dae443297281854640fb8822abc1d09d5d32b068193432f77249d62"
+    },
+    {
+      "path": "notebooks/06_resume_phase3_pilot.ipynb",
+      "bytes": 28951,
+      "sha256": "0f3f2ad32e1be2c77d3ecc1c1a46313a56d515ab5d7153dac472fbbe7946702b"
+    },
+    {
+      "path": "notebooks/07_resume_phase3_l4_pilot.ipynb",
+      "bytes": 30042,
+      "sha256": "d24b227ea80489533f1251f788c326c77b365025a484d681da071cc515ef1418"
+    },
+    {
+      "path": "notebooks/08_resume_phase3_latest_checkpoint.ipynb",
+      "bytes": 44971,
+      "sha256": "6f797815077c6757ea61d01c1b0fb0af759c35db17ba5aa60a045f3400a8b495"
+    },
+    {
+      "path": "requirements-pilot.txt",
+      "bytes": 211,
+      "sha256": "492753a638699bbe25c5fd3228aadd01533e7a80fb17af7a4149131af26bd5fa"
+    },
+    {
+      "path": "requirements-review.txt",
+      "bytes": 100,
+      "sha256": "d05d79646036abf2d038df8462b2cc6789034bd51c28b43be9c61a0fbeb4423a"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 212,
+      "sha256": "9b351fd91749ebcbfbfc215cb37c6fb14440c93fb4b3cd6f82696b3ca137f36d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/NUMERICAL_FINDINGS.md",
+      "bytes": 16515,
+      "sha256": "f91ea55bf8109749fba53b405e6f0b0423d2657a87fbf0daed3f607c32c36227"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/README.md",
+      "bytes": 3164,
+      "sha256": "73f52493cee130ab5cb9654256e6100cee4cb47194b9ed9188b76bdf756693e5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/EXAMPLES.md",
+      "bytes": 3083,
+      "sha256": "99b105f3413989c68627abb6fd7cefb1fcff2b57a89c8bf8c9aead87413ba108"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/READING.md",
+      "bytes": 785,
+      "sha256": "288ebfc6c7ccd8818142c14622652d4d26769a32262365f6f2f700cd0fcca30e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/README.md",
+      "bytes": 3661,
+      "sha256": "5794f024a1d478e6854609645605f851f359f3cbfe7e1fb6c4b833fcdc0fe31c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-colab-monitor-primary/coverage.json",
+      "bytes": 21852,
+      "sha256": "98fa9a2d1ae5a2fc412fc452782b93141c0571dd8734c5a7a74fc7c71ab9f2dc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-colab-monitor-primary/recheck-plan.json",
+      "bytes": 6424,
+      "sha256": "378aae0359e8e239e387ae5c3b5d743c919df341a978ef236e7105d79a6f17c2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/coverage.json",
+      "bytes": 23746,
+      "sha256": "b5bb5164fed79747c8953b9da43eb9d5147ac6dbe6401d02f4a26d6388e06228"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/recheck-plan.json",
+      "bytes": 16436,
+      "sha256": "bebd9378147f235f3cbce8925c8ddb79c6fa383abfea606437dc149d29e2676f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-01/batch-01.txt",
+      "bytes": 35056,
+      "sha256": "66a85c536b20a79ac09b43e4f847dafaaa162d6caa3872ce41f1719328b5ab8c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-01/batch-02.txt",
+      "bytes": 47242,
+      "sha256": "2674c8bee31b6960897d4a6489ee420dde253881d4a26d884fe996bb3d096f31"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-01/batch-03.txt",
+      "bytes": 57979,
+      "sha256": "29b0e299a454f8289c4b67530509ddeabf31fddb0b9055bbf96733166e5aedac"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-01/batch-04.txt",
+      "bytes": 51274,
+      "sha256": "ccc836371bf93c44525db5c79209b63206eef8e7936e74714f11cbc5039bbbe6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-01/batch-05.txt",
+      "bytes": 19525,
+      "sha256": "7c05b8c0fad84387878af47b1b655ee3f4efa6e3143052996565e163e262d453"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-02/batch-01.txt",
+      "bytes": 33349,
+      "sha256": "335ad9f09dab2e46fc00c3c0204e49e49d90f2609e58c3a2ee7daf932cebb743"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-02/batch-02.txt",
+      "bytes": 42840,
+      "sha256": "9cf271c08d23a22bf98c47e6b8a120d1e9eb1b36de6cc6308fa259d1b1bc659d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-02/batch-03.txt",
+      "bytes": 40538,
+      "sha256": "77a528041a56039ca84355638a0028078dc2a0d2aabf214c208707e7dd7afcab"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-02/batch-04.txt",
+      "bytes": 40321,
+      "sha256": "bcf70ea40fd929a4b71402650afc8aedf816334bcd29c028ae6df9bd02fb6824"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-02/batch-05.txt",
+      "bytes": 43758,
+      "sha256": "5e1de9ce8574f5b33459f8319423c92c948197a962cd6d5ebf34050c3cf61a8d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-03/batch-01.txt",
+      "bytes": 34513,
+      "sha256": "65ed0254bfea62281a659d484c13b546acc7383d57b113dde1c4d74788177415"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-03/batch-02.txt",
+      "bytes": 36147,
+      "sha256": "dc866dfd56ab7adf4239d5e91763514f7966e47d63be09a235f72e32ea2ac173"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-03/batch-03.txt",
+      "bytes": 45010,
+      "sha256": "9191640d1c18701362a196a51490df490c3fd148934e657634f591a1e7e9d913"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-03/batch-04.txt",
+      "bytes": 49131,
+      "sha256": "62c422feff2338d2042670bce30ad71f1e4f2a5b90b0cdcb479a323ce62d8d18"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-03/batch-05.txt",
+      "bytes": 34034,
+      "sha256": "924ddb47468d83ff58b8bb4c7d814b0002972a28c8ede21c3f9f3a4926a87b48"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-01.txt",
+      "bytes": 44264,
+      "sha256": "2dd8abf5f2543ac89274f3dc12bca84d9823bd225bde736c5ba8792b24b02ea2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-02.txt",
+      "bytes": 43832,
+      "sha256": "0fa77fdbe6ba6698ba2440352073450399cb875edb54b74d54cfdeaab0d244ad"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-03.txt",
+      "bytes": 54380,
+      "sha256": "090d2f5a55205ae05b0ee597f167d1cc3cad69b1043adb1e1af5f3e3118fffc6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-04.txt",
+      "bytes": 50387,
+      "sha256": "263ad2fc47b051d19a3f1bedab8a08d05157a53a18c602444b65374ea1560b6e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-05.txt",
+      "bytes": 50452,
+      "sha256": "3394e7e03e2d866ecbbb8d0cdee65a49feaf1d67fa7c03fc41c081ca9c66087d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-04/batch-06.txt",
+      "bytes": 58320,
+      "sha256": "65dfac2e14be1e43266e547748a2fd0f6fc7be534e8efa01f41de5c1badbae01"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-01.txt",
+      "bytes": 41145,
+      "sha256": "d47fc4fa50536ade980ad066171822a6a3cdb7f996e0b73d0bae4c25a6be222d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-02.txt",
+      "bytes": 51450,
+      "sha256": "9bcb3630173191f553a496e1715f194581e7e677f75c9bd8b9180a8d12f48c41"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-03.txt",
+      "bytes": 49043,
+      "sha256": "e0f31a69fda9e91d2a111ef5326478a5727aabaae3061466083141704e51bf13"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-04.txt",
+      "bytes": 55305,
+      "sha256": "22c43e3a172bcec3730d27458b16b6d1b0afe8bc516c37754104637c313b1fc4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-05.txt",
+      "bytes": 55216,
+      "sha256": "5cd76d157a37c6630cfffc3fe184ecb5085662fa83fdda67da3769f0b9cb3d89"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-06.txt",
+      "bytes": 43771,
+      "sha256": "d0ff3ea4ac4c01d22360ac1c4b158c89ee7ead9ef739a5427965b378e9da9231"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-07.txt",
+      "bytes": 40243,
+      "sha256": "25a989657710a1a4ab853394f6b6ce8a352dbbbd1a66fb31ac8d412f1c8624cb"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-05/batch-08.txt",
+      "bytes": 19939,
+      "sha256": "bc4cf92fd547bed46ecc392cdfd61f63395fbd9717ab00e4c57c963c78542013"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-01.txt",
+      "bytes": 27502,
+      "sha256": "a2e34690d5fff1f351d9f81cfcf15008f1eeec26730f6fcafdb964add5e918ee"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-02.txt",
+      "bytes": 58887,
+      "sha256": "644fb16fb629e50ec557beec246e9dfef9f88ef0c3bc3df0b032474de9ad6276"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-03.txt",
+      "bytes": 56940,
+      "sha256": "82dc3f6ed28f0dc62ad84f67c06406ebc25f31c4bd49823c9f7589437696898a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-04.txt",
+      "bytes": 62367,
+      "sha256": "c4ff1bb7736263871f490662d736fd7ac5af4ab6983db4613f3fa990c1feccc5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-05.txt",
+      "bytes": 48290,
+      "sha256": "1dc1d0ff9543980830c1d15823d58a626099ec19c43c678f6e2e0d14b9960299"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/coverage-v1/second-pass-readers/question-06/batch-06.txt",
+      "bytes": 36592,
+      "sha256": "eb537c41af11b053abdf27669bdc3b38d745807a2151fedf07c99381225a87f1"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/descriptive-counts-v1/REPORT.md",
+      "bytes": 1900,
+      "sha256": "db26e3d6b7a78899df5607418f241d51d65db3cb3ca599d418b0ce86b90e4007"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/descriptive-counts-v1/checksums.sha256",
+      "bytes": 240,
+      "sha256": "a9d843390af0dca948bafe8b735d5edb8c1b5977cecd9bcfe373266ba06f9f6d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/descriptive-counts-v1/record_summary.csv",
+      "bytes": 61642,
+      "sha256": "db6c8b3c0921089147d6db99ecc8b263ef6a1e10a9f122a77fbc81bdea5c7687"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/descriptive-counts-v1/summary.json",
+      "bytes": 89538,
+      "sha256": "43548a8416d8ced3e0e2548c70f9c637034bf73dfe7681cf63c2a665316c6267"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/examples.json",
+      "bytes": 7944,
+      "sha256": "59718c8ddad8a40c2b8029abe3c638eb59de7d98a6cc1853a9108d61d7a7a9d4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-067.json",
+      "bytes": 964,
+      "sha256": "86101d10309605410380109fb9c063db07aa81494f1af10e64a18c5e9276203d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-068.json",
+      "bytes": 906,
+      "sha256": "079d9bb8c9698140e470b4d33f8569678b93df2b6a50d177d34008f4a752fd61"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-069.json",
+      "bytes": 1084,
+      "sha256": "08c5563e0fbb514789eb71cacee32c0724f6359a9c0b05506fd217696cb9b232"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-070.json",
+      "bytes": 1134,
+      "sha256": "56a5ee80b3af2ae463e0a91bf8ceee5d170cc91c361664e3a939a882bb583513"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-071.json",
+      "bytes": 938,
+      "sha256": "3210eeefcfdf5c5ef6818fe63f38f72e89ca2e60c264127143d1fe7108c0c011"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-072.json",
+      "bytes": 733,
+      "sha256": "2bcaa7094713a3b046c52f504e8c9d0ca7ca60b043489c1997e068540807e861"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-073.json",
+      "bytes": 946,
+      "sha256": "4c25b39d568b0d32f887f1a349b4a1242e2699cba714fbd3a1d266a5bb9201e8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-074.json",
+      "bytes": 958,
+      "sha256": "9974c53e0789a2f01196df32176d1d71c8281e0e0d0dd06e272d1471384a4bf8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-075.json",
+      "bytes": 828,
+      "sha256": "6d1dfb67a39d8677f23250efa2cbc2a0a714502fac96c4f4c624ef9addff1b22"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-076.json",
+      "bytes": 1114,
+      "sha256": "1166ca68b0e9ea990b3976cf6898183456cc6af828d4c1fb025a485c678aa909"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-077.json",
+      "bytes": 777,
+      "sha256": "d54bc9369ee9d5f316f56ff2e8889bb6443939b91826e14b3559cf4f31095535"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-078.json",
+      "bytes": 991,
+      "sha256": "19e5fb9b94d1ebbb6facca5178f3ebfdbd9ca98b80d427499d457b643a1b35d9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-079.json",
+      "bytes": 911,
+      "sha256": "61033a80ad7a1277912230cc30fbe41ebe91cd534286ca5f2e9de937f85664b2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-080.json",
+      "bytes": 734,
+      "sha256": "d783e1cbb06578b1f25a485c0b3042519ac6d021a889ac4839ea007a98d6efc6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-081.json",
+      "bytes": 1038,
+      "sha256": "ae0c53776a5c891e897cb01083f6bcc82bbb14e1232fce9dea0d66c58d0082a1"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-082.json",
+      "bytes": 1018,
+      "sha256": "30fe59ac9f07b3152329ac556d83bcb9f93c5a145d377d3bba7ae1d1a162451e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-083.json",
+      "bytes": 847,
+      "sha256": "f875b00f6e9b81415213d30128065f52be15a18fef47c652c19fa13936bdae4a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-084.json",
+      "bytes": 959,
+      "sha256": "ef5c2e5ef1cf89d186afe8a7b5d5e42201936756881cb7974d05a65dbeb27f4b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-085.json",
+      "bytes": 896,
+      "sha256": "fc8efd523699432f95c1bd93c8784ebfd712d82cf931ea1a416d5b3f18a121ec"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-086.json",
+      "bytes": 952,
+      "sha256": "87c4a0e7059f662869705c40645422dac509548720ba675cf3aef26e5c905236"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-087.json",
+      "bytes": 987,
+      "sha256": "6b73fe66241a072fc86d14685d286c445f803a04676dbd91340dfbaed71ac858"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-088.json",
+      "bytes": 873,
+      "sha256": "b8f9eec4890fda0d9df15200ea0846e5ad4bd69f7ed032aad9e34e8a0e4dbca1"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-089.json",
+      "bytes": 976,
+      "sha256": "8fd6a5bfd390c088d589fe088e3d373c4a34dde1523309c56d6f6a97391f741b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-090.json",
+      "bytes": 957,
+      "sha256": "85eab4c250f04be92a28c713e33bfd90cc109cdaac2bccccd81b01302f38b5b7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-091.json",
+      "bytes": 878,
+      "sha256": "55879e439557889faa29729e71c9f46ed1eb5c7815b1728cab023ec4d16db020"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-092.json",
+      "bytes": 854,
+      "sha256": "805265705fbe30a87478bed15aad90bd79de277268ec5ca93bceee87182151fa"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-093.json",
+      "bytes": 1076,
+      "sha256": "4784a120edc41399512386c2f274ae38cde12f665fc18a6101b8e2d09910e612"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-094.json",
+      "bytes": 948,
+      "sha256": "ff0310c4f3b8e0b88a8a65220793ec58d44b475f94c77edb3d1108f764b8a962"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-095.json",
+      "bytes": 881,
+      "sha256": "98f218ee154aceaebefc345a540e848393ac547ab5d436b1ea9e5be93d0a1063"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-096.json",
+      "bytes": 938,
+      "sha256": "acde5f3fb299804a5187238bb22253a9c09bd303f0fa3912a9a58ec9b22ae07b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-097.json",
+      "bytes": 920,
+      "sha256": "dc7a75de51df0808f03774ac4c8660e820aa9792919815de92553d9eacf2fca4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-098.json",
+      "bytes": 996,
+      "sha256": "f06ab87a49f73b1dc2d74b5d91bea1d81a2aaa52aec4a895157ceec1a15805b7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-03/line-099.json",
+      "bytes": 970,
+      "sha256": "777b7640d23e9f7e99ee9214ea169ce65bae31901c5baa73b9e0f9d367c2c0bb"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-100.json",
+      "bytes": 1106,
+      "sha256": "4d563ce207f180afb6a1186cdf3898a335f2f84035060d1dc8d0a0ee343003d8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-101.json",
+      "bytes": 975,
+      "sha256": "61258a7594050f3efb3e2bfb4a6500c050c8031995285e0f2e4decb0d782f953"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-102.json",
+      "bytes": 1055,
+      "sha256": "8c2d97f5483f8c1e7b52779ee19a2fd8b8ed08060bc652e6315c961d575445d8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-103.json",
+      "bytes": 1052,
+      "sha256": "6326e88e9bcc0e74b2a1ef46cf6246ef7416eb2c27b447138c972e17d1db72c7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-104.json",
+      "bytes": 860,
+      "sha256": "1c26621f94453aebb86c08a5d6b6c57edbd31eb14e989ca7f0f3ff1a634dd0fa"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-105.json",
+      "bytes": 1020,
+      "sha256": "d68154e59b86b28664f91be676f6e76f6393726b76f16a354dfec9b2800f0faa"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-106.json",
+      "bytes": 984,
+      "sha256": "e8cbbdf1ad844434aacc6d589eb217ac36a7a001ab1554e74ecf15d303d97059"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-107.json",
+      "bytes": 956,
+      "sha256": "7c8ae7fbf059e3005280ae298599e1d3d4818e9f8dbd068c05537f03467b7626"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-108.json",
+      "bytes": 909,
+      "sha256": "15295b2845b023c72d41ebfb2839f0afbb5487688619d3bd1683fa45992ff6ef"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-109.json",
+      "bytes": 1007,
+      "sha256": "4f9d97319706498327d72592c21749356dcd1600bd3b385feddae92990dc630c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-110.json",
+      "bytes": 1114,
+      "sha256": "956f873804478364209d6c83e5e56f4e3c2f5bca60acb6640bdcbe1def148287"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-111.json",
+      "bytes": 1019,
+      "sha256": "26c809fd3d447a0d2c27987543b8df411cd36a92870e91bb355c0275a278501c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-112.json",
+      "bytes": 872,
+      "sha256": "334c9a9408bc26192a24b669ba7a7c4f864a4ebcc2e377f9cc1d2ad9adce3d3a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-113.json",
+      "bytes": 1143,
+      "sha256": "4b415fe0ae0c4345b25eecead5b910984848a7dcf52b7b8df8db3ca7b8e81037"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-114.json",
+      "bytes": 1129,
+      "sha256": "46df748b537c2783be86eb20d7ad775d752cdaeb17c72d9b68a7822f4297d064"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-115.json",
+      "bytes": 962,
+      "sha256": "22f910f83207d2970f259ee0040e00dc391b778327a3ff9b31f3760051fe4d4d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-116.json",
+      "bytes": 845,
+      "sha256": "5a2461a6fa244cefa3e999e133e2adda09511ef154652abe41d193d984b6cd00"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-117.json",
+      "bytes": 1121,
+      "sha256": "02382ec5f1a564d5afeb0f8297dba0c42caa18f23af02f184628f87b25b053dc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-118.json",
+      "bytes": 935,
+      "sha256": "4c7de2b7b38ef636643ac4fb947486531d7e056be31340828008d29e1da115d5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-119.json",
+      "bytes": 934,
+      "sha256": "54c7d45f23e769fc8f70805b4dbb1aee913a75f9970a54600834cf016d7bbe72"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-120.json",
+      "bytes": 925,
+      "sha256": "78f1b56e30308413aab5f5bcd008e6bda10b61e6950ec3bfd821ceb942670b97"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-121.json",
+      "bytes": 1004,
+      "sha256": "05ca60482336056bd289f2fe5f2fb68bb83fb489bf04d5260ef6317ea55450b6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-122.json",
+      "bytes": 1020,
+      "sha256": "8a6074a5d6e76518f0a03d4239f7955a58662c4498bdeb5d12fc522269f4549f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-123.json",
+      "bytes": 893,
+      "sha256": "aebf13d8753caa70abf1f98648007284b2195c7a979c23f29fb79ec3967635dc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-124.json",
+      "bytes": 809,
+      "sha256": "376f6c08b8593ad8ec35078e54e0247f3bed9debc697a125f3c4a928b93a2dce"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-125.json",
+      "bytes": 995,
+      "sha256": "329d176b633808ff95abe80b8bb5216abcb3b7c0aa33b4ba366a230947e7fe7d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-126.json",
+      "bytes": 1128,
+      "sha256": "7da91e86934032a053b1703c0ef48312acdd2f3af7eb09162006bc05740be24e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-127.json",
+      "bytes": 1010,
+      "sha256": "f0760ea3a3f40a3d888a58b72acacf177bbca6241d5b99d4af138a200c9674cf"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-128.json",
+      "bytes": 929,
+      "sha256": "4bdceb397db448bbf01c250106c53245f16cede42fe444027a600918f939c974"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-129.json",
+      "bytes": 1024,
+      "sha256": "4b42404857c6c2f5c26c14965b7462ab034dfe2481bed9a2ac49fd8cec67c0cc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-130.json",
+      "bytes": 1117,
+      "sha256": "1e04070efc71f8fd66f1228b247473449d6f5a049aaaff1008d04b9959e94b37"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-131.json",
+      "bytes": 985,
+      "sha256": "fb233f0b3523768d466453fd4933cc230e4b6abbd9fae7ae6e913f3cdce84651"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/notes/question-04/line-132.json",
+      "bytes": 995,
+      "sha256": "a6a6fb898ca591333b551112eed475ab71213e862cccb62df2e6b59827c3cd46"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/partition-manifest.json",
+      "bytes": 125838,
+      "sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/partition-manifest.sha256",
+      "bytes": 90,
+      "sha256": "c07b252b44a5e34799deb350a912a0be0fa596b6e3d27c056f2317af6265c970"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-01.json",
+      "bytes": 3615,
+      "sha256": "01c77e65f99e71fa672f88bd20c7b18c51a177fc3a8e32faae1a8344e96b58a3"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-02.json",
+      "bytes": 3535,
+      "sha256": "ac74a2ea9207e26cddd4c07bba9c2072f03413034b16d52fd22ee5359555a456"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-03.json",
+      "bytes": 3360,
+      "sha256": "3d68b5f90c1a03424e8abedfbf69c57e1a1bc93d2b5c15703cf8d203760c7ed0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-04.json",
+      "bytes": 3583,
+      "sha256": "6163c0220169b87f8764786f44e6ab1d5e69f4e6b8b482b8b1a1698d0e139fd9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-05.json",
+      "bytes": 3683,
+      "sha256": "f2d266eff33ed394b50a6fff1734a715d555e208c54feeda2ca95efc6fbed108"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-06.json",
+      "bytes": 3617,
+      "sha256": "b82dcf09f968f5cb7b69bc52f2bbd7ba1585e298af80e814298b2d944dba22d4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-07.json",
+      "bytes": 3645,
+      "sha256": "1ea7c8a93a3b9a498c3354a8117711bad1fca146d4f48ac3cd9bbf51309b0c1a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-08.json",
+      "bytes": 3548,
+      "sha256": "9e7906da201f1d3aa4b04cd9460b2e6bc2d86740c86ea3dbd9be67fab4c0986d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-09.json",
+      "bytes": 3611,
+      "sha256": "4e2b682304c84f84fea1b201944535ceccaa702457166605791c0642705151e8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-10.json",
+      "bytes": 3539,
+      "sha256": "6ab0297130ea91dff0c7da091670975d13605b903782ba87b79b9b3038829a46"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-05/batch-11.json",
+      "bytes": 3582,
+      "sha256": "c7caaae2d3eb584e6eefc1f5c2081e72577f76ce127d2a0c1b9c8b5916b8b54f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-01.json",
+      "bytes": 3488,
+      "sha256": "2f02c8adcf0123b91c325419e00db798510c6591dfabdb3216518473aba28dee"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-02.json",
+      "bytes": 3597,
+      "sha256": "a81c68aab10c742318034649c9e3659767881f1d22931df43b13ae5f634861be"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-03.json",
+      "bytes": 3663,
+      "sha256": "a84a4e268be5b69792b11fe914a0722caee5304c7b31e0cbf706b65e7ffbcb2c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-04.json",
+      "bytes": 3446,
+      "sha256": "7d83a33dee97d6a3cb66e4a4b95ce3859fecefb97fb92492649bf5689e5dbbf2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-05.json",
+      "bytes": 3279,
+      "sha256": "b96abcc982f6fec9ce26d1152c80d623c86d4ee656035aab4639510361d135d6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-06.json",
+      "bytes": 3479,
+      "sha256": "be7e05016d9ffb3fe8a6e1912e72cff1ff9b48a00a4b4367c376c9fc8046ebcd"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-07.json",
+      "bytes": 3454,
+      "sha256": "475d6f803295ae8fe3feac6540426c434a9a8ba26f99825e1cf5765262dd8bd7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-08.json",
+      "bytes": 3309,
+      "sha256": "16fcbe3fa09d5cb94aa2fe276a30e96e280b4897a38ccd00d7704f0029e75c28"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-09.json",
+      "bytes": 3398,
+      "sha256": "e5ca3830af6fb23aa6b41fbeacebd29c35defd8899297b965301a3798836c5f3"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-10.json",
+      "bytes": 3558,
+      "sha256": "8f2c8ba6bb3d41b048f02cea52e0e5de045c7eb42520b7b52426e50a67a67885"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reader-annotations/question-06/batch-11.json",
+      "bytes": 3526,
+      "sha256": "b4ed75731a5a2cd3380c4752e0a66cf2b9b1f1a19c8c8b4c88daa3e131831ae0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/baseline.txt",
+      "bytes": 6079,
+      "sha256": "9ea0cd1a3a9232d2f2c42e86de6235d3477e9eca298977f71e79a1b225caa344"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-01.txt",
+      "bytes": 18116,
+      "sha256": "51086365432eb162bdc34bf8e936f27c2cee8309dcfae95f8aee24fde6f58a6b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-02.txt",
+      "bytes": 39695,
+      "sha256": "b65fb1f977a99fc2d6fb572cad289fc670832e564a2ef7320e56ccfb813ee9be"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-03.txt",
+      "bytes": 50850,
+      "sha256": "af7d4e426e945120078614e8a316913d8231e5803b0a7be7c7192871e7b2c0f2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-04.txt",
+      "bytes": 26299,
+      "sha256": "799aae316ce4a64d04b1d498679a9dace5b3ae382842171061792afcf7f9e790"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-05.txt",
+      "bytes": 21722,
+      "sha256": "6be02cc2387dc3f3c62afbdd5520e794b52729f7ff5b54f9efb3add75a22a33d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-06.txt",
+      "bytes": 41765,
+      "sha256": "11237d98c892b371485aa145dd44cc4a395e0fb3e9e28be48f68ce7c6b4aa28c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-07.txt",
+      "bytes": 36409,
+      "sha256": "199582b93c46732a863089912da69c9b6e4447fc08a307ade2eefe68eb215eb6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-08.txt",
+      "bytes": 33400,
+      "sha256": "3b3970c82f529bb7acbf33c214fdebf4eca5ba4f6735bb4de349d3330415a0dc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-09.txt",
+      "bytes": 30506,
+      "sha256": "3dcf42690aec7193ebbf8fb280d7709bfbe6d8ec168d73730e3e366e772d6c02"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-10.txt",
+      "bytes": 22534,
+      "sha256": "54604c072592760e51b71d316566b1049663180d2b710a494a2258fbaa4b1bdc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-01/batch-11.txt",
+      "bytes": 44312,
+      "sha256": "38e065d98cba909761c2af88c89f90add971bebe3b2b3143fb236e9b94eca785"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/baseline.txt",
+      "bytes": 5937,
+      "sha256": "d4505d5d63fa10d529a7fd0117f1b868fbbf805a4794fd3a0d6ba9bf5ebd4f54"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-01.txt",
+      "bytes": 15998,
+      "sha256": "6b200be304cfb22f1d73cf1c71d628b5d118c2168898cd7013577af8337765fc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-02.txt",
+      "bytes": 33185,
+      "sha256": "d997a59af1e02ac788a91b4c7332a6664eb57bcc392aa7f8c680ae8132d55962"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-03.txt",
+      "bytes": 43967,
+      "sha256": "9e0505f072a6e7c71a193ec13f3df26fc838e3607076ff158da5bb1d75a0c0e9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-04.txt",
+      "bytes": 23516,
+      "sha256": "6579cad7352c3ea61069f4caedd689df1747ec1c2694e59b247cdf3ba762aa59"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-05.txt",
+      "bytes": 26548,
+      "sha256": "934ac8a23b6487457772e59fe693780005d8b126e4bb612af15e70e9c89c9d0b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-06.txt",
+      "bytes": 33575,
+      "sha256": "a8f68744cb86299703df2dfe269ee28046d90e7b1e6f7f9df84f7f344a9290d0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-07.txt",
+      "bytes": 40314,
+      "sha256": "d040641e74e34ba118770b0d45ccbeecda3b231915b75641abb18807ca691110"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-08.txt",
+      "bytes": 22611,
+      "sha256": "838ae14afc366df14aa15bc01eff9229d44e35c81767680a360c9ba0af5f4917"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-09.txt",
+      "bytes": 22553,
+      "sha256": "fb3c81e3f69636f27989b7d7b48e50c6ccd6620998d77751d1e82594093f8bc2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-10.txt",
+      "bytes": 26431,
+      "sha256": "8ffd4b447671cf7bbe2a373e1e48ce2dcf617c19fef738da404348277f6fc7b4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-02/batch-11.txt",
+      "bytes": 40568,
+      "sha256": "29c92f129c267c14ba8671b556bec38a2a15bdf173504eee88f987dc55b2ca80"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/baseline.txt",
+      "bytes": 4445,
+      "sha256": "a0e4f66a593816999b9e94d405599515a521e58403415bf76fcf1fbff54ea9f7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-01.txt",
+      "bytes": 12739,
+      "sha256": "25ad93c5e7e027bf6e6fc04e2132e4fcc84be9a6f4c1ce00b9ab84af1bf71a10"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-02.txt",
+      "bytes": 33187,
+      "sha256": "0b2f344f4c8482e51c43785280147e370d4e931ad9a801c246ce439aa07780a9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-03.txt",
+      "bytes": 38067,
+      "sha256": "025aa5d02db0a8cc867d6a2376c2a332c1ce1338a31e8e2c15528bb9e9bfc871"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-04.txt",
+      "bytes": 22032,
+      "sha256": "c15b1d66284b9543d50f5f10cdaf773114d4140f5e1a630522f07c914be97ed5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-05.txt",
+      "bytes": 29282,
+      "sha256": "fe27a713f6922a15511a26d53b85cb0f88abede8989b2df283fcf94a9f69ccbe"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-06.txt",
+      "bytes": 37872,
+      "sha256": "b318ef805016cce37ce3812c18aa104c62ba3098e96f3a384a718136cfa31d3c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-07.txt",
+      "bytes": 37526,
+      "sha256": "d1c098c7a18a026221a695e0bec2ce1209e709bc1b2552d324b75f5d64cc30be"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-08.txt",
+      "bytes": 22648,
+      "sha256": "38410a6e8d805e0f4da1d9de8393b3a58f4475fedf4c5cb386547cabd83ea8c5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-09.txt",
+      "bytes": 30649,
+      "sha256": "4e4ed15ac584733c8e920125564fcd5e1c7ee167e4226c81eb89dd2021919d40"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-10.txt",
+      "bytes": 36672,
+      "sha256": "be733eb936c642c1427d7eba8ea77ff650e08769c5eee6c774cc18f863c2f719"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-03/batch-11.txt",
+      "bytes": 37590,
+      "sha256": "c90f38d772a84f93463176477ee4de6d01956d162a3a44537045da7a30fdae73"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/baseline.txt",
+      "bytes": 11242,
+      "sha256": "b97c08b6ee0aed9d56ce739d9807a2fd105dd19918ab4fd9e2cd25021ec1e26e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-01.txt",
+      "bytes": 29206,
+      "sha256": "6f51a7c3e34c5e06a6de1e979cad63280efd43398e17db7c982a0c4cd4b8a279"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-02.txt",
+      "bytes": 42428,
+      "sha256": "1a44772c4e9179245237d6d01954fd06b48f9620f7bd5a131135494a9d586876"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-03.txt",
+      "bytes": 43795,
+      "sha256": "2ff295cd5fa300ab432094323aa212a3da0591d285ba7e80b3e85f33d1ecf23f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-04.txt",
+      "bytes": 49653,
+      "sha256": "340d8b5a38698c1d45e2f0373fcfc9cf06758ef64185dc70497c35d0fa29d498"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-05.txt",
+      "bytes": 48664,
+      "sha256": "b8236cc8a422a64115047865422cb5e6a798b59a2357aad1e6d419285461446f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-06.txt",
+      "bytes": 42021,
+      "sha256": "8c229410f1d4f8ec6db2c5bc35176126497dd3fac719e90624c2dda004df37b5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-07.txt",
+      "bytes": 46954,
+      "sha256": "cd2b5509b5aa8a50a0b4cdd9d76af4005755fe61fae60e8bc607ba5db7cd8c9e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-08.txt",
+      "bytes": 32317,
+      "sha256": "ffffe34a708b915d85d38d084d181ee514bf0c2f599e1f5e4ff0ae9a7f8bb2cb"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-09.txt",
+      "bytes": 41664,
+      "sha256": "da3bf3684debf05c714e33b701d8fbe891f3c0cfc68db79b88694dc170b803d8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-10.txt",
+      "bytes": 44580,
+      "sha256": "ff63cb6aeafde4b82cfd0fbb0b27c45ec942fc1ee7640cca263db011e9e7b0cc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-04/batch-11.txt",
+      "bytes": 48154,
+      "sha256": "aebc0e7603d2d938f39df6370939a8b5792ee922a4a0297917a1788f09acc1e5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/baseline.txt",
+      "bytes": 9774,
+      "sha256": "878b18cf35951d35a83d9e5b9dbe8c941559790aa88c59144b41bca2891d65e4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-01.txt",
+      "bytes": 32032,
+      "sha256": "62e4c23a7876d6a29c67edb86d9208c5766233e155db189897a1a37ea1b372ce"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-02.txt",
+      "bytes": 38119,
+      "sha256": "99fc962ae312ea00ec7ff9c0c816803545b4fb88342c903a424f522bda1b03f8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-03.txt",
+      "bytes": 53400,
+      "sha256": "a3d9d30fe85924993997564746c698fd4e65d1a10cb9e548cfb3fb1fc42b39cc"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-04.txt",
+      "bytes": 43883,
+      "sha256": "9062a88a93a319210bef89dc5a32c05488f8292c044da552feab3431d6718382"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-05.txt",
+      "bytes": 44857,
+      "sha256": "a8f4408e349be637ef54b2e1061ba85596ebeb0438c892645805c3b042cef8e3"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-06.txt",
+      "bytes": 52541,
+      "sha256": "98559344d4a6b374a892f1538a80c8db0f97908ca23fe7f97c1aaf55555dbb0f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-07.txt",
+      "bytes": 49166,
+      "sha256": "f46d3ed18310b9ea3bc21bce8f806d1e45f8d345dc3ba3f4b22128a0a76d2952"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-08.txt",
+      "bytes": 45742,
+      "sha256": "1c40190411dcb1cf389df1405fb5f9f305c815bcc8d86c8e3322b287a331caba"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-09.txt",
+      "bytes": 52207,
+      "sha256": "3a82efc6972588414c5bdbecf9f1e7b4c54d2bd0e940ed2f5bb6494c10b387d4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-10.txt",
+      "bytes": 30081,
+      "sha256": "69800ea91a699eb0366cb9fd4229777eb2d91b092f14e3c415222eacbd76b44a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-05/batch-11.txt",
+      "bytes": 53577,
+      "sha256": "aee019492169c53f1661850e6963a11e14233ab2e1b60577e85138320d22d702"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/baseline.txt",
+      "bytes": 4422,
+      "sha256": "f733e37bfb5f10ddd3d7763b672658b27033ca924ac5b80e73c0144384de17b2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-01.txt",
+      "bytes": 13561,
+      "sha256": "8f2e4db6fcd765326deaaab2f3783dd7f593f3ee2ff9e98293e8d91049650b0f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-02.txt",
+      "bytes": 46623,
+      "sha256": "576125decced35270c1ef9812c3a223909e0c48ddc854f48ce94cd099b86e7aa"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-03.txt",
+      "bytes": 50589,
+      "sha256": "04aff8f27d598e8ab9f54898ad3714487d4593deffccf9cf6845fc286d1e584a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-04.txt",
+      "bytes": 33351,
+      "sha256": "2802b3d84d114649d163d42c9cff60855eefa28cd87deb27ca06a14d8485522f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-05.txt",
+      "bytes": 24372,
+      "sha256": "1ec457c28ed6cac31d62d8f3488d3aa62d2db9c034e6cbef7f878fbc93913afd"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-06.txt",
+      "bytes": 50823,
+      "sha256": "7c08f697582b7cfe947459d632a66dae344e3623fc2409cbb2424318980375bf"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-07.txt",
+      "bytes": 43574,
+      "sha256": "8c47e13770df11a07de218ff314a37853f500dc31fba280d84373cb8dff75298"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-08.txt",
+      "bytes": 21503,
+      "sha256": "2a221aa0702cac532e74244edfbde774c0beee2536e15b355445de2a04810e93"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-09.txt",
+      "bytes": 30664,
+      "sha256": "10d73f5fbc3a7fe10ab32a5c57d1b4d174bece2e82d791a8cc534f72b642f81c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-10.txt",
+      "bytes": 40011,
+      "sha256": "f75a28e21bcd30318c8c4fb575a68ab2384dde75d2828738d2a74f34e8ab684a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/readers/question-06/batch-11.txt",
+      "bytes": 41729,
+      "sha256": "ee1d148bd33ea24536bfb8f25a8f19b44c4577f6a2201bd5061be01570f6128a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-01.jsonl",
+      "bytes": 61157,
+      "sha256": "4001b486e8d45c36243a8a8d01d07dc6bb98cf2e1315a6c2a4b2200c6a7fb1a3"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-02.jsonl",
+      "bytes": 60248,
+      "sha256": "999feaddce1b6d3c7d73402e8fe1cb4884977120b5d80dbf94b0069d1243f987"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-03.jsonl",
+      "bytes": 62317,
+      "sha256": "61577573b3e65ab991d168680edd52ec4c418a63763a26b2e354e3458768bde3"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-04.jsonl",
+      "bytes": 63601,
+      "sha256": "e4715c51e4a391aafc9cf9447ca6353ed2f655899f3a052a1142cd854383c853"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-05.jsonl",
+      "bytes": 66100,
+      "sha256": "aa15fb2d0d92b1b51c49db3c7ad0d1ddb1e9fc8de7b1dff691aca237491ab71b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/reviews/question-06.jsonl",
+      "bytes": 65333,
+      "sha256": "3028ce30f43ea3425ab3dcce0a90fd1d517181ec59dd42703043efcaf3483d5a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-01-notes.json",
+      "bytes": 3991,
+      "sha256": "7567359893b10f5ab522fb6458efe5c25e58c6a3d8859b9c67e5996485108ab9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-02-notes.json",
+      "bytes": 4027,
+      "sha256": "4fd51256bb8ffa074184f8a523013968e3abe066a59ee770271fb1f29cf01507"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-03-notes.json",
+      "bytes": 4129,
+      "sha256": "5c25bae01249f768da86bcaead14f9e900172133701b3bd93ecb204c8b7f8527"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-04-notes.json",
+      "bytes": 4411,
+      "sha256": "73c8af31feb6e011c94739a8935a32aa284ea3d80fd3b609dcc32ace0af1c6de"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-05-notes.json",
+      "bytes": 4130,
+      "sha256": "33f7f4a5ae4652f003fe676a6061e91f8528dd63715971eccda1725d4ac2fde8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-06-notes.json",
+      "bytes": 4070,
+      "sha256": "736be8e77368efc759a48fafa85aa887aaa7d02642c5c8c9054dcbd9f883c93b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-07-notes.json",
+      "bytes": 4051,
+      "sha256": "1c2e0edbd0442584c080f8c7d100662219f006efcb44082bbb3a7ca96a8aff7b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-08-notes.json",
+      "bytes": 3995,
+      "sha256": "9ac93c3dc3d060234b55777a1eeb9fdcc3de8f68904603ecb6306bbbb9863fca"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-09-notes.json",
+      "bytes": 3808,
+      "sha256": "c8a4c0f821039654c95e82c2cd7cb4c72a996294c2368bbbcd8c57cd746ec5f9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-10-notes.json",
+      "bytes": 3964,
+      "sha256": "14f6e72a0629e5530fd19c2d24785881e4c9a11b81f4b89c1e9a120788c9a6e8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-01-colab-monitor-batch-11-notes.json",
+      "bytes": 4362,
+      "sha256": "c4ced033bf09f728ed0344af6722cadcc5a922be7e073b1d1fef6f08257e0687"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-01-notes.json",
+      "bytes": 3884,
+      "sha256": "6dfeb80ee6ca522611a6ac00e45748494cb0871b732dfe0cd2434283c8b741ba"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-02-notes.json",
+      "bytes": 4140,
+      "sha256": "18b9f0ab2b39d01aaaee1ffae03f4deb37ecf5296724324aef2ec00c9c258dae"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-03-notes.json",
+      "bytes": 3988,
+      "sha256": "a39ed5f66f8d726eb625eed66cb36feeff4a9c3a5beb675870fe47f2c56df92d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-04-notes.json",
+      "bytes": 4085,
+      "sha256": "3db0140dcef057cbf1ac45902deac93c037664718ddb15f5f6eaff9ea256715f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-05-notes.json",
+      "bytes": 4099,
+      "sha256": "f9bb57186e88a8b37b2227be6f87e2a4ebad1a472c05783dec165e748baaecf6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-06-notes.json",
+      "bytes": 3868,
+      "sha256": "7029c74c5230e78cd2001da79dc5db3df6564eeb3d7ec57f5211a0fb02924577"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-07-notes.json",
+      "bytes": 3989,
+      "sha256": "48014ae881bb1fe428ceca36230dc847c240fa4c170434fd1c88ed07d23cfec7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-08-notes.json",
+      "bytes": 3734,
+      "sha256": "dfaa07309adcb4c80a73c2b16aa98ace4cddde0dc3ea7ad4710e3597e74a8430"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-09-notes.json",
+      "bytes": 3978,
+      "sha256": "ebbfcda305c8517895e86c33e1f1b00962bad174f9d9bc17e8bf305dd5f084c5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-10-notes.json",
+      "bytes": 4094,
+      "sha256": "fa3bb3c52a6702803a7f93311aa0fdf85dc6bf5fc140a1e32b76cf59c4b58703"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/revisions/question-02-colab-monitor-batch-11-notes.json",
+      "bytes": 4179,
+      "sha256": "14a24a71254336d2f72c38aeef86cc53adaaf73a9c5d7a7e029e267ada1d8cec"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/completion.json",
+      "bytes": 18539,
+      "sha256": "6f556dc8cd059353a81814d67c9e8c306299a38fc990f78e151363e0f4eec5e8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/assignment.json",
+      "bytes": 2854,
+      "sha256": "f24a75f611314aca2eac01008a37503cf3aedf95752088584e6beee54f24c62e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/batch-01.txt",
+      "bytes": 41893,
+      "sha256": "eb5e02066f9aad4517b5457046c115e68f773b42ad1625c3d1fedd8a5eb22546"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/batch-02.txt",
+      "bytes": 54013,
+      "sha256": "12d95548426f1968ecb266a63a773cf8c1a55e7a0db7066cf7ba7155d40a1e7b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/batch-03.txt",
+      "bytes": 64789,
+      "sha256": "00601e33b2d3044da4373886252591aed64a1d37460e6f52fcc65ac85c7a11f8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/batch-04.txt",
+      "bytes": 58100,
+      "sha256": "17a3e72a1bb620c9d44f21c8cbe4326266b9aec3ac3c929a3637005bddbfe4af"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/batch-05.txt",
+      "bytes": 22061,
+      "sha256": "0c657b8cadb6220260aed0e4d70c36e1cdefcec9d27209a1684698d468576998"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/checks.jsonl",
+      "bytes": 13024,
+      "sha256": "9f1199205d4eadb64cb3456cac181fcf5766acd27c7f379611480e9ed7a14cf4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-01/reader-completion.json",
+      "bytes": 642,
+      "sha256": "679ee53f46997681a4a237b7b79e147e54c71dc2a225e45cdeb1d1949ed1ae44"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/assignment.json",
+      "bytes": 3214,
+      "sha256": "b5ca5769efb78ef3f18f50e1bc80d1de966e150ec048b0f4dfd33a912efde5b4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/batch-01.txt",
+      "bytes": 40236,
+      "sha256": "23f6863cb924707ebc1df3d0a979f46723fa77bf60e1825cf341f07800a93df4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/batch-02.txt",
+      "bytes": 49670,
+      "sha256": "3f1b3e24a4e01f7473797e511c3b973c3a02e5f3f20acb346c0c466d5cf9a42a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/batch-03.txt",
+      "bytes": 47282,
+      "sha256": "e1562bdef798210a30ee3448604ddfd79d65e4d42f76b0a6d51387120d9c7419"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/batch-04.txt",
+      "bytes": 47042,
+      "sha256": "9649f78ad5c10d4ed83735748ebb4c7244dddf7ca7874bc391446c871b577e82"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/batch-05.txt",
+      "bytes": 50671,
+      "sha256": "8f61f6daf1e3dbd96284d78452eb5e31b1d62cc783000c916943f146de44a04f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-02/checks.jsonl",
+      "bytes": 15811,
+      "sha256": "8a7497afd50d74a181d83aa3babe0fa0c9865e115cd7bd8de870cf314b1c8cf6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/assignment.json",
+      "bytes": 3070,
+      "sha256": "2920c7885e5a55b09770bcf7455ebe029761a53f8396a1658b57775ac1098c9d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-01-colab-monitor-notes.json",
+      "bytes": 3765,
+      "sha256": "af10086152925bc07f7c7a59c8308a9512e4605a620e698a3d5930d15a112c13"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-01.txt",
+      "bytes": 41803,
+      "sha256": "c525a1d137ecce00d029650d1e5556118e4b564366d91757ddddabf3aa89a6a9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-02-colab-monitor-notes.json",
+      "bytes": 3660,
+      "sha256": "fbe85b34e5313d81a95bef8a81eab3c63485e72b3a604e25b9e5c711ce518ffd"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-02.txt",
+      "bytes": 43070,
+      "sha256": "eebaa74f1b1040199329b15a3db106825c8c218f2493b2a0c962ef2da8860200"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-03-colab-monitor-notes.json",
+      "bytes": 3728,
+      "sha256": "58f5b7209c1a0017b3fc1e05281d52e0f8c20b3041d93e18f468797cac45a8c4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-03.txt",
+      "bytes": 51867,
+      "sha256": "034720f2aea4076a82e5ce69c045cafd060fb833694ffbef4da959aaa7af464d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-04-colab-monitor-notes.json",
+      "bytes": 3665,
+      "sha256": "361f87f60d34c7e18f0a77e47b4c470fe0655738cf46075e332bbcdd4c8ba689"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-04.txt",
+      "bytes": 55958,
+      "sha256": "35c84bf527189ca03c0f539a13d5d25d858886e419be8aaa3dc0b9fa27d74126"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-05-colab-monitor-notes.json",
+      "bytes": 2747,
+      "sha256": "d5ed5c8a5c9fb2dd956812679e9664a2f0160b0ce465972211a24cedf353a5db"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/batch-05.txt",
+      "bytes": 38716,
+      "sha256": "1608c5e6903636aea41c8a43f13a35751ccaa92818636f7a7102a6be6ba6ff27"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-03/checks.jsonl",
+      "bytes": 14377,
+      "sha256": "a723cf5e0e386e567317b35394ba986222b58b5df33036420807f986b7c7db89"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/assignment.json",
+      "bytes": 3646,
+      "sha256": "7394cca13cc93533e33d52533ce404c217cc240d94a582ee59918c72f2f5685a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-01-colab-monitor-notes.json",
+      "bytes": 3756,
+      "sha256": "587a958089e2b9a3cf795c0666b097542671e80ca5e799663cefe7f939dcc388"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-01.txt",
+      "bytes": 51317,
+      "sha256": "7fca612533308df41dbdc10f6a725d4ae419ce46de3a8f34f4279c46e1405d54"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-02-colab-monitor-notes.json",
+      "bytes": 3688,
+      "sha256": "2d11e2dd0da9b728111dba2ea540a14a90c499c9e3c5d07f752e38f91fdfdb2e"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-02.txt",
+      "bytes": 50712,
+      "sha256": "c579b298d87809cfa30d5042428f4315733057bc436f3fcd48c25df05b2c6be4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-03-colab-monitor-notes.json",
+      "bytes": 3785,
+      "sha256": "ab6341c6e740a2a6746481c38924be8d69b81fe4ee8189958d9d672ba0a5a9e2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-03.txt",
+      "bytes": 61250,
+      "sha256": "76112d816d0cebac0cb585cdae1662c02e1cf07e9a0cc8b65f2df489b1e76885"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-04-colab-monitor-notes.json",
+      "bytes": 3715,
+      "sha256": "565b1fae8bead245c1d841b3850f002cd3b84e83609bfe74f71fa1cabffb24be"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-04.txt",
+      "bytes": 57297,
+      "sha256": "c270f0f97c71d4d9be5c7c8b25fd431cf9bce61978eb65b36cc59aa49b4de6ef"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-05-colab-monitor-notes.json",
+      "bytes": 3571,
+      "sha256": "0f86f3ad924f98f8179713368a3f1e60e0a0bfc8e4f541a7c600d9168363badb"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-05.txt",
+      "bytes": 57210,
+      "sha256": "7f36a92da4284477951677934144898d19ad6f9202d2558471d792946a3246c9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-06-colab-monitor-notes.json",
+      "bytes": 4483,
+      "sha256": "950940fad0c0c4186a56d8c3ba02bdedc4cdea5807e261e192a640f0b511959c"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/batch-06.txt",
+      "bytes": 65271,
+      "sha256": "b5f48837eddc70752001d7d0d7128ad509df7c6f91367510242a503206737e76"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-04/checks.jsonl",
+      "bytes": 19156,
+      "sha256": "cb4466897cb10e1980bb46fa94dd9ec8041f78994ef203ab881af95f26ced2f0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/assignment.json",
+      "bytes": 4150,
+      "sha256": "431e0e3fb896d1c55c3af45056cde08e29df37cc2b7060060d93aae35de6afc6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-01.txt",
+      "bytes": 48586,
+      "sha256": "279779ab5c660ae6904a4efce58f47e95245b9128e58d7e564baaa89408a02c0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-02.txt",
+      "bytes": 58596,
+      "sha256": "136ebba22dc3857cdb94829d0bc63face793dd3fd9abf1dec71e22320ad75305"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-03.txt",
+      "bytes": 56083,
+      "sha256": "303a759efc2edea57fbd9687b3d6f7dd3e6d33bf4e7cac1aa079bd102bf05e3b"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-04.txt",
+      "bytes": 62496,
+      "sha256": "0af6a81a9fd87c001250e20e5ccacb5d31f49eeed7b5daf29e45be8169926655"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-05.txt",
+      "bytes": 62508,
+      "sha256": "61244fc00f561d54c1f47c61f6b0f60f11039f78709f354b3f334a9635209658"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-06.txt",
+      "bytes": 51089,
+      "sha256": "42a07b9004cc651e8573949891f7761c01aad49b2353ec96191b91b286f6c208"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-07.txt",
+      "bytes": 47568,
+      "sha256": "2cc2913fa6066665f7965515021dcab7ef2e79cd42e50392e799d9236d8d0537"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/batch-08.txt",
+      "bytes": 22356,
+      "sha256": "bf94f2317f936fb06e83c502b928ee8d6f4b8fc67da17fde1a45b86220ebcdf4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-05/checks.jsonl",
+      "bytes": 21439,
+      "sha256": "a7db5f6975f7933aaa1cdc7ae3839f43c35282cb068791af70ff55fe68ed0106"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/assignment.json",
+      "bytes": 3430,
+      "sha256": "5914cac107d93c0166f99389b97c74ccbe76ae9b3c20585aa649519daf632cda"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-01.txt",
+      "bytes": 34713,
+      "sha256": "990e527811b771e4a3ce592892f8ee1b09449e2c6001618941cd66f07130d7b1"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-02.txt",
+      "bytes": 66101,
+      "sha256": "ad3d57cf5ee8341354859fee753fc41e010e55d6dd127662a79a199a5e3013a9"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-03.txt",
+      "bytes": 64189,
+      "sha256": "064647bc976bd3f009e91cae09f2c4226f090b97b03a89d285d80eaf30a67c01"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-04.txt",
+      "bytes": 69578,
+      "sha256": "7beed7836cc683ad330e1eb223e857f59af0718f9270145699ee97a736f077d0"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-05.txt",
+      "bytes": 55569,
+      "sha256": "3ac4131859b08d9ca5e4291b2fb5107e0ea3831b08ecb4fead4316c13ae3668a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/batch-06.txt",
+      "bytes": 41506,
+      "sha256": "f94b66d9253509e67cf45faf5a31f97f6ebaff94a4c311d26176bf95abae313f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/second-pass/question-06/checks.jsonl",
+      "bytes": 17408,
+      "sha256": "c5df6a5ffe35069a281f78f825db2e6fec2289e3e0110b6227640a34cb7e8257"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-01.jsonl",
+      "bytes": 46199,
+      "sha256": "4d76e027307b24327dd72dcc23f2bb61d86e63a4113cdc4d7b027bfc313652af"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-02.jsonl",
+      "bytes": 46665,
+      "sha256": "0af5eea029c14e6458c41fe32fcddb3a6de29a5081f7026455b2b4a660fc60f4"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-03.jsonl",
+      "bytes": 46151,
+      "sha256": "8318108c251add90a34c782f228ee2564970ce19e2b859580ff4f93aa916e081"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-04.jsonl",
+      "bytes": 46170,
+      "sha256": "923e88a666cd521f54fca1aeabaa17c4c1f18d0bbe2a8da6cf4805b01ab66211"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-05.jsonl",
+      "bytes": 46815,
+      "sha256": "c90a4766c654cd01949b226b0624a430878945dcdba9d24cc24ee11ee9d3329f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/templates/question-06.jsonl",
+      "bytes": 46636,
+      "sha256": "a425d5dddb3fd4d9ea13f485789ad433c81ac78e1c2b6950a45809b4ae416311"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/validation-primary-05-06/coverage.json",
+      "bytes": 23413,
+      "sha256": "24c522092d466abb4f6ca321aab9b38c99750dcfa7b625a6591f0d4eb548b184"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/ai-review/validation-primary-05-06/recheck-plan.json",
+      "bytes": 7936,
+      "sha256": "ce3c75ccf4efd052fc0e3dfc47511e67acf6bac397b869ddff1370a39520bc72"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/artifact_audit/audit.json",
+      "bytes": 114492,
+      "sha256": "afabe39857c57d78e1f632fe3c0715eb1faea8a6e8d096f490de6ccb77e6f3de"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/artifact_audit/audit.md",
+      "bytes": 2511,
+      "sha256": "e5497f5f643b02b86446320ccb484479437dacd7940b1fff15f209253a479797"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/REPORT.md",
+      "bytes": 7576,
+      "sha256": "6d7179b6daf50a96b23d803ab93a932fe7838caf4cf2e633660fd21fa29034e5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/all_attempt_target_yield.png",
+      "bytes": 130106,
+      "sha256": "4f86e17bd99bec711a7725dbb3c0002eff3dd356990772237aef76b083429f9d"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/checksums.sha256",
+      "bytes": 692,
+      "sha256": "0b0e8a07bdb25015b0951ed31ccc8d1f4c8cb214180efb419009b425f0eeb1a5"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/condition_summary.csv",
+      "bytes": 18921,
+      "sha256": "eda621c26320ffce4c78a2ecea1fe96f55964c2807b16743cb7d65dde01c3259"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/condition_summary.jsonl",
+      "bytes": 41435,
+      "sha256": "068cd9929a31917aeeaaee57c60d574793e9d898374ca7fa758217f3eef22da6"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/paired_decisions.jsonl",
+      "bytes": 47413,
+      "sha256": "fe7b0bc0caeb9123cc0778b28e99d4a48fdbe6e6ad046a543a504b6ac8acedd1"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/paired_summary.csv",
+      "bytes": 55036,
+      "sha256": "8490820817ee7d1bd6d65310468d70fa7d0077f866eb0d4409e4232970f9e618"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/paired_summary.jsonl",
+      "bytes": 66379,
+      "sha256": "fbb596e48e0b13e5f8badc4ec57be9ce58081d26f7c986c1d8eed44e207a8ab7"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/hardware_sensitivity_five_questions/provenance.json",
+      "bytes": 4446,
+      "sha256": "a185cc5f93527f359c35b210365f9ae6b779df4fb221b60a20eb8c636ede896a"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/REPORT.md",
+      "bytes": 6768,
+      "sha256": "5d0b09de62e9004cefbfa11690c8d92a54456e4acd39a0b62f2da70bce956255"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/all_attempt_target_yield.png",
+      "bytes": 130382,
+      "sha256": "81562eef7862b0841fef59026294ad5ce95497da018acaf76f517e56ef8fd77f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/checksums.sha256",
+      "bytes": 692,
+      "sha256": "abd2c8c4904fd6c5b403ca6fcee3d687f82940f6d2f33fbfcb4a45a43af243a8"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/condition_summary.csv",
+      "bytes": 22045,
+      "sha256": "4bb20088f78082e4df1d46d122e158367ff2c37cbffe93cfc8016c15ff68a14f"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/condition_summary.jsonl",
+      "bytes": 44233,
+      "sha256": "b098212544817bd898c0bc648a6814444449c4af349d84317141bf7400bf3802"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/paired_decisions.jsonl",
+      "bytes": 56698,
+      "sha256": "a1824374d5648bfb931bac79b0383889044faf56cf901814cbd7a00fa397f895"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/paired_summary.csv",
+      "bytes": 55762,
+      "sha256": "89ce7d7dfd86577d060b101b251775b5b39c6c57c7de1c2b8859c86ec5315eeb"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/paired_summary.jsonl",
+      "bytes": 67069,
+      "sha256": "2e78e9cb1b7be94f81f120b598a1709b5791b3a7bd93bbfba807619e11451aa2"
+    },
+    {
+      "path": "results/pilot-20-phase3-v1/paired_sensitivity/provenance.json",
+      "bytes": 3455,
+      "sha256": "a68a599384b7e3dad4d476664fd8e2a5681dc79625136ab49f91473e6d664e1e"
+    },
+    {
+      "path": "scripts/analyze_phase3_pilot.py",
+      "bytes": 33114,
+      "sha256": "c8540022eaa7f2f0e51229e0a6f1096c876347088dfd4bd95154afd2ff77d87f"
+    },
+    {
+      "path": "scripts/audit_phase3_artifacts.py",
+      "bytes": 40115,
+      "sha256": "c4f7a78377d956926fff8f2a98d4ac983436e79bd84045a20cf61f746ce32a29"
+    },
+    {
+      "path": "scripts/recover_pilot.py",
+      "bytes": 16160,
+      "sha256": "c1c7a1e98ab691a4d567afe296d5253f910b23e68d7d453daa328a64b4a959d2"
+    },
+    {
+      "path": "scripts/review_phase3_traces.py",
+      "bytes": 38797,
+      "sha256": "76d4ff7b64e10da753a89348f83df99ec3ec121a0f6c3be8d8ca5b25c0b012a7"
+    },
+    {
+      "path": "scripts/run_openai_pilot_judge.py",
+      "bytes": 4698,
+      "sha256": "1d99c89dab5051075743263629533abddc8b54d1b85441ef2e98fa52bdce8721"
+    },
+    {
+      "path": "scripts/run_phase2_pilot.py",
+      "bytes": 2431,
+      "sha256": "4e19cbdab12fdf3d2cba12bde7fc90e142a23f4e35fafff81ea7a3c99fa671e7"
+    },
+    {
+      "path": "scripts/run_phase3_pilot.py",
+      "bytes": 3337,
+      "sha256": "8e616c5b20f21c01682e215ea2ba0e8b5bf0ed8d145fd529c6497190474ef714"
+    },
+    {
+      "path": "scripts/summarize_phase3_reviews.py",
+      "bytes": 8332,
+      "sha256": "bdd50c746c211df3ddc8d7cea5f894c221b016c4ade30f00ef2a43efc2b5d059"
+    },
+    {
+      "path": "scripts/verify_phase3_colab_export.py",
+      "bytes": 20536,
+      "sha256": "b30b1b550ccc893dafa66e74f5ab05fa1004aea152f4e9e8b883991ffefeaa70"
+    },
+    {
+      "path": "scripts/verify_phase3_context_checks.py",
+      "bytes": 12217,
+      "sha256": "b19d55065e3f560aadc4d657b6728c67f754c03e6b79cb9f5935265064bb5945"
+    },
+    {
+      "path": "src/__init__.py",
+      "bytes": 80,
+      "sha256": "fe44e39aca7a377aa6d373837543100d578cd7c4669e20d1cdf7980d867624e1"
+    },
+    {
+      "path": "src/analyze.py",
+      "bytes": 17022,
+      "sha256": "d5f4fc75528246cd5215958c2d67008c9131e3e0d3e0c064599ff5cb90aa2613"
+    },
+    {
+      "path": "src/billing.py",
+      "bytes": 1394,
+      "sha256": "f07aa0f0e2b647336e4883989b94c7f74f7b7d3e22fd568324bf3bb03ea9bb1a"
+    },
+    {
+      "path": "src/common.py",
+      "bytes": 3162,
+      "sha256": "665d1d7866e87dac4afd0cff9e12c7be190a57e6daaa9cb692441e1475cc9d9d"
+    },
+    {
+      "path": "src/doctor.py",
+      "bytes": 2056,
+      "sha256": "974788617baca997c839f3fce3c6b1c5ac9eaa0c72cdd846b4a97421b57e3474"
+    },
+    {
+      "path": "src/judge.py",
+      "bytes": 17921,
+      "sha256": "908a1a4e0fb2674ee2a0910c666e043ccc4a4a773884a3e72be3cdf4ae03414f"
+    },
+    {
+      "path": "src/local_model.py",
+      "bytes": 4168,
+      "sha256": "b7a549ace225611660eb0c27ca03ba12cb1d4a180407b7138c1fd223fdb68766"
+    },
+    {
+      "path": "src/openai_judge.py",
+      "bytes": 7665,
+      "sha256": "c214b5a51acc1757b6cac79b4facea2a679bc68ef2a7d66bf4353e8757f80b03"
+    },
+    {
+      "path": "src/phase2.py",
+      "bytes": 20059,
+      "sha256": "052393814bcf767c29f8f8891d1014e7b85dd57d2158179bf210e8f64c289e44"
+    },
+    {
+      "path": "src/phase3.py",
+      "bytes": 27897,
+      "sha256": "57bb529ac9096f8892d3da6253d43b728d7fb562b1c1565a64c5b0691a28fcdc"
+    },
+    {
+      "path": "src/prepare.py",
+      "bytes": 3717,
+      "sha256": "1ac2a22fcbb60e75b35ac9c441f78afb028217479635e33fdba2d8bb9971f59e"
+    },
+    {
+      "path": "src/provenance.py",
+      "bytes": 1976,
+      "sha256": "8817fe77b5a78164ea923f9098a51503a2ea1ab65fd123adb541735e1f9fba99"
+    },
+    {
+      "path": "src/providers.py",
+      "bytes": 10301,
+      "sha256": "cd79ace7ee0b520b2f666031f21452ecb1ce3a4b20be9a7ed0bd387faa156510"
+    },
+    {
+      "path": "src/run.py",
+      "bytes": 9731,
+      "sha256": "00ddfbfae2aa3dc5f1de34a690c8a6d98497bdb353992f31f0e497b71bac002e"
+    },
+    {
+      "path": "src/sensitivity.py",
+      "bytes": 13400,
+      "sha256": "031f926fd1acc050b15a179605e648441b7ed1de90dec24d9c399f5a5da71def"
+    },
+    {
+      "path": "src/transcripts.py",
+      "bytes": 1661,
+      "sha256": "ec898e6ccdfce952a8b3c5cbe6a8c928ae318f79a8748b7ce5dc63bf687373a0"
+    },
+    {
+      "path": "src/verify_artifacts.py",
+      "bytes": 18587,
+      "sha256": "cf973d501391a879d41743a6c12df09aa564b0fe65b7739f9d6ba6afbb0aff42"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "bytes": 7662,
+      "sha256": "bdd89123027b1f4ca85a56f71b4b71edba9d4dcb176fa231888e09c3d9d6c4b9"
+    },
+    {
+      "path": "tests/test_analyze_phase3_pilot.py",
+      "bytes": 20259,
+      "sha256": "d3f1e98cc0f1f994b4a9bb76ca3178a0360cb273694076f34f6ccdfc572785f8"
+    },
+    {
+      "path": "tests/test_audit_phase3_artifacts.py",
+      "bytes": 20557,
+      "sha256": "364cf36140f9c318a7f73c9d24c743b0c12423b8a6852998393bfaf0a58a9058"
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 1942,
+      "sha256": "5afaa4a214f99a6cb721dd03df6bf40d368ba1783e429b7e099185a83869781b"
+    },
+    {
+      "path": "tests/test_interventions.py",
+      "bytes": 11197,
+      "sha256": "fb6b92102ea782cd782d19629f92fecba43bca37fa15b3ab30b3dbea8ae5b7ec"
+    },
+    {
+      "path": "tests/test_judge.py",
+      "bytes": 4064,
+      "sha256": "b0dc63de3d347b5cda553daf3e240fd2cc7131ec9607fca9eeaaff44d2f156bf"
+    },
+    {
+      "path": "tests/test_judge_backend_isolation.py",
+      "bytes": 7593,
+      "sha256": "07725a12a38c2661e9340766d66cf9fc5d5bfa75dfc362fce22d1dde989f256a"
+    },
+    {
+      "path": "tests/test_openai_judge.py",
+      "bytes": 6788,
+      "sha256": "5e3af0dad1c27483156bb53df7e4a7efb322157efcf316c9bcb799141eeaac0a"
+    },
+    {
+      "path": "tests/test_openai_pilot_wrapper.py",
+      "bytes": 4845,
+      "sha256": "8e06ee267783eb3738a6cd73c7cb39f56d71999011de8e015a0491a402b9d6b9"
+    },
+    {
+      "path": "tests/test_phase3.py",
+      "bytes": 8133,
+      "sha256": "8f0aa56d75559ea4cf33eaccc197fe26a142bbe0756cd94a89e06cc7513dfc21"
+    },
+    {
+      "path": "tests/test_providers.py",
+      "bytes": 4713,
+      "sha256": "69ba7d8350bf5d27f3ab28e399bcc7642116dca9081c2df66ad8c771a8c56e56"
+    },
+    {
+      "path": "tests/test_recover_pilot.py",
+      "bytes": 7302,
+      "sha256": "9d032736dd7f31900fa4aa89b9f32873f1eb5a37d8b6c292aee9be9bad69b95a"
+    },
+    {
+      "path": "tests/test_review_phase3_traces.py",
+      "bytes": 22441,
+      "sha256": "cf15640b0bc672a12e84a9c8afec16d7525f80decb685da0017b925eef3d5ae3"
+    },
+    {
+      "path": "tests/test_sensitivity.py",
+      "bytes": 8418,
+      "sha256": "981bf4cd40c81a6a8c720b2d6627334378a7545eabe84eff460fceb40d395b16"
+    },
+    {
+      "path": "tests/test_summarize_phase3_reviews.py",
+      "bytes": 3238,
+      "sha256": "fd2a7865d7903ba74dc199f1269018479efd5a493db3cd876af95bbe168bfbf6"
+    },
+    {
+      "path": "tests/test_verify_artifacts.py",
+      "bytes": 11370,
+      "sha256": "7b00278b1658c7d56a130309c8067fdfe4a02e76780ecc4b9dc4db91d5166d6a"
+    },
+    {
+      "path": "tests/test_verify_phase3_colab_export.py",
+      "bytes": 17726,
+      "sha256": "8e4f501031431a8616150bf2546882af536d81aee7c884ebd886bb3c37a02baa"
+    },
+    {
+      "path": "tests/test_verify_phase3_context_checks.py",
+      "bytes": 11203,
+      "sha256": "b3feb0ae82ebeb7b97dec695b958f94c30420f9fdae1d8190a3c5406f035a763"
+    }
+  ]
+}

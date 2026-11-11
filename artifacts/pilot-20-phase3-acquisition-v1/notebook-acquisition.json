@@ -1,0 +1,37 @@
+{
+  "schema": "phase3-final-notebook-acquisition-v1",
+  "checked_at_utc": "2026-11-11T10:31:57.675772+00:00",
+  "drive_file_id": "1urqlIEeTw8549xsxFqH2hKZuHXw8VT-A",
+  "drive_modified_at": "2026-11-11T07:20:46.878Z",
+  "notebook_name": "phase3-l4-continuation2-final-downloaded.ipynb",
+  "notebook_bytes": 3090573,
+  "notebook_sha256": "b9104b848a244de389f24627167eb2a8f51193167f70779d084da950f8b7a5f0",
+  "notebook_cells_checked": true,
+  "reference_notebook": "notebooks/08_resume_phase3_latest_checkpoint.ipynb",
+  "normalization": "Only authorized COPIED_TO_DRIVE=True normalized to published False for source comparison; raw notebook preserved unchanged.",
+  "final_snapshots": [
+    {
+      "cell_index": 5,
+      "captured_at_utc": "2026-11-11T07:20:36.671321+00:00",
+      "complete_verified_claim": true,
+      "retained_records": 198,
+      "payload_count": 38
+    },
+    {
+      "cell_index": 6,
+      "captured_at_utc": "2026-11-11T07:20:37.470020+00:00",
+      "complete_verified_claim": true,
+      "retained_records": 198,
+      "payload_count": 38
+    }
+  ],
+  "payload_dictionaries_identical": true,
+  "selection": "Both final snapshots independently checked; no outcome-based selection. Cell6 is the export-cell snapshot after completion validation.",
+  "verified_bundle_inventory_sha256": {
+    "phase3-l4-continuation2-final-cell5-verified": "738d956811d751752b50480a1a4bbdeac0991ed3835773ecdc463a471445c8c5",
+    "phase3-l4-continuation2-final-cell6-verified": "b5b2a9b14d17ae1c829d716941af5e408081f502fb980ef175262a7420ea823f"
+  },
+  "last_retained_finished_at": "2026-11-11T07:20:32.286155+00:00",
+  "retained_rows_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "full_scientific_audit_passed": false
+}

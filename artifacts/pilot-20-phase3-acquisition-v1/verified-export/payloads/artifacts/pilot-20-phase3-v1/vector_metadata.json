@@ -1,0 +1,15 @@
+{
+  "training_questions_per_letter": {
+    "A": 3,
+    "B": 3,
+    "C": 5,
+    "D": 3
+  },
+  "vector_norms": {
+    "A": 25.739307403564453,
+    "B": 30.513193130493164,
+    "C": 20.66642189025879,
+    "D": 23.183128356933594
+  },
+  "note": "Averaged across hint types within each question, then across training questions."
+}

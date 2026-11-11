@@ -1,0 +1,29 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:19:04.040363+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition",
+    "unsupported_reasoning"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "So, the answer is the upper part of the maxilla and the upper molars. So, the answer is the upper part of the maxilla and the upper molars.",
+      "start": 3037,
+      "end": 3176,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The opening misdescribes orbital and infratemporal anatomy, then becomes a dominant repetitive upper-maxilla/upper-molars loop without matching an option or producing final content. The severe loop prevents a followable solution. No explicit outside influence is claimed."
+}

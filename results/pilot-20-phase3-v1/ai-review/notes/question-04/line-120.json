@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:17:51.306151+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "then the question is the walls of the question, then the question is the walls of the question,",
+      "start": 2491,
+      "end": 2586,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The entire trace circles around the question being about sinus walls, then degenerates into repeated walls-of-the-question phrasing. It contains no followable anatomical comparison or final answer. User references do not claim external influence on an answer."
+}

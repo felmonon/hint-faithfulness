@@ -39,3 +39,7 @@ All validation precedes extraction. The tool rejects unsafe payload paths, symli
 Keep each acquired bundle immutable and preserve its provenance. A partial prefix is useful recovery evidence but cannot enter the completed analysis. Once a complete export is acquired, run the [full audit and analyses](REPRODUCIBILITY.md#phase-3-full-audit-and-primarysecondary-analyses) on its extracted artifact directory, supplying both checkpoint directories and the separate setup/log directories as required by the audit CLI. A successful acquisition does not certify a full trace read, human validation, steering efficacy, or an exact historical inference count.
 
 The live operational backup helper is deliberately unchanged. This portable verifier is a separately reviewed publication tool; it does not modify the experiment, notebook, frozen protocols, or acquisition history.
+
+## The completed pilot export
+
+The final saved notebook contains two complete snapshots (foreground and export cells), with identical 38-file payload dictionaries. The verifier intentionally rejects ambiguous multi-snapshot notebooks rather than choosing by apparent outcome. Both snapshots were explicitly extracted and independently checked; the unchanged original notebook and source-cell comparison are preserved in the [final acquisition archive](../artifacts/pilot-20-phase3-acquisition-v1/). Its README supplies the exact standalone-JSON reproduction command, historical checkpoint hashes, and the distinction between acquisition-time checks and the later passed scientific audit.

@@ -1,0 +1,51 @@
+{
+  "schema": "phase3-ai-context-check-assignment-v1",
+  "created_at_utc": "2026-11-11T12:14:05.823843+00:00",
+  "partition_id": "question-03",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "primary_review_path": "results/pilot-20-phase3-v1/ai-review/reviews/question-03.jsonl",
+  "primary_review_sha256": "61577573b3e65ab991d168680edd52ec4c418a63763a26b2e354e3458768bde3",
+  "mandatory_ids": [
+    "3f0d758bdbe550675e37ffeb96563d9c296b00785644ffc6fe00662a64d1f966",
+    "c3c9f08c4261f5b942fc7200bb14a2dae1abceba5faae0f5a8c6bb277a51d83b",
+    "a198377f04bcfe104c297e3cd053dbfcb7f7789fc69a22516232c40f98d16f59",
+    "dc1f97f20b05e694889d5dd60629c45e1bdd6f549c0c859cf0ac6233dbeaae1d",
+    "97a54f8a639bc6b7ae1dcb232d371ac295de826b7df4229012c846f96b7703ba",
+    "38ac4017db9158dcda35ac87fa55dd419cce62372b8044ab5ac82d922248a379",
+    "017ac969cc02b66a339e822d6325aa7c922a0c5790ac9b61fd7e0743dee0b5c3",
+    "21e21da3cd7cfa4b1778d6bb6ec5aa0b7b3d5fc242147f7fab1cd8995f2ac46c",
+    "cecfa9ce36c59af09184c85d067b60e5409cf4afbaf8d6de69f8f5032b116cc1",
+    "e00dce20486cfd2d168b831f239eb7b8194c2b75068f74a17943680c71a25776",
+    "ce11e8a1601bdb655523fa26be56b3566e01fe21a4ac549b823bff33480da21f",
+    "22c6facefc65e95183aec7ff70137e03114c4a79157d3154de08b8e1dd417e9d",
+    "6cd69b4044bf20afd64227c75e3d6d8534af8b9cf19df7ea2d2bb75bc3fbb5c2"
+  ],
+  "spotcheck": {
+    "partition_id": "question-03",
+    "ordinary_record_id": "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "invalid_or_truncated_record_id": "3f0d758bdbe550675e37ffeb96563d9c296b00785644ffc6fe00662a64d1f966",
+    "selected_records_overlap": false,
+    "partition_primary_complete": true,
+    "unavailable_categories": [],
+    "unresolved_until_partition_complete": []
+  },
+  "record_ids": [
+    "17a7492f6d1af2c0c17cd43e23202e06ba56ee5db02cd0ba1d4fe8c454c32e09",
+    "3f0d758bdbe550675e37ffeb96563d9c296b00785644ffc6fe00662a64d1f966",
+    "c3c9f08c4261f5b942fc7200bb14a2dae1abceba5faae0f5a8c6bb277a51d83b",
+    "a198377f04bcfe104c297e3cd053dbfcb7f7789fc69a22516232c40f98d16f59",
+    "dc1f97f20b05e694889d5dd60629c45e1bdd6f549c0c859cf0ac6233dbeaae1d",
+    "97a54f8a639bc6b7ae1dcb232d371ac295de826b7df4229012c846f96b7703ba",
+    "38ac4017db9158dcda35ac87fa55dd419cce62372b8044ab5ac82d922248a379",
+    "017ac969cc02b66a339e822d6325aa7c922a0c5790ac9b61fd7e0743dee0b5c3",
+    "21e21da3cd7cfa4b1778d6bb6ec5aa0b7b3d5fc242147f7fab1cd8995f2ac46c",
+    "cecfa9ce36c59af09184c85d067b60e5409cf4afbaf8d6de69f8f5032b116cc1",
+    "e00dce20486cfd2d168b831f239eb7b8194c2b75068f74a17943680c71a25776",
+    "ce11e8a1601bdb655523fa26be56b3566e01fe21a4ac549b823bff33480da21f",
+    "22c6facefc65e95183aec7ff70137e03114c4a79157d3154de08b8e1dd417e9d",
+    "6cd69b4044bf20afd64227c75e3d6d8534af8b9cf19df7ea2d2bb75bc3fbb5c2"
+  ],
+  "note": "Assignment only; no second reading claimed."
+}

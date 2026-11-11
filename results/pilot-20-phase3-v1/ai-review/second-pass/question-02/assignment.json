@@ -1,0 +1,53 @@
+{
+  "schema": "phase3-ai-context-check-assignment-v1",
+  "created_at_utc": "2026-11-11T12:14:05.805849+00:00",
+  "partition_id": "question-02",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "primary_review_path": "results/pilot-20-phase3-v1/ai-review/reviews/question-02.jsonl",
+  "primary_review_sha256": "999feaddce1b6d3c7d73402e8fe1cb4884977120b5d80dbf94b0069d1243f987",
+  "mandatory_ids": [
+    "bd6d52bbcaa9a39c2ced155e9ee939c4597e02197103395514633d34d8bb8ad2",
+    "75475fc44f25e11f250bb62baf93ac8934bd0c4f582f291ce711eb69d8a5b1aa",
+    "bc2b89883b3c890e27e3e7251dcd6f8a915b3ed5aac398719bd0644465de96c8",
+    "9af89d3d1ceac04b0f9f8424a7b2c99cc7b6f6bc1bdc2b55770f33d52c806556",
+    "b792bbed9fdd6d8e768997bb66bb0a457b002a3324c9883a06f18894e980f8db",
+    "31c825fd405214b30200d2dbfe2f82046dc1d8519a98ba193a698f76aea86f26",
+    "548ba75e0d995f5b8a31eceddbf5cac2895f56435ab85caf516aa0c2330a1e95",
+    "95ae9c72dfd02a208a126d12176c873dd1c2bf4cbfb90a851bfdbd6ddb1ddd27",
+    "ea5f76c26790803b2907cd96d0853dd7515b973ded0e50ecb545f81f445de87f",
+    "cb4f8e728b6c89b76ace17e8ea895aa4bcc8a9f29aa51cec43a110ea64108d09",
+    "d202875e6a7dd87291b2396eaa9175b7e5b388a830342b385cee5ed3755143d0",
+    "be71b7a43546c131329ab1c4e7cab3681983675e3aa15d5f0225ade086e971b1",
+    "13fca8dd8e2c0fb640ab3e7d5ee4ee078b9b8ebeb71471db3849f30782e059aa",
+    "ccdaa751f9d6d57d36500d2d4d2fc5fb3d9fb71885da7f55b95de6f4a5bca63f"
+  ],
+  "spotcheck": {
+    "partition_id": "question-02",
+    "ordinary_record_id": "52d4bc208f80275939fd7e98ed56b47983cd7b26c05872d5c6e5def7b571c37c",
+    "invalid_or_truncated_record_id": "bd6d52bbcaa9a39c2ced155e9ee939c4597e02197103395514633d34d8bb8ad2",
+    "selected_records_overlap": false,
+    "partition_primary_complete": true,
+    "unavailable_categories": [],
+    "unresolved_until_partition_complete": []
+  },
+  "record_ids": [
+    "52d4bc208f80275939fd7e98ed56b47983cd7b26c05872d5c6e5def7b571c37c",
+    "bd6d52bbcaa9a39c2ced155e9ee939c4597e02197103395514633d34d8bb8ad2",
+    "75475fc44f25e11f250bb62baf93ac8934bd0c4f582f291ce711eb69d8a5b1aa",
+    "bc2b89883b3c890e27e3e7251dcd6f8a915b3ed5aac398719bd0644465de96c8",
+    "9af89d3d1ceac04b0f9f8424a7b2c99cc7b6f6bc1bdc2b55770f33d52c806556",
+    "b792bbed9fdd6d8e768997bb66bb0a457b002a3324c9883a06f18894e980f8db",
+    "31c825fd405214b30200d2dbfe2f82046dc1d8519a98ba193a698f76aea86f26",
+    "548ba75e0d995f5b8a31eceddbf5cac2895f56435ab85caf516aa0c2330a1e95",
+    "95ae9c72dfd02a208a126d12176c873dd1c2bf4cbfb90a851bfdbd6ddb1ddd27",
+    "ea5f76c26790803b2907cd96d0853dd7515b973ded0e50ecb545f81f445de87f",
+    "cb4f8e728b6c89b76ace17e8ea895aa4bcc8a9f29aa51cec43a110ea64108d09",
+    "d202875e6a7dd87291b2396eaa9175b7e5b388a830342b385cee5ed3755143d0",
+    "be71b7a43546c131329ab1c4e7cab3681983675e3aa15d5f0225ade086e971b1",
+    "13fca8dd8e2c0fb640ab3e7d5ee4ee078b9b8ebeb71471db3849f30782e059aa",
+    "ccdaa751f9d6d57d36500d2d4d2fc5fb3d9fb71885da7f55b95de6f4a5bca63f"
+  ],
+  "note": "Assignment only; no second reading claimed."
+}

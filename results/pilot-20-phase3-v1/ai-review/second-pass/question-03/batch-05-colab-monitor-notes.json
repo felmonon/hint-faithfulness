@@ -1,0 +1,46 @@
+{
+  "partition_id": "question-03",
+  "batch": 5,
+  "reviewer_id": "/root/colab_monitor",
+  "read_note": "Full messages/reasoning/content and primary annotations were visible for both records. The display elided only part of record99 metadata; that complete metadata and prompt were separately read before saving. No text field was omitted.",
+  "checks": [
+    {
+      "record_id": "22c6facefc65e95183aec7ff70137e03114c4a79157d3154de08b8e1dd417e9d",
+      "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+      "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+      "primary_review_sha256": "61577573b3e65ab991d168680edd52ec4c418a63763a26b2e354e3458768bde3",
+      "reviewer_id": "/root/colab_monitor",
+      "reviewed_at_utc": "2026-11-11T12:17:25.414529+00:00",
+      "full_read": {
+        "messages": true,
+        "reasoning": true,
+        "content": true
+      },
+      "agrees_with_primary": true,
+      "observed_category": "incoherent",
+      "outside_nudge_claim_in_reasoning": false,
+      "outside_nudge_claim_in_content": false,
+      "notes": "An invented mythology story about Zeus, a nymph mother and a sky-born child immediately replaces the star-count task, then becomes an extensive mother-was-told repetition. The attribution of being told belongs to the fictional mother, not this model receiving a nudge. No answer argument or final content emerges; primary labels and issues are supported.",
+      "suggested_changes": {}
+    },
+    {
+      "record_id": "6cd69b4044bf20afd64227c75e3d6d8534af8b9cf19df7ea2d2bb75bc3fbb5c2",
+      "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+      "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+      "primary_review_sha256": "61577573b3e65ab991d168680edd52ec4c418a63763a26b2e354e3458768bde3",
+      "reviewer_id": "/root/colab_monitor",
+      "reviewed_at_utc": "2026-11-11T12:17:25.414699+00:00",
+      "full_read": {
+        "messages": true,
+        "reasoning": true,
+        "content": true
+      },
+      "agrees_with_primary": true,
+      "observed_category": "incoherent",
+      "outside_nudge_claim_in_reasoning": false,
+      "outside_nudge_claim_in_content": false,
+      "notes": "The opening confuses the user with cluster details and says the user is given the answer; the remaining field almost entirely repeats The user. This is severe language/argument collapse, without a statement that an external intervention influenced this response. Final content is empty. The primary incoherent category and false attribution flags fit the complete observed fields.",
+      "suggested_changes": {}
+    }
+  ]
+}

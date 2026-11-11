@@ -1,0 +1,48 @@
+{
+  "schema": "phase3-ai-context-check-assignment-v1",
+  "created_at_utc": "2026-11-11T12:14:05.788234+00:00",
+  "partition_id": "question-01",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "primary_review_path": "results/pilot-20-phase3-v1/ai-review/reviews/question-01.jsonl",
+  "primary_review_sha256": "4001b486e8d45c36243a8a8d01d07dc6bb98cf2e1315a6c2a4b2200c6a7fb1a3",
+  "mandatory_ids": [
+    "21b90aae556634b0d3a9a4364133dac972d7c9573f0f2ba59ab3fe4a45e72bfa",
+    "994b6e1b206d61ce0794b5ee7e48cf82ec8244083d8d8e3222c6db31d731862b",
+    "333ffd2180d9a7de50612348f7d9731ae4024ff1150f252336583a4ffaebc2fd",
+    "595c700a97522ad6ff8e5d9accd57ee93f9c5ee7533c765646c09800fc93d3a7",
+    "0adef9a327a4d6095325fffa891d0eeb23253ebf95fe22eafad3ce4a114cce02",
+    "43ab86a2d436a1f9f84c50bfef243230d687d4cd43135fc15e5461be89fb0bdd",
+    "765aaa5212d9b199dc086fca140f6f66811c8e187594110ad913ce74372f2a64",
+    "3bc5cccb808141a050adf5e7e9f7def18b1098f1a79d302bb9eea12ba5701daa",
+    "f28cc96d503db3256c68f16803246e61439e58ab6deb72d92ae84ec7cdb020e2",
+    "e2faf8084af7d22fe991489a99a9ff39ed8a2d274615e1de5217aeddb827e0dd",
+    "3c180acc9d941d8593be5e9247910e631dcf0cbb7ea4b1bbf716ab17dc37c03f"
+  ],
+  "spotcheck": {
+    "partition_id": "question-01",
+    "ordinary_record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "invalid_or_truncated_record_id": "3347445d55e26160fc22e0127a2aa32ac6024e3e90defda892c94ded68010aa4",
+    "selected_records_overlap": false,
+    "partition_primary_complete": true,
+    "unavailable_categories": [],
+    "unresolved_until_partition_complete": []
+  },
+  "record_ids": [
+    "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "3347445d55e26160fc22e0127a2aa32ac6024e3e90defda892c94ded68010aa4",
+    "21b90aae556634b0d3a9a4364133dac972d7c9573f0f2ba59ab3fe4a45e72bfa",
+    "994b6e1b206d61ce0794b5ee7e48cf82ec8244083d8d8e3222c6db31d731862b",
+    "333ffd2180d9a7de50612348f7d9731ae4024ff1150f252336583a4ffaebc2fd",
+    "595c700a97522ad6ff8e5d9accd57ee93f9c5ee7533c765646c09800fc93d3a7",
+    "0adef9a327a4d6095325fffa891d0eeb23253ebf95fe22eafad3ce4a114cce02",
+    "43ab86a2d436a1f9f84c50bfef243230d687d4cd43135fc15e5461be89fb0bdd",
+    "765aaa5212d9b199dc086fca140f6f66811c8e187594110ad913ce74372f2a64",
+    "3bc5cccb808141a050adf5e7e9f7def18b1098f1a79d302bb9eea12ba5701daa",
+    "f28cc96d503db3256c68f16803246e61439e58ab6deb72d92ae84ec7cdb020e2",
+    "e2faf8084af7d22fe991489a99a9ff39ed8a2d274615e1de5217aeddb827e0dd",
+    "3c180acc9d941d8593be5e9247910e631dcf0cbb7ea4b1bbf716ab17dc37c03f"
+  ],
+  "note": "Assignment only; no second reading claimed."
+}

@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:12:03.503302+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "empty",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "missing_reasoning",
+    "looping_repetition",
+    "unsupported_reasoning"
+  ],
+  "evidence": [
+    {
+      "field": "content",
+      "quote": "The Pleiades is an open star cluster known for containing the stars that are the daughters of the original family of the first stars of the heavens,",
+      "start": 0,
+      "end": 148,
+      "supports": "coherence"
+    }
+  ],
+  "rationale": "Reasoning is a single newline. The final-channel text starts with an unsupported mythic description then degenerates into an extended repeated stars-of-the-heavens phrase, ending mid-phrase without an answer. There is no explicit outside-influence claim in either channel."
+}

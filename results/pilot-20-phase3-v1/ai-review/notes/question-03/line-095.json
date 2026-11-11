@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:13:09.329058+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "So, the stars that are not too bright, so, the stars that are not too bright.",
+      "start": 2421,
+      "end": 2498,
+      "supports": "category"
+    }
+  ],
+  "rationale": "After a brief restatement, reasoning collapses into repeated assertions that the stars are not too bright and never relates a count to an option. The final field is empty. No outside push or intervention is claimed in either channel."
+}

@@ -108,7 +108,7 @@ The public record must distinguish completed inference, completed transcript rev
 
 ## Phase 2 and Phase 3: source references and saved evidence
 
-**Phase 2 is complete and published. Phase 3 collection and its final audit/results remain pending until the complete retained grid is exported and verified.** Two immutable checkpoints preserve eight and then 28 retained responses. The latest checkpoint contains the original eight T4 responses and 20 responses from the first L4 continuation; the next continuation fills the remaining 170 positions. A complete retained dataset would therefore contain 8 + 20 + 170 outcomes. Unarchived attempts after both interrupted sessions remain unknown; 198 retained outcomes would not establish exactly 198 historical generation attempts.
+**Phases 2 and 3 are complete and published.** The [Phase 3 report](PHASE3_PILOT_REPORT.md) binds the final 198 retained outputs to their passed audit and numerical analyses. The exact eight/28-row checkpoints remain unchanged. Final lineage is 8 T4 + 20 first-L4 + 170 later-L4 outcomes. Unarchived attempts after both interrupted sessions remain unknown; 198 retained outcomes does not establish exactly 198 historical generation attempts.
 
 Use the current documented analysis checkout for the commands below, and record `git rev-parse HEAD`. The audit and secondary-analysis tools were added after the scientific execution commits. Keep the recorded runtime commits available in local Git history: the full audit checks them with local `git show` and does not fetch missing history automatically.
 
@@ -121,7 +121,7 @@ Use the current documented analysis checkout for the commands below, and record 
 | L4 continuation checkout and frozen hardware declaration | [`35fc053f65646030b780030fb592861113430ca6`](https://github.com/felmonon/hint-faithfulness/tree/35fc053f65646030b780030fb592861113430ca6) |
 | Published 28-row checkpoint and second recovery protocol | [`06ff192c6662819b893ebdec931f2bbbf2d70b17`](https://github.com/felmonon/hint-faithfulness/tree/06ff192c6662819b893ebdec931f2bbbf2d70b17), with acquisition hashes and the full 20-payload snapshot in `artifacts/pilot-20-phase3-checkpoint-1110/` |
 
-[Notebook 05](../notebooks/05_real_phase2_phase3_pilot.ipynb) pins `ef90362…` for a fresh T4 Phase 2/3 execution. [Notebook 07](../notebooks/07_resume_phase3_l4_pilot.ipynb) documents the first L4 continuation from eight rows. After the second interruption, use [Notebook 08](../notebooks/08_resume_phase3_latest_checkpoint.ipynb), which pins `06ff192…`, restores all 20 payloads from the verified 28-row checkpoint and fills only the remaining 170 positions. Do not use an older notebook to roll back a later retained prefix. Notebook 08 requires an L4, the pinned imported package versions and scientific files byte-identical to `ef90362…`; it reuses the original T4-fitted vectors and preserves the earlier setup, log and runtime unchanged. These notebooks perform model execution; the offline commands below do not.
+[Notebook 05](../notebooks/05_real_phase2_phase3_pilot.ipynb) pins `ef90362…` for a fresh T4 Phase 2/3 execution. [Notebook 07](../notebooks/07_resume_phase3_l4_pilot.ipynb) documents the first L4 continuation from eight rows. The completed second recovery used [Notebook 08](../notebooks/08_resume_phase3_latest_checkpoint.ipynb), which pins `06ff192…`, restored all 20 payloads from the verified 28-row checkpoint and filled the remaining 170 positions. Use the published final evidence for offline reproduction; executing the recovery notebook again would be a separate run. Do not use an older notebook to roll back a later retained prefix. Notebook 08 requires an L4, the pinned imported package versions and scientific files byte-identical to `ef90362…`; it reuses the original T4-fitted vectors and preserves the earlier setup, log and runtime unchanged. These notebooks perform model execution; the offline commands below do not.
 
 The original [Phase 2 plan](phase2-pilot-plan.json), [Phase 3 plan](phase3-pilot-plan.json), [recovery protocol](PHASE3_RESUME_PROTOCOL.md), and [L4 declaration](phase3-l4-resume-addendum.json) remain frozen. The [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md) records the later loss, latest checkpoint and unchanged continuation settings. Read the separate [L4 prose erratum](PHASE3_L4_ADDENDUM_ERRATUM.md) for the corrected answer-stratum counts; question membership and the declaration JSON were unchanged. Save and independently verify checkpoint outputs outside the temporary runtime: a visible snapshot or assumed notebook autosave is not evidence of durable preservation.
 
@@ -131,10 +131,10 @@ The original [Phase 2 plan](phase2-pilot-plan.json), [Phase 3 plan](phase3-pilot
 | Phase 2 report and independent numerical audit | [Report](PHASE2_PILOT_REPORT.md), [artifact index](../results/pilot-20-phase2-v1/README.md), [audit method/results](../results/pilot-20-phase2-v1/audit.md), [machine-readable audit](../results/pilot-20-phase2-v1/audit.json) |
 | Immutable Phase 3 checkpoint | [`artifacts/pilot-20-phase3-checkpoint-0430/`](../artifacts/pilot-20-phase3-checkpoint-0430/); eight verified retained records, vectors, manifest, runtime and original log |
 | Latest immutable Phase 3 checkpoint | [`artifacts/pilot-20-phase3-checkpoint-1110/`](../artifacts/pilot-20-phase3-checkpoint-1110/); 28 retained records, the complete snapshot, acquisition provenance and checksums; its 20 payloads include both earlier runtime segments and the first L4 setup/log |
-| Completed Phase 3 raw evidence | `artifacts/pilot-20-phase3-v1/`; pending verified completion, including `steering.jsonl`, vectors, original/resumed runtimes, completion marker and checksums |
+| Completed Phase 3 raw evidence | [`artifacts/pilot-20-phase3-v1/`](../artifacts/pilot-20-phase3-v1/); 198 audited outcomes, vectors, original/resumed runtimes, completion marker and checksums |
 | Phase 3 notebook setup and separate continuation log | `artifacts/pilot-20-phase3-resume-notebook-*/`; preserve these alongside the final artifact directory |
-| Planned Phase 3 derived results | `results/pilot-20-phase3-v1/artifact_audit/`, `paired_sensitivity/`, and `hardware_sensitivity_five_questions/`; pending |
-| Planned descriptive AI review | `results/pilot-20-phase3-v1/ai-review/`; prepare only after the complete 198-record integrity audit; no human labels or validated faithfulness result |
+| Published Phase 3 derived results | [`results/pilot-20-phase3-v1/`](../results/pilot-20-phase3-v1/): `artifact_audit/`, `paired_sensitivity/`, and `hardware_sensitivity_five_questions/` |
+| Descriptive AI review | [`results/pilot-20-phase3-v1/ai-review/`](../results/pilot-20-phase3-v1/ai-review/); frozen inputs, full-text annotations and separate context checks; no human labels or validated faithfulness result |
 
 ### Phase 2 offline checks and figure reproduction
 
@@ -275,6 +275,56 @@ python scripts/review_phase3_traces.py validate \
 Use `--allow-incomplete` only for an explicitly partial coverage report, and a fresh `--out-dir` each time. For revised partitions, point `--review` at one selected version per question and repeat `--history PATH` for preserved earlier files. The validator checks all 198 IDs exactly once, the overlapping secondary cohort of 165, source hashes and exact quote offsets, UTC timestamps, category/channel consistency, mandatory quality flags and baseline-relative eligibility. Invalid pairs have null change/switch flags; an explanation category cannot turn an invalid answer into a valid switch.
 
 Outputs are `coverage.json`, `recheck-plan.json` and, once primary coverage is complete, full-text second-pass batches. They report coverage and review-file hashes, not faithfulness, human accuracy or category/claim prevalence. Full-read flags are reader attestations; structural validation does not independently prove comprehension. The second AI reader must still check all explicit claims in either channel, ambiguous/incoherent cases, final/reasoning disagreements and the prescribed ordinary/invalid spot checks in complete context. Preserve that work and adjudication separately: the tool deliberately leaves `full_review_process_complete=false`, even after 198 primary annotations pass. A second AI pass is neither human validation nor an independent model experiment.
+
+### Count the reviewed annotations without inventing labels
+
+After validating the six actual review files, reproduce descriptive category, issue, claim-channel and disjoint change-group counts in a fresh directory:
+
+```bash
+python scripts/summarize_phase3_reviews.py \
+  --manifest results/pilot-20-phase3-v1/ai-review/partition-manifest.json \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-01.jsonl \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-02.jsonl \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-03.jsonl \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-04.jsonl \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-05.jsonl \
+  --review results/pilot-20-phase3-v1/ai-review/reviews/question-06.jsonl \
+  --out-dir results/reproduced-phase3/review-counts
+```
+
+This revalidates source/manifest/protocol, all 198 annotations, quote offsets and blank human labels before counting. `summary.json` includes six-question/overlapping five-question counts, all record IDs, nonexclusive quality flags, separate reasoning/content claims and correct/incorrect-target strata. `record_summary.csv` preserves both current and baseline identities and pair-valid eligibility. The generated report is a descriptive count of AI labels, not a validated faithfulness score. The separate second-reader completion/adjudication evidence must still accompany it; a counting script cannot prove that a reader understood the full text.
+
+### Check the publication inventory
+
+From the repository root, this checks every file listed in the final publication inventory. The inventory excludes itself to avoid a circular hash; Git records its own bytes.
+
+```bash
+python - <<'PYVERIFY'
+import hashlib, json
+from pathlib import Path
+manifest = json.loads(Path('results/pilot-20-phase3-v1/publication-manifest.json').read_text())
+for item in manifest['files']:
+    data = Path(item['path']).read_bytes()
+    assert len(data) == item['bytes'], item['path']
+    assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
+print(f"Verified {len(manifest['files'])} publication files")
+PYVERIFY
+```
+
+The immutable subdirectory inventories remain available for checking the original acquisition, raw exports and analysis outputs separately. File consistency cannot verify a scientific causal claim.
+
+### Verify the separate second-reader context checks
+
+The saved second-reader notes are checked independently of the primary coverage and descriptive-count reports:
+
+```bash
+python scripts/verify_phase3_context_checks.py \
+  --review-dir results/pilot-20-phase3-v1/ai-review \
+  --coverage results/pilot-20-phase3-v1/ai-review/coverage-v1/coverage.json \
+  --out results/reproduced-phase3/context-completion.json
+```
+
+Use a fresh output path. The verifier revalidates all primary reviews, the frozen plan, exact selected IDs, primary/assignment/check-file hashes, distinct reader identity, UTC timestamps, complete-field attestations and agreement consistency. It refuses missing or duplicate checks. A reported disagreement stays unresolved; it cannot become a completed review by silently changing the primary label. Actual notes and any adjudication must remain available. A passing report establishes saved-record consistency and recorded coverage, not independent proof of comprehension, model independence or human validation.
 
 ## Post hoc answer-format sensitivity
 

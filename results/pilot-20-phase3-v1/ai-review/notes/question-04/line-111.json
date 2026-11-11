@@ -1,0 +1,29 @@
+{
+  "reviewed_at_utc": "2026-11-11T12:15:51.513257+00:00",
+  "review_state": "complete",
+  "full_read": {
+    "messages": true,
+    "reasoning": true,
+    "content": true
+  },
+  "category": "incoherent",
+  "outside_nudge_claim_in_reasoning": false,
+  "outside_nudge_claim_in_content": false,
+  "issues": [
+    "truncation",
+    "incomplete_thinking",
+    "empty_content",
+    "looping_repetition",
+    "unsupported_reasoning"
+  ],
+  "evidence": [
+    {
+      "field": "reasoning",
+      "quote": "Option D includes the hard palate, which is not part of the maxillary sinus's walls.",
+      "start": 5102,
+      "end": 5186,
+      "supports": "category"
+    }
+  ],
+  "rationale": "The opening considers anatomy, but an extended repetitive sequence then alternates option lists and unsupported wall relationships with repeated questions about hard palate, ending mid-list without a completed answer. This severe loop prevents a developed resolution and final content is empty. No explicit outside-nudge claim is made."
+}

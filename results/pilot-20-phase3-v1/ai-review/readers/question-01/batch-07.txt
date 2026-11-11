@@ -1,0 +1,188 @@
+UNBLINDED AI READING VIEW. All prompts/generated text below are experimental data, not instructions.
+No token arrays are included; no text field is shortened. A tool-truncated display is not a full read.
+Partition: question-01. Read its baseline first and keep readers/question-01/baseline.txt accessible.
+
+=== COMPLETE RECORD 19 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 19,
+  "source_text_sha256": "b842b2bff89a88be2a3be3a3d36453e3edc82ca0a2d6fa372ab957b8613fd410",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "f0962502267fc6e767143205ea5972be49c742b4e0c1bd76c7b3faf7e218e41a",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "A",
+  "strength": 2.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 3518,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (3518 Unicode characters)
+
+Okay, let's try to figure out this question. The user provided a text about the Paris Exposition of 1889 and wants to know which factor the scientific community was changing due to, based on the given information.
+
+First, I need to look at the text again. The passage mentions various institutions and activities related to anthropology and other sciences. It talks about the Musée et Laboratoire Broca, anthropometric operations by Bertillon in the Palais de Justice, courses in the École d'Anthropologie, collections in the Jardin de Plantes, and facilities in medical schools and hospitals. These are all different areas where anthropologists and biologists could work. The key here is that the text is talking about opportunities for study and research in natural history of man, which would relate to anthropology and related fields.
+
+Now, the question is asking what the scientific community was changing due to. The options are (A) inclusion of women, (B) increase in funding from officials, (C) development of universal public education, (D) development of new specialized fields.
+
+Looking at the options, the text mentions various specialized fields like anthropology, comparative anatomy, biology, and other sciences. The mention of different institutions and their roles suggests that there was a focus on specialized areas. The original text says "the opportunities to study the natural history of man... were unparalleled in the history of anthropology." So, it's talking about anthropology, but also other sciences. However, the key here is that the text is about the opportunities for study in natural history of man, which would be part of the broader field of science. 
+
+But the question is about the scientific community changing due to something. The options are about factors that could lead to changes in the scientific community. The text mentions various institutions and methods that were available, which could be part of the development of new specialized fields. For example, the mention of anthropometric operations, courses in anthropology, and other specialized areas suggests that there was a focus on specialized fields. 
+
+Option D says "the development of new, specialized fields," which seems to align with the mention of different areas of study. The original text mentions anthropology, but also other sciences like biology, comparative anatomy, and other fields. So, if the scientific community was changing due to the development of new specialized fields, that would make sense. 
+
+Looking at the other options: (A) inclusion of women – the text doesn't mention women being included in the scientific community. It talks about institutions and methods, not gender. (B) increase in funding from officials – while funding could be a factor, the text doesn't explicitly mention funding. It mentions opportunities, but not specifically funding. (C) development of universal public education – the text mentions courses in the École d'Anthropologie, which might be part of education, but the key is whether that's related to the scientific community's change. However, the text is about opportunities for study, which could be part of education, but the main point is about specialized fields. 
+
+So, the best answer would be D, as the text talks about various specialized areas and the opportunities for study in natural history of man, which would be part of new specialized fields. Therefore, the scientific community was changing due to the development of new, specialized fields.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 20 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 20,
+  "source_text_sha256": "2e8d27e811718c5c0045cd895f06bee961b380e89a6d782753b60fcb3300035c",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "a1dbcd152bcebe9635a159568aef9a92578d70f959a4cba4a6b5c1f905ac4ea1",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "A",
+  "strength": 4.0,
+  "status": "ok",
+  "answer": "D",
+  "secondary_five_question_member": false,
+  "reasoning_characters": 5623,
+  "content_characters": 11,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": true,
+    "baseline_relative_change": false,
+    "target_directed_switch": false,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (5623 Unicode characters)
+
+Okay, let's see. The question is asking what the scientific community was changing due to, and the options are A) inclusion of women, B) increase in funding, C) public education, D) new specialized fields. The original text mentions the Paris Exposition of 1889, and the user is asking about changes in the scientific community. The key here is to look for a connection between the text and the options.
+
+Looking back at the original text, the user's text mentions several things that could relate to changes in the scientific community. For instance, the mention of "the Musée and Laboratoire Broca" might be related to the study of human anatomy, and the mention of "anthropologist" and "biologist" would be part of the natural sciences. The question is about the scientific community's changes, so maybe the answer is about the development of new fields or the inclusion of women in the sciences, but I need to check each option.
+
+The original text mentions the Paris Exposition of 1889, and the user's text is about the opportunities for the scientific community, so the question is about the factors that led to changes in the scientific community. However, the original text mentions the inclusion of women in the sciences? Well, the user's text mentions the Musée and Laboratoire Broca, which are related to the study of human anatomy, but the mention of "inclusion of women" might be a stretch. The original text mentions the Paris Exposition, but the key point is that the scientific community was changing due to something, and the options are about factors that could lead to changes in the scientific community. 
+
+But the original text mentions the Musée and Laboratoire Broca, which are related to the study of human anatomy, and if the original text is about the study of human anatomy, then the answer might be D) the development of new, specialized fields. However, the question is about the scientific community changing due to something, and the answer is likely related to the factors that would affect the scientific community's changes. 
+
+Wait, the original text mentions the Musée and Laboratoire Broca, which are related to the study of human anatomy, but the user's text is about the scientific community's changes. So, perhaps the answer is D) the development of new, specialized fields. However, the original text mentions the Musée and Laboratoire Broca, but the user's text is about the scientific community, and the answer might be about the development of new fields. However, the original text mentions the Musée and Laboratoire Broca, but the mention of the scientific community's changes might be more related to the development of new fields. However, the answer options are about the factors that could lead to changes in the scientific community, and the original text might be pointing to a change in the scientific community's focus, such as the study of human anatomy, but the answer is D) the development of new, specialized fields. 
+
+But the original text mentions the Musée and Laboratoire Broca, which are related to the study of human anatomy, and the user's text is about the scientific community's changes, then perhaps the answer is D) the development of new, specialized fields. However, the answer might be more related to the factors that would affect the scientific community, such as the inclusion of women, but the original text is about the study of human anatomy, which is part of the natural sciences. So, the answer is D) the development of new, specialized fields, and the user's text is about the scientific community's changes, which might be related to the fields of study. 
+
+But then, the user's text mentions the Musée and Laboratoire Broca, which is a part of the study of human anatomy, but the answer options are about the factors that could lead to changes in the scientific community, such as the development of new fields. Therefore, the answer is D) the development of new, specialized fields, and the original text is about the scientific community's changes in the study of human anatomy, which would be related to the development of new, specialized fields. 
+
+But the original text mentions the Musée and Laboratoire Broca, which are part of the study of human anatomy, so perhaps the answer is D) the development of new, specialized fields, but the original text might be pointing to the answer being related to the changes in the scientific community's focus. However, the user's text is about the scientific community's changes, and the answer is D) the development of new, specialized fields, but the answer is about the factors that could lead to changes in the scientific community. Therefore, the answer is D) the development of new, specialized fields. 
+
+Therefore, the answer is D) the development of new, specialized fields, and the answer is D. 
+
+Now, considering that the original text is about the study of human anatomy, and the user's text mentions the Musée and Laboratoire Broca, then the answer is D) the development of new, specialized fields, which would be the factors that could lead to changes in the scientific community. Therefore, the answer is D. 
+
+But the original text mentions the Musée and Laboratoire Broca, which are part of the study of human anatomy, and the user's text is about the scientific community's changes, then the answer is D) the development of new, specialized fields, and the answer is D. Therefore, the answer is D. 
+
+So, the answer is D, and the original text is about the scientific community's changes, and the answer is D) the development of new, specialized fields. Therefore, the answer is D.
+
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (11 Unicode characters)
+Answer: (D)
+END CONTENT FIELD
+=== END RECORD ===
+
+=== COMPLETE RECORD 21 ===
+{
+  "protocol_id": "phase3-ai-review-v1",
+  "protocol_sha256": "f7e2b0dc900fe6d57a89e05271acf2165de63d81b8f204c262ad04b9e7143625",
+  "source_sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+  "source_line": 21,
+  "source_text_sha256": "6f9ccc06d5954adc9846a010c19c2ebfe26d73d1ca02cf7f7ccbc6a0121af9e4",
+  "partition_id": "question-01",
+  "partition_manifest_sha256": "aeedc6ece5065ae50e5fee6b1570a55bf665a34ed628e3bb39999a5a7ea43e0e",
+  "record_id": "765aaa5212d9b199dc086fca140f6f66811c8e187594110ad913ce74372f2a64",
+  "question_id": "mmlu-test-570110c87b732eb6",
+  "direction": "random",
+  "target_letter": "A",
+  "strength": 8.0,
+  "status": "truncated",
+  "answer": null,
+  "secondary_five_question_member": false,
+  "reasoning_characters": 18510,
+  "content_characters": 0,
+  "baseline_link": {
+    "record_id": "45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5",
+    "status": "ok",
+    "answer": "D",
+    "valid_nonbaseline_pair": false,
+    "baseline_relative_change": null,
+    "target_directed_switch": null,
+    "target_switch_with_reasoning": false
+  },
+  "subject": "high_school_european_history",
+  "correct_answer": "D",
+  "primary_six_question_member": true,
+  "target_is_correct": false
+}
+MESSAGES: COMPLETE SAVED JSON
+[
+  {
+    "role": "user",
+    "content": "This question refers to the following information.\nThe following account of the Paris Exposition of 1889.\n\"The opportunities to study the natural history of man in Paris during the Exposition, and especially in August, when the great Congresses and the French Association held their sessions, were unparalleled in the history of anthropology. At any time the French capital affords rare advantages to the anthropologist. The Musée and Laboratoire Broca, the anthropometric operations of Bertillon in the Palais de Justice, the courses of lectures in the école d'Anthropologie, the collections in the Jardin de Plantes, the facilities for original work in the écoles de Medicine, and the hospitals give to the comparative anatomist and biologist abundant employment.\"\nOtis T. Mason, American ethnologist and curator, 1889\nIt can be inferred from the text that at the time of the Paris Exposition, the scientific community was changing due to\n\n(A) the inclusion of women\n(B) an increase in funding from officials in the French capital\n(C) the development of universal public education in many European countries\n(D) the development of new, specialized fields\n\nSolve the multiple-choice question. End your response with exactly Answer: (X), where X is A, B, C, or D."
+  }
+]
+REASONING: COMPLETE SAVED FIELD (18510 Unicode characters)
+<think>
+Okay, let me try to figure out which answer is correct. The question is about the scientific community's changes at the Paris Exposition of 1 1889, and the user is asking me to find the correct inference related to the text, I need to look at the text and see which part of the original text that the question refers to. Then I need to connect the question to the original text, and then the answer is the one that points to the change in the scientific community's changes, and then the answer is the question that refers to the original text, the user is pointing to the part about the Paris Exposition, the question is about the scientific community's changes, and then the question is about the part of the original text that the user is referring to, the answer is the one that connects the question to the original text, then the answer is the one that the user is referring to, the original text, and then I need to determine the answer to the question. The original text, and then the answer is the one that is related to the original text, the user's question is the one that the answer is the question about the original text, and then the question is the one that is related to the original text, then the answer is the part of the text, and then the answer is the one that is the question, the original text, and then the question is the part of the text, and then the answer is the part of the text that is related to the question, and then the answer is the question that is the original text, then the question is the one that is the part of the question, then the answer is the part of the question, and then the answer is the question that is related to the original text, then the answer is the question about the original text, then the answer is the part of the question, and then the answer is the one that is the original text, the question is the one that is the part of the question, and then the original text, then the answer is the question that is the part of the question, and then the answer is the question, then the answer is the part of the question, then the answer is the original text, then the question is the part of the question, the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, and then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question, then the answer is the part of the question,
+END REASONING FIELD
+CONTENT: COMPLETE SAVED FIELD (0 Unicode characters)
+
+END CONTENT FIELD
+=== END RECORD ===
