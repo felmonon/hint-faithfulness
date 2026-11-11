@@ -254,17 +254,19 @@ def phase3():
     out["denominator"] = "held-out (question, target letter) pairs whose valid unsteered answer differs from the target; invalid steered output = no switch"
     # Post hoc (descriptive, decided after seeing the sweep): per-letter switches, any answer change, statuses.
     post = {}
-    for d in ("fitted", "random"):
-        per = {}
-        for letter in LETTERS:
-            rows = [r for r in sweep if r["direction"] == d and r["target_letter"] == letter
-                    and valid_answer(base.get(r["question_id"])) and base[r["question_id"]]["answer"] != letter]
-            per[letter] = rate(sum(valid_answer(r) and r["answer"] == letter for r in rows), len(rows))
-        post[f"switch_by_letter_{d}"] = per
-        rows = [r for r in sweep if r["direction"] == d and valid_answer(base.get(r["question_id"]))]
-        post[f"answer_changed_any_letter_{d}"] = rate(
-            sum(valid_answer(r) and r["answer"] != base[r["question_id"]]["answer"] for r in rows), len(rows))
-    post["status_counts"] = {f"{d}:{s}": n for (d, s), n in sorted(Counter((r["direction"], r["status"]) for r in sweep).items())}
+    for f in sorted({r["fraction"] for r in sweep if r["direction"] != "baseline"}):
+        for d in ("fitted", "random"):
+            per = {}
+            for letter in LETTERS:
+                rows = [r for r in sweep if r["direction"] == d and r["fraction"] == f and r["target_letter"] == letter
+                        and valid_answer(base.get(r["question_id"])) and base[r["question_id"]]["answer"] != letter]
+                per[letter] = rate(sum(valid_answer(r) and r["answer"] == letter for r in rows), len(rows))
+            post[f"switch_by_letter_{d}@{f}"] = per
+            rows = [r for r in sweep if r["direction"] == d and r["fraction"] == f and valid_answer(base.get(r["question_id"]))]
+            post[f"answer_changed_any_letter_{d}@{f}"] = rate(
+                sum(valid_answer(r) and r["answer"] != base[r["question_id"]]["answer"] for r in rows), len(rows))
+    post["status_counts"] = {f"{d}@{f}:{s}": n for (d, f, s), n in
+                             sorted(Counter((r["direction"], r["fraction"], r["status"]) for r in sweep).items())}
     cal = read_jsonl(P3 / "calibration.jsonl")
     post["calibration_valid_by_fraction_direction"] = {
         f"{d}@{f}": rate(sum(r["status"] == "ok" for r in cal if r["direction"] == d and r["fraction"] == f),

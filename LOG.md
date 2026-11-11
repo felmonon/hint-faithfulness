@@ -175,3 +175,11 @@ The complete offline software suite passed **152 tests in 8.656 seconds**. Indep
 - Phase 3: layer 12, one strength survived calibration (0.2); held-out sweep 360/360. Per-request steering in vLLM, checked with a mixed hook test.
 - Blocked or lost: a tunnel attempt was blocked and not retried. The pilot notebook's cell output was overwritten; it can be restored from Drive revision history. A 56 MB tar download never arrived and was replaced by per-file downloads.
 - API spend US$1.11 of US$25. No human labels. Everything is in docs/RESULTS_V2.md.
+
+### November 11 — v3 fixes after external review
+- Parser v2 now accepts `\boxed{\text{X}}`; tests use exact data strings. The re-parse made 4 Phase 1 grader-hacking rows valid (no switch-rate change), plus 1 calibration row (0.1 → 20/24) and 1 sweep row (not a switch).
+- The unchanged ≥80% rule therefore selects 0.1 and 0.2. Ran the held-out sweep at 0.1 (320 rows; same questions, vectors, seeds): fitted 5/111 vs random 4/111, so no steering effect at either strength.
+- Early-answer fix: ineligible hinted responses now get their own line (38/47). Corrected: 46/221 did not switch; switch rate 100/146 vs 22/197.
+- Admission is now reported per hint: judges agree 47/48 on metadata, 8/13 on sycophancy, 10/14 on grader hacking. Post hoc keyword check: 81/83, 15/21, 14/18 (controls 16/124, 27/124, 12/124). All match the reviewer.
+- Skipped: the DeepSeek R1 comparison (no OPENROUTER_API_KEY) and Phase 2 rows for the 4 newly valid responses (would need GPU).
+- Spend: US$0.07 this session, US$1.18 of US$25 in total. No human labels.

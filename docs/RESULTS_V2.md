@@ -115,7 +115,7 @@ Per-layer table: [`phase2.probe`].
 
 So, before any reasoning, the final letter is barely decodable: at most about 10 points above the majority class, which is borderline once all layers are counted.
 
-**Reproducibility check.** The same probe also finished on Colab (scikit-learn 1.6.1 rather than 1.8.0). Its per-layer accuracies differ: its best was layer 22 at 175/526, and its average null maximum was 0.283. Only these summary counts were read before the runtime disconnected; Colab's output files were not retrieved. Following the rule declared before the results, the local run is the one reported.
+**Reproducibility check.** The same probe also finished on Colab (scikit-learn 1.6.1 rather than 1.8.0). Its per-layer accuracies differ: its best was layer 22 at 175/526, and its average null maximum was 0.283. Its files were retrieved in v3 and are in `artifacts/v2/phase2/colab_check/`. The max-over-layers permutation p there is 0.020, against 0.050 locally. Following the rule declared before the results, the local run is the one reported. The two runs differ in library version, and that alone moves the borderline p-value either side of 0.05.
 
 ## 4. Can a steering vector move the answer without the reasoning saying so? (Phase 3)
 
@@ -130,45 +130,48 @@ Data: `artifacts/v2/phase3/` (`split.json`, `layer_choice.json`, `vectors.npz`, 
 
 | Strength (× median norm) | 0.05 | 0.1 | 0.2 | 0.4 | 0.8 | 1.6 |
 |---|---|---|---|---|---|---|
-| Valid answers | 19/24 | 19/24 | 20/24 | 18/24 | 0/24 | 0/24 |
+| Valid answers (fixed parser) | 19/24 | 20/24 | 20/24 | 18/24 | 0/24 | 0/24 |
+| Valid answers (v2 parser, before the fix) | 19/24 | 19/24 | 20/24 | 18/24 | 0/24 | 0/24 |
 
-Only 0.2 meets the frozen ≥80% rule, so the sweep uses one strength rather than the 3–4 hoped for; the rule was not relaxed [`phase3.strengths`]. The 15 calibration rows written before the switch to per-request steering are kept (see the changelog).
+With the v2 parser only 0.2 met the frozen ≥80% rule. After the `\boxed{\text{X}}` fix, one fitted output at 0.1 (`\boxed{\text{A}}`) became valid. That brings 0.1 to 20/24, so the **unchanged** rule now selects 0.1 and 0.2 [`phase3.strengths`; the old selection is kept as `frozen_fractions_v2_0`]. This is a bug fix that changed what the frozen rule selects, not a new choice. The 0.1 sweep was then run with exactly the same 40 questions, vectors, per-question seeds, settings and code; the existing unsteered baselines were reused. Two strengths is still fewer than the 3–4 hoped for. The 15 calibration rows written before the switch to per-request steering are kept (see the changelog).
 
-**Held-out sweep** (40 questions × (1 unsteered + 4 letters × {fitted, random}) at 0.2 = 360 outputs, all kept):
+**Held-out sweep** (40 questions × (1 unsteered + 4 letters × {fitted, random} × 2 strengths) = 680 outputs, all kept. 360 were generated at 0.2 in v2, and the 320 at 0.1 were added in v3):
 - The unsteered baseline is valid for 37/40 = 92.5% [80.1, 97.4] [`phase3.baseline_valid`].
 - Denominator: (question, target letter) pairs whose valid unsteered answer differs from the target, 111 per direction. An invalid steered output counts as no switch.
 
-| Steering at 0.2 × median norm | Answer moved to the target letter | Invalid outputs |
+| Steering (× median norm) | Answer moved to the target letter | Invalid outputs |
 |---|---|---|
-| Fitted letter vector | 6/111 = 5.4% [2.5, 11.3] | 7 |
-| Random vector, same norm | 2/111 = 1.8% [0.5, 6.3] | 12 |
+| Fitted letter vector, 0.1 | 5/111 = 4.5% [1.9, 10.1] | 4 |
+| Random vector, same norm, 0.1 | 4/111 = 3.6% [1.4, 8.9] | 3 |
+| Fitted letter vector, 0.2 | 6/111 = 5.4% [2.5, 11.3] | 7 |
+| Random vector, same norm, 0.2 | 2/111 = 1.8% [0.5, 6.3] | 12 |
 
-[`phase3.steered_switch_rate`] The intervals overlap, so this does not show that the fitted vectors steer toward their letter.
+[`phase3.steered_switch_rate`] At both strengths the intervals overlap, so this does not show that the fitted vectors steer toward their letter. The parser fix made one fitted 0.2 output valid, but its answer is C and its target D, so the 0.2 numbers are unchanged, as the reviewer expected.
 
 Post hoc descriptive numbers, decided after seeing the sweep [`phase3.post_hoc`]:
-- **Fitted switches by target letter:** A 0/28, B 3/27, C 1/26, D 2/30.
-- **Random switches by target letter:** A 0/28, B 0/27, C 1/26, D 1/30.
-- **Answer changed to any letter:** fitted 19/148 = 12.8% [8.4, 19.2], random 18/148 = 12.2% [7.8, 18.4].
+- **Fitted switches by target letter:** at 0.1, A 1/28, B 4/27, C 0/26, D 0/30; at 0.2, A 0/28, B 3/27, C 1/26, D 2/30.
+- **Random switches by target letter:** at 0.1, A 1/28, B 1/27, C 2/26, D 0/30; at 0.2, A 0/28, B 0/27, C 1/26, D 1/30.
+- **Answer changed to any letter:** at 0.1, fitted 18/148 = 12.2% [7.8, 18.4] and random 21/148 = 14.2% [9.5, 20.7]; at 0.2, fitted 19/148 = 12.8% [8.4, 19.2] and random 18/148 = 12.2% [7.8, 18.4].
 
-At this strength the fitted vectors change answers about as often as random ones.
+At both strengths the fitted vectors change answers about as often as random ones.
 
 **Hook check.** In one mixed batch on 2 training questions, the steered rows were token-identical to the per-call check, which confirms that each request got its own vector. The zero-vector rows gave the same answers, and their tokens matched for 445 and 2,940 tokens before fp16 batch noise made them diverge (`hook_check.jsonl`, `hook_check_mixed.jsonl`).
 
-**Labels for steered switches (AI-judged).** Commands: `python -m src.judge_v2 steer --judge j1|j2`. Files: `artifacts/v2/judge/steer_j1.jsonl`, `steer_j2.jsonl`. The steered switches are 8 (6 fitted + 2 random). The steer rubric (`steer-label-v2`) was not calibrated.
+**Labels for steered switches (AI-judged).** Commands: `python -m src.judge_v2 steer --judge j1|j2`. Files: `artifacts/v2/judge/steer_j1.jsonl`, `steer_j2.jsonl`. There are 17 steered switches: 6 fitted + 2 random at 0.2, and 5 fitted + 4 random at 0.1. The steer rubric (`steer-label-v2`) was not calibrated.
 
 | | mentions_outside_nudge | argues_normally | incoherent | errors |
 |---|---|---|---|---|
-| Judge 1 | 0/3 | 3/3 | 0/3 | 5/8 |
-| Judge 2 | 1/5 | 1/5 | 3/5 | 3/8 |
+| Judge 1 | 0/5 | 5/5 | 0/5 | 12/17 |
+| Judge 2 | 4/12 | 3/12 | 5/12 | 5/17 |
 
-[`judge_steer`] Both judges labelled only 1 case, and they disagreed on it, so kappa is undefined in practice: the report prints 0 and marks it unreliable. Most errors are evidence quotes that were not verbatim; they were kept, not retried. Judge 2's one `mentions_outside_nudge` case quotes only the model's own uncertainty, not any outside source (`steer_j2.jsonl`, field `evidence`). **No conclusion about whether steered reasoning admits the nudge is supported.**
+[`judge_steer`] Both judges produced a usable label for only 3 cases and agreed on 1 of them. The report prints kappa as 0 and marks it unreliable. Most errors are evidence quotes that were not verbatim; they were kept, not retried. In all four of judge 2's `mentions_outside_nudge` cases, the quoted evidence names no outside source. Three express the model's own uncertainty or recall, and one says "The question is from a test" (`steer_j2.jsonl`, field `evidence`). **No conclusion about whether steered reasoning admits the nudge is supported.**
 
 ## 5. Costs, failures and limits
 
-- **API spend:** US$1.11 of the US$25 cap (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`). These are list-price estimates from returned token usage, not an invoice. Colab used the existing balance only.
+- **API spend:** US$1.18 of the US$25 cap (US$1.11 in v2, plus US$0.07 in v3 to judge the 9 new steered switches) (`artifacts/v2/costs.json`; `python -m src.judge_v2 costs`). These are list-price estimates from returned token usage, not an invoice. Colab used the existing balance only.
 - **Kept failures:**
-  - Phase 1: 85 truncated and 6 invalid responses.
-  - Judges: 45 + 6 errors on hint cases and 5 + 3 on steer cases.
+  - Phase 1: 85 truncated and 2 invalid responses (6 before the parser fix).
+  - Judges: 45 + 6 errors on hint cases and 12 + 5 on steer cases.
   - Phase 3: calibration and sweep outputs that truncated or gave no answer.
   - All of these stay in the raw files and in the denominators stated above.
 - **Changes after the plan was frozen** (dated in [PLAN_V2.md](PLAN_V2.md)):
@@ -176,7 +179,8 @@ At this strength the fitted vectors change answers about as often as random ones
   - Phase 3 steering changed from one vector per call to one vector per request, so the 15 earliest calibration rows were generated the old way.
   - The probe ran locally from checksum-verified shards.
   - Post hoc analyses are labelled where they appear.
-- **Not run:** DeepSeek (no OpenRouter key).
+- **Not run:** the DeepSeek R1 comparison (v3 item 4). `OPENROUTER_API_KEY` is not configured, so it is waiting for the key. No DeepSeek call was made, and no third (non-OpenAI) judge was run.
+- **Numbers vs. the reviewer's expected values:** every expected value in the v3 brief matches, before and after the fixes: Phase 1, calibration, sweep, early-answer groups, per-hint agreement and the keyword check. No differences need explaining.
 - **Limits:**
   - One small model.
   - Both judges are OpenAI models, and their agreement is poor.
