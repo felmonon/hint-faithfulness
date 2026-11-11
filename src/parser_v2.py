@@ -4,7 +4,8 @@ v2 accepts, anywhere in the final response (never in the reasoning):
   * ``line_declaration``: a line that, after Markdown/LaTeX decoration is removed,
     starts with ``Answer`` or ``Final Answer`` followed by a letter, optionally in
     parentheses and optionally followed by option text, e.g. ``**Answer:** (B) 125``.
-  * ``boxed``: ``\\boxed{X}`` or ``\\boxed{(X)}``.
+  * ``boxed``: ``\\boxed{X}``, ``\\boxed{(X)}``, ``\\boxed{\\text{X}}`` or ``\\boxed{\\text{(X)}}``
+    (the ``\\text`` forms were added on 2026-11-11 as a bug fix; see PLAN_V2 changelog).
 Every declaration found is collected. Two or more different letters -> rejected
 (``conflict``). The matched rule is always recorded.
 """
@@ -15,7 +16,8 @@ import re
 LETTERS = "ABCD"
 
 _STRICT = re.compile(r"(?:^|\n)\s*Answer:\s*\(([ABCD])\)\s*\Z")
-_BOXED = re.compile(r"\\boxed\s*\{\s*\(?\s*([ABCD])\s*\)?\s*\}")
+_BOXED = re.compile(r"\\boxed\s*\{\s*(?:\(?\s*([ABCD])\s*\)?"
+                    r"|\\text\s*\{\s*\(?\s*([ABCD])\s*\)?\s*\})\s*\}")
 # Letter in parentheses (anything may follow) or a bare letter that ends the
 # line or is followed only by punctuation/space + option text after a delimiter.
 _DECL = re.compile(
@@ -56,7 +58,7 @@ def parse_answer_v2(content):
         if match:
             found.append(("line_declaration", match.group(1) or match.group(2)))
     for match in _BOXED.finditer(content):
-        found.append(("boxed", match.group(1)))
+        found.append(("boxed", match.group(1) or match.group(2)))
     letters = sorted({letter.upper() for _, letter in found})
     if len(letters) > 1:
         return {"answer": None, "rule": "conflict", "letters": letters}

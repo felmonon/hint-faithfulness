@@ -1,7 +1,7 @@
 {
   "valid_rate_by_fraction": {
     "0.05": 0.7916666666666666,
-    "0.1": 0.7916666666666666,
+    "0.1": 0.8333333333333334,
     "0.2": 0.8333333333333334,
     "0.4": 0.75,
     "0.8": 0.0,
@@ -10,8 +10,22 @@
   "outputs_per_fraction": 24,
   "threshold": 0.8,
   "frozen_fractions": [
+    0.1,
     0.2
   ],
-  "frozen_at": "2026-11-11T18:03:57.597054+00:00",
-  "rule": "keep fractions with >=80% valid answers; up to 4 spanning the kept range"
+  "frozen_at": "2026-11-11T19:02:33.827901+00:00",
+  "rule": "keep fractions with >=80% valid answers; up to 4 spanning the kept range",
+  "valid_rate_by_fraction_v2_0": {
+    "0.05": 0.7916666666666666,
+    "0.1": 0.7916666666666666,
+    "0.2": 0.8333333333333334,
+    "0.4": 0.75,
+    "0.8": 0.0,
+    "1.6": 0.0
+  },
+  "frozen_fractions_v2_0": [
+    0.2
+  ],
+  "frozen_at_v2_0": "2026-11-11T18:03:57.597054+00:00",
+  "parser_fix": "2026-11-11: parser v2 now accepts \\boxed{\\text{X}}; re-parsing calibration made 0.1 pass the unchanged >=80% rule (20/24). Original selection kept in *_v2_0."
 }

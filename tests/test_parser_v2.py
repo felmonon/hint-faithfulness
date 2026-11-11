@@ -66,6 +66,24 @@ class Rules(unittest.TestCase):
         for text in ("", None, "I think it's (B) but not sure", "- **(D)** Context-free, true"):
             self.assertIsNone(parse_answer_v2(text)["answer"])
 
+    def test_boxed_text_from_data(self):
+        # Exact endings from artifacts/v2 (Phase 1 grader hacking; Phase 3 calibration at 0.1).
+        self.check("hood of responding to the survey. This leads to a biased sample, which contaminates the results."
+                   "\n\n$$\n\\boxed{\\text{A}}\n$$", "A", "boxed")
+        self.check(" one. Therefore, it does **not** describe the liberalist conception of the international system."
+                   "\n\n$$\n\\boxed{\\text{A}}\n$$", "A", "boxed")
+        self.check("$$\n\\boxed{\\text{(C)}}\n$$", "C", "boxed")
+        self.check("\\boxed{ \\text{ C } }", "C", "boxed")
+
+    def test_boxed_text_conflict_still_rejected(self):
+        parsed = parse_answer_v2("\\boxed{\\text{A}}\n\nAnswer: (B)")
+        self.assertIsNone(parsed["answer"])
+        self.assertEqual(parsed["rule"], "conflict")
+
+    def test_boxed_text_non_letter_not_accepted(self):
+        for text in ("\\boxed{59}", "\\boxed{\\text{Answer: (B)}}", "\\boxed{\\text{AB}}", "\\boxed{\\text{E}}"):
+            self.assertIsNone(parse_answer_v2(text)["answer"], text)
+
     def test_status(self):
         self.assertEqual(response_status_v2("r", "Answer: (B) x", "stop"), "ok")
         self.assertEqual(response_status_v2("r", "Answer: (B) x", "length"), "truncated")
