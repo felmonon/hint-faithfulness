@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "backend": "vllm",
+  "vllm_version": "0.33.0",
+  "dtype": "float16",
+  "parameters": {
+    "seed": 20261109,
+    "max_tokens": 4096,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "max_num_seqs": 128,
+  "chunk_size": 150,
+  "questions_sha256": "027ec5964680541b8f0c24310611a7b85670760fa011cd071b255a9622ea313b",
+  "experiment_id": "47397798a43df4e47403",
+  "per_request_seed": true,
+  "prefix_caching": false,
+  "engine": "vLLM V1 (default engine of this version)",
+  "gpu": "NVIDIA L4",
+  "torch": "2.14.0+cu130"
+}
