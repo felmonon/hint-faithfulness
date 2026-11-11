@@ -613,7 +613,223 @@
         0.06332555284276006
       ]
     },
-    "denominator": "held-out (question, target letter) pairs whose valid unsteered answer differs from the target; invalid steered output = no switch"
+    "denominator": "held-out (question, target letter) pairs whose valid unsteered answer differs from the target; invalid steered output = no switch",
+    "post_hoc": {
+      "switch_by_letter_fitted": {
+        "A": {
+          "successes": 0,
+          "n": 28,
+          "rate": 0.0,
+          "ci95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ]
+        },
+        "B": {
+          "successes": 3,
+          "n": 27,
+          "rate": 0.1111111111111111,
+          "ci95": [
+            0.038520348283098374,
+            0.2805780081827982
+          ]
+        },
+        "C": {
+          "successes": 1,
+          "n": 26,
+          "rate": 0.038461538461538464,
+          "ci95": [
+            0.006821984993543487,
+            0.18892778903034757
+          ]
+        },
+        "D": {
+          "successes": 2,
+          "n": 30,
+          "rate": 0.06666666666666667,
+          "ci95": [
+            0.018477023791270378,
+            0.2132345836261692
+          ]
+        }
+      },
+      "answer_changed_any_letter_fitted": {
+        "successes": 19,
+        "n": 148,
+        "rate": 0.12837837837837837,
+        "ci95": [
+          0.08374954261664819,
+          0.19181063143373206
+        ]
+      },
+      "switch_by_letter_random": {
+        "A": {
+          "successes": 0,
+          "n": 28,
+          "rate": 0.0,
+          "ci95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ]
+        },
+        "B": {
+          "successes": 0,
+          "n": 27,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.12455502974186705
+          ]
+        },
+        "C": {
+          "successes": 1,
+          "n": 26,
+          "rate": 0.038461538461538464,
+          "ci95": [
+            0.006821984993543487,
+            0.18892778903034757
+          ]
+        },
+        "D": {
+          "successes": 1,
+          "n": 30,
+          "rate": 0.03333333333333333,
+          "ci95": [
+            0.005908590381612455,
+            0.16670390991409173
+          ]
+        }
+      },
+      "answer_changed_any_letter_random": {
+        "successes": 18,
+        "n": 148,
+        "rate": 0.12162162162162163,
+        "ci95": [
+          0.0783327712904737,
+          0.18405576956082256
+        ]
+      },
+      "status_counts": {
+        "baseline:ok": 37,
+        "baseline:truncated": 3,
+        "fitted:invalid_answer": 3,
+        "fitted:ok": 141,
+        "fitted:truncated": 16,
+        "random:invalid_answer": 2,
+        "random:ok": 137,
+        "random:truncated": 21
+      },
+      "calibration_valid_by_fraction_direction": {
+        "fitted@0.05": {
+          "successes": 10,
+          "n": 12,
+          "rate": 0.8333333333333334,
+          "ci95": [
+            0.5519691377470266,
+            0.9530348578161463
+          ]
+        },
+        "random@0.05": {
+          "successes": 9,
+          "n": 12,
+          "rate": 0.75,
+          "ci95": [
+            0.46769466506643426,
+            0.9110583316059453
+          ]
+        },
+        "fitted@0.1": {
+          "successes": 9,
+          "n": 12,
+          "rate": 0.75,
+          "ci95": [
+            0.46769466506643426,
+            0.9110583316059453
+          ]
+        },
+        "random@0.1": {
+          "successes": 10,
+          "n": 12,
+          "rate": 0.8333333333333334,
+          "ci95": [
+            0.5519691377470266,
+            0.9530348578161463
+          ]
+        },
+        "fitted@0.2": {
+          "successes": 9,
+          "n": 12,
+          "rate": 0.75,
+          "ci95": [
+            0.46769466506643426,
+            0.9110583316059453
+          ]
+        },
+        "random@0.2": {
+          "successes": 11,
+          "n": 12,
+          "rate": 0.9166666666666666,
+          "ci95": [
+            0.646120088858883,
+            0.9851349055950829
+          ]
+        },
+        "fitted@0.4": {
+          "successes": 9,
+          "n": 12,
+          "rate": 0.75,
+          "ci95": [
+            0.46769466506643426,
+            0.9110583316059453
+          ]
+        },
+        "random@0.4": {
+          "successes": 9,
+          "n": 12,
+          "rate": 0.75,
+          "ci95": [
+            0.46769466506643426,
+            0.9110583316059453
+          ]
+        },
+        "fitted@0.8": {
+          "successes": 0,
+          "n": 12,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ]
+        },
+        "random@0.8": {
+          "successes": 0,
+          "n": 12,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ]
+        },
+        "fitted@1.6": {
+          "successes": 0,
+          "n": 12,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ]
+        },
+        "random@1.6": {
+          "successes": 0,
+          "n": 12,
+          "rate": 0.0,
+          "ci95": [
+            2.7755575615628914e-17,
+            0.24249400665524085
+          ]
+        }
+      }
+    }
   },
   "judge_steer": {
     "j1": {

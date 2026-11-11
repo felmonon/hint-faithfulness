@@ -1,3 +1,6 @@
+> Archived pilot-era README (moved from the repository root on 2026-11-11). Links are relative to the repository root.
+
+
 # Does the model say what changed its answer?
 
 Research software for testing whether an open reasoning model acknowledges using a wrong-answer hint. The project includes prompt interventions, answer/noise measurements, judge validation, early answering, linear probes, and optional activation steering.

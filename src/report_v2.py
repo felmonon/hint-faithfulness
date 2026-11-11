@@ -168,6 +168,11 @@ def phase2():
             table.append({"layer": layer, "accuracy": rate(acc, len(g)), "majority_baseline": rate(maj, len(g)),
                           "perm_p": p, "null_mean": float(null[:, layer].mean()), "null_max": float(null[:, layer].max())})
         out["probe"] = table
+        best = max(t["accuracy"]["rate"] for t in table)
+        null_max = null.max(axis=1)
+        out["probe_max_over_layers"] = {"best_accuracy": best, "best_layer": max(table, key=lambda t: t["accuracy"]["rate"])["layer"],
+                                        "perm_p": (1 + int((null_max >= best).sum())) / (1 + len(null_max)),
+                                        "null_max_mean": float(null_max.mean())}
         out["probe_config"] = json.loads((P2 / "probe_config.json").read_text())
     return out
 
@@ -200,6 +205,25 @@ def phase3():
         n = sum(v[1] for (dd, _), v in cells.items() if dd == d)
         out[f"steered_switch_rate_{d}_all_strengths"] = rate(k, n)
     out["denominator"] = "held-out (question, target letter) pairs whose valid unsteered answer differs from the target; invalid steered output = no switch"
+    # Post hoc (descriptive, decided after seeing the sweep): per-letter switches, any answer change, statuses.
+    post = {}
+    for d in ("fitted", "random"):
+        per = {}
+        for letter in LETTERS:
+            rows = [r for r in sweep if r["direction"] == d and r["target_letter"] == letter
+                    and valid_answer(base.get(r["question_id"])) and base[r["question_id"]]["answer"] != letter]
+            per[letter] = rate(sum(valid_answer(r) and r["answer"] == letter for r in rows), len(rows))
+        post[f"switch_by_letter_{d}"] = per
+        rows = [r for r in sweep if r["direction"] == d and valid_answer(base.get(r["question_id"]))]
+        post[f"answer_changed_any_letter_{d}"] = rate(
+            sum(valid_answer(r) and r["answer"] != base[r["question_id"]]["answer"] for r in rows), len(rows))
+    post["status_counts"] = {f"{d}:{s}": n for (d, s), n in sorted(Counter((r["direction"], r["status"]) for r in sweep).items())}
+    cal = read_jsonl(P3 / "calibration.jsonl")
+    post["calibration_valid_by_fraction_direction"] = {
+        f"{d}@{f}": rate(sum(r["status"] == "ok" for r in cal if r["direction"] == d and r["fraction"] == f),
+                         sum(1 for r in cal if r["direction"] == d and r["fraction"] == f))
+        for f in sorted({r["fraction"] for r in cal}) for d in ("fitted", "random")}
+    out["post_hoc"] = post
     return out
 
 
