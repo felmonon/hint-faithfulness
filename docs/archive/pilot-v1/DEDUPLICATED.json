@@ -1,0 +1,318 @@
+{
+  "rule": "Byte-for-byte duplicates only (SHA-256 equal); one copy kept per content. No unique raw output removed.",
+  "date": "2026-11-11",
+  "removed": [
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/checkpoint-provenance.json",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-0430/checkpoint-provenance.json",
+      "sha256": "f012a8d91fc57206913e76a56416a3583a03f0053a691fcaed8e222095fd20a2",
+      "bytes": 940
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/execution.log",
+      "kept": "artifacts/pilot-20-phase3-v1/execution.log",
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9",
+      "bytes": 90146
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/manifest.json",
+      "kept": "artifacts/pilot-20-phase3-v1/manifest.json",
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c",
+      "bytes": 2531
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/plan.json",
+      "kept": "artifacts/pilot-20-phase3-v1/plan.json",
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+      "bytes": 5109
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/runtime.json",
+      "kept": "artifacts/pilot-20-phase3-v1/runtime.json",
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64",
+      "bytes": 19801
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl",
+      "sha256": "5bec0702c11667104b6a37a3f15487b19dceb7358f771748e467b346ae63044b",
+      "bytes": 259338
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/vector_metadata.json",
+      "kept": "artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20",
+      "bytes": 325
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-0430/vectors.npz",
+      "kept": "artifacts/pilot-20-phase3-v1/vectors.npz",
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57",
+      "bytes": 59220
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/README.md",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-1110/README.md",
+      "sha256": "a5f96ed58eeb79b5c27c490ed796eb44eb9785012b0fe3a792c5b49ac24e12bd",
+      "bytes": 1571
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/acquisition-provenance.json",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-1110/acquisition-provenance.json",
+      "sha256": "f7aaab4e4a3290f511034a87f115dacf61135ed4058bf7d3812d55dea22ba57f",
+      "bytes": 3141
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/checksums.sha256",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-1110/checksums.sha256",
+      "sha256": "3bdc3d73beca7d00d99886018e4da6a85578bbaccb70cde0ce19cc0ece349005",
+      "bytes": 331
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/snapshot.json",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-1110/snapshot.json",
+      "sha256": "92adcb34894143f73f63f74965862d1c895dd7041b2f81e568fbb86c1991b81a",
+      "bytes": 336729
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-checkpoint-1110/steering.jsonl",
+      "kept": "artifacts/pilot-20-phase3-checkpoint-1110/steering.jsonl",
+      "sha256": "54f5e311d8e6ceed08629f4bb39f4f0de3b5e7b6a337f74cef2e7812fed73507",
+      "bytes": 885213
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/resume-execution.log",
+      "kept": "artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/resume-execution.log",
+      "sha256": "64a72187a9469b5c3d524f27c73b721f73b72c244eda3e81e4031be88db799cc",
+      "bytes": 88361
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/setup.json",
+      "kept": "artifacts/pilot-20-phase3-resume-notebook-20261110T103905.686089Z/setup.json",
+      "sha256": "64f16e6faa983ba54cca6e09ece9b4fe644f7f8e896f6b0f362fa69ebc0f7f35",
+      "bytes": 23173
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/resume-execution.log",
+      "kept": "artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/resume-execution.log",
+      "sha256": "1107e81c26d9b3e6164ee8182e91c48db09145107988ba24a13fdfbabe39a588",
+      "bytes": 93287
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/setup.json",
+      "kept": "artifacts/pilot-20-phase3-resume-notebook-20261111T005437.407408Z/setup.json",
+      "sha256": "9c7e71b7719d3c2ed13646161534ee51e629f1ed4b5a3e7e19cdf487a6e97a5e",
+      "bytes": 26777
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/EXPLANATION_SUMMARY.md",
+      "kept": "artifacts/pilot-20-phase3-v1/EXPLANATION_SUMMARY.md",
+      "sha256": "128daccb229369c3b9a83114b0530dca629dae2a245654bd7640b5488d416a89",
+      "bytes": 252
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/LABELING.md",
+      "kept": "artifacts/pilot-20-phase3-v1/LABELING.md",
+      "sha256": "3ad5835a8cc77ba938c52d9c3d6be8a06d70e7f95e732f4fffc2b424c055a7ce",
+      "bytes": 1229
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/checksums.sha256",
+      "kept": "artifacts/pilot-20-phase3-v1/checksums.sha256",
+      "sha256": "854cf87c6b7df459e3834d1fc17526e68296439cac0f8e869d89ce3f4012ebb6",
+      "bytes": 1302
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/completion.json",
+      "kept": "artifacts/pilot-20-phase3-v1/completion.json",
+      "sha256": "e554f379cee1ad207d4899ef522f06f0e14bce40e9a4201ea8ba1e5961375ba0",
+      "bytes": 131
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/execution.log",
+      "kept": "artifacts/pilot-20-phase3-v1/execution.log",
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9",
+      "bytes": 90146
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/explanation_labels.csv",
+      "kept": "artifacts/pilot-20-phase3-v1/explanation_labels.csv",
+      "sha256": "3692882ef15330e131d931a9c1011af9ed19e27e682726d909f077ac07b384e5",
+      "bytes": 90465
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/manifest.json",
+      "kept": "artifacts/pilot-20-phase3-v1/manifest.json",
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c",
+      "bytes": 2531
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/plan.json",
+      "kept": "artifacts/pilot-20-phase3-v1/plan.json",
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+      "bytes": 5109
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-10T10-39-08.868091+00-00.json",
+      "kept": "artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-10T10-39-08.868091+00-00.json",
+      "sha256": "b8315b7d73f57a1f3129959a5a349e9981453de6f46e6096c95b6d823025357b",
+      "bytes": 19802
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-11T00-54-40.487123+00-00.json",
+      "kept": "artifacts/pilot-20-phase3-v1/runtime-resume-2026-11-11T00-54-40.487123+00-00.json",
+      "sha256": "a3b51bf0d1358d26151913cc335a1e4f0bbfb2ff8d626e734a6988f2996b5ece",
+      "bytes": 19802
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/runtime.json",
+      "kept": "artifacts/pilot-20-phase3-v1/runtime.json",
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64",
+      "bytes": 19801
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/steering.jsonl",
+      "kept": "artifacts/pilot-20-phase3-v1/steering.jsonl",
+      "sha256": "5542b7bbc53cac1f9b2c47cf8ecf1404e24d0a681638f73cfb05daa67a5582dc",
+      "bytes": 7777476
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/steering_rates.png",
+      "kept": "artifacts/pilot-20-phase3-v1/steering_rates.png",
+      "sha256": "dda5cd51d2e5521e0348691ff1562ffdadb78631f431cb132893966a75229cb6",
+      "bytes": 126458
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/summary.jsonl",
+      "kept": "artifacts/pilot-20-phase3-v1/summary.jsonl",
+      "sha256": "f7ff4640d3f894918d286231cf24339d9b48c34f78507bea9a9c71f770296e2d",
+      "bytes": 13024
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "kept": "artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20",
+      "bytes": 325
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/artifacts/pilot-20-phase3-v1/vectors.npz",
+      "kept": "artifacts/pilot-20-phase3-v1/vectors.npz",
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57",
+      "bytes": 59220
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_L4_ADDENDUM_ERRATUM.md",
+      "kept": "docs/archive/pilot-v1/PHASE3_L4_ADDENDUM_ERRATUM.md",
+      "sha256": "67a7b033795d9a97603143d5a6585f1a6c863cedbd0ef2c7d9d3302fa86a1f88",
+      "bytes": 3060
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_L4_RESUME_ADDENDUM.md",
+      "kept": "docs/archive/pilot-v1/PHASE3_L4_RESUME_ADDENDUM.md",
+      "sha256": "88d762777c692619758bba590220d7da8c8bbd15804ded14581c3e68955299fb",
+      "bytes": 3448
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_RESUME_PROTOCOL.md",
+      "kept": "docs/archive/pilot-v1/PHASE3_RESUME_PROTOCOL.md",
+      "sha256": "16985dd9ed3ebb1a584169b40d88c40b2a1e12c2df4e66a7823bc65d207b4309",
+      "bytes": 9500
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/PHASE3_SECOND_RESUME_PROTOCOL.md",
+      "kept": "docs/archive/pilot-v1/PHASE3_SECOND_RESUME_PROTOCOL.md",
+      "sha256": "c90533a6be1e8fd563075f9b1d982d03111ff8f380f4ce3b69898965b5e2147d",
+      "bytes": 5865
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-acquisition-v1/verified-export/payloads/docs/phase3-l4-resume-addendum.json",
+      "kept": "docs/archive/pilot-v1/phase3-l4-resume-addendum.json",
+      "sha256": "b9c9afeeddc099297bfd3eb1c9652590afea97ffcf4be03a4c2ad16ef9716607",
+      "bytes": 1126
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/execution.log",
+      "kept": "artifacts/pilot-20-phase3-v1/execution.log",
+      "sha256": "5b580df84a568b4de5ad1f601844354302fdfaaf01e351f31d1e417d015373d9",
+      "bytes": 90146
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/manifest.json",
+      "kept": "artifacts/pilot-20-phase3-v1/manifest.json",
+      "sha256": "b6ab6444ac32113f1e00ebf3f1cba43a6344f00ada0b431ff7b4fdc03b74565c",
+      "bytes": 2531
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/plan.json",
+      "kept": "artifacts/pilot-20-phase3-v1/plan.json",
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+      "bytes": 5109
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/runtime.json",
+      "kept": "artifacts/pilot-20-phase3-v1/runtime.json",
+      "sha256": "46c1201b9755f0ac8f317773cfdff9e82ed5c5ae966ee3528ff88232e59d0b64",
+      "bytes": 19801
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/vector_metadata.json",
+      "kept": "artifacts/pilot-20-phase3-v1/vector_metadata.json",
+      "sha256": "cf3a7ff327d4ef6eb496a0819c8af2539b1d5ee43636db284cbb5266dc0cba20",
+      "bytes": 325
+    },
+    {
+      "removed": "artifacts/pilot-20-phase3-checkpoint-0430/vectors.npz",
+      "kept": "artifacts/pilot-20-phase3-v1/vectors.npz",
+      "sha256": "9808b154bd3e584c53ba8fe784d3b5d47c67ec131a9c246fe0ca5dfc828e8c57",
+      "bytes": 59220
+    },
+    {
+      "removed": "artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl.manifest.json",
+      "kept": "artifacts/pilot-20-qwen3-1.7b/responses.jsonl.manifest.json",
+      "sha256": "58cbea8d228b73b01ff894db858f92dd3024c1377de50dd3b817752084aa7ac8",
+      "bytes": 502
+    },
+    {
+      "removed": "docs/phase2-pilot-plan.json",
+      "kept": "artifacts/pilot-20-phase2-v1/plan.json",
+      "sha256": "7a94a66af2476e0b79e99b512baae1c6f0ed2d76fb43fc2d05637fd4acd3cc75",
+      "bytes": 3678
+    },
+    {
+      "removed": "docs/phase3-pilot-plan.json",
+      "kept": "artifacts/pilot-20-phase3-v1/plan.json",
+      "sha256": "5ecc12c4f4d79161de442582f2bea7b89815a0ba06808eb130b00054de52d1f2",
+      "bytes": 5109
+    },
+    {
+      "removed": "results/pilot-20-openai-v1/composite100/phase1.png",
+      "kept": "results/pilot-20-v1/composite100/strict/phase1.png",
+      "sha256": "76e93d2db69d9aa7a1977512b8c79fad0007e1f95337625b1356991866a1b310",
+      "bytes": 80099
+    },
+    {
+      "removed": "results/pilot-20-openai-v1/composite100/report.md",
+      "kept": "results/pilot-20-v1/composite100/strict/report.md",
+      "sha256": "3de96bbbf24d36c819baec0b7e702044d94c99a85fa98dbd90b467b9f58db5c4",
+      "bytes": 1297
+    },
+    {
+      "removed": "results/pilot-20-openai-v1/original90/phase1.png",
+      "kept": "results/pilot-20-v1/original90/strict/phase1.png",
+      "sha256": "5d48a514d77c623e8e73bdf04444a3298dbff106b1dc7ff1ad0e4ddeb2839e3e",
+      "bytes": 80012
+    },
+    {
+      "removed": "results/pilot-20-openai-v1/original90/report.md",
+      "kept": "results/pilot-20-v1/original90/strict/report.md",
+      "sha256": "b5a2dfe052d302e38e4d24a3b0bd47e832461e510c1313e2e1e26a43320848fc",
+      "bytes": 1295
+    },
+    {
+      "removed": "results/pilot-20-v1/composite100/posthoc-format-v1/rule.json",
+      "kept": "results/pilot-20-v1/original90/posthoc-format-v1/rule.json",
+      "sha256": "e3c6700e257444d558bd9f6e43db9f089b357704b8c3375e7eb4a11c989b6ba7",
+      "bytes": 1774
+    }
+  ]
+}

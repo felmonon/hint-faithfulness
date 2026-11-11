@@ -123,7 +123,7 @@ Use the current documented analysis checkout for the commands below, and record 
 
 [Notebook 05](../notebooks/05_real_phase2_phase3_pilot.ipynb) pins `ef90362…` for a fresh T4 Phase 2/3 execution. [Notebook 07](../notebooks/07_resume_phase3_l4_pilot.ipynb) documents the first L4 continuation from eight rows. The completed second recovery used [Notebook 08](../notebooks/08_resume_phase3_latest_checkpoint.ipynb), which pins `06ff192…`, restored all 20 payloads from the verified 28-row checkpoint and filled the remaining 170 positions. Use the published final evidence for offline reproduction; executing the recovery notebook again would be a separate run. Do not use an older notebook to roll back a later retained prefix. Notebook 08 requires an L4, the pinned imported package versions and scientific files byte-identical to `ef90362…`; it reuses the original T4-fitted vectors and preserves the earlier setup, log and runtime unchanged. These notebooks perform model execution; the offline commands below do not.
 
-The original [Phase 2 plan](phase2-pilot-plan.json), [Phase 3 plan](phase3-pilot-plan.json), [recovery protocol](PHASE3_RESUME_PROTOCOL.md), and [L4 declaration](phase3-l4-resume-addendum.json) remain frozen. The [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md) records the later loss, latest checkpoint and unchanged continuation settings. Read the separate [L4 prose erratum](PHASE3_L4_ADDENDUM_ERRATUM.md) for the corrected answer-stratum counts; question membership and the declaration JSON were unchanged. Save and independently verify checkpoint outputs outside the temporary runtime: a visible snapshot or assumed notebook autosave is not evidence of durable preservation.
+The original [Phase 2 plan](../artifacts/pilot-20-phase2-v1/plan.json), [Phase 3 plan](../artifacts/pilot-20-phase3-v1/plan.json), [recovery protocol](archive/pilot-v1/PHASE3_RESUME_PROTOCOL.md), and [L4 declaration](archive/pilot-v1/phase3-l4-resume-addendum.json) remain frozen. The [second recovery protocol](archive/pilot-v1/PHASE3_SECOND_RESUME_PROTOCOL.md) records the later loss, latest checkpoint and unchanged continuation settings. Read the separate [L4 prose erratum](archive/pilot-v1/PHASE3_L4_ADDENDUM_ERRATUM.md) for the corrected answer-stratum counts; question membership and the declaration JSON were unchanged. Save and independently verify checkpoint outputs outside the temporary runtime: a visible snapshot or assumed notebook autosave is not evidence of durable preservation.
 
 | Evidence | Location and status |
 | --- | --- |
@@ -173,7 +173,7 @@ This uses the existing plotting functions, without model weights, a GPU, or new 
 
 ### Verify a downloaded Colab checkpoint
 
-Before using a downloaded notebook or standalone snapshot, follow the [portable export-verification guide](PHASE3_EXPORT_VERIFICATION.md). The standard-library-only checker preserves the exact source and decoded payloads in a fresh directory, verifies explicit earlier prefixes, and records acquisition scope and hashes. It accepts partial recovery checkpoints and does not replace the complete 198-record scientific audit or full-text review.
+Before using a downloaded notebook or standalone snapshot, follow the [portable export-verification guide](archive/pilot-v1/PHASE3_EXPORT_VERIFICATION.md). The standard-library-only checker preserves the exact source and decoded payloads in a fresh directory, verifies explicit earlier prefixes, and records acquisition scope and hashes. It accepts partial recovery checkpoints and does not replace the complete 198-record scientific audit or full-text review.
 
 ### Prepare the cached tokenizer for the full Phase 3 audit
 
@@ -229,7 +229,7 @@ Both analyses save `condition_summary.csv/jsonl`, `paired_summary.csv/jsonl`, pe
 
 ### Phase 3 descriptive AI review: prepare, annotate and validate
 
-The [AI review protocol](PHASE3_AI_REVIEW_PROTOCOL.md) specifies an unblinded, descriptive reading procedure created after the original eight records were known. It is not an original preregistration or human validation. The review tool performs no inference or judge API requests. Install its separate schema dependency before working offline; this does not change the frozen inference requirements:
+The [AI review protocol](archive/pilot-v1/PHASE3_AI_REVIEW_PROTOCOL.md) specifies an unblinded, descriptive reading procedure created after the original eight records were known. It is not an original preregistration or human validation. The review tool performs no inference or judge API requests. Install its separate schema dependency before working offline; this does not change the frozen inference requirements:
 
 ```bash
 python -m pip install -r requirements-review.txt

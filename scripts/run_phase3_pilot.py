@@ -19,7 +19,7 @@ def main():
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     os.chdir(PROJECT)
-    plan_path = PROJECT / "docs/phase3-pilot-plan.json"
+    plan_path = PROJECT / "artifacts/pilot-20-phase3-v1/plan.json"
     plan = json.loads(plan_path.read_text())
     source = PROJECT / plan["source_path"]
     assert hashlib.sha256(source.read_bytes()).hexdigest() == plan["source_sha256"]

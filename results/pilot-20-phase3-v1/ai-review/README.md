@@ -4,7 +4,7 @@ This directory binds AI annotations to all **198 saved outcomes**. It contains n
 
 | Evidence | Purpose |
 |---|---|
-| [Frozen protocol](../../../docs/PHASE3_AI_REVIEW_PROTOCOL.md) | Unblinded descriptive rubric, actual full-text reading, exact quotations, context checks and posthoc examples |
+| [Frozen protocol](../../../docs/archive/pilot-v1/PHASE3_AI_REVIEW_PROTOCOL.md) | Unblinded descriptive rubric, actual full-text reading, exact quotations, context checks and posthoc examples |
 | [Partition manifest](partition-manifest.json) | Six nonoverlapping 33-record question partitions; exact IDs, source/text hashes and fixed cohort membership |
 | [Primary annotations](reviews/) | One final source-bound annotation per saved outcome |
 | [Primary coverage](coverage-v1/coverage.json) | Checks all 198 annotations, exact quote offsets, deterministic links, blank human labels and source hashes |

@@ -6,7 +6,7 @@ The primary original-record analysis found baseline agreement rising from **5/10
 
 ## Execution and evidence
 
-The [frozen plan](phase2-pilot-plan.json) was saved at 04:06:03 UTC, before execution. The runtime recorded clean commit [`66788e3444a43f1cc87422313ad6b1f7b72a6114`](https://github.com/felmonon/hint-faithfulness/tree/66788e3444a43f1cc87422313ad6b1f7b72a6114), `Qwen/Qwen3-1.7B` revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`, FP16, eager attention, seed 20261109, and one Colab Tesla T4. Python was 3.13.16, Torch 2.14.1+cu130, Transformers 5.0.0rc3, and scikit-learn 1.8.0. The four jobs ran from 04:07:15 to 04:08:34 UTC, excluding initial model loading.
+The [frozen plan](../artifacts/pilot-20-phase2-v1/plan.json) was saved at 04:06:03 UTC, before execution. The runtime recorded clean commit [`66788e3444a43f1cc87422313ad6b1f7b72a6114`](https://github.com/felmonon/hint-faithfulness/tree/66788e3444a43f1cc87422313ad6b1f7b72a6114), `Qwen/Qwen3-1.7B` revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`, FP16, eager attention, seed 20261109, and one Colab Tesla T4. Python was 3.13.16, Torch 2.14.1+cu130, Transformers 5.0.0rc3, and scikit-learn 1.8.0. The four jobs ran from 04:07:15 to 04:08:34 UTC, excluding initial model loading.
 
 There were 210 early-answer scoring passes, 115 prompt-activation passes, and 112 logistic-regression fits across the two overlapping datasets. Phase 2 generated no new answer continuations and made no API calls. The [artifact index and reproduction instructions](../results/pilot-20-phase2-v1/README.md) link every result, activation array, manifest, plot, and log.
 

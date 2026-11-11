@@ -26,7 +26,7 @@ from scripts.audit_phase3_artifacts import HARDWARE_ADDENDUM_SHA256, ordered_ids
 from src.phase3 import _valid
 
 PROTOCOL_ID = 'phase3-ai-review-v1'
-DEFAULT_PROTOCOL = PROJECT / 'docs/PHASE3_AI_REVIEW_PROTOCOL.md'
+DEFAULT_PROTOCOL = PROJECT / 'docs/archive/pilot-v1/PHASE3_AI_REVIEW_PROTOCOL.md'
 ANNOTATION_FIELDS = {
     'reviewed_at_utc', 'review_state', 'full_read', 'category',
     'outside_nudge_claim_in_reasoning', 'outside_nudge_claim_in_content',
@@ -174,11 +174,11 @@ def checked_inputs(root, audit_path):
     plan = read_object(root / 'plan.json')
     manifest = read_object(root / 'manifest.json')
     require([row['record_id'] for row in rows] == ordered_ids(manifest), 'Final source is not the ordered fixed grid')
-    require(plan == read_object(PROJECT / 'docs/phase3-pilot-plan.json'), 'Frozen pilot plan differs')
+    require(plan == read_object(PROJECT / 'artifacts/pilot-20-phase3-v1/plan.json'), 'Frozen pilot plan differs')
     phase1 = PROJECT / plan['source_path']
     require(sha(phase1) == plan['source_sha256'], 'Frozen Phase 1 source differs')
     validate_run(rows, manifest, plan, read_lines(phase1))
-    declaration_path = PROJECT / 'docs/phase3-l4-resume-addendum.json'
+    declaration_path = PROJECT / 'docs/archive/pilot-v1/phase3-l4-resume-addendum.json'
     require(sha(declaration_path) == HARDWARE_ADDENDUM_SHA256, 'Frozen L4 declaration differs')
     declaration = read_object(declaration_path)
     require(set(declaration['secondary_test_question_ids']) < set(plan['test_question_ids'])

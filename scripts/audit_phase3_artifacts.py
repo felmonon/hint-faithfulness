@@ -419,7 +419,7 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
                 *(checkpoint / name for name in CHECKPOINT_HASHES), checkpoint / "checkpoint-provenance.json"]}
     provenance = check_immutable(root, checkpoint)
     plan = json.loads((root / "plan.json").read_text())
-    require(plan == json.loads((project / "docs/phase3-pilot-plan.json").read_text()), "Repository plan differs")
+    require(plan == json.loads((project / "artifacts/pilot-20-phase3-v1/plan.json").read_text()), "Repository plan differs")
     require(plan["model"] == MODEL and plan["model_revision"] == REVISION, "Unexpected model identity")
     manifest = json.loads((root / "manifest.json").read_text())
     rows = audit_prefix((checkpoint / "steering.jsonl").read_bytes(), (root / "steering.jsonl").read_bytes(), ordered_ids(manifest))
@@ -442,7 +442,7 @@ def run_audit(root, checkpoint, metadata_dirs=None, project=PROJECT, hardware_ad
     lineage = audit_runtime_lineage(rows, original, resumed, provenance["captured_at_utc"])
     hardware = None
     if any("L4" in runtime.get("gpu_name", "") for _, runtime in resumed) and hardware_addendum is None:
-        hardware_addendum = project / "docs/phase3-l4-resume-addendum.json"
+        hardware_addendum = project / "docs/archive/pilot-v1/phase3-l4-resume-addendum.json"
     if hardware_addendum is not None:
         require(hardware_addendum.is_file() and not hardware_addendum.is_symlink(), "Hardware addendum must be a regular file")
         require(sha(hardware_addendum) == HARDWARE_ADDENDUM_SHA256, "Hardware addendum differs from published frozen bytes")

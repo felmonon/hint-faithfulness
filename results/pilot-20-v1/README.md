@@ -16,7 +16,7 @@ Read the [research report](../../docs/PILOT_REPORT.md) first. This is actual Qwe
 
 ## Integrity interpretation
 
-The [original audit](original90/audit.json) intentionally reports `ok=false`: the fixed ten missing records cause only `record_set` and `question_coverage` failures. Its token and checksum checks pass. The [composite audit](composite100/audit.json) reports `ok=true` for 100 unique planned records. An internally consistent composite is not evidence of an uninterrupted original run; read the lineage and [recovery protocol](../../docs/RECOVERY_PROTOCOL.md).
+The [original audit](original90/audit.json) intentionally reports `ok=false`: the fixed ten missing records cause only `record_set` and `question_coverage` failures. Its token and checksum checks pass. The [composite audit](composite100/audit.json) reports `ok=true` for 100 unique planned records. An internally consistent composite is not evidence of an uninterrupted original run; read the lineage and [recovery protocol](../../docs/archive/pilot-v1/RECOVERY_PROTOCOL.md).
 
 Original and composite checksum manifests cover separate scopes. The original manifest excludes the composite subtree. These local manifests were created after the independently recorded Colab hashes were verified. The derived-results checksum manifest excludes itself. Hashes establish consistency of the preserved evidence, not independent proof of inference or scientific validity.
 

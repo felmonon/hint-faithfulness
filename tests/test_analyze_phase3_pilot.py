@@ -86,11 +86,11 @@ def find(rows, qid, direction, target=None, strength=0):
 def hardware_fixture():
     """Synthetic outcomes under the real declared IDs; never observed research results."""
     rows, manifest, plan, source = fixture()
-    path = Path(__file__).resolve().parents[1] / "docs/phase3-l4-resume-addendum.json"
+    path = Path(__file__).resolve().parents[1] / "docs/archive/pilot-v1/phase3-l4-resume-addendum.json"
     declaration = json.loads(path.read_text())
     mapping = dict(zip(plan["test_question_ids"], declaration["primary_test_question_ids"]))
     # Correct-answer strata are derived from the frozen question file, never addendum prose.
-    questions = [json.loads(line) for line in (path.parents[1] / "data/questions.jsonl").read_text().splitlines()]
+    questions = [json.loads(line) for line in (path.parents[3] / "data/questions.jsonl").read_text().splitlines()]
     answers = {q["question_id"]: q["correct_answer"] for q in questions}
     plan["test_question_ids"] = list(mapping.values())
     plan["assigned_targets"] = {mapping.get(qid, qid): target for qid, target in plan["assigned_targets"].items()}
@@ -278,7 +278,7 @@ class HardwareSensitivityTests(unittest.TestCase):
             select_hardware_sensitivity(altered, plan, declaration, checkpoint, runtimes)
 
     def test_published_declaration_bytes_match_fixed_hash(self):
-        path = Path(__file__).resolve().parents[1] / "docs/phase3-l4-resume-addendum.json"
+        path = Path(__file__).resolve().parents[1] / "docs/archive/pilot-v1/phase3-l4-resume-addendum.json"
         self.assertEqual(sha256(path), HARDWARE_DECLARATION_SHA256)
 
 

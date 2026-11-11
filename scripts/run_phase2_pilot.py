@@ -16,7 +16,7 @@ from src.phase2 import run_early, run_probe, select_local_records
 
 def main():
     os.chdir(PROJECT)
-    plan = json.loads((PROJECT / "docs/phase2-pilot-plan.json").read_text())
+    plan = json.loads((PROJECT / "artifacts/pilot-20-phase2-v1/plan.json").read_text())
     out = PROJECT / "artifacts/pilot-20-phase2-v1"
     if out.exists():
         raise FileExistsError("Preserve the existing run; do not silently rerun or overwrite it")

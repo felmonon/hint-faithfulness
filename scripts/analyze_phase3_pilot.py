@@ -409,7 +409,7 @@ def main():
     require(not args.out_dir.exists(), "Output already exists; preserve it and choose a new directory")
     require(not args.out_dir.resolve().is_relative_to(args.input_dir.resolve()), "Write analysis outside original artifacts")
     inventory = verify_inventory(args.input_dir)
-    plan_path = PROJECT / "docs/phase3-pilot-plan.json"
+    plan_path = PROJECT / "artifacts/pilot-20-phase3-v1/plan.json"
     plan = json.loads(plan_path.read_text())
     saved_plan = json.loads((args.input_dir / "plan.json").read_text())
     require(saved_plan == plan, "Saved plan differs from frozen repository plan")
@@ -424,7 +424,7 @@ def main():
     question_ids = plan["test_question_ids"]
     cohort = {"analysis_role": "primary", "question_ids": question_ids, "retained_grid_outcomes": len(rows)}
     if args.hardware_sensitivity:
-        declaration_path = PROJECT / "docs/phase3-l4-resume-addendum.json"
+        declaration_path = PROJECT / "docs/archive/pilot-v1/phase3-l4-resume-addendum.json"
         checkpoint_path = PROJECT / "artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl"
         require(sha256(declaration_path) == HARDWARE_DECLARATION_SHA256, "Published hardware declaration bytes differ")
         require(sha256(checkpoint_path) == HARDWARE_CHECKPOINT_SHA256, "Published eight-row checkpoint bytes differ")

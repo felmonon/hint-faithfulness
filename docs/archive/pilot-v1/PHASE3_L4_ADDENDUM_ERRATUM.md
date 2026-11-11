@@ -8,7 +8,7 @@ The mixed-runtime question `mmlu-test-570110c87b732eb6` has stored dataset `corr
 
 ## Evidence checked
 
-All eight [checkpoint records](../artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl) identify this same question and carry `correct_answer: "D"`. The checkpoint baseline record is `45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5`, linked to source record `039add433d7dcceca32559ba`. That baseline-0 source record in the [frozen Phase 1 recovery composite](../artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl) also gives D and subject `high_school_european_history`.
+All eight [checkpoint records](../../../artifacts/pilot-20-phase3-checkpoint-0430/steering.jsonl) identify this same question and carry `correct_answer: "D"`. The checkpoint baseline record is `45cef91658d0fc9eed16ed7b813ecb6504e647558c8d1aacf7065193750103f5`, linked to source record `039add433d7dcceca32559ba`. That baseline-0 source record in the [frozen Phase 1 recovery composite](../../../artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl) also gives D and subject `high_school_european_history`.
 
 The JSON declaration already excludes the correct question identity. Reading its five retained question IDs against the source baseline records gives:
 
