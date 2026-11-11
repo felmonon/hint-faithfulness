@@ -185,7 +185,8 @@ class VLLMSteer:
         self.llm = load_vllm(max_num_seqs=128, enforce_eager=True)
         self.tok = self.llm.get_tokenizer()
         model = None
-        for path in ("llm_engine.model_executor.driver_worker.worker.model_runner.model",
+        for path in ("llm_engine.engine_core.engine_core.model_executor.driver_worker.worker.model_runner.model",
+                     "llm_engine.model_executor.driver_worker.worker.model_runner.model",
                      "llm_engine.model_executor.driver_worker.model_runner.model"):
             obj = self.llm
             try:
@@ -195,6 +196,10 @@ class VLLMSteer:
                 break
             except AttributeError:
                 continue
+        if model is None:
+            found = []
+            self.llm.apply_model(lambda m: found.append(m))  # in-process engine: runs here
+            model = found[0] if found else None
         if model is None:
             raise RuntimeError("cannot reach the in-process vLLM model to hook")
         param = next(model.parameters())
