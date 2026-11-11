@@ -19,6 +19,7 @@ OUT = Path("artifacts/v2/phase2")
 FRACTIONS = (0.0, 0.25, 0.5, 0.75, 1.0)
 SEED, FOLDS, SHUFFLES, C = 20261111, 5, 100, 0.1
 SHARD_LAYERS = 7
+JOBS = int(__import__('os').environ.get('PROBE_JOBS', '-1'))  # parallelism only; results unchanged
 
 
 def valid_rows():
@@ -118,14 +119,14 @@ def run_probe():
     y = np.array([r["answer"] for r in meta["rows"]])
     groups = np.array([r["question_id"] for r in meta["rows"]])
     n_layers = x.shape[1]
-    observed = Parallel(n_jobs=-1)(delayed(fold_predictions)(x[:, layer], y, groups) for layer in range(n_layers))
+    observed = Parallel(n_jobs=JOBS)(delayed(fold_predictions)(x[:, layer], y, groups) for layer in range(n_layers))
     rng = np.random.default_rng(SEED)
     perms = [rng.permutation(len(y)) for _ in range(SHUFFLES)]
 
     def perm_acc(layer, order):
         pred, _, _ = fold_predictions(x[:, layer], y[order], groups)
         return float((pred == y[order]).mean())
-    null = Parallel(n_jobs=-1)(delayed(perm_acc)(layer, order) for order in perms for layer in range(n_layers))
+    null = Parallel(n_jobs=JOBS)(delayed(perm_acc)(layer, order) for order in perms for layer in range(n_layers))
     null = np.array(null).reshape(SHUFFLES, n_layers)
     with (OUT / "probe_predictions.jsonl").open("w") as handle:
         for layer, (pred, majority, folds) in enumerate(observed):
