@@ -10,11 +10,18 @@ case "$1" in
     pip install -q vllm==0.8.5.post1 scikit-learn > colab_logs/pip.log 2>&1
     python -c "import vllm, torch, transformers; print(vllm.__version__, torch.__version__, transformers.__version__)" >> colab_logs/pip.log 2>&1
     echo SETUP_DONE >> colab_logs/pip.log ;;
+  after1)
+    # Wait for Phase 1, then run the GPU parts of Phase 2 and all of Phase 3.
+    until grep -q PHASE1_DONE colab_logs/phase1.log 2>/dev/null; do sleep 30; done
+    git pull -q
+    bash scripts/colab_v2.sh phase2
+    bash scripts/colab_v2.sh phase3 ;;
   pack)
     # Bundle logs and v2 artifacts for a browser download (transport only).
     stamp=$(date -u +%Y%m%dT%H%M%SZ)
-    tar czf /content/v2-$2-$stamp.tar.gz colab_logs artifacts/v2
-    sha256sum /content/v2-$2-$stamp.tar.gz ;;
+    name=${2:-run}; name=${name//[^A-Za-z0-9._-]/_}
+    tar -czf "/content/v2-${name}-${stamp}.tar.gz" -- colab_logs artifacts/v2
+    sha256sum -- "/content/v2-${name}-${stamp}.tar.gz" ;;
   status)
     nvidia-smi --query-gpu=name,utilization.gpu,memory.used --format=csv,noheader
     for f in colab_logs/*.log; do echo "== $f"; tail -c 600 "$f"; echo; done
@@ -23,7 +30,8 @@ case "$1" in
     VLLM_USE_V1=0 python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl > colab_logs/phase1.log 2>&1
     echo PHASE1_DONE >> colab_logs/phase1.log ;;
   phase2)
-    python -m src.phase2_v2 all > colab_logs/phase2.log 2>&1
+    python -m src.phase2_v2 early > colab_logs/phase2.log 2>&1
+    python -m src.phase2_v2 acts >> colab_logs/phase2.log 2>&1
     echo PHASE2_DONE >> colab_logs/phase2.log ;;
   phase3)
     VLLM_USE_V1=0 python -m src.phase3_v2 all > colab_logs/phase3.log 2>&1
