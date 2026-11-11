@@ -27,12 +27,12 @@ case "$1" in
     for f in colab_logs/*.log; do echo "== $f"; tail -c 600 "$f"; echo; done
     wc -l artifacts/v2/*/*.jsonl 2>/dev/null ;;
   phase1)
-    python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl --batch-size 32 > colab_logs/phase1.log 2>&1 \
+    python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl > colab_logs/phase1.log 2>&1 \
       && echo PHASE1_DONE >> colab_logs/phase1.log || echo PHASE1_FAILED >> colab_logs/phase1.log ;;
   phase2)
     { python -m src.phase2_v2 early && python -m src.phase2_v2 acts; } > colab_logs/phase2.log 2>&1 \
       && echo PHASE2_DONE >> colab_logs/phase2.log || echo PHASE2_FAILED >> colab_logs/phase2.log ;;
   phase3)
-    python -m src.phase3_v2 all > colab_logs/phase3.log 2>&1 \
+    ( for s in acts vectors check steer; do VLLM_ENABLE_V1_MULTIPROCESSING=0 python -m src.phase3_v2 $s || exit 1; done ) > colab_logs/phase3.log 2>&1 \
       && echo PHASE3_DONE >> colab_logs/phase3.log || echo PHASE3_FAILED >> colab_logs/phase3.log ;;
 esac

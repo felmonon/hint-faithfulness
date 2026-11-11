@@ -167,11 +167,92 @@ def conditions(strengths):
                 yield (direction, letter, fraction)
 
 
-def run_steps(questions, split, choice):
-    from .hf_batch import HFRunner
+class VLLMSteer:
+    """vLLM (V1, in-process, eager) generation with one steering vector per call.
+
+    The hook adds the vector to the hidden-state output of decoder block `layer`.
+    Qwen blocks in vLLM return (hidden, residual) with the residual stream = hidden + residual,
+    so adding to hidden adds to the residual stream. Per-request seeds: qseed(question_id).
+    """
+
+    def __init__(self, layer):
+        import os
+        os.environ.setdefault("VLLM_ENABLE_V1_MULTIPROCESSING", "0")
+        import torch
+        import vllm
+        from .gen_v2 import load_vllm
+        self.torch, self.vector = torch, None
+        self.llm = load_vllm(max_num_seqs=128, enforce_eager=True)
+        self.tok = self.llm.get_tokenizer()
+        model = None
+        for path in ("llm_engine.model_executor.driver_worker.worker.model_runner.model",
+                     "llm_engine.model_executor.driver_worker.model_runner.model"):
+            obj = self.llm
+            try:
+                for part in path.split("."):
+                    obj = getattr(obj, part)
+                model = obj
+                break
+            except AttributeError:
+                continue
+        if model is None:
+            raise RuntimeError("cannot reach the in-process vLLM model to hook")
+        param = next(model.parameters())
+        self.dtype, self.device = param.dtype, param.device
+
+        def hook(_module, _inputs, output):
+            if self.vector is None:
+                return output
+            if isinstance(output, tuple):
+                return (output[0] + self.vector, *output[1:])
+            return output + self.vector
+        model.model.layers[layer].register_forward_hook(hook)
+        self.info = {"backend": "vllm", "vllm_version": vllm.__version__, "enforce_eager": True}
+
+    def run(self, items, path):
+        """items: (meta, messages, vector) sharing one vector."""
+        from vllm import SamplingParams
+        from vllm.inputs import TokensPrompt
+        from .gen_v2 import PARAMS, split_generation
+        vector = items[0][2]
+        self.vector = None if vector is None else self.torch.tensor(vector, dtype=self.dtype, device=self.device)
+        prompts = [self.tok.apply_chat_template(m, tokenize=True, add_generation_prompt=True, enable_thinking=True,
+                                                return_dict=False) for _, m, _ in items]
+        params = [SamplingParams(seed=qseed(meta["question_id"]), temperature=PARAMS["temperature"], top_p=PARAMS["top_p"],
+                                 top_k=PARAMS["top_k"], max_tokens=PARAMS["max_tokens"], skip_special_tokens=False)
+                  for meta, _, _ in items]
+        try:
+            results = self.llm.generate([TokensPrompt(prompt_token_ids=p) for p in prompts], params, use_tqdm=False)
+        finally:
+            self.vector = None
+        for (meta, _, _), ids, result in zip(items, prompts, results):
+            out = result.outputs[0]
+            finish = "length" if out.finish_reason == "length" else "stop" if out.finish_reason == "stop" else str(out.finish_reason)
+            append_jsonl(path, {**meta, "seed": qseed(meta["question_id"]),
+                                **split_generation(self.tok, list(out.token_ids), finish),
+                                "prompt_token_ids": ids, **self.info, "finished_at": utc_now()})
+
+
+def generate_vllm(steer, items, path):
+    groups = {}
+    for item in items:
+        m = item[0]
+        groups.setdefault((m["direction"], m["target_letter"], m["fraction"]), []).append(item)
+    for k, group in groups.items():
+        steer.run(group, path)
+        print(f"{path.name}: {k} {len(group)}", flush=True)
+
+
+def run_steps(questions, split, choice, backend="vllm"):
     vec = np.load(OUT / "vectors.npz")
     layer, median = int(vec["layer"]), float(vec["median_norm"])
-    runner = HFRunner()
+    if backend == "vllm":
+        steer = VLLMSteer(layer)
+        gen = lambda items, path: generate_vllm(steer, items, path)  # noqa: E731
+    else:
+        from .hf_batch import HFRunner
+        runner = HFRunner()
+        gen = lambda items, path: generate_batches(runner, layer, items, path)  # noqa: E731
     by_id = {q["question_id"]: q for q in questions}
 
     def vector_for(direction, letter, fraction):
@@ -189,7 +270,7 @@ def run_steps(questions, split, choice):
                             "fraction": fraction, "layer": layer, "abs_strength": fraction * median}
                     if key(meta) not in done:
                         items.append((meta, build_messages(by_id[qid], "none"), vector_for(direction, letter, fraction)))
-    generate_batches(runner, layer, items, cal_path)
+    gen(items, cal_path)
     strengths_path = OUT / "strengths.json"
     if not strengths_path.exists():
         cal = read_jsonl(cal_path)
@@ -216,12 +297,13 @@ def run_steps(questions, split, choice):
             if key(meta) not in done:
                 items.append((meta, build_messages(by_id[qid], "none"), vector_for(direction, letter, fraction)))
     random.Random(SPLIT_SEED).shuffle(items)  # mix conditions across batches
-    generate_batches(runner, layer, items, sweep_path)
+    gen(items, sweep_path)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("step", choices=("all", "split", "acts", "vectors", "steer"))
+    parser.add_argument("step", choices=("all", "split", "acts", "vectors", "steer", "check"))
+    parser.add_argument("--backend", choices=("vllm", "hf"), default="vllm")
     args = parser.parse_args()
     questions = read_jsonl("data/questions.jsonl")
     split = make_split(questions)
@@ -231,8 +313,17 @@ def main():
     if args.step in ("all", "vectors"):
         choice = choose_layer_and_vectors()
         print("layer", choice["layer"], "cosines", choice["pairwise_cosines_fitted"], flush=True)
+    if args.step == "check":  # hook sanity check on 2 training questions; never used for results
+        vec = np.load(OUT / "vectors.npz")
+        steer = VLLMSteer(int(vec["layer"]))
+        by_id = {q["question_id"]: q for q in questions}
+        path = OUT / "hook_check.jsonl"
+        for name, v in (("zero", None), ("fitted_A_x1.6", scaled(vec["fitted_A"], 1.6, float(vec["median_norm"])))):
+            steer.run([({"phase": "hook_check", "question_id": q, "direction": name, "target_letter": "A", "fraction": 0},
+                        build_messages(by_id[q], "none"), v) for q in split["train"][:2]], path)
+        print([(r["direction"], r["answer"], r["content"][-40:]) for r in read_jsonl(path)], flush=True)
     if args.step in ("all", "steer"):
-        run_steps(questions, split, choice)
+        run_steps(questions, split, choice, args.backend)
 
 
 if __name__ == "__main__":
