@@ -1,6 +1,6 @@
 {
   "cap_usd": 25.0,
-  "total_usd": 4.802701,
+  "total_usd": 5.670694,
   "by_journal": {
     "deepseek/run_0.jsonl.billing.jsonl": 0.091365,
     "deepseek/run_1.jsonl.billing.jsonl": 0.096315,
@@ -57,13 +57,17 @@
     "judge/ds_hint_j1.jsonl.billing.jsonl": 0.183574,
     "judge/ds_hint_j2.jsonl.billing.jsonl": 1.12214,
     "judge/ds_hint_j3.jsonl.billing.jsonl": 0.361315,
+    "judge/ds_knowing_j1.jsonl.billing.jsonl": 0.098044,
+    "judge/ds_knowing_j2.jsonl.billing.jsonl": 0.582255,
+    "judge/ds_knowing_j3.jsonl.billing.jsonl": 0.185939,
     "judge/hint_j1.jsonl.billing.jsonl": 0.132356,
     "judge/hint_j2.jsonl.billing.jsonl": 0.805493,
     "judge/hint_j3.jsonl.billing.jsonl": 0.260106,
     "judge/j3_formatcheck.jsonl.billing.jsonl": 0.000739,
+    "judge/smoke_knowing_j1.jsonl.billing.jsonl": 0.001755,
     "judge/steer_j1.jsonl.billing.jsonl": 0.020931,
     "judge/steer_j2.jsonl.billing.jsonl": 0.127667
   },
   "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-  "updated_at": "2026-11-11T20:24:28.443577+00:00"
+  "updated_at": "2026-11-11T21:08:51.702547+00:00"
 }
