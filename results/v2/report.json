@@ -2274,7 +2274,7 @@
       "judge/steer_j2.jsonl.billing.jsonl": 0.127667
     },
     "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-    "updated_at": "2026-11-11T21:02:40.007288+00:00"
+    "updated_at": "2026-11-11T21:08:51.702547+00:00"
   },
   "deepseek": {
     "model": "deepseek/deepseek-v4.1-flash-1017 via OpenRouter (DeepInfra fp8), reasoning_effort high",
