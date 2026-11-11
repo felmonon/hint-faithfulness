@@ -12,7 +12,7 @@ Metadata hints produced 5/7 eligible wrong-target switches in the retained origi
 
 **Phase 3 continuation is running from 28 verified conditions.** The original T4 and first L4 sessions are no longer available. The [latest verified checkpoint](artifacts/pilot-20-phase3-checkpoint-1110/) preserves eight original T4 rows and 20 first-continuation L4 rows, all from one question. The fixed sweep still has 198 positions, leaving 170 to collect. Any unarchived attempts after either interruption are unknown. The [second recovery protocol](docs/PHASE3_SECOND_RESUME_PROTOCOL.md) freezes restoration of the full 28-row prefix with identical vectors, settings, controls, and analysis rules. The second continuation launched at **2026-11-11 00:54:41 UTC** after its guards passed on L4. No completed steering result or explanation conclusion is claimed. Earlier [recovery](docs/PHASE3_RESUME_PROTOCOL.md), [hardware amendment](docs/PHASE3_L4_RESUME_ADDENDUM.md), and [factual erratum](docs/PHASE3_L4_ADDENDUM_ERRATUM.md) remain part of the provenance.
 
-Local [software verification](docs/VERIFICATION.md) passes **127 tests**; these checks do not replace the unfinished GPU experiment.
+Local [software verification](docs/VERIFICATION.md) passes **139 tests**; these checks do not replace the unfinished GPU experiment.
 
 ## Start with the real pilot
 
@@ -114,6 +114,7 @@ Early-answer agreement and probe accuracy show consistency or decodable informat
 - [Methods](docs/METHODS.md): source papers, metrics, controls, and inference limits.
 - [Phase 2 report](docs/PHASE2_PILOT_REPORT.md), [evidence/audit](results/pilot-20-phase2-v1/), and [Phase 3 frozen plan](docs/phase3-pilot-plan.json).
 - [Latest Phase 3 checkpoint](artifacts/pilot-20-phase3-checkpoint-1110/) and [second recovery protocol](docs/PHASE3_SECOND_RESUME_PROTOCOL.md): 28 preserved records, two interrupted sessions with unknown later attempts, and the fixed continuation procedure.
+- [Offline Colab export verification](docs/PHASE3_EXPORT_VERIFICATION.md): extract a saved notebook or snapshot into a fresh, checksummed evidence bundle, including explicit checks against earlier acquired prefixes.
 - [Live OpenAI judge report](docs/OPENAI_JUDGE_REPORT.md), [OpenAI setup](docs/OPENAI_SETUP.md), and [labeling guide](docs/LABELING.md): API judging and independent human validation.
 - [Research log](LOG.md): dated expectations and observations, with assistant-authored predictions identified.
 - [Verification](docs/VERIFICATION.md) and [Phase 2–3 checks](docs/PHASE2_3_VERIFICATION.md): what was tested and what remains unverified.

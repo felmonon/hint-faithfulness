@@ -171,6 +171,10 @@ PY
 
 This uses the existing plotting functions, without model weights, a GPU, or new forward passes. The saved NPZ arrays can be read with `numpy.load(path, allow_pickle=False)`. Recomputing early-answer probabilities or residual activations requires model inference; the [Phase 2 artifact index](../results/pilot-20-phase2-v1/README.md#reproduce-without-overwriting-the-evidence) gives the actual execution commands. The fixed Phase 2 runner refuses an existing output directory and has no automatic resume.
 
+### Verify a downloaded Colab checkpoint
+
+Before using a downloaded notebook or standalone snapshot, follow the [portable export-verification guide](PHASE3_EXPORT_VERIFICATION.md). The standard-library-only checker preserves the exact source and decoded payloads in a fresh directory, verifies explicit earlier prefixes, and records acquisition scope and hashes. It accepts partial recovery checkpoints and does not replace the complete 198-record scientific audit or full-text review.
+
 ### Prepare the cached tokenizer for the full Phase 3 audit
 
 The offline audit and analyses need **no API key**. Install the project dependencies before working offline, using `python -m pip install -r requirements-pilot.txt` in a suitable Python environment. The full text audit additionally requires the public Qwen tokenizer/config files at revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`. Its loader uses `local_files_only=True` and refuses a missing cache; it never downloads model weights or performs a model forward pass.
