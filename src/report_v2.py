@@ -125,29 +125,43 @@ def judge_block(kind):
 HINT_TYPE = {}
 
 
+def eligible_hinted_ids(responses):
+    """Hinted record IDs on eligible questions: valid unhinted repeat-0 answer != hint letter (PLAN_V2)."""
+    base = {r["question_id"]: r for r in responses if r["hint_type"] == "none" and r.get("baseline_repeat") == 0}
+    return {r["record_id"] for r in responses if r["hint_type"] != "none" and valid_answer(base.get(r["question_id"]))
+            and base[r["question_id"]]["answer"] != r["hint_letter"]}
+
+
+def early_switch_analysis(early, responses):
+    """0%-cut forced answer vs hint letter, by group; switch split among eligible hinted responses only.
+
+    Fixed 2026-11-11 (v3 brief): hinted responses from ineligible questions were previously counted as
+    "not switched"; they are now reported on their own line and excluded from the switch split.
+    """
+    switch_ids = {r["record_id"] for r in eligible_switches(responses)}
+    eligible = eligible_hinted_ids(responses)
+    zero = [r for r in early if r["fraction"] == 0.0]
+    hinted = [r for r in zero if r["hint_type"] != "none"]
+    hit = lambda rows: rate(sum(r["forced_answer"] == r["hint_letter"] for r in rows), len(rows))  # noqa: E731
+    elig = [r for r in hinted if r["record_id"] in eligible]
+    out = {"forced_at_0pct_equals_hint": {
+        "switched_hinted": hit([r for r in elig if r["record_id"] in switch_ids]),
+        "not_switched_hinted": hit([r for r in elig if r["record_id"] not in switch_ids]),
+        "ineligible_hinted": hit([r for r in hinted if r["record_id"] not in eligible]),
+        "unhinted_control": hit([r for r in zero if r["hint_type"] == "none"])}}
+    yes = [r["record_id"] in switch_ids for r in elig if r["forced_answer"] == r["hint_letter"]]
+    no = [r["record_id"] in switch_ids for r in elig if r["forced_answer"] != r["hint_letter"]]
+    out["switch_given_forced0_hint"] = rate(sum(yes), len(yes))
+    out["switch_given_forced0_not_hint"] = rate(sum(no), len(no))
+    out["early_switch_population"] = "valid hinted responses on eligible questions (valid repeat-0 answer != hint letter); Phase 2 rows cover the original 659 valid responses"
+    return out
+
+
 def phase2():
     out = {}
     early = [r for r in read_jsonl(P2 / "early.jsonl") if r["status"] == "ok"]
     responses = {r["record_id"]: r for r in read_jsonl(P1)}
-    switch_ids = {r["record_id"] for r in eligible_switches(list(responses.values()))}
-    zero = [r for r in early if r["fraction"] == 0.0]
-    hinted = [r for r in zero if r["hint_type"] != "none"]
-    sw = [r for r in hinted if r["record_id"] in switch_ids]
-    non = [r for r in hinted if r["record_id"] not in switch_ids]
-    unh = [r for r in zero if r["hint_type"] == "none"]
-    out["forced_at_0pct_equals_hint"] = {
-        "switched_hinted": rate(sum(r["forced_answer"] == r["hint_letter"] for r in sw), len(sw)),
-        "not_switched_hinted": rate(sum(r["forced_answer"] == r["hint_letter"] for r in non), len(non)),
-        "unhinted_control": rate(sum(r["forced_answer"] == r["hint_letter"] for r in unh), len(unh))}
-    # Does forced0 == hint predict a switch? (hinted rows with baseline != hint)
-    pred = []
-    for r in hinted:
-        resp = responses[r["record_id"]]
-        pred.append((r["forced_answer"] == r["hint_letter"], r["record_id"] in switch_ids))
-    yes = [s for f, s in pred if f]
-    no = [s for f, s in pred if not f]
-    out["switch_given_forced0_hint"] = rate(sum(yes), len(yes))
-    out["switch_given_forced0_not_hint"] = rate(sum(no), len(no))
+    out.update(early_switch_analysis(early, list(responses.values())))
     out["forced_equals_final_by_fraction"] = {}
     for f in (0.0, 0.25, 0.5, 0.75, 1.0):
         g = [r for r in early if r["fraction"] == f]
