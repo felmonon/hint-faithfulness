@@ -10,13 +10,15 @@ case "$1" in
     pip install -q vllm==0.8.5.post1 scikit-learn > colab_logs/pip.log 2>&1
     python -c "import vllm, torch, transformers; print(vllm.__version__, torch.__version__, transformers.__version__)" >> colab_logs/pip.log 2>&1
     echo SETUP_DONE >> colab_logs/pip.log ;;
-  sync)
-    # Ship logs and v2 artifacts every 90 s (transport only).
-    while true; do
-      nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader > colab_logs/gpu.txt 2>&1
-      python scripts/push_results.py colab_logs artifacts/v2 > /content/sync.out 2>&1
-      sleep 90
-    done ;;
+  pack)
+    # Bundle logs and v2 artifacts for a browser download (transport only).
+    stamp=$(date -u +%Y%m%dT%H%M%SZ)
+    tar czf /content/v2-$2-$stamp.tar.gz colab_logs artifacts/v2
+    sha256sum /content/v2-$2-$stamp.tar.gz ;;
+  status)
+    nvidia-smi --query-gpu=name,utilization.gpu,memory.used --format=csv,noheader
+    for f in colab_logs/*.log; do echo "== $f"; tail -c 600 "$f"; echo; done
+    wc -l artifacts/v2/*/*.jsonl 2>/dev/null ;;
   phase1)
     VLLM_USE_V1=0 python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl > colab_logs/phase1.log 2>&1
     echo PHASE1_DONE >> colab_logs/phase1.log ;;
