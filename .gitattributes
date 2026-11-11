@@ -5,6 +5,7 @@ results/pilot-20-openai-v1/** -text
 artifacts/pilot-20-phase2-v1/** -text
 results/pilot-20-phase2-v1/** -text
 artifacts/pilot-20-phase3-checkpoint-0430/** -text
+artifacts/pilot-20-phase3-checkpoint-1110/** -text
 artifacts/pilot-20-phase3-v1/** -text
 artifacts/pilot-20-phase3-resume-notebook-*/** -text
 results/pilot-20-phase3-v1/** -text
