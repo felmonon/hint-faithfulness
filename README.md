@@ -55,7 +55,7 @@ git clone https://github.com/felmonon/hint-faithfulness.git
 cd hint-faithfulness
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements-pilot.txt
+python -m pip install -r requirements-pilot.txt -r requirements-review.txt
 python -m unittest discover -s tests -v
 ```
 
@@ -97,8 +97,9 @@ The uptake/noise chart can be generated before judging; the faithfulness panel r
 | [02 — early answering and probes](notebooks/02_early_answering_and_probes.ipynb) | Reuse local tokens and weights; split by question; compare majority and shuffled-label controls | Colab GPU and saved local outputs |
 | [03 — optional steering](notebooks/03_optional_steering.ipynb) | Separate vector-building/evaluation questions; zero-strength and random-direction controls | Colab GPU and saved local outputs |
 | [05 — real Phase 2/3 pilot](notebooks/05_real_phase2_phase3_pilot.ipynb) | Frozen real-evidence extension: early answers, probes, 198-response controlled steering sweep | Colab T4; no API key |
-| [06 — resume the interrupted Phase 3 pilot](notebooks/06_resume_phase3_pilot.ipynb) | Restore the verified eight-row checkpoint and collect the 190 missing positions, with foreground snapshots | Colab T4; save a Drive copy with outputs before running; no API key |
-| [07 — L4 recovery after T4 allocation failure](notebooks/07_resume_phase3_l4_pilot.ipynb) | The same fixed recovery with a frozen hardware addendum and five-question secondary sensitivity | Paid Colab L4; save a Drive copy with outputs; no API key |
+| [06 — original T4 recovery](notebooks/06_resume_phase3_pilot.ipynb) | Historical eight-row recovery procedure; superseded by notebook 08 after the later checkpoint | Colab T4; no API key |
+| [07 — first L4 recovery](notebooks/07_resume_phase3_l4_pilot.ipynb) | Historical first L4 continuation and frozen hardware sensitivity; superseded by notebook 08 after interruption | Colab L4; no API key |
+| [08 — continue from the latest 28-row checkpoint](notebooks/08_resume_phase3_latest_checkpoint.ipynb) | Restore all 28 retained conditions and earlier provenance, then collect only the 170 missing positions | Colab L4; save and externally verify checkpoints; no API key |
 | [04 — OpenRouter comparison and judge](notebooks/04_judge_and_analysis.ipynb) | Optional large-model comparison and the original OpenRouter judging workflow | Separate OpenRouter key; CPU sufficient for API calls |
 
 Notebooks 01–04 accept a project ZIP and saved-results ZIP together. Their default `data/runs/small.jsonl` paths differ from notebook 00's `artifacts/` path: change `RECORDS` to the actual saved local response file before using Phase 2 or 3. Notebook 04 is an OpenRouter alternative, not an OpenAI-key setup flow. For the requested OpenAI judge, use [the OpenAI instructions](docs/OPENAI_SETUP.md).
