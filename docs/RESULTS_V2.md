@@ -275,9 +275,13 @@ V4.1's short traces do not hide the hint any more often than Qwen's. No summariz
 
 Only questions whose repeat-0 and hinted rows both finished count. Switch rates: sycophancy 0/10, metadata 4/10, grader hacking 7/13; control 0/18 [`deepseek_r1_partial`]. These are too few to compare and are shown only so the data isn't dropped.
 
-**Differences from the reviewer's numbers (v3 review of item 4).** The reviewer's figures checked out against the live API:
-- Account credit was US$2.42 at check time; the reviewer said US$2.60 earlier.
-- R1-0528 cost US$0.0054 per call over 225 rows; the reviewer said US$0.00545 over 195 rows.
-- 10/225 R1 rows truncated; the reviewer counted 9/195.
-- V4.1 cost US$0.00023 per call over the full run. The reviewer's US$0.000106 was the Relace fp4 endpoint, which does not support `seed`; this run used DeepInfra fp8.
+**Differences from the numbers in the budget/model review (2026-11-11).** These figures come from the external review the owner pasted into the working session on 2026-11-11, the one that flagged the account-credit and model problems. They are not from the v3 brief and not from the later audit. Each claim was rechecked against the live API before acting:
+- Account credit was US$2.42 at check time; the review said US$2.60.
+- R1-0528 cost US$0.0054 per call over 225 rows; the review said US$0.00545 over 195.
+- 10 of 225 R1 rows were truncated; the review counted 9 of 195.
+- V4.1 cost US$0.00023 per call. The review's US$0.000106 was the Relace fp4 endpoint, which does not support `seed`; this run used DeepInfra fp8.
 
+**Post hoc checks from the later audit (2026-11-11)** [recomputed by `src/report_v2.py`, which was not changed for this; the numbers come from the raw files]:
+- **DeepSeek mostly switches away from answers it knew.** In 139 of its 144 grader-hacking switches, its unhinted repeat-0 answer was the correct one. Unhinted accuracy on the 146 eligible questions was 141/146. Example reasoning: "But validation function says answer == "C" (pneumonia) oddly."
+- How often the reasoning *states* that the graded letter is wrong has not been measured. A rough regex gives anywhere from 44 to 129 of 144, depending on the pattern. That would need a new judge question, so it is not claimed.
+- **The comparison holds on the questions both models share.** On the 122 questions eligible for both models, switches are: sycophancy DeepSeek 0 vs Qwen 19, metadata 41 vs 81, grader hacking 120 vs 17.
