@@ -137,3 +137,10 @@ The initial 18-file recovery snapshot captured at `2026-11-10T10:39:07.046576+00
 ### November 11, 00:48 UTC — second infrastructure recovery
 
 The first L4 session was unavailable on resumed inspection after an unobserved interval. The latest saved Drive snapshot contains 28 rows captured November 10 at 11:10:25 UTC; all 20 payloads and the exact eight-row original prefix verified. Archived at `06ff192c6662819b893ebdec931f2bbbf2d70b17`. Any later work is unknown and is not counted as retained evidence. A fresh L4 is available; a guarded continuation is being prepared for the remaining 170 positions under the frozen second recovery protocol. No second-continuation inference has started at this entry.
+
+
+### November 11, 00:54 UTC — second continuation launched
+
+Notebook 08, published at `cef711f`, pins checkpoint commit `06ff192`. The saved Drive copy was downloaded and source/byte-verified before execution. A stale-import preflight stopped safely before restoration; restarting the Python session resolved it. All 20 archived payloads and 28 outcomes restored, with unchanged vectors and matching imported inference packages on NVIDIA L4. Initial snapshot capture: `00:54:38.685331 UTC`; runner start: `00:54:41.317459 UTC`. The remaining 170 grid positions are running; external verification of the new initial snapshot and final completion remain pending.
+
+The initial second-continuation snapshot was subsequently acquired and verified: Drive saved at `00:55:02.288 UTC`, all 30 payloads checked, notebook SHA-256 `9da21bda35dd9174d1a73cf245be7dacb32e7d63196a6a9da82025050de6486f`.

@@ -1,6 +1,6 @@
 # What was actually verified
 
-Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation being prepared**. The [latest verified checkpoint](../artifacts/pilot-20-phase3-checkpoint-1110/) preserves 28 conditions; 170 remain in the fixed 198-position grid. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
+Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation running**, launched November 11 at 00:54:41 UTC after all restoration guards passed. The [latest verified checkpoint](../artifacts/pilot-20-phase3-checkpoint-1110/) preserves 28 conditions; 170 remain in the fixed 198-position grid. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
 
 ## Completed
 
@@ -26,7 +26,7 @@ Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analy
 
 ## Still pending
 
-- **Phase 3 compute:** 28 conditions have externally verified records (eight T4 and 20 L4); the second continuation will collect the remaining 170 on a fresh L4. Both earlier interruptions have unknown unarchived attempts. These 28 records cover only part of one question and support no steering-efficacy conclusion.
+- **Phase 3 compute:** 28 conditions have externally verified records (eight T4 and 20 L4); the second continuation is collecting the remaining 170 on a fresh L4. Both earlier interruptions have unknown unarchived attempts. These 28 records cover only part of one question and support no steering-efficacy conclusion.
 - **Additional experiments:** DeepSeek inference and the full 150-question study have not been performed. Phase 2 measurements are complete. The setup Mac has 8 GB shared memory and no CUDA GPU; it is not the collection machine.
 - **API execution:** `OPENROUTER_API_KEY` is not configured here. OpenAI live judging is documented above; network-failure recovery and budget-exhaustion paths were exercised with simulated responses, not deliberate paid failures.
 - **Human validation:** no actual blind human labels or human judge validation have been supplied. The reporting rule requires at least 30 paired held-out labels and at least 90% agreement, with class balance inspected. Blank labels are intentional; a tuned judge needs a fresh, disjoint held-out check. Assistant-written predictions must not be attributed to the user as personal forecasts.
@@ -52,3 +52,7 @@ The public repository is [felmonon/hint-faithfulness](https://github.com/felmono
 - The complete structured checkpoint and readable raw rows were published at `06ff192c6662819b893ebdec931f2bbbf2d70b17`, with acquisition provenance and a second recovery protocol frozen before new inference.
 
 - The expanded offline suite passed **127 tests** on November 11 UTC, including checkpoint-28 preservation failures and the strict AI review preparation/validation workflow. The new checks ran with Hugging Face offline settings and no real API requests; they do not establish Phase 3 completion or human validation.
+
+- Notebook 08 was published at `cef711f2da01e9b1799b9f6e238737652cb0a460` and its saved Drive copy independently downloaded byte-identically before execution. The initial stale-import guard stopped before restoration/inference; a Python-session restart resolved it. All 20 checkpoint payloads and 28 rows then restored unchanged, with matching imported package versions on NVIDIA L4. The initial snapshot was emitted at `2026-11-11T00:54:38.685331+00:00` and the foreground runner logged `PHASE3_START 2026-11-11T00:54:41.317459+00:00`. External verification of that newly emitted snapshot remains pending at this entry.
+
+- The initial second-continuation snapshot was independently downloaded after Drive saved it at `2026-11-11T00:55:02.288Z`: all 30 compressed/raw payloads verified, including the unchanged prior 20 payloads and full 28-row prefix. Saved notebook SHA-256: `9da21bda35dd9174d1a73cf245be7dacb32e7d63196a6a9da82025050de6486f`. This verifies initial external preservation, not final completion.
