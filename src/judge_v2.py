@@ -1,7 +1,8 @@
 """v2 AI judging: rubric v2 for hint reliance, a 3-way label for steered switches.
 
 python -m src.judge_v2 calibrate --judge j1|j2      # 10 pilot cases only (rubric tuning allowed)
-python -m src.judge_v2 hint --judge j1|j2           # every Phase 1 v2 switch
+python -m src.judge_v2 hint --judge j1|j2|j3        # every Phase 1 v2 (Qwen) switch
+python -m src.judge_v2 hint --judge j1|j2|j3 --source deepseek   # every v3 DeepSeek switch
 python -m src.judge_v2 steer --judge j1|j2          # every Phase 3 held-out steered switch
 python -m src.judge_v2 costs                        # rewrite artifacts/v2/costs.json
 
@@ -21,7 +22,11 @@ from .common import read_jsonl, stable_hash, utc_now, write_jsonl
 CAP_USD = 25.0
 OUT = Path("artifacts/v2/judge")
 COSTS = Path("artifacts/v2/costs.json")
-JUDGES = {"j1": "gpt-4.1-mini-2025-04-14", "j2": "gpt-4o-2024-08-06"}
+JUDGES = {"j1": "gpt-4.1-mini-2025-04-14", "j2": "gpt-4o-2024-08-06",
+          "j3": "google/gemini-3.8-flash"}  # v3: third judge outside OpenAI, via OpenRouter
+J3_SETTINGS = {"temperature": 0, "top_p": None, "top_k": None, "seed": 20261111,
+               "reasoning": {"effort": "low", "exclude": False}, "max_tokens": 4000}
+DEEPSEEK = Path("artifacts/v2/deepseek/responses.jsonl")
 J2_FALLBACK = "gpt-4.1-2025-04-14"  # declared before use; only if j2 is unavailable
 PILOT_SOURCE = Path("artifacts/pilot-20-qwen3-1.7b/recovery-composite/responses.jsonl")
 PILOT_JUDGED = Path("results/pilot-20-openai-v1/judgments.jsonl")
@@ -153,9 +158,17 @@ def write_costs():
     return rows
 
 
+def _openrouter_judge(client, messages, model, request_key, schema, schema_name):
+    s = J3_SETTINGS
+    return client.complete(messages, model, max_tokens=s["max_tokens"], temperature=s["temperature"], top_p=s["top_p"],
+                           top_k=s["top_k"], seed=s["seed"], reasoning=s["reasoning"], request_key=request_key,
+                           response_format={"type": "json_schema",
+                                            "json_schema": {"name": schema_name, "strict": True, "schema": schema}})
+
+
 def run(rows, output, model, kind, max_tokens=600):
     from .openai_judge import OpenAIJudgeClient
-    from .providers import BudgetExceededError
+    from .providers import BudgetExceededError, OpenRouterClient
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
     ledger = output.with_suffix(output.suffix + ".billing.jsonl")
@@ -165,7 +178,9 @@ def run(rows, output, model, kind, max_tokens=600):
         if r["rubric_hash"] != stable_hash(prompt) or r["judge_model_id"] != model:
             raise ValueError("output file belongs to another rubric or judge; use a fresh file")
     budget = CAP_USD - spent(exclude=ledger)
-    client = OpenAIJudgeClient(budget_usd=budget, ledger_path=ledger)
+    via_openrouter = "/" in model
+    client = (OpenRouterClient(budget_usd=budget, ledger_path=ledger, timeout=300) if via_openrouter
+              else OpenAIJudgeClient(budget_usd=budget, ledger_path=ledger))
     calls = 0
     for row in rows:
         if row["record_id"] in existing:
@@ -178,18 +193,28 @@ def run(rows, output, model, kind, max_tokens=600):
         if not row.get("reasoning", "").strip():
             verdict["error"] = "empty reasoning; not sent"
         else:
+            messages = hint_messages(row) if kind == "hint" else steer_messages(row)
+            schema = HINT_SCHEMA if kind == "hint" else STEER_SCHEMA
+            schema_name = "hint_reliance_verdict" if kind == "hint" else "steer_label"
             try:
-                response = client.complete(hint_messages(row) if kind == "hint" else steer_messages(row), model=model,
-                                           max_tokens=max_tokens, request_key=f"{row['record_id']}:{kind}:1",
-                                           schema=HINT_SCHEMA if kind == "hint" else STEER_SCHEMA,
-                                           schema_name="hint_reliance_verdict" if kind == "hint" else "steer_label")
+                if via_openrouter:
+                    response = _openrouter_judge(client, messages, model, f"{row['record_id']}:{kind}:1", schema, schema_name)
+                else:
+                    response = client.complete(messages, model=model, max_tokens=max_tokens,
+                                               request_key=f"{row['record_id']}:{kind}:1", schema=schema,
+                                               schema_name=schema_name)
             except BudgetExceededError as error:
                 print(f"{error}; stopping", flush=True)
                 break
+            except RuntimeError as error:  # transport failure: kept as an error row, never retried
+                verdict["error"] = f"call failed: {error}"
+                existing[row["record_id"]] = verdict
+                write_jsonl(output, list(existing.values()))
+                continue
             calls += 1
             verdict.update({"usage": response["usage"], "cost_usd": response["cost_usd"],
                             "finish_reason": response["finish_reason"], "judge_content": response["content"],
-                            "resolved_model": response["resolved_model"]})
+                            "resolved_model": response["resolved_model"], "provider": response.get("provider")})
             try:
                 if response["finish_reason"] != "stop":
                     raise ValueError(f"finish_reason {response['finish_reason']}")
@@ -234,6 +259,7 @@ def main():
     parser.add_argument("step", choices=("calibrate", "hint", "steer", "costs"))
     parser.add_argument("--judge", choices=tuple(JUDGES))
     parser.add_argument("--tag", default="", help="suffix for calibration rounds, e.g. r1")
+    parser.add_argument("--source", choices=("qwen", "deepseek"), default="qwen")
     args = parser.parse_args()
     if args.step == "costs":
         print(json.dumps(write_costs(), indent=2))
@@ -244,7 +270,10 @@ def main():
         rows = [r for r in read_jsonl(PILOT_SOURCE) if r["record_id"] in set(ids)]
         result = run(rows, OUT / f"calibration_{args.judge}{args.tag}.jsonl", model, "hint")
     elif args.step == "hint":
-        result = run(eligible_switches(read_jsonl(PHASE1)), OUT / f"hint_{args.judge}.jsonl", model, "hint")
+        if args.source == "deepseek":
+            result = run(eligible_switches(read_jsonl(DEEPSEEK)), OUT / f"ds_hint_{args.judge}.jsonl", model, "hint")
+        else:
+            result = run(eligible_switches(read_jsonl(PHASE1)), OUT / f"hint_{args.judge}.jsonl", model, "hint")
     else:
         result = run(steer_switches(read_jsonl(SWEEP)), OUT / f"steer_{args.judge}.jsonl", model, "steer")
     print(json.dumps(result, indent=2))

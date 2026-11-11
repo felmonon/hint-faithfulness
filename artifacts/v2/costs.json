@@ -1,7 +1,28 @@
 {
   "cap_usd": 25.0,
-  "total_usd": 1.183311,
+  "total_usd": 2.142617,
   "by_journal": {
+    "run_0.jsonl.billing.jsonl": 0.040654,
+    "run_1.jsonl.billing.jsonl": 0.039119,
+    "run_10.jsonl.billing.jsonl": 0.04525,
+    "run_11.jsonl.billing.jsonl": 0.044705,
+    "run_12.jsonl.billing.jsonl": 0.043876,
+    "run_13.jsonl.billing.jsonl": 0.037546,
+    "run_14.jsonl.billing.jsonl": 0.039542,
+    "run_15.jsonl.billing.jsonl": 0.045266,
+    "run_2.jsonl.billing.jsonl": 0.042237,
+    "run_3.jsonl.billing.jsonl": 0.040824,
+    "run_4.jsonl.billing.jsonl": 0.044179,
+    "run_5.jsonl.billing.jsonl": 0.044062,
+    "run_6.jsonl.billing.jsonl": 0.037461,
+    "run_7.jsonl.billing.jsonl": 0.045727,
+    "run_8.jsonl.billing.jsonl": 0.031904,
+    "run_9.jsonl.billing.jsonl": 0.04394,
+    "smoke_0.jsonl.billing.jsonl": 0.003178,
+    "smoke_1.jsonl.billing.jsonl": 0.013276,
+    "smoke_2.jsonl.billing.jsonl": 0.006656,
+    "smoke_3.jsonl.billing.jsonl": 0.007578,
+    "smoke_4.jsonl.billing.jsonl": 0.001481,
     "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
     "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
     "calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
@@ -9,9 +30,11 @@
     "calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
     "hint_j1.jsonl.billing.jsonl": 0.132356,
     "hint_j2.jsonl.billing.jsonl": 0.805493,
+    "hint_j3.jsonl.billing.jsonl": 0.260106,
+    "j3_formatcheck.jsonl.billing.jsonl": 0.000739,
     "steer_j1.jsonl.billing.jsonl": 0.020931,
     "steer_j2.jsonl.billing.jsonl": 0.127667
   },
   "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-  "updated_at": "2026-11-11T19:22:35.949634+00:00"
+  "updated_at": "2026-11-11T19:41:35.284811+00:00"
 }

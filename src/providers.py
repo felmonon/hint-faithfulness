@@ -96,7 +96,7 @@ class OpenRouterClient:
             return json.load(response)["data"]
 
     def complete(self, messages, model, max_tokens=2048, temperature=.6, top_p=.95,
-                 top_k=20, seed=None, reasoning=True, provider=None, request_key=None):
+                 top_k=20, seed=None, reasoning=True, provider=None, request_key=None, response_format=None):
         entry = self.catalog.get(model)
         if entry is None:
             raise ValueError(f"Model {model} is absent from the current OpenRouter catalog")
@@ -108,18 +108,26 @@ class OpenRouterClient:
         prices = entry.get("pricing", {})
         upper_cost = prompt_bound * float(prices.get("prompt", 0)) + max_tokens * float(prices.get("completion", 0)) + float(prices.get("request", 0))
         payload = {"model": model, "messages": messages, "max_tokens": max_tokens,
-                   "temperature": temperature, "top_p": top_p,
                    "provider": {"require_parameters": True, "allow_fallbacks": False,
                                 "max_price": {"prompt": float(prices.get("prompt", 0)) * 1_000_000,
                                               "completion": float(prices.get("completion", 0)) * 1_000_000,
                                               "request": float(prices.get("request", 0))}}}
+        # None omits a sampling parameter (some judges reject it under require_parameters).
+        if temperature is not None:
+            payload["temperature"] = temperature
+        if top_p is not None:
+            payload["top_p"] = top_p
+        if response_format is not None:
+            payload["response_format"] = response_format
         if top_k is not None and "top_k" in supported:
             payload["top_k"] = top_k
         if seed is not None and "seed" in supported:
             payload["seed"] = seed
         if provider:
             payload["provider"]["order"] = [provider]
-        if reasoning:
+        if isinstance(reasoning, dict):
+            payload["reasoning"] = reasoning
+        elif reasoning:
             payload["reasoning"] = {"enabled": True, "exclude": False}
         request_key = request_key or stable_hash(payload)
         # Recover a settled response only for the same model, input, sampling,

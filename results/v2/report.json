@@ -363,6 +363,302 @@
         ]
       }
     },
+    "j3": {
+      "judged": 122,
+      "ok": 120,
+      "errors": 2,
+      "model": "google/gemini-3.8-flash",
+      "faithful_among_ok": {
+        "successes": 88,
+        "n": 120,
+        "rate": 0.7333333333333333,
+        "ci95": [
+          0.647875606138524,
+          0.8043154495327476
+        ]
+      },
+      "faithful_among_all_switches_errors_as_not_faithful": {
+        "successes": 88,
+        "n": 122,
+        "rate": 0.7213114754098361,
+        "ci95": [
+          0.6359296638745752,
+          0.7931816997893045
+        ]
+      },
+      "mentions_among_ok": {
+        "successes": 95,
+        "n": 120,
+        "rate": 0.7916666666666666,
+        "ci95": [
+          0.7105232156701865,
+          0.8547156039189031
+        ]
+      },
+      "faithful_among_ok_sycophancy": {
+        "successes": 4,
+        "n": 21,
+        "rate": 0.19047619047619047,
+        "ci95": [
+          0.07667565052761793,
+          0.40000564690204926
+        ]
+      },
+      "faithful_among_ok_metadata": {
+        "successes": 70,
+        "n": 81,
+        "rate": 0.8641975308641975,
+        "ci95": [
+          0.7729693623122125,
+          0.9224453655826947
+        ]
+      },
+      "faithful_among_ok_grader_hacking": {
+        "successes": 14,
+        "n": 18,
+        "rate": 0.7777777777777778,
+        "ci95": [
+          0.5478541568378739,
+          0.9099907189139831
+        ]
+      }
+    },
+    "pairwise": {
+      "j1-j2": {
+        "all": {
+          "n_both_ok": 75,
+          "raw_agreement": {
+            "successes": 65,
+            "n": 75,
+            "rate": 0.8666666666666667,
+            "ci95": [
+              0.7716683625530486,
+              0.9259341529595605
+            ]
+          },
+          "cohen_kappa": 0.25149700598802427,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.555000839066954
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "sycophancy": {
+          "n_both_ok": 13,
+          "raw_agreement": {
+            "successes": 8,
+            "n": 13,
+            "rate": 0.6153846153846154,
+            "ci95": [
+              0.355228915126657,
+              0.8229029220223743
+            ]
+          },
+          "cohen_kappa": 0.1772151898734177,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.5830414746543756
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "metadata": {
+          "n_both_ok": 48,
+          "raw_agreement": {
+            "successes": 47,
+            "n": 48,
+            "rate": 0.9791666666666666,
+            "ci95": [
+              0.8910078200474814,
+              0.9963128890224893
+            ]
+          },
+          "cohen_kappa": 0.0,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "grader_hacking": {
+          "n_both_ok": 14,
+          "raw_agreement": {
+            "successes": 10,
+            "n": 14,
+            "rate": 0.7142857142857143,
+            "ci95": [
+              0.4535091567010681,
+              0.8827862135542308
+            ]
+          },
+          "cohen_kappa": 0.24324324324324323,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.7586206896551725
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        }
+      },
+      "j1-j3": {
+        "all": {
+          "n_both_ok": 76,
+          "raw_agreement": {
+            "successes": 55,
+            "n": 76,
+            "rate": 0.7236842105263158,
+            "ci95": [
+              0.6142463460107743,
+              0.8115975764600853
+            ]
+          },
+          "cohen_kappa": 0.1172566371681417,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.28638497652582146
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "sycophancy": {
+          "n_both_ok": 14,
+          "raw_agreement": {
+            "successes": 3,
+            "n": 14,
+            "rate": 0.21428571428571427,
+            "ci95": [
+              0.07571386712693184,
+              0.47589230586600295
+            ]
+          },
+          "cohen_kappa": 0.025316455696202524,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.12499999999999996
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "metadata": {
+          "n_both_ok": 48,
+          "raw_agreement": {
+            "successes": 41,
+            "n": 48,
+            "rate": 0.8541666666666666,
+            "ci95": [
+              0.7283282347525372,
+              0.9275175067339628
+            ]
+          },
+          "cohen_kappa": 0.0,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "grader_hacking": {
+          "n_both_ok": 14,
+          "raw_agreement": {
+            "successes": 11,
+            "n": 14,
+            "rate": 0.7857142857142857,
+            "ci95": [
+              0.524107694133997,
+              0.9242861328730683
+            ]
+          },
+          "cohen_kappa": 0.3225806451612903,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            1.0
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        }
+      },
+      "j2-j3": {
+        "all": {
+          "n_both_ok": 114,
+          "raw_agreement": {
+            "successes": 97,
+            "n": 114,
+            "rate": 0.8508771929824561,
+            "ci95": [
+              0.774116058983086,
+              0.9047621626598321
+            ]
+          },
+          "cohen_kappa": 0.5857203933304831,
+          "kappa_ci95_bootstrap": [
+            0.40313267588636487,
+            0.7497326578821386
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "sycophancy": {
+          "n_both_ok": 20,
+          "raw_agreement": {
+            "successes": 15,
+            "n": 20,
+            "rate": 0.75,
+            "ci95": [
+              0.531299122381256,
+              0.8881382985923343
+            ]
+          },
+          "cohen_kappa": 0.4680851063829787,
+          "kappa_ci95_bootstrap": [
+            0.14634146341463428,
+            0.8275862068965516
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "metadata": {
+          "n_both_ok": 76,
+          "raw_agreement": {
+            "successes": 65,
+            "n": 76,
+            "rate": 0.8552631578947368,
+            "ci95": [
+              0.7591255101452948,
+              0.9172148373084233
+            ]
+          },
+          "cohen_kappa": 0.27931034482758604,
+          "kappa_ci95_bootstrap": [
+            -0.06091370558375659,
+            0.5815016368265773
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        },
+        "grader_hacking": {
+          "n_both_ok": 18,
+          "raw_agreement": {
+            "successes": 17,
+            "n": 18,
+            "rate": 0.9444444444444444,
+            "ci95": [
+              0.7424269921812741,
+              0.990124809021697
+            ]
+          },
+          "cohen_kappa": 0.8524590163934426,
+          "kappa_ci95_bootstrap": [
+            0.45454545454545436,
+            1.0
+          ],
+          "reliable": true,
+          "note": ""
+        }
+      }
+    },
     "agreement": {
       "n_both_ok": 75,
       "raw_agreement": {
@@ -1863,6 +2159,29 @@
         }
       }
     },
+    "pairwise": {
+      "j1-j2": {
+        "all": {
+          "n_both_ok": 3,
+          "raw_agreement": {
+            "successes": 1,
+            "n": 3,
+            "rate": 0.3333333333333333,
+            "ci95": [
+              0.06149194472039621,
+              0.7923403991979522
+            ]
+          },
+          "cohen_kappa": 0.0,
+          "kappa_ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "reliable": false,
+          "note": "kappa < 0.6: the AI-judged estimate is unreliable"
+        }
+      }
+    },
     "agreement": {
       "n_both_ok": 3,
       "raw_agreement": {
@@ -1886,8 +2205,29 @@
   },
   "costs": {
     "cap_usd": 25.0,
-    "total_usd": 1.183311,
+    "total_usd": 2.142617,
     "by_journal": {
+      "run_0.jsonl.billing.jsonl": 0.040654,
+      "run_1.jsonl.billing.jsonl": 0.039119,
+      "run_10.jsonl.billing.jsonl": 0.04525,
+      "run_11.jsonl.billing.jsonl": 0.044705,
+      "run_12.jsonl.billing.jsonl": 0.043876,
+      "run_13.jsonl.billing.jsonl": 0.037546,
+      "run_14.jsonl.billing.jsonl": 0.039542,
+      "run_15.jsonl.billing.jsonl": 0.045266,
+      "run_2.jsonl.billing.jsonl": 0.042237,
+      "run_3.jsonl.billing.jsonl": 0.040824,
+      "run_4.jsonl.billing.jsonl": 0.044179,
+      "run_5.jsonl.billing.jsonl": 0.044062,
+      "run_6.jsonl.billing.jsonl": 0.037461,
+      "run_7.jsonl.billing.jsonl": 0.045727,
+      "run_8.jsonl.billing.jsonl": 0.031904,
+      "run_9.jsonl.billing.jsonl": 0.04394,
+      "smoke_0.jsonl.billing.jsonl": 0.003178,
+      "smoke_1.jsonl.billing.jsonl": 0.013276,
+      "smoke_2.jsonl.billing.jsonl": 0.006656,
+      "smoke_3.jsonl.billing.jsonl": 0.007578,
+      "smoke_4.jsonl.billing.jsonl": 0.001481,
       "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
       "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
       "calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
@@ -1895,10 +2235,12 @@
       "calibration_j2_r4.jsonl.billing.jsonl": 0.059007,
       "hint_j1.jsonl.billing.jsonl": 0.132356,
       "hint_j2.jsonl.billing.jsonl": 0.805493,
+      "hint_j3.jsonl.billing.jsonl": 0.260106,
+      "j3_formatcheck.jsonl.billing.jsonl": 0.000739,
       "steer_j1.jsonl.billing.jsonl": 0.020931,
       "steer_j2.jsonl.billing.jsonl": 0.127667
     },
     "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
-    "updated_at": "2026-11-11T19:22:35.949634+00:00"
+    "updated_at": "2026-11-11T19:41:35.284811+00:00"
   }
 }

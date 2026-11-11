@@ -20,6 +20,9 @@ from .common import HINTS, LETTERS, read_jsonl
 
 V2 = Path("artifacts/v2")
 P1 = V2 / "phase1/responses.jsonl"
+DS = V2 / "deepseek/responses.jsonl"
+JUDGE_IDS = ("j1", "j2", "j3")
+PAIRS = (("j1", "j2"), ("j1", "j3"), ("j2", "j3"))
 P2 = V2 / "phase2"
 P3 = V2 / "phase3"
 J = V2 / "judge"
@@ -88,8 +91,19 @@ def keyword_check(responses):
     return out
 
 
-def phase1(strict=False):
-    rows = read_jsonl(P1)
+def diff_ci(a, b):
+    """Difference of two independent proportions a - b with Newcombe's hybrid score 95% interval
+    (method 10, built from the two Wilson intervals)."""
+    if not a["n"] or not b["n"]:
+        return {"difference": None, "ci95": [None, None]}
+    p1, (l1, u1), p2, (l2, u2) = a["rate"], a["ci95"], b["rate"], b["ci95"]
+    d = p1 - p2
+    return {"difference": d, "ci95": [d - ((p1 - l1) ** 2 + (u2 - p2) ** 2) ** .5,
+                                      d + ((u1 - p1) ** 2 + (p2 - l2) ** 2) ** .5]}
+
+
+def phase1(strict=False, path=P1):
+    rows = read_jsonl(path)
     if strict:
         rows = [{**r, "answer": r["answer_strict"], "status": r["status_strict"]} for r in rows]
     out = {"records": len(rows), "status": dict(Counter(r["status"] for r in rows))}
@@ -97,7 +111,7 @@ def phase1(strict=False):
     for hint, rep in [("none", 0), ("none", 1)] + [(h, None) for h in HINTS]:
         group = [r for r in rows if r["hint_type"] == hint and r.get("baseline_repeat") == rep]
         by_cond[f"{hint}{'' if rep is None else rep}"] = {"valid": rate(sum(valid_answer(r) for r in group), len(group)),
-                                                          "finish_length": sum(r["finish_reason"] == "length" for r in group)}
+                                                          "finish_length": sum(r.get("finish_reason") == "length" for r in group)}
     out["valid_by_condition"] = by_cond
     idx = index_records(rows)
     switches = {h: [0, 0] for h in HINTS}
@@ -120,12 +134,12 @@ def phase1(strict=False):
     out["control_unhinted_repeat_lands_on_hint_letter"] = rate(*control)
     out["denominator"] = "questions with a valid unhinted answer (repeat 0) that differs from the hint letter"
     if not strict:
-        out["answer_rule_counts"] = dict(Counter(r["answer_rule"] for r in rows))
+        out["answer_rule_counts"] = dict(Counter(r.get("answer_rule", "call_failed") for r in rows))
     return out
 
 
-def judge_block(kind):
-    files = {j: J / f"{kind}_{j}.jsonl" for j in ("j1", "j2")}
+def judge_block(kind, prefix=""):
+    files = {j: J / f"{prefix}{kind}_{j}.jsonl" for j in JUDGE_IDS}
     data = {j: {r["record_id"]: r for r in read_jsonl(p)} for j, p in files.items() if p.exists()}
     out = {}
     for j, rows in data.items():
@@ -143,8 +157,18 @@ def judge_block(kind):
             entry["labels_among_ok"] = {lab: rate(sum(r["label"] == lab for r in ok), len(ok))
                                         for lab in ("mentions_outside_nudge", "argues_normally", "incoherent")}
         out[j] = entry
-    if len(data) == 2:
-        out["agreement"] = agreement(data["j1"], data["j2"], "faithful" if kind == "hint" else "label")
+    field = "faithful" if kind == "hint" else "label"
+    out["pairwise"] = {}
+    for a, b in PAIRS:
+        if a in data and b in data:
+            entry = {"all": agreement(data[a], data[b], field)}
+            if kind == "hint":
+                entry.update({h: agreement({k: v for k, v in data[a].items() if HINT_TYPE.get(k) == h},
+                                           {k: v for k, v in data[b].items() if HINT_TYPE.get(k) == h}, field)
+                              for h in HINTS})
+            out["pairwise"][f"{a}-{b}"] = entry
+    if "j1" in data and "j2" in data:
+        out["agreement"] = agreement(data["j1"], data["j2"], field)
         if kind == "hint":
             out["agreement_by_hint"] = {h: agreement({k: v for k, v in data["j1"].items() if HINT_TYPE.get(k) == h},
                                                      {k: v for k, v in data["j2"].items() if HINT_TYPE.get(k) == h},
@@ -156,6 +180,40 @@ def judge_block(kind):
 
 
 HINT_TYPE = {}
+
+
+def comparison(report):
+    """Qwen3-1.7B vs DeepSeek R1-0528 per hint. Two models: a comparison, not a size trend."""
+    q, d = report["phase1"], report["deepseek"]["phase1"]
+    out = {"note": "Two models make a comparison, not a size trend. Differences are DeepSeek minus Qwen, with "
+                   "Newcombe hybrid-score 95% intervals that treat the two models as independent samples.",
+           "switch_rate": {}, "admission_faithful_among_ok": {}}
+    for h in HINTS:
+        out["switch_rate"][h] = {"qwen": q["switch_rate"][h], "deepseek": d["switch_rate"][h],
+                                 "deepseek_minus_qwen": diff_ci(d["switch_rate"][h], q["switch_rate"][h])}
+        out["admission_faithful_among_ok"][h] = {}
+        for j in JUDGE_IDS:
+            a = report["judge_hint"].get(j, {}).get(f"faithful_among_ok_{h}")
+            b = report["deepseek"]["judge_hint"].get(j, {}).get(f"faithful_among_ok_{h}")
+            if a and b:
+                out["admission_faithful_among_ok"][h][j] = {"qwen": a, "deepseek": b, "deepseek_minus_qwen": diff_ci(b, a)}
+    out["control"] = {"qwen": q["control_unhinted_repeat_lands_on_hint_letter"],
+                      "deepseek": d["control_unhinted_repeat_lands_on_hint_letter"]}
+    return out
+
+
+def deepseek_block():
+    rows = read_jsonl(DS)
+    HINT_TYPE.update({r["record_id"]: r["hint_type"] for r in rows})
+    ok = [r for r in rows if r["status"] != "error"]
+    return {"model": "deepseek/deepseek-r1-0528 via OpenRouter", "phase1": phase1(path=DS),
+            "providers": dict(Counter(r.get("provider") for r in rows)),
+            "errors": [{"record_id": r["record_id"], "error": r["error"]} for r in rows if r["status"] == "error"],
+            "reasoning_chars_median": float(np.median([r["reasoning_chars"] for r in ok])) if ok else None,
+            "empty_reasoning": sum(not r["reasoning"].strip() for r in ok),
+            "cost_usd": sum(r.get("cost_usd") or 0 for r in rows),
+            "judge_hint": judge_block("hint", prefix="ds_"),
+            "keyword_check_post_hoc": keyword_check(ok)}
 
 
 def eligible_hinted_ids(responses):
@@ -316,6 +374,9 @@ def main():
               "judge_hint": judge_block("hint"), "keyword_check_post_hoc": keyword_check(read_jsonl(P1)), "phase2": phase2() if (P2 / "early.jsonl").exists() else {"status": "not run"},
               "phase3": phase3(), "judge_steer": judge_block("steer"),
               "costs": json.loads((V2 / "costs.json").read_text())}
+    if DS.exists():
+        report["deepseek"] = deepseek_block()
+        report["comparison"] = comparison(report)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "report.json").write_text(json.dumps(report, indent=2) + "\n")
     if args.chart:
