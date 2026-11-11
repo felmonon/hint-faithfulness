@@ -1,0 +1,13 @@
+{
+  "cap_usd": 25.0,
+  "total_usd": 0.096864,
+  "by_journal": {
+    "calibration_j1_r1.jsonl.billing.jsonl": 0.008945,
+    "calibration_j1_r2.jsonl.billing.jsonl": 0.009704,
+    "calibration_j1_r3.jsonl.billing.jsonl": 0.009485,
+    "calibration_j1_r4.jsonl.billing.jsonl": 0.009723,
+    "calibration_j2_r4.jsonl.billing.jsonl": 0.059007
+  },
+  "note": "estimates from returned token usage at list prices, cached-input discounts ignored (upper bound)",
+  "updated_at": "2026-11-11T16:22:12.710888+00:00"
+}

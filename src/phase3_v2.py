@@ -24,7 +24,6 @@ from .vectors_v2 import calibrated_strengths, letter_contrast_vectors, pairwise_
 OUT = Path("artifacts/v2/phase3")
 SPLIT_SEED, N_HELDOUT = 20261111, 40
 FRACTIONS = (0.05, 0.1, 0.2, 0.4, 0.8, 1.6)
-GEN = {"temperature": .6, "top_p": .95, "top_k": 20, "max_tokens": 4096}
 TIE_PP = 0.005
 
 
@@ -74,7 +73,8 @@ def collect_activations(questions, split):
     rows, acts = [], []
     for qid in split["train"]:
         for hint, letter, messages in letter_prompts(by_id[qid]):
-            ids = tok.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, enable_thinking=True)
+            ids = tok.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, enable_thinking=True,
+                                        return_dict=False)
             acts.append(capture_residuals(local, ids).astype(np.float32))
             rows.append({"question_id": qid, "hint_type": hint, "hint_letter": letter,
                          "correct_answer": by_id[qid]["correct_answer"], "prompt_tokens": len(ids)})
@@ -130,61 +130,33 @@ def choose_layer_and_vectors():
     return choice
 
 
-class Steerer:
-    """vLLM (V0, eager) forward hook adding one fixed vector after a decoder layer."""
-
-    def __init__(self, llm, layer):
-        import torch
-        model = None
-        for path in ("llm_engine.model_executor.driver_worker.model_runner.model",
-                     "llm_engine.model_executor.driver_worker.worker.model_runner.model"):
-            obj = llm
-            try:
-                for part in path.split("."):
-                    obj = getattr(obj, part)
-                model = obj
-                break
-            except AttributeError:
-                continue
-        if model is None:
-            raise RuntimeError("Could not reach the vLLM model for hooking (needs VLLM_USE_V1=0)")
-        self.torch = torch
-        self.vector = None
-        block = model.model.layers[layer]
-        dtype = next(model.parameters()).dtype
-        self.dtype, self.device = dtype, next(model.parameters()).device
-
-        def hook(_module, _inputs, output):
-            if self.vector is None:
-                return output
-            hidden, residual = output
-            return hidden + self.vector, residual
-        block.register_forward_hook(hook)
-
-    def set(self, vector):
-        self.vector = None if vector is None else self.torch.tensor(vector, dtype=self.dtype, device=self.device)
+BATCH = 32
 
 
-def generate(llm, tok, steerer, items, vector):
-    """items: list of (row_metadata, messages, seed). Returns rows with outputs."""
-    from vllm import SamplingParams
-    from vllm.inputs import TokensPrompt
+def key(row):
+    return f"{row['question_id']}|{row['direction']}|{row['target_letter']}|{row['fraction']}"
+
+
+def generate_batches(runner, layer, items, path):
+    """items: list of (meta, messages, vector or None). Conditions are mixed within a
+    batch; each row gets its own steering vector (zero for baseline). One torch seed per
+    batch, derived from the row keys and recorded on every row."""
     from .gen_v2 import split_generation
-    steerer.set(vector)
-    prompts, params = [], []
-    for _, messages, seed in items:
-        ids = tok.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, enable_thinking=True)
-        prompts.append(TokensPrompt(prompt_token_ids=ids))
-        params.append(SamplingParams(seed=seed, skip_special_tokens=False, **GEN))
-    results = llm.generate(prompts, params, use_tqdm=False)
-    rows = []
-    for (meta, _, seed), prompt, result in zip(items, prompts, results):
-        out = result.outputs[0]
-        finish = "length" if out.finish_reason == "length" else "stop" if out.finish_reason == "stop" else str(out.finish_reason)
-        rows.append({**meta, "seed": seed, **split_generation(tok, list(out.token_ids), finish),
-                     "prompt_token_ids": prompt["prompt_token_ids"], "finished_at": utc_now()})
-    steerer.set(None)
-    return rows
+    from .hf_batch import batch_seed
+    width = runner.model.config.hidden_size
+    for start in range(0, len(items), BATCH):
+        chunk = items[start:start + BATCH]
+        prompts = [runner.prompt_ids(messages) for _, messages, _ in chunk]
+        vectors = np.stack([np.zeros(width, np.float32) if v is None else np.asarray(v, np.float32)
+                            for _, _, v in chunk])
+        seed = batch_seed(SPLIT_SEED, [key(m) for m, _, _ in chunk])
+        steer = None if all(v is None for _, _, v in chunk) else vectors
+        results = runner.generate(prompts, seed, steer_layer=layer if steer is not None else None, steer_vectors=steer)
+        for (meta, _, _), ids, result in zip(chunk, prompts, results):
+            append_jsonl(path, {**meta, **split_generation(runner.tok, result["generated"], result["finish_reason"]),
+                                "prompt_token_ids": ids, "batch": {"batch_seed": seed, "batch_size": len(chunk)},
+                                "backend": "transformers-batched", "finished_at": utc_now()})
+        print(f"{path.name}: {start + len(chunk)}/{len(items)}", flush=True)
 
 
 def conditions(strengths):
@@ -195,13 +167,11 @@ def conditions(strengths):
                 yield (direction, letter, fraction)
 
 
-def run_vllm_steps(questions, split, choice):
-    from .gen_v2 import load_vllm
+def run_steps(questions, split, choice):
+    from .hf_batch import HFRunner
     vec = np.load(OUT / "vectors.npz")
     layer, median = int(vec["layer"]), float(vec["median_norm"])
-    llm = load_vllm(max_num_seqs=64, enforce_eager=True)
-    tok = llm.get_tokenizer()
-    steerer = Steerer(llm, layer)
+    runner = HFRunner()
     by_id = {q["question_id"]: q for q in questions}
 
     def vector_for(direction, letter, fraction):
@@ -209,17 +179,17 @@ def run_vllm_steps(questions, split, choice):
 
     # Calibration on 3 training questions, unhinted prompts.
     cal_path = OUT / "calibration.jsonl"
-    done = {(r["question_id"], r["direction"], r["target_letter"], r["fraction"]) for r in read_jsonl(cal_path)}
+    done = {key(r) for r in read_jsonl(cal_path)}
+    items = []
     for fraction in FRACTIONS:
         for direction in ("fitted", "random"):
             for letter in LETTERS:
-                items = [({"phase": "calibration", "question_id": qid, "direction": direction, "target_letter": letter,
-                           "fraction": fraction, "layer": layer, "abs_strength": fraction * median},
-                          build_messages(by_id[qid], "none"), qseed(qid))
-                         for qid in split["calibration"] if (qid, direction, letter, fraction) not in done]
-                if items:
-                    for row in generate(llm, tok, steerer, items, vector_for(direction, letter, fraction)):
-                        append_jsonl(cal_path, row)
+                for qid in split["calibration"]:
+                    meta = {"phase": "calibration", "question_id": qid, "direction": direction, "target_letter": letter,
+                            "fraction": fraction, "layer": layer, "abs_strength": fraction * median}
+                    if key(meta) not in done:
+                        items.append((meta, build_messages(by_id[qid], "none"), vector_for(direction, letter, fraction)))
+    generate_batches(runner, layer, items, cal_path)
     strengths_path = OUT / "strengths.json"
     if not strengths_path.exists():
         cal = read_jsonl(cal_path)
@@ -236,17 +206,17 @@ def run_vllm_steps(questions, split, choice):
     print("frozen strengths", strengths, flush=True)
     # Held-out sweep.
     sweep_path = OUT / "sweep.jsonl"
-    done = {(r["question_id"], r["direction"], r["target_letter"], r["fraction"]) for r in read_jsonl(sweep_path)}
+    done = {key(r) for r in read_jsonl(sweep_path)}
+    items = []
     for direction, letter, fraction in conditions(strengths):
-        items = [({"phase": "sweep", "question_id": qid, "direction": direction, "target_letter": letter,
-                   "fraction": fraction, "layer": layer, "abs_strength": fraction * median,
-                   "correct_answer": by_id[qid]["correct_answer"]},
-                  build_messages(by_id[qid], "none"), qseed(qid))
-                 for qid in split["heldout"] if (qid, direction, letter, fraction) not in done]
-        if items:
-            for row in generate(llm, tok, steerer, items, vector_for(direction, letter, fraction)):
-                append_jsonl(sweep_path, row)
-            print(f"sweep {direction} {letter} {fraction}: {len(items)}", flush=True)
+        for qid in split["heldout"]:
+            meta = {"phase": "sweep", "question_id": qid, "direction": direction, "target_letter": letter,
+                    "fraction": fraction, "layer": layer, "abs_strength": fraction * median,
+                    "correct_answer": by_id[qid]["correct_answer"]}
+            if key(meta) not in done:
+                items.append((meta, build_messages(by_id[qid], "none"), vector_for(direction, letter, fraction)))
+    random.Random(SPLIT_SEED).shuffle(items)  # mix conditions across batches
+    generate_batches(runner, layer, items, sweep_path)
 
 
 def main():
@@ -262,7 +232,7 @@ def main():
         choice = choose_layer_and_vectors()
         print("layer", choice["layer"], "cosines", choice["pairwise_cosines_fitted"], flush=True)
     if args.step in ("all", "steer"):
-        run_vllm_steps(questions, split, choice)
+        run_steps(questions, split, choice)
 
 
 if __name__ == "__main__":

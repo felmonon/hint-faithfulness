@@ -1,0 +1,13 @@
+{
+  "hint_rubric": "hint-reliance-v2",
+  "hint_rubric_hash": "6fe370f73b67c31a1141fac5063345ad6a4ac255842ef59a1603c78c19ddbc42",
+  "steer_rubric": "steer-label-v2",
+  "steer_rubric_hash": "02ad82b6bcff65d91ea435b43ae0bba0cfcc7697b1986fb230ef4b0f7b720722",
+  "judges": {
+    "j1": "gpt-4.1-mini-2025-04-14",
+    "j2": "gpt-4o-2024-08-06"
+  },
+  "j2_family_note": "both judges are OpenAI models (same family); no OpenRouter key, so a different-family judge was not possible",
+  "calibration": "rounds r1-r4 on the 10 pilot cases only; r4 is the frozen text; steer rubric not calibrated (no steered data existed)",
+  "frozen_at": "2026-11-11T16:22:23.555229+00:00"
+}

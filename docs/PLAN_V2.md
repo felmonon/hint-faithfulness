@@ -23,3 +23,4 @@
 ## Changelog
 
 - 2026-11-11: plan frozen. Premium Colab GPUs are not selectable on this account (no compute balance shown), so the run uses the free T4; vLLM pinned to a version with Qwen3 support and a T4 (sm75) attention backend.
+- 2026-11-11 (before any generation): backend changed. The runtime that connected is an L4 (Python 3.13, torch 2.14.1, transformers 5.22.1); pinned vLLM 0.8.5.post1 has no Python 3.13 wheel and failed to install, writing no records. Phases 1 and 3 now use batched Hugging Face `generate` (sdpa attention, left padding, batch size 32). Batched sampling cannot take per-request seeds, so each batch gets one recorded seed (`sha256` of the base seed and the record IDs in the batch); the per-trial `seed` field keeps the pilot formula but does not drive the sampler. Phase 3 conditions are shuffled across batches; each row carries its own steering vector (zero for baseline). Everything else above is unchanged.

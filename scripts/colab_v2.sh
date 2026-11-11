@@ -7,13 +7,13 @@ cd /content/hf
 mkdir -p colab_logs
 case "$1" in
   setup)
-    pip install -q vllm==0.8.5.post1 scikit-learn > colab_logs/pip.log 2>&1
-    python -c "import vllm, torch, transformers; print(vllm.__version__, torch.__version__, transformers.__version__)" >> colab_logs/pip.log 2>&1
-    echo SETUP_DONE >> colab_logs/pip.log ;;
+    python -c "import sklearn" 2>/dev/null || pip install -q scikit-learn > colab_logs/pip.log 2>&1
+    python -c "import torch, transformers, sklearn; print(torch.__version__, transformers.__version__, sklearn.__version__)" >> colab_logs/pip.log 2>&1 \
+      && echo SETUP_DONE >> colab_logs/pip.log ;;
   after1)
     # Wait for Phase 1, then run the GPU parts of Phase 2 and all of Phase 3.
-    until grep -q PHASE1_DONE colab_logs/phase1.log 2>/dev/null; do sleep 30; done
-    git pull -q
+    until grep -q "PHASE1_DONE\|PHASE1_FAILED" colab_logs/phase1.log 2>/dev/null; do sleep 30; done
+    grep -q PHASE1_DONE colab_logs/phase1.log || exit 1
     bash scripts/colab_v2.sh phase2
     bash scripts/colab_v2.sh phase3 ;;
   pack)
@@ -27,13 +27,12 @@ case "$1" in
     for f in colab_logs/*.log; do echo "== $f"; tail -c 600 "$f"; echo; done
     wc -l artifacts/v2/*/*.jsonl 2>/dev/null ;;
   phase1)
-    VLLM_USE_V1=0 python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl > colab_logs/phase1.log 2>&1
-    echo PHASE1_DONE >> colab_logs/phase1.log ;;
+    python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl --batch-size 32 > colab_logs/phase1.log 2>&1 \
+      && echo PHASE1_DONE >> colab_logs/phase1.log || echo PHASE1_FAILED >> colab_logs/phase1.log ;;
   phase2)
-    python -m src.phase2_v2 early > colab_logs/phase2.log 2>&1
-    python -m src.phase2_v2 acts >> colab_logs/phase2.log 2>&1
-    echo PHASE2_DONE >> colab_logs/phase2.log ;;
+    { python -m src.phase2_v2 early && python -m src.phase2_v2 acts; } > colab_logs/phase2.log 2>&1 \
+      && echo PHASE2_DONE >> colab_logs/phase2.log || echo PHASE2_FAILED >> colab_logs/phase2.log ;;
   phase3)
-    VLLM_USE_V1=0 python -m src.phase3_v2 all > colab_logs/phase3.log 2>&1
-    echo PHASE3_DONE >> colab_logs/phase3.log ;;
+    python -m src.phase3_v2 all > colab_logs/phase3.log 2>&1 \
+      && echo PHASE3_DONE >> colab_logs/phase3.log || echo PHASE3_FAILED >> colab_logs/phase3.log ;;
 esac

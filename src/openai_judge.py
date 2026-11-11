@@ -14,7 +14,10 @@ from .providers import BudgetExceededError, ledger_state
 DEFAULT_MODEL = "gpt-4.1-mini-2025-04-14"
 # Standard rates verified 2026-11-09. These are estimates, not an account cap.
 # This model is scheduled to shut down on 2027-01-14; no silent replacement.
-PRICES = {DEFAULT_MODEL: {"input": .40 / 1_000_000, "output": 1.60 / 1_000_000}}
+PRICES = {DEFAULT_MODEL: {"input": .40 / 1_000_000, "output": 1.60 / 1_000_000},
+          # v2 second judge and its pre-declared fallback (rates checked 2026-11-11).
+          "gpt-4o-2024-08-06": {"input": 2.50 / 1_000_000, "output": 10.00 / 1_000_000},
+          "gpt-4.1-2025-04-14": {"input": 2.00 / 1_000_000, "output": 8.00 / 1_000_000}}
 VERDICT_SCHEMA = {
     "type": "object", "additionalProperties": False,
     "properties": {
@@ -50,7 +53,9 @@ class OpenAIJudgeClient:
                                                "delta_usd": spent_usd, "at": utc_now()})
 
     def complete(self, messages, model=DEFAULT_MODEL, max_tokens=800, temperature=0,
-                 top_p=1, top_k=None, reasoning=False, request_key=None):
+                 top_p=1, top_k=None, reasoning=False, request_key=None,
+                 schema=None, schema_name="hint_reliance_verdict"):
+        schema = schema or VERDICT_SCHEMA
         if model not in PRICES:
             raise ValueError(f"Unsupported/unpriced OpenAI judge model {model!r}; choose the documented pinned snapshot")
         if reasoning or top_k is not None:
@@ -60,8 +65,8 @@ class OpenAIJudgeClient:
         payload = {"model": model, "input": messages, "max_output_tokens": max_tokens,
                    "temperature": temperature, "top_p": top_p, "store": False,
                    "service_tier": "default",
-                   "text": {"format": {"type": "json_schema", "name": "hint_reliance_verdict",
-                                        "strict": True, "schema": VERDICT_SCHEMA}}}
+                   "text": {"format": {"type": "json_schema", "name": schema_name,
+                                        "strict": True, "schema": schema}}}
         request_key = request_key or stable_hash(payload)
         if request_key in self.completed:
             saved = self.completed[request_key]
@@ -72,7 +77,7 @@ class OpenAIJudgeClient:
             raise RuntimeError("A prior OpenAI request remains pending in the billing journal; reconcile its charge before retrying")
         prices = PRICES[model]
         # UTF-8 bytes overcount ordinary text tokens; include schema and framing.
-        prompt_bound = len(json.dumps(messages, ensure_ascii=False).encode()) + len(json.dumps(VERDICT_SCHEMA).encode()) + 1024
+        prompt_bound = len(json.dumps(messages, ensure_ascii=False).encode()) + len(json.dumps(schema).encode()) + 1024
         reservation = prompt_bound * prices["input"] + max_tokens * prices["output"]
         if self.spent_usd + reservation > self.budget_usd:
             raise BudgetExceededError(f"OpenAI budget guard: next call could exceed ${self.budget_usd:.2f}; no request sent")
@@ -113,7 +118,7 @@ class OpenAIJudgeClient:
                   "usage": usage, "raw_response": raw, "request_parameters": payload,
                   "resolved_model": raw.get("model"), "provider": "openai",
                   "cost_usd": estimated_cost, "cost_is_estimate": True,
-                  "pricing_verified_on": "2026-11-09", "pricing_usd_per_token": prices}
+                  "pricing_verified_on": "2026-11-09" if model == DEFAULT_MODEL else "2026-11-11", "pricing_usd_per_token": prices}
         if self.ledger_path:
             append_jsonl(self.ledger_path, {"event": "settle", "request_key": request_key,
                                           "delta_usd": estimated_cost - reservation,
