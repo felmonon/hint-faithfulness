@@ -1,6 +1,6 @@
 # What was actually verified
 
-Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **L4 continuation running**, launched at 10:39 UTC after preflight; full-grid export and analysis remain pending. Eight original records are preserved. See the [pilot report](PILOT_REPORT.md), [evidence index](../results/pilot-20-v1/), and [Phase 3 resume protocol](PHASE3_RESUME_PROTOCOL.md).
+Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analyzed November 10 UTC. Current Phase 3 status: **second L4 continuation being prepared**. The [latest verified checkpoint](../artifacts/pilot-20-phase3-checkpoint-1110/) preserves 28 conditions; 170 remain in the fixed 198-position grid. Both earlier sessions are unavailable, and any unarchived attempts after their checkpoints are unknown. Full-grid export and analysis remain pending. See the [second recovery protocol](PHASE3_SECOND_RESUME_PROTOCOL.md).
 
 ## Completed
 
@@ -26,7 +26,7 @@ Prepared November 9, 2026, America/Edmonton; Phase 1 evidence exported and analy
 
 ## Still pending
 
-- **Phase 3 compute:** the paid L4 continuation is running after T4 allocation was unavailable. The fixed grid has 198 positions, of which eight have archived records and 190 require a retained continuation outcome. Earlier attempts after the checkpoint are unknown, so a completed recovery must not claim exactly 198 historical attempts. The checkpoint covers only part of one question and supports no steering-efficacy conclusion.
+- **Phase 3 compute:** 28 conditions have externally verified records (eight T4 and 20 L4); the second continuation will collect the remaining 170 on a fresh L4. Both earlier interruptions have unknown unarchived attempts. These 28 records cover only part of one question and support no steering-efficacy conclusion.
 - **Additional experiments:** DeepSeek inference and the full 150-question study have not been performed. Phase 2 measurements are complete. The setup Mac has 8 GB shared memory and no CUDA GPU; it is not the collection machine.
 - **API execution:** `OPENROUTER_API_KEY` is not configured here. OpenAI live judging is documented above; network-failure recovery and budget-exhaustion paths were exercised with simulated responses, not deliberate paid failures.
 - **Human validation:** no actual blind human labels or human judge validation have been supplied. The reporting rule requires at least 30 paired held-out labels and at least 90% agreement, with class balance inspected. Blank labels are intentional; a tuned judge needs a fresh, disjoint held-out check. Assistant-written predictions must not be attributed to the user as personal forecasts.
@@ -43,3 +43,10 @@ The public repository is [felmonon/hint-faithfulness](https://github.com/felmono
 - The expanded offline suite passed **112 tests**. It includes the full-grid artifact audit and secondary five-question hardware sensitivity. Both tools refuse an incomplete primary dataset. These software checks do not supply human validation or completed Phase 3 findings.
 
 - GitHub CI also passed all 112 tests for analysis/audit commit `6302b16`: [workflow run](https://github.com/felmonon/hint-faithfulness/actions/runs/42801360638).
+
+
+## Second recovery verification, November 11 UTC
+
+- The saved Drive notebook's latest snapshot contains 28 rows, captured November 10 at 11:10:25.384475 UTC. All 20 compressed and decoded payloads verified independently, including the exact original eight-row prefix and unchanged fitted vectors.
+- Inspection around November 11 at 00:37 UTC found a disconnected session; reconnection supplied a fresh L4. The session manager subsequently identified only the current session. A read-only workspace check found no prior project directory. No intermediate progress or termination time can be established from the unobserved interval.
+- The complete structured checkpoint and readable raw rows were published at `06ff192c6662819b893ebdec931f2bbbf2d70b17`, with acquisition provenance and a second recovery protocol frozen before new inference.
