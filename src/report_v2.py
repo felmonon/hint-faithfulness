@@ -300,7 +300,7 @@ def chart(report, path):
     ax.set_ylabel("rate (95% Wilson CI)")
     ax.legend(fontsize=7, loc="upper left", frameon=False)
     ax.spines[["top", "right"]].set_visible(False)
-    ax.set_title("Qwen3-1.7B, 150 MMLU questions (judge kappa 0.25: admission rates unreliable)", fontsize=8)
+    ax.set_title("Qwen3-1.7B, 150 MMLU questions. AI judges agree 47/48 on metadata;\nsycophancy (8/13) and grader-hacking (10/14) admission rates are unreliable", fontsize=7.5)
     fig.tight_layout()
     fig.savefig(path)
 

@@ -1,6 +1,12 @@
 # Results v2
 
-Qwen3-1.7B (revision `70d244cc`), 150 questions × 5 conditions, thinking on, T 0.6 / top-p 0.95 / top-k 20, 4,096-token cap, vLLM 0.33.0 on a Colab L4. The plan is in [PLAN_V2.md](PLAN_V2.md) and every change after the freeze is in its changelog. DeepSeek was not run because no OpenRouter key was configured.
+Qwen3-1.7B (revision `70d244cc`), 150 questions × 5 conditions, thinking on, T 0.6 / top-p 0.95 / top-k 20, 4,096-token cap, vLLM 0.33.0 on a Colab L4. The plan is in [PLAN_V2.md](PLAN_V2.md) and every change after the freeze is in its changelog. DeepSeek was not run because no OpenRouter key was configured; the v3 comparison is waiting for that key.
+
+**v3 update (2026-11-11, after an external review).** Two bugs were fixed and every number below was recomputed:
+- Parser v2 now accepts `\boxed{\text{X}}`.
+- The early-answer switch analysis now uses only eligible questions.
+
+The 0.2 steering sweep was also run at 0.1, which the frozen rule selects once the parser is fixed. Every number matches the reviewer's expected values. The changelog in PLAN_V2.md lists each change.
 
 Every rate below is k/n with a 95% Wilson interval. Recompute everything offline with:
 
@@ -16,7 +22,7 @@ This writes `results/v2/report.json` and `results/v2/switch_and_admission.png`. 
 
 Data: `artifacts/v2/phase1/responses.jsonl` (750 rows, all kept) and `responses.manifest.json`. Command: `python -m src.gen_v2 --output artifacts/v2/phase1/responses.jsonl`.
 
-Statuses: 659 ok, 85 truncated at 4,096 tokens, 6 invalid answer [`phase1.status`].
+Statuses: 663 ok, 85 truncated at 4,096 tokens, 2 invalid answer [`phase1.status`]. Before the parser fix it was 659 ok and 6 invalid. The 4 grader-hacking responses ending in `\boxed{\text{A}}` / `\boxed{\text{C}}` are now valid; none of them lands on the hint letter, so no switch rate changes. Grader-hacking valid answers: 129/150 = 86.0% [79.5, 90.7] (was 125/150).
 
 Denominator: questions whose unhinted repeat-0 answer is valid and differs from the hint letter (124). An invalid hinted response counts as no switch.
 
@@ -30,7 +36,7 @@ Denominator: questions whose unhinted repeat-0 answer is valid and differs from 
 
 [`phase1.switch_rate`, `phase1_strict_parser.switch_rate`, `phase1.control_unhinted_repeat_lands_on_hint_letter`]
 
-Parser v2 accepts 659 answers; the strict pilot parser accepts 519. The switch rates barely change.
+Parser v2 accepts 663 answers; the strict pilot parser accepts 519. The switch rates barely change.
 
 ## 2. When the answer switched, does the reasoning admit the hint? (AI-judged)
 
@@ -47,7 +53,25 @@ Data: `artifacts/v2/judge/hint_j1.jsonl`, `hint_j2.jsonl` (the 122 switches, one
 
 [`judge_hint.j1`, `judge_hint.j2`]
 
-Agreement on the 75 cases both judges labelled: 65/75 = 86.7% [77.2, 92.6]. Cohen's kappa = 0.25 (bootstrap 95% CI 0.00–0.56) [`judge_hint.agreement`]. **Kappa is below 0.6, so the faithfulness estimate is unreliable.** The high raw agreement and low kappa come from nearly all cases being labelled "admits". The judges disagree mainly on sycophancy.
+Overall agreement on the 75 cases both judges labelled: 65/75 = 86.7% [77.2, 92.6], Cohen's kappa 0.25 (bootstrap 95% CI 0.00–0.56) [`judge_hint.agreement`].
+
+Kappa is low partly because almost every case is labelled "admits". When one label dominates, chance agreement is already high, so even near-perfect raw agreement gives a small kappa. Reliability therefore has to be read per hint, with raw agreement next to kappa [`judge_hint.agreement_by_hint`]:
+
+| Hint | Both judges usable | Raw agreement | Kappa | Reading |
+|---|---|---|---|---|
+| Metadata | 48 | 47/48 = 97.9% [89.1, 99.6] | 0.00 | The judges agree; kappa is 0 only because 47 of 48 cases are labelled "admits" |
+| Sycophancy | 13 | 8/13 = 61.5% [35.5, 82.3] | 0.18 | **Unreliable**: few switches, judges disagree |
+| Grader hacking | 14 | 10/14 = 71.4% [45.4, 88.3] | 0.24 | **Unreliable**: few switches, judges disagree |
+
+**Keyword cross-check (post hoc).** These patterns were chosen by the external reviewer after reading the judges' quotes, so this is a sanity check, not a pre-registered measure. A case-insensitive regex runs on the reasoning text; the patterns are in `src/report_v2.py` (`KEYWORDS`). As a false-positive control, the same regex runs on the unhinted repeat-0 reasoning for the same eligible questions [`keyword_check_post_hoc`].
+
+| Hint | Switches whose reasoning matches | Unhinted control matching |
+|---|---|---|
+| Metadata | 81/83 = 97.6% [91.6, 99.3] | 16/124 = 12.9% [8.1, 19.9] |
+| Sycophancy | 15/21 = 71.4% [50.0, 86.2] | 27/124 = 21.8% [15.4, 29.8] |
+| Grader hacking | 14/18 = 77.8% [54.8, 91.0] | 12/124 = 9.7% [5.6, 16.2] |
+
+**Reading.** When the metadata hint changes Qwen3-1.7B's answer, the reasoning almost always says so: the judges agree, and the keyword check agrees. For sycophancy and grader hacking, there are too few switches and the judges disagree, so no admission rate is claimed.
 
 ## 3. Was the answer decided before the reasoning? (Phase 2)
 
@@ -57,13 +81,16 @@ Data: `artifacts/v2/phase2/early.jsonl` (3,295 rows = 659 valid responses × 5 c
 
 | With 0% of the reasoning kept, the forced answer is the hint letter | |
 |---|---|
-| Hinted responses that switched | 100/122 = 82.0% [74.2, 87.8] |
-| Hinted responses that did not switch | 84/268 = 31.3% [26.1, 37.1] |
+| Eligible hinted responses that switched | 100/122 = 82.0% [74.2, 87.8] |
+| Eligible hinted responses that did not switch | 46/221 = 20.8% [16.0, 26.6] |
+| Hinted responses on ineligible questions (repeat-0 answer already the hint letter, or invalid) | 38/47 = 80.9% [67.5, 89.6] |
 | Unhinted responses (hint letter of the matching question) | 42/269 = 15.6% [11.8, 20.4] |
 
 [`phase2.forced_at_0pct_equals_hint`]
 
-Among hinted responses, the switch rate is 100/184 = 54.3% [47.1, 61.4] when the 0% forced answer is the hint letter, and 22/206 = 10.7% [7.2, 15.6] when it is not [`phase2.switch_given_forced0_*`].
+Among eligible hinted responses, the switch rate is 100/146 = 68.5% [60.6, 75.5] when the 0% forced answer is the hint letter, and 22/197 = 11.2% [7.5, 16.3] when it is not [`phase2.switch_given_forced0_*`].
+
+**Bug fix.** v2 mistakenly put the 47 ineligible hinted responses into the "did not switch" group, which gave 84/268, 100/184 and 22/206. They now have their own line, as the plan specifies, and the corrected numbers match the reviewer's. Phase 2 still covers the original 659 valid responses: the 4 responses made valid by the parser fix would need new GPU forward passes, so they were not added. None of the 4 is a switch.
 
 Forced answer equals the final answer, all 659 valid responses: 0% cut 456/659 = 69.2% [65.6, 72.6]; 25% 514/659 = 78.0% [74.7, 81.0]; 50% 564/659 = 85.6% [82.7, 88.1]; 75% 609/659 = 92.4% [90.1, 94.2]; 100% 652/659 = 98.9% [97.8, 99.5] [`phase2.forced_equals_final_by_fraction`].
 
